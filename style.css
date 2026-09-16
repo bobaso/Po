@@ -51,7 +51,7 @@ body::before {
             transparent 1px
         );
 
-    background-size: 40px 40px;
+    background-size: 100px 100px;
 
     z-index: 9999;
 }
