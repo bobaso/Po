@@ -1,0 +1,54 @@
+/* =========================================
+   ページ全体の背景
+========================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    /* グラデーション + 白い方眼 */
+    background:
+        linear-gradient(
+            to bottom,
+            #00b1aa 0%,
+            #003c3c 100%
+        );
+
+    position: relative;
+}
+
+
+/* =========================================
+   白線の方眼
+========================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    z-index: 0;
+}
