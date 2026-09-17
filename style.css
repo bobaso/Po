@@ -349,6 +349,24 @@ body::before {
 
     z-index: 3;
 
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* =========================================
+   ボタン ホバー
+========================================= */
+
+.main-visual-button:hover {
+
+    transform: scale(1.05) translateY(-3px);
+
+    filter: brightness(1.15);
+
 }
 
 
