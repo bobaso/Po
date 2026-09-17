@@ -405,3 +405,16 @@ body::before {
     height: 10.3704%;
 
 }
+
+.main-visual-overlay {
+    position: absolute;
+    display: block;
+    z-index: 10;
+}
+
+.overlay01 {
+    left: 8.4722%;
+    top: 65.1852%;
+    width: 16.1111%;
+    height: auto;
+}
