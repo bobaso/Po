@@ -11,11 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
        HTML要素取得
     ===================================== */
 
-    const bootScreen =
-        document.getElementById("boot-screen");
+const bootScreen =
+    document.getElementById("boot-screen");
 
-    const loadingBar =
-        document.getElementById("loading-bar");
+const loadingBar =
+    document.getElementById("loading-bar");
+
+const loadingScreen =
+    document.getElementById("loading-screen");
 
 
     console.log("bootScreen:", bootScreen);
@@ -120,8 +123,6 @@ bootScreen.classList.add(
 loadingScreen.classList.add(
     "is-background"
 );
-const loadingScreen =
-    document.getElementById("loading-screen");
 
         /* =================================
            ロードバーを表示
