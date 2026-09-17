@@ -51,7 +51,7 @@ const mainVisual =
        タイピング速度
     ===================================== */
 
-    const typingSpeed = 30;
+    const typingSpeed = 20;
 
     const lineDelay = 300;
 
