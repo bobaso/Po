@@ -457,8 +457,20 @@ body::before {
 }
 
 .under01 {
-    left: 118.2639%;
-    top: -34.0741%;
-    width: 26.1806%;
-    height: auto;
+    position: fixed !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 377px !important;
+    height: auto !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    display: block !important;
+    opacity: 1 !important;
+
+    z-index: 999 !important;
+
+    border: 5px solid red;
 }
