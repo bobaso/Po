@@ -15,22 +15,58 @@
 
 <div id="loading-screen" class="loading-screen">
 
+    <!-- 起動画面 -->
     <div id="boot-screen" class="boot-screen">
 
         <div class="boot-text">
+
             <div id="line1" class="boot-line"></div>
             <div id="line2" class="boot-line"></div>
             <div id="line3" class="boot-line"></div>
             <div id="line4" class="boot-line"></div>
+
         </div>
 
     </div>
 
+
+    <!-- =====================================
+         ロードバー
+    ====================================== -->
+
     <div id="loading-bar" class="loading-bar">
-        <img
-            src="images/loading-bar.png"
-            alt="Loading"
-        >
+
+        <div class="loading-bar-inner">
+
+            <!-- 背景画像 -->
+            <img
+                src="images/loading-bar.png"
+                alt="Loading"
+                class="loading-bar-image"
+            >
+
+
+            <!-- Loading文字 -->
+            <div
+                id="loading-text"
+                class="loading-text"
+            >
+                Loading... 0%
+            </div>
+
+
+            <!-- 進行ゲージ -->
+            <div class="progress-container">
+
+                <div
+                    id="progress-fill"
+                    class="progress-fill"
+                ></div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>
@@ -51,5 +87,6 @@
 
 
 <script src="script.js"></script>
+
 </body>
 </html>
