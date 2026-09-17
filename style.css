@@ -302,14 +302,21 @@ body::before {
     max-width: 1440px;
 
     margin: 0 auto;
+
+    /* 最初は非表示 */
+    opacity: 0;
+
+    /* 表示するときのアニメーション */
+    transition: opacity 0.8s ease;
 }
 
 
-.main-visual img {
+/* =========================================
+   ローディング完了後
+========================================= */
 
-    display: block;
+.main-visual.is-visible {
 
-    width: 100%;
-    height: auto;
+    opacity: 1;
 
 }
