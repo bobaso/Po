@@ -425,3 +425,15 @@ body::before {
     width: 9.3056%;
     height: auto;
 }
+.main-visual-under {
+    position: absolute;
+    display: block;
+    z-index: 0;
+}
+
+.under01 {
+    left: 118.2639%;
+    top: -34.0741%;
+    width: 26.1806%;
+    height: auto;
+}
