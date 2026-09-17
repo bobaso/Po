@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
        タイピング速度
     ===================================== */
 
-    const typingSpeed = 45;
+    const typingSpeed = 20;
 
     const lineDelay = 300;
 
