@@ -113,10 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
            起動画面を消す
         ================================= */
 
-        bootScreen.classList.add(
-            "is-hidden"
-        );
+bootScreen.classList.add(
+    "is-hidden"
+);
 
+loadingScreen.classList.add(
+    "is-background"
+);
+const loadingScreen =
+    document.getElementById("loading-screen");
 
         /* =================================
            ロードバーを表示
