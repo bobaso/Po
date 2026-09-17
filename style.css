@@ -55,7 +55,6 @@ body::before {
 
     z-index: 9999;
 }
-}
 /* =========================================
    メインビジュアル
 ========================================= */
@@ -89,9 +88,13 @@ body::before {
     z-index: 9999;
 
     overflow: hidden;
+
+    transition: background 0.5s ease;
 }
 
-
+.loading-screen.is-background {
+    background: transparent;
+}
 /* =========================================
    起動画面
 ========================================= */
