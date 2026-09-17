@@ -11,20 +11,23 @@ document.addEventListener("DOMContentLoaded", function () {
        HTML要素取得
     ===================================== */
 
-    const bootScreen =
-        document.getElementById("boot-screen");
+const bootScreen =
+    document.getElementById("boot-screen");
 
-    const loadingBar =
-        document.getElementById("loading-bar");
+const loadingBar =
+    document.getElementById("loading-bar");
 
-    const loadingScreen =
-        document.getElementById("loading-screen");
+const loadingScreen =
+    document.getElementById("loading-screen");
 
-    const loadingText =
-        document.getElementById("loading-text");
+const loadingText =
+    document.getElementById("loading-text");
 
-    const progressFill =
-        document.getElementById("progress-fill");
+const progressFill =
+    document.getElementById("progress-fill");
+
+const mainVisual =
+    document.querySelector(".main-visual");
 
 
     console.log("bootScreen:", bootScreen);
@@ -48,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
        タイピング速度
     ===================================== */
 
-    const typingSpeed = 45;
+    const typingSpeed = 30;
 
     const lineDelay = 300;
 
@@ -132,17 +135,34 @@ document.addEventListener("DOMContentLoaded", function () {
                    100%到達
                 ----------------------------- */
 
-                if (progress >= 100) {
+              if (progress >= 100) {
 
-                    clearInterval(
-                        progressInterval
-                    );
+    clearInterval(
+        progressInterval
+    );
 
-                    console.log(
-                        "LOADING COMPLETE"
-                    );
 
-                }
+    /* =============================
+       ローディング画面を終了
+    ============================= */
+
+    loadingScreen.style.display = "none";
+
+
+    /* =============================
+       メインビジュアルを表示
+    ============================= */
+
+    mainVisual.classList.add(
+        "is-visible"
+    );
+
+
+    console.log(
+        "LOADING COMPLETE"
+    );
+
+}
 
             }, 20);
 
