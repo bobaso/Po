@@ -4,14 +4,22 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    console.log("JavaScript START");
+
+
+    /* =====================================
+       HTML要素取得
+    ===================================== */
+
     const bootScreen =
         document.getElementById("boot-screen");
 
     const loadingBar =
         document.getElementById("loading-bar");
 
-    const loadingScreen =
-        document.getElementById("loading-screen");
+
+    console.log("bootScreen:", bootScreen);
+    console.log("loadingBar:", loadingBar);
 
 
     /* =====================================
@@ -27,15 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================
-       タイピング設定
+       タイピング速度
     ===================================== */
 
     const typingSpeed = 45;
-    const lineDelay = 250;
+
+    const lineDelay = 300;
 
 
     /* =====================================
-       1行をタイピング
+       1行タイピング
     ===================================== */
 
     function typeLine(element, text) {
@@ -44,11 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let index = 0;
 
+
             function typeCharacter() {
 
                 if (index < text.length) {
 
-                    element.textContent += text.charAt(index);
+                    element.textContent +=
+                        text.charAt(index);
 
                     index++;
 
@@ -65,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                 }
+
             }
+
 
             typeCharacter();
 
@@ -75,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================
-       起動画面を開始
+       起動画面
     ===================================== */
 
     async function startBootSequence() {
@@ -87,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "line" + (i + 1)
                 );
 
+
             await typeLine(
                 line,
                 bootLines[i]
@@ -96,29 +110,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =================================
-           起動画面終了
+           起動画面を消す
         ================================= */
 
-        bootScreen.style.opacity = "0";
+        bootScreen.classList.add(
+            "is-hidden"
+        );
 
 
-        setTimeout(function () {
+        /* =================================
+           ロードバーを表示
+        ================================= */
 
-            bootScreen.style.display = "none";
+        loadingBar.style.display = "block";
 
-            /*
-             * ロードバー表示
-             */
 
-            loadingBar.classList.add("is-visible");
-
-        }, 600);
+        console.log("BOOT COMPLETE");
 
     }
 
 
     /* =====================================
-       開始
+       起動
     ===================================== */
 
     startBootSequence();
