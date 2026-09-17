@@ -276,7 +276,7 @@ body::before {
 }
 
 /* =========================================
-   メインビジュアル全体の座標エリア
+   メインビジュアル全体
 ========================================= */
 
 .visual-area {
@@ -285,14 +285,14 @@ body::before {
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
-
     width: min(
         100vw,
         calc(100vh * 1440 / 675)
     );
 
     aspect-ratio: 1440 / 675;
+
+    transform: translate(-50%, -50%);
 
     z-index: 1;
 }
@@ -443,7 +443,7 @@ body::before {
     height: auto;
 }
 /* =========================================
-   メインビジュアルより下の画像
+   main-visualより下の画像
 ========================================= */
 
 .main-visual-under {
@@ -457,20 +457,9 @@ body::before {
 }
 
 .under01 {
-    position: fixed !important;
+    left: 118.2639%;
+    top: -34.0741%;
 
-    left: 50% !important;
-    top: 50% !important;
-
-    width: 377px !important;
-    height: auto !important;
-
-    transform: translate(-50%, -50%) !important;
-
-    display: block !important;
-    opacity: 1 !important;
-
-    z-index: 999 !important;
-
-    border: 5px solid red;
+    width: 26.1806%;
+    height: auto;
 }
