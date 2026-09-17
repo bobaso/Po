@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadingScreen =
         document.getElementById("loading-screen");
 
+    const loadingText =
+        document.getElementById("loading-text");
+
+    const progressFill =
+        document.getElementById("progress-fill");
+
 
     console.log("bootScreen:", bootScreen);
     console.log("loadingBar:", loadingBar);
@@ -42,9 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
        タイピング速度
     ===================================== */
 
-    const typingSpeed = 20;
+    const typingSpeed = 45;
 
-    const lineDelay = 350;
+    const lineDelay = 300;
 
 
     /* =====================================
@@ -92,12 +98,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================
+       プログレスバー
+    ===================================== */
+
+    function startLoadingProgress() {
+
+        let progress = 0;
+
+
+        const progressInterval =
+            setInterval(function () {
+
+                progress += 1;
+
+
+                /* -----------------------------
+                   数値表示
+                ----------------------------- */
+
+                loadingText.textContent =
+                    "Loading... " + progress + "%";
+
+
+                /* -----------------------------
+                   バーの進行
+                ----------------------------- */
+
+                progressFill.style.width =
+                    progress + "%";
+
+
+                /* -----------------------------
+                   100%到達
+                ----------------------------- */
+
+                if (progress >= 100) {
+
+                    clearInterval(
+                        progressInterval
+                    );
+
+                    console.log(
+                        "LOADING COMPLETE"
+                    );
+
+                }
+
+            }, 40);
+
+    }
+
+
+    /* =====================================
        起動画面
     ===================================== */
 
     async function startBootSequence() {
 
-        for (let i = 0; i < bootLines.length; i++) {
+        for (
+            let i = 0;
+            i < bootLines.length;
+            i++
+        ) {
 
             const line =
                 document.getElementById(
@@ -135,10 +197,20 @@ document.addEventListener("DOMContentLoaded", function () {
            ロードバーを表示
         ================================= */
 
-        loadingBar.style.display = "block";
+        loadingBar.style.display =
+            "block";
 
 
-        console.log("BOOT COMPLETE");
+        /* =================================
+           ロード開始
+        ================================= */
+
+        startLoadingProgress();
+
+
+        console.log(
+            "BOOT COMPLETE"
+        );
 
     }
 
