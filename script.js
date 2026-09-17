@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const typingSpeed = 20;
 
-    const lineDelay = 300;
+    const lineDelay = 350;
 
 
     /* =====================================
