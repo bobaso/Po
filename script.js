@@ -11,18 +11,19 @@ document.addEventListener("DOMContentLoaded", function () {
        HTML要素取得
     ===================================== */
 
-const bootScreen =
-    document.getElementById("boot-screen");
+    const bootScreen =
+        document.getElementById("boot-screen");
 
-const loadingBar =
-    document.getElementById("loading-bar");
+    const loadingBar =
+        document.getElementById("loading-bar");
 
-const loadingScreen =
-    document.getElementById("loading-screen");
+    const loadingScreen =
+        document.getElementById("loading-screen");
 
 
     console.log("bootScreen:", bootScreen);
     console.log("loadingBar:", loadingBar);
+    console.log("loadingScreen:", loadingScreen);
 
 
     /* =====================================
@@ -116,13 +117,19 @@ const loadingScreen =
            起動画面を消す
         ================================= */
 
-bootScreen.classList.add(
-    "is-hidden"
-);
+        bootScreen.classList.add(
+            "is-hidden"
+        );
 
-loadingScreen.classList.add(
-    "is-background"
-);
+
+        /* =================================
+           背景を表示
+        ================================= */
+
+        loadingScreen.classList.add(
+            "is-background"
+        );
+
 
         /* =================================
            ロードバーを表示
