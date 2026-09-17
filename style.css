@@ -281,22 +281,22 @@ body::before {
 ========================================= */
 
 .main-visual {
-
     position: fixed;
-
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%);
 
-    width: 1440px;
+    width: min(
+        100vw,
+        calc(100vh * 1440 / 675)
+    );
+
+    aspect-ratio: 1440 / 675;
 
     opacity: 0;
-
     transition: opacity 0.8s ease;
 
     z-index: 1;
-
 }
 
 
