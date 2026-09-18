@@ -472,22 +472,19 @@ body::before {
 
 .object03-top,
 .object03-bottom {
-
     position: absolute;
-
     left: 0;
+    top: 0;
 
     width: 100%;
-    height: auto;
+    height: 100%;
 
     display: block;
-
     pointer-events: none;
 
     z-index: 2;
 
-    transition:
-        transform 0.8s ease;
+    transition: transform 0.8s ease;
 }
 
 /* =========================================
@@ -515,14 +512,11 @@ body::before {
 ========================================= */
 
 .object03.is-open .object03-top {
-
-    transform: translateY(-110%);
+    transform: translateY(-42.1%);
 }
 
-
 .object03.is-open .object03-bottom {
-
-    transform: translateY(110%);
+    transform: translateY(50%);
 }
 /* =========================================
    object03内 MS-DOS風ターミナル
