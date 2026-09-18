@@ -28,7 +28,9 @@ const progressFill =
 
 const mainVisual =
     document.querySelector(".main-visual");
-
+   
+const mainVisualUnder =
+    document.querySelector(".main-visual-under");
 
     console.log("bootScreen:", bootScreen);
     console.log("loadingBar:", loadingBar);
@@ -135,7 +137,7 @@ const mainVisual =
                    100%到達
                 ----------------------------- */
 
-              if (progress >= 100) {
+if (progress >= 100) {
 
     clearInterval(
         progressInterval
@@ -146,7 +148,8 @@ const mainVisual =
        ローディング画面を終了
     ============================= */
 
-    loadingScreen.style.display = "none";
+ loadingScreen.style.display =
+        "none";
 
 
     /* =============================
@@ -157,11 +160,13 @@ const mainVisual =
         "is-visible"
     );
 
+    mainVisualUnder.classList.add(
+        "is-visible"
+    );
 
     console.log(
         "LOADING COMPLETE"
     );
-
 }
 
             }, 20);
