@@ -248,11 +248,29 @@ if (progress >= 100) {
 object03.classList.add(
     "is-visible"
 );
+
 object03Terminal.classList.add(
     "is-visible"
 );
 
 startTerminalAnimation();
+
+
+/* =============================
+   object03を開く
+============================= */
+
+setTimeout(function () {
+
+    object03.classList.add(
+        "is-open"
+    );
+
+}, 200);
+object03.classList.add(
+    "is-open"
+);
+   
     console.log(
         "LOADING COMPLETE"
     );
