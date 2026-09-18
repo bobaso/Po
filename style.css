@@ -443,13 +443,18 @@ body::before {
     height: auto;
 }
 /* =========================================
-   main-visualより下の画像
+   object03
 ========================================= */
 
-.main-visual-under {
+.object03 {
     position: absolute;
-
     display: block;
+
+    left: 73%;
+    top: -25%;
+
+    width: 26.1806%;
+    height: auto;
 
     z-index: 0;
 
@@ -460,20 +465,8 @@ body::before {
     transition: opacity 0.8s ease;
 }
 
-
-.main-visual-under.is-visible {
+.object03.is-visible {
     opacity: 1;
-}
-
-/* =========================================
-   object03
-========================================= */
-.under01 {
-    left: 73%;
-    top: -25%;
-
-    width: 26.1806%;
-    height: auto;
 }
 
 
