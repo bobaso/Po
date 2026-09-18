@@ -468,42 +468,28 @@ body::before {
 
 /* =========================================
    object03 上下フレーム
+   377 × 461pxの同一キャンバス
 ========================================= */
 
 .object03-top,
 .object03-bottom {
+
     position: absolute;
+
     left: 0;
     top: 0;
 
     width: 100%;
-    height: 100%;
+    height: auto;
 
     display: block;
+
     pointer-events: none;
 
     z-index: 2;
 
-    transition: transform 0.8s ease;
-}
-
-/* =========================================
-   上フレーム
-========================================= */
-
-.object03-top {
-
-    top: 42.1158%;
-}
-
-
-/* =========================================
-   下フレーム
-========================================= */
-
-.object03-bottom {
-
-    top: 49.9847%;
+    transition:
+        transform 0.8s ease;
 }
 
 
@@ -512,11 +498,15 @@ body::before {
 ========================================= */
 
 .object03.is-open .object03-top {
+
     transform: translateY(-42.1%);
+
 }
 
 .object03.is-open .object03-bottom {
+
     transform: translateY(50%);
+
 }
 /* =========================================
    object03内 MS-DOS風ターミナル
