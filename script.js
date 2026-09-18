@@ -29,8 +29,8 @@ const progressFill =
 const mainVisual =
     document.querySelector(".main-visual");
 
-const mainVisualUnder =
-    document.querySelector(".main-visual-under");
+const object03 =
+    document.querySelector(".object03");
 
 const object03Terminal =
     document.querySelector(".object03-terminal");
@@ -245,9 +245,9 @@ if (progress >= 100) {
         "is-visible"
     );
 
-    mainVisualUnder.classList.add(
-        "is-visible"
-    );
+object03.classList.add(
+    "is-visible"
+);
 object03Terminal.classList.add(
     "is-visible"
 );
