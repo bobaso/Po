@@ -112,17 +112,17 @@ const terminalText =
 ========================================= */
 
 const terminalLines = [
-    "C:\\UMAKI> SYSTEM CHECK",
-    "C:\\UMAKI> MEMORY CHECK........ OK",
-    "C:\\UMAKI> DEVICE CHECK........ OK",
-    "C:\\UMAKI> NETWORK.............. OK",
-    "C:\\UMAKI> NFC SYSTEM........... READY",
-    "C:\\UMAKI> LOADING DATA...",
-    "C:\\UMAKI> 001010101101001",
-    "C:\\UMAKI> 101101001011010",
-    "C:\\UMAKI> 110010110010101",
-    "C:\\UMAKI> ACCESS GRANTED",
-    "C:\\UMAKI> STARTING SYSTEM..."
+    "C:\\SYSTEM OS> SYSTEM CHECK",
+    "C:\\SYSTEM OS> MEMORY CHECK........ OK",
+    "C:\\SYSTEM OS> DEVICE CHECK........ OK",
+    "C:\\SYSTEM OS> NETWORK.............. OK",
+    "C:\\SYSTEM OS> NFC SYSTEM........... READY",
+    "C:\\SYSTEM OS> LOADING DATA...",
+    "C:\\SYSTEM OS> 001010101101001",
+    "C:\\SYSTEM OS> 101101001011010",
+    "C:\\SYSTEM OS> 110010110010101",
+    "C:\\SYSTEM OS> ACCESS GRANTED",
+    "C:\\SYSTEM OS> STARTING SYSTEM..."
 ];
 
 
