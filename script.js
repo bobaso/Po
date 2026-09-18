@@ -28,9 +28,15 @@ const progressFill =
 
 const mainVisual =
     document.querySelector(".main-visual");
-   
+
 const mainVisualUnder =
     document.querySelector(".main-visual-under");
+
+const object03Terminal =
+    document.querySelector(".object03-terminal");
+
+const terminalText =
+    document.getElementById("terminal-text");
 
     console.log("bootScreen:", bootScreen);
     console.log("loadingBar:", loadingBar);
@@ -101,7 +107,86 @@ const mainVisualUnder =
 
     }
 
+/* =========================================
+   object03 MS-DOS風ターミナル
+========================================= */
 
+const terminalLines = [
+    "C:\\UMAKI> SYSTEM CHECK",
+    "C:\\UMAKI> MEMORY CHECK........ OK",
+    "C:\\UMAKI> DEVICE CHECK........ OK",
+    "C:\\UMAKI> NETWORK.............. OK",
+    "C:\\UMAKI> NFC SYSTEM........... READY",
+    "C:\\UMAKI> LOADING DATA...",
+    "C:\\UMAKI> 001010101101001",
+    "C:\\UMAKI> 101101001011010",
+    "C:\\UMAKI> 110010110010101",
+    "C:\\UMAKI> ACCESS GRANTED",
+    "C:\\UMAKI> STARTING SYSTEM..."
+];
+
+
+function startTerminalAnimation() {
+
+    if (!terminalText) {
+        return;
+    }
+
+    let lineIndex = 0;
+
+    function showNextLine() {
+
+        if (lineIndex >= terminalLines.length) {
+
+            setTimeout(function () {
+
+                terminalText.textContent = "";
+                lineIndex = 0;
+
+                showNextLine();
+
+            }, 1000);
+
+            return;
+        }
+
+        const line =
+            terminalLines[lineIndex];
+
+        let charIndex = 0;
+
+        function typeCharacter() {
+
+            if (charIndex < line.length) {
+
+                terminalText.textContent +=
+                    line.charAt(charIndex);
+
+                charIndex++;
+
+                setTimeout(
+                    typeCharacter,
+                    20
+                );
+
+            } else {
+
+                terminalText.textContent += "\n";
+
+                lineIndex++;
+
+                setTimeout(
+                    showNextLine,
+                    180
+                );
+            }
+        }
+
+        typeCharacter();
+    }
+
+    showNextLine();
+}
     /* =====================================
        プログレスバー
     ===================================== */
@@ -229,86 +314,7 @@ startTerminalAnimation();
         loadingBar.style.display =
             "block";
 
-/* =========================================
-   object03 MS-DOS風ターミナル
-========================================= */
 
-const terminalLines = [
-    "C:\\UMAKI> SYSTEM CHECK",
-    "C:\\UMAKI> MEMORY CHECK........ OK",
-    "C:\\UMAKI> DEVICE CHECK........ OK",
-    "C:\\UMAKI> NETWORK.............. OK",
-    "C:\\UMAKI> NFC SYSTEM........... READY",
-    "C:\\UMAKI> LOADING DATA...",
-    "C:\\UMAKI> 001010101101001",
-    "C:\\UMAKI> 101101001011010",
-    "C:\\UMAKI> 110010110010101",
-    "C:\\UMAKI> ACCESS GRANTED",
-    "C:\\UMAKI> STARTING SYSTEM..."
-];
-
-
-function startTerminalAnimation() {
-
-    if (!terminalText) {
-        return;
-    }
-
-    let lineIndex = 0;
-
-    function showNextLine() {
-
-        if (lineIndex >= terminalLines.length) {
-
-            setTimeout(function () {
-
-                terminalText.textContent = "";
-                lineIndex = 0;
-
-                showNextLine();
-
-            }, 1000);
-
-            return;
-        }
-
-        const line =
-            terminalLines[lineIndex];
-
-        let charIndex = 0;
-
-        function typeCharacter() {
-
-            if (charIndex < line.length) {
-
-                terminalText.textContent +=
-                    line.charAt(charIndex);
-
-                charIndex++;
-
-                setTimeout(
-                    typeCharacter,
-                    20
-                );
-
-            } else {
-
-                terminalText.textContent += "\n";
-
-                lineIndex++;
-
-                setTimeout(
-                    showNextLine,
-                    180
-                );
-            }
-        }
-
-        typeCharacter();
-    }
-
-    showNextLine();
-}
         /* =================================
            ロード開始
         ================================= */
