@@ -468,16 +468,64 @@ body::before {
 
 
 /* =========================================
-   object03画像
+   object03 上下フレーム
 ========================================= */
 
-.object03-image {
-    display: block;
+.object03-top,
+.object03-bottom {
+
+    position: absolute;
+
+    left: 0;
 
     width: 100%;
     height: auto;
 
+    display: block;
+
     pointer-events: none;
+
+    z-index: 2;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* =========================================
+   上フレーム
+========================================= */
+
+.object03-top {
+
+    top: 42.1158%;
+}
+
+
+/* =========================================
+   下フレーム
+========================================= */
+
+.object03-bottom {
+
+    top: 49.9847%;
+}
+
+
+/* =========================================
+   ローディング完了後
+   上下に展開
+========================================= */
+
+.object03.is-open .object03-top {
+
+    transform: translateY(-110%);
+}
+
+
+.object03.is-open .object03-bottom {
+
+    transform: translateY(110%);
 }
 
 
