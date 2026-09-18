@@ -478,7 +478,7 @@ body::before {
     left: 0;
 
     width: 100%;
-    height: 36px;
+    height: auto;
 
     display: block;
 
@@ -489,7 +489,6 @@ body::before {
     transition:
         transform 0.8s ease;
 }
-
 
 /* =========================================
    上フレーム
