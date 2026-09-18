@@ -113,10 +113,10 @@ const terminalText =
 
 const terminalLines = [
     "C:\\SYSTEM OS> SYSTEM CHECK",
-    "C:\\SYSTEM OS> MEMORY CHECK........ OK",
-    "C:\\SYSTEM OS> DEVICE CHECK........ OK",
-    "C:\\SYSTEM OS> NETWORK.............. OK",
-    "C:\\SYSTEM OS> NFC SYSTEM........... READY",
+    "C:\\SYSTEM OS> MEMORY CHECK..... OK",
+    "C:\\SYSTEM OS> DEVICE CHECK..... OK",
+    "C:\\SYSTEM OS> NETWORK.......... OK",
+    "C:\\SYSTEM OS> NFC SYSTEM.... READY",
     "C:\\SYSTEM OS> LOADING DATA...",
     "C:\\SYSTEM OS> 001010101101001",
     "C:\\SYSTEM OS> 101101001011010",
