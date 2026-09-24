@@ -503,7 +503,7 @@ body::before {
     );
 
     transition:
-        clip-path 1s ease;
+        clip-path 2s ease;
 }
 
 
