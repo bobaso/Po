@@ -444,7 +444,7 @@ body::before {
 }
 
 /* =========================================
-   object03
+   object03 本体
 ========================================= */
 
 .object03 {
@@ -471,10 +471,10 @@ body::before {
 
 
 /* =========================================
-   object03 開閉パネル
+   object03 フレーム
 ========================================= */
 
-.object03-panel {
+.object03-frame {
     position: absolute;
 
     left: 0;
@@ -483,16 +483,14 @@ body::before {
     width: 100%;
     height: 100%;
 
-    overflow: hidden;
-
-    pointer-events: none;
+    overflow: visible;
 
     z-index: 2;
 }
 
 
 /* =========================================
-   object03画像
+   共通画像
 ========================================= */
 
 .object03-image {
@@ -505,36 +503,84 @@ body::before {
     height: auto;
 
     display: block;
+
+    pointer-events: none;
 }
 
 
 /* =========================================
-   上側パネル
+   上側エリア
 ========================================= */
 
-.object03-panel-top {
-    clip-path: inset(
-        0
-        0
-        50%
-        0
-    );
+.object03-top-area {
 
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 50%;
+
+    overflow: hidden;
+
+    z-index: 3;
+
+    transition:
+        transform 0.8s ease;
 }
 
 
 /* =========================================
-   下側パネル
+   下側エリア
 ========================================= */
 
-.object03-panel-bottom {
-    clip-path: inset(
-        50%
-        0
-        0
-        0
-    );
+.object03-bottom-area {
 
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 100%;
+
+    height: 50%;
+
+    overflow: hidden;
+
+    z-index: 3;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* =========================================
+   中央エリア
+========================================= */
+
+.object03-center-area {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 100%;
+
+    height: 0;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    transition:
+        top 0.8s ease,
+        height 0.8s ease;
 }
 
 
@@ -542,14 +588,15 @@ body::before {
    開くアニメーション
 ========================================= */
 
-.object03.is-open .object03-panel-top {
+.object03.is-open .object03-top-area {
 
     transform:
         translateY(-50%);
 
 }
 
-.object03.is-open .object03-panel-bottom {
+
+.object03.is-open .object03-bottom-area {
 
     transform:
         translateY(50%);
@@ -557,14 +604,11 @@ body::before {
 }
 
 
-/* =========================================
-   開く速度
-========================================= */
+.object03.is-open .object03-center-area {
 
-.object03-panel {
+    top: 0;
 
-    transition:
-        transform 0.8s ease;
+    height: 100%;
 
 }
 /* =========================================
