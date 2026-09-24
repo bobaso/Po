@@ -444,7 +444,7 @@ body::before {
 }
 
 /* =========================================
-   object03 本体
+   object03
 ========================================= */
 
 .object03 {
@@ -471,29 +471,11 @@ body::before {
 
 
 /* =========================================
-   object03 フレーム
-========================================= */
-
-.object03-frame {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 100%;
-    height: 100%;
-
-    overflow: visible;
-
-    z-index: 2;
-}
-
-
-/* =========================================
-   共通画像
+   object03本体画像
 ========================================= */
 
 .object03-image {
+
     position: absolute;
 
     left: 0;
@@ -505,110 +487,38 @@ body::before {
     display: block;
 
     pointer-events: none;
-}
 
+    /*
+       Illustrator上で
+       Y=194.1495px
+       ～ Y=266.974px
+       の部分だけを表示
+    */
 
-/* =========================================
-   上側エリア
-========================================= */
-
-.object03-top-area {
-
-    position: absolute;
-
-    left: 0;
-
-    top: 0;
-
-    width: 100%;
-
-    height: 50%;
-
-    overflow: hidden;
-
-    z-index: 3;
+    clip-path: inset(
+        42.1149%
+        0
+        42.0881%
+        0
+    );
 
     transition:
-        transform 0.8s ease;
+        clip-path 1s ease;
 }
 
 
 /* =========================================
-   下側エリア
+   object03を開く
 ========================================= */
 
-.object03-bottom-area {
+.object03.is-open .object03-image {
 
-    position: absolute;
-
-    left: 0;
-
-    top: 50%;
-
-    width: 100%;
-
-    height: 50%;
-
-    overflow: hidden;
-
-    z-index: 3;
-
-    transition:
-        transform 0.8s ease;
-}
-
-
-/* =========================================
-   中央エリア
-========================================= */
-
-.object03-center-area {
-
-    position: absolute;
-
-    left: 0;
-
-    top: 50%;
-
-    width: 100%;
-
-    height: 0;
-
-    overflow: hidden;
-
-    z-index: 2;
-
-    transition:
-        top 0.8s ease,
-        height 0.8s ease;
-}
-
-
-/* =========================================
-   開くアニメーション
-========================================= */
-
-.object03.is-open .object03-top-area {
-
-    transform:
-        translateY(-50%);
-
-}
-
-
-.object03.is-open .object03-bottom-area {
-
-    transform:
-        translateY(50%);
-
-}
-
-
-.object03.is-open .object03-center-area {
-
-    top: 0;
-
-    height: 100%;
+    clip-path: inset(
+        0
+        0
+        0
+        0
+    );
 
 }
 /* =========================================
