@@ -442,24 +442,62 @@ body::before {
     width: 9.3056%;
     height: auto;
 }
+/* =========================================
+   object03 グループ
+========================================= */
 
+.object03 {
+
+    position: fixed;
+
+    /*
+       メインビジュアルと同じ
+       1440 × 675 の基準サイズ
+    */
+    top: 50%;
+    left: 50%;
+
+    width: min(
+        100vw,
+        calc(100vh * 1440 / 675)
+    );
+
+    aspect-ratio: 1440 / 675;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 3;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease;
+}
+
+
+.object03.is-visible {
+    opacity: 1;
+}
 /* =========================================
    object03本体画像
 ========================================= */
 
 .object03-image {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+
+    left: 73%;
+    top: -25%;
+
+    width: 26.1806%;
+
     height: auto;
+
     display: block;
+
     pointer-events: none;
 
-    /*
-     * 中央部分だけを表示
-     * 上端・下端のフレームは別で動かす
-     */
     clip-path: inset(
         42.1149%
         0
