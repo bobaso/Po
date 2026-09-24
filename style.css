@@ -448,24 +448,18 @@ body::before {
 ========================================= */
 
 .object03-image {
-
     position: absolute;
-
     left: 0;
     top: 0;
-
     width: 100%;
     height: auto;
-
     display: block;
-
     pointer-events: none;
 
     /*
-       閉じた状態
-       中央のフレーム部分だけ表示
-    */
-
+     * 中央部分だけを表示
+     * 上端・下端のフレームは別で動かす
+     */
     clip-path: inset(
         42.1149%
         0
@@ -475,13 +469,94 @@ body::before {
 
     transition:
         clip-path 0.8s ease;
-
 }
 
 
-/* =========================================
-   object03を開く
-========================================= */
+/* =========================
+   上端フレーム
+========================= */
+
+.object03::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        url("images/images-object03.png");
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    /*
+     * 上端のフレーム部分だけ表示
+     */
+    clip-path: inset(
+        42.1149%
+        0
+        50%
+        0
+    );
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* =========================
+   下端フレーム
+========================= */
+
+.object03::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        url("images/images-object03.png");
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    /*
+     * 下端のフレーム部分だけ表示
+     */
+    clip-path: inset(
+        50%
+        0
+        42.0881%
+        0
+    );
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+/* =========================
+   OPEN
+========================= */
 
 .object03.is-open .object03-image {
 
@@ -491,7 +566,24 @@ body::before {
         0
         0
     );
+}
 
+
+/* 上端を上へ移動 */
+
+.object03.is-open::before {
+
+    transform:
+        translateY(-42.1149%);
+}
+
+
+/* 下端を下へ移動 */
+
+.object03.is-open::after {
+
+    transform:
+        translateY(42.0881%);
 }
 /* =========================================
    object03 上端・下端
