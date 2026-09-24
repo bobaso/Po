@@ -444,7 +444,7 @@ body::before {
 }
 
 /* =========================================
-   object03 グループ
+   object03
 ========================================= */
 
 .object03 {
@@ -455,25 +455,47 @@ body::before {
 
     width: 26.1806%;
 
+    aspect-ratio: 377 / 461;
+
     z-index: 0;
 
     opacity: 0;
 
-    transition: opacity 0.8s ease;
+    transition:
+        opacity 0.8s ease;
 }
 
 .object03.is-visible {
     opacity: 1;
 }
 
+
 /* =========================================
-   object03 上下フレーム
-   377 × 461pxの同一キャンバス
+   object03 開閉パネル
 ========================================= */
 
-.object03-top,
-.object03-bottom {
+.object03-panel {
+    position: absolute;
 
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   object03画像
+========================================= */
+
+.object03-image {
     position: absolute;
 
     left: 0;
@@ -483,29 +505,66 @@ body::before {
     height: auto;
 
     display: block;
-
-    pointer-events: none;
-
-    z-index: 2;
-
-    transition:
-        transform 0.8s ease;
 }
 
 
 /* =========================================
-   object03 開く
+   上側パネル
 ========================================= */
 
-.object03.is-open .object03-top {
-
-    transform: translateY(-42.1%);
+.object03-panel-top {
+    clip-path: inset(
+        0
+        0
+        50%
+        0
+    );
 
 }
 
-.object03.is-open .object03-bottom {
 
-    transform: translateY(50%);
+/* =========================================
+   下側パネル
+========================================= */
+
+.object03-panel-bottom {
+    clip-path: inset(
+        50%
+        0
+        0
+        0
+    );
+
+}
+
+
+/* =========================================
+   開くアニメーション
+========================================= */
+
+.object03.is-open .object03-panel-top {
+
+    transform:
+        translateY(-50%);
+
+}
+
+.object03.is-open .object03-panel-bottom {
+
+    transform:
+        translateY(50%);
+
+}
+
+
+/* =========================================
+   開く速度
+========================================= */
+
+.object03-panel {
+
+    transition:
+        transform 0.8s ease;
 
 }
 /* =========================================
