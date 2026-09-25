@@ -568,12 +568,7 @@ body::before {
 ========================================= */
 
 .object03.is-open .object03-image {
-    clip-path: inset(
-        0
-        0
-        0
-        0
-    );
+    clip-path: inset(0 0 0 0);
 }
 
 /* 上バー → 中央から上へ */
