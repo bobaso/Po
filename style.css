@@ -593,7 +593,7 @@ body::before {
 
 .object03.is-open::before {
     transform:
-        translateY(-47.82%);
+        translateY(-200%);
 }
 
 .object03.is-open::after {
