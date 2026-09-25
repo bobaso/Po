@@ -363,7 +363,9 @@ async function startBootSequence() {
    SKIPボタン
 ===================================== */
 
-let isSkipped = false;
+let isSkipped =
+    new URLSearchParams(window.location.search)
+        .get("skipLoading") === "1";
 
 loadingSkipButton.addEventListener(
     "click",
@@ -416,10 +418,22 @@ loadingSkipButton.addEventListener(
 
     }
 );
-    /* =====================================
-       起動
-    ===================================== */
+/* =====================================
+   起動
+===================================== */
+
+if (isSkipped) {
+
+    /* =============================
+       ロード画面を完全にスキップ
+    ============================= */
+
+    finishLoading();
+
+} else {
 
     startBootSequence();
+
+}
 
 });
