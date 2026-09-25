@@ -341,7 +341,7 @@ body::before {
 
     transition: opacity 0.8s ease;
 
-    z-index: 3;
+    z-index: 4;
 }
 
 
