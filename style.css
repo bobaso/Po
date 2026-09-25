@@ -598,7 +598,7 @@ body::before {
 
 .object03.is-open::after {
     transform:
-        translateY(400%);
+        translateY(430%);
 }
 /* =========================================
    object03内 MS-DOS風ターミナル
