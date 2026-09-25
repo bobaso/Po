@@ -582,14 +582,14 @@ body::before {
    → Y = 42.1739%
 */
 .object03::before {
-    top: 50%;
+    top: 3.7407%;
 
     background-position:
         0 0;
 }
 
 .object03::after {
-    top: 50%;
+    top: 9.0741%;
 
     background-position:
         0 -92.1739%;
