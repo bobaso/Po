@@ -609,16 +609,14 @@ body::before {
     );
 }
 
-/* 上バー → 上方向へ */
 .object03.is-open::before {
     transform:
-        translateY(-42.1739%);
+        translateY(-28.7407%);
 }
 
-/* 下バー → 下方向へ */
 .object03.is-open::after {
     transform:
-        translateY(42.1739%);
+        translateY(34.0741%);
 }
 /* =========================================
    object03内 MS-DOS風ターミナル
