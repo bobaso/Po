@@ -571,7 +571,7 @@ body::before {
 
 /* 下バー */
 .object03::after {
-    z-index: -1;
+    z-index: 1;
     top: 9.0741%;
     background-position:
         0 100%;
