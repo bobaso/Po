@@ -140,3 +140,21 @@ z-index: 0;
     display: block;
 
 }
+/* =========================================
+   home-bottom
+   基準：1280 × 650px
+========================================= */
+
+.home-bottom {
+
+    position: absolute;
+
+    left: 147px;
+    top: 14px;
+
+    width: 123px;
+    height: auto;
+
+    display: block;
+
+}
