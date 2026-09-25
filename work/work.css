@@ -80,41 +80,45 @@ z-index: 0;
 
     transform: translate(-50%, -50%);
 
-    transform-origin: center center;
-
     z-index: 3;
 
 }
 
 /* =========================================
    WORK メインビジュアル
-   1280 × 650pxの基準キャンバス
+   基準キャンバス：1280 × 650px
 ========================================= */
 
 .main-visual {
 
     position: relative;
 
-    top: 0;
-    left: 0;
-
     width: 1280px;
     height: 650px;
 
+    margin: 0;
+    padding: 0;
+
     z-index: 4;
+
 }
 
 /* =========================================
    WORK専用メインビジュアル画像
-   元画像：1280 × 650px
+   基準サイズ：1280 × 650px
 ========================================= */
 
 .work-main-visual-image {
 
-    display: block;
+    position: absolute;
 
-    width: 100%;
-    height: auto;
+    left: 0;
+    top: 0;
+
+    width: 1280px;
+    height: 650px;
+
+    display: block;
 
 }
 /* =========================================
