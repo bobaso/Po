@@ -313,7 +313,7 @@ body::before {
 
     transition: opacity 0.8s ease;
 
-    z-index: 2;
+    z-index: 3;
 }
 
 
@@ -466,7 +466,7 @@ body::before {
 
     transform: translate(-50%, -50%);
 
-    z-index: 3;
+    z-index: 2;
 
     opacity: 0;
 
@@ -495,7 +495,9 @@ body::before {
     height: auto;
 
     display: block;
-
+   
+ 　　z-index: 1;
+   
     pointer-events: none;
 
     clip-path: inset(
@@ -513,7 +515,6 @@ body::before {
 
 /* =========================================
    object03 上バー・下バー
-   377 × 460px を基準に配置
 ========================================= */
 
 .object03::before,
