@@ -525,62 +525,77 @@ body::before {
     left: 73%;
 
     width: 26.1806%;
+
     height: 7.8261%;
 
     background-image:
         url("images/images-object03.png");
 
     background-repeat: no-repeat;
+
     background-size: 100% auto;
 
     z-index: 3;
-    pointer-events: none;
 
-    /*
-       最初は中央に重ねる
-    */
-    top: 46.0869%;
+    pointer-events: none;
 
     transition:
         transform 0.8s ease;
 }
 
-/* 上バー */
+/* =========================================
+   閉じた状態
+   object03画像の座標を基準
+========================================= */
+
+/* 上バー
+   X = 0px
+   Y = 194px
+   → Y = 42.1739%
+*/
 .object03::before {
+    top: 42.1739%;
+
     background-position:
         0 0;
-
-    transform:
-        translateY(0);
 }
 
-/* 下バー */
+/* 下バー
+   X = 0px
+   Y = 230px
+   → Y = 50%
+*/
 .object03::after {
+    top: 50%;
+
     background-position:
         0 -92.1739%;
-
-    transform:
-        translateY(0);
 }
+
 
 /* =========================================
    OPEN時
 ========================================= */
 
 .object03.is-open .object03-image {
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(
+        0
+        0
+        0
+        0
+    );
 }
 
-/* 上バー → 中央から上へ */
+/* 上バー → 上方向へ */
 .object03.is-open::before {
     transform:
-        translateY(-46.0869%);
+        translateY(-42.1739%);
 }
 
-/* 下バー → 中央から下へ */
+/* 下バー → 下方向へ */
 .object03.is-open::after {
     transform:
-        translateY(46.0869%);
+        translateY(42.1739%);
 }
 /* =========================================
    object03内 MS-DOS風ターミナル
