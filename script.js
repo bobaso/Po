@@ -19,7 +19,8 @@ const loadingBar =
 
 const loadingScreen =
     document.getElementById("loading-screen");
-
+const loadingSkipButton =
+    document.getElementById("loadingSkipButton");
 const loadingText =
     document.getElementById("loading-text");
 
@@ -187,53 +188,17 @@ function startTerminalAnimation() {
 
     showNextLine();
 }
-    /* =====================================
-       プログレスバー
-    ===================================== */
+   /* =====================================
+   ローディング完了処理
+===================================== */
 
-    function startLoadingProgress() {
-
-        let progress = 0;
-
-
-        const progressInterval =
-            setInterval(function () {
-
-                progress += 1;
-
-
-                /* -----------------------------
-                   数値表示
-                ----------------------------- */
-
-                loadingText.textContent =
-                    "Loading... " + progress + "%";
-
-
-                /* -----------------------------
-                   バーの進行
-                ----------------------------- */
-
-                progressFill.style.width =
-                    progress + "%";
-
-
-                /* -----------------------------
-                   100%到達
-                ----------------------------- */
-
-if (progress >= 100) {
-
-    clearInterval(
-        progressInterval
-    );
-
+function finishLoading() {
 
     /* =============================
        ローディング画面を終了
     ============================= */
 
- loadingScreen.style.display =
+    loadingScreen.style.display =
         "none";
 
 
@@ -245,108 +210,212 @@ if (progress >= 100) {
         "is-visible"
     );
 
-object03.classList.add(
-    "is-visible"
-);
-
-object03Terminal.classList.add(
-    "is-visible"
-);
-
-startTerminalAnimation();
-
-
-/* =============================
-   object03を開く
-============================= */
-
-setTimeout(function () {
-
     object03.classList.add(
-        "is-open"
+        "is-visible"
     );
 
-}, 200);
-object03.classList.add(
-    "is-open"
-);
-   
+    object03Terminal.classList.add(
+        "is-visible"
+    );
+
+    startTerminalAnimation();
+
+
+    /* =============================
+       object03を開く
+    ============================= */
+
+    setTimeout(function () {
+
+        object03.classList.add(
+            "is-open"
+        );
+
+    }, 200);
+
+
     console.log(
         "LOADING COMPLETE"
     );
 }
+    /* =====================================
+       プログレスバー
+    ===================================== */
 
-            }, 20);
+function startLoadingProgress() {
 
-    }
+    let progress = 0;
+
+    const progressInterval =
+        setInterval(function () {
+
+            progress += 1;
+
+
+            /* -----------------------------
+               数値表示
+            ----------------------------- */
+
+            loadingText.textContent =
+                "Loading... " + progress + "%";
+
+
+            /* -----------------------------
+               バーの進行
+            ----------------------------- */
+
+            progressFill.style.width =
+                progress + "%";
+
+
+            /* -----------------------------
+               100%到達
+            ----------------------------- */
+
+            if (progress >= 100) {
+
+                clearInterval(
+                    progressInterval
+                );
+
+                finishLoading();
+
+            }
+
+        }, 20);
+
+}
 
 
     /* =====================================
        起動画面
     ===================================== */
 
-    async function startBootSequence() {
+async function startBootSequence() {
 
-        for (
-            let i = 0;
-            i < bootLines.length;
-            i++
-        ) {
+    if (isSkipped) {
+        return;
+    }
 
-            const line =
-                document.getElementById(
-                    "line" + (i + 1)
-                );
+    for (
+        let i = 0;
+        i < bootLines.length;
+        i++
+    ) {
 
-
-            await typeLine(
-                line,
-                bootLines[i]
-            );
-
+        if (isSkipped) {
+            return;
         }
 
+        const line =
+            document.getElementById(
+                "line" + (i + 1)
+            );
 
-        /* =================================
-           起動画面を消す
-        ================================= */
+        await typeLine(
+            line,
+            bootLines[i]
+        );
+
+    }
+
+
+    /* =================================
+       起動画面を消す
+    ================================= */
+
+    bootScreen.classList.add(
+        "is-hidden"
+    );
+
+
+    /* =================================
+       背景を表示
+    ================================= */
+
+    loadingScreen.classList.add(
+        "is-background"
+    );
+
+
+    /* =================================
+       ロードバーを表示
+    ================================= */
+
+    loadingBar.style.display =
+        "block";
+
+
+    /* =================================
+       ロード開始
+    ================================= */
+
+    startLoadingProgress();
+
+
+    console.log(
+        "BOOT COMPLETE"
+    );
+
+}
+
+/* =====================================
+   SKIPボタン
+===================================== */
+
+let isSkipped = false;
+
+loadingSkipButton.addEventListener(
+    "click",
+    function () {
+
+        if (isSkipped) {
+            return;
+        }
+
+        isSkipped = true;
+
+
+        /* =============================
+           起動画面を即終了
+        ============================= */
 
         bootScreen.classList.add(
             "is-hidden"
         );
 
 
-        /* =================================
-           背景を表示
-        ================================= */
+        /* =============================
+           ロードバーを表示
+        ============================= */
 
         loadingScreen.classList.add(
             "is-background"
         );
 
-
-        /* =================================
-           ロードバーを表示
-        ================================= */
-
         loadingBar.style.display =
             "block";
 
 
-        /* =================================
-           ロード開始
-        ================================= */
+        /* =============================
+           100%へ一気に進める
+        ============================= */
 
-        startLoadingProgress();
+        loadingText.textContent =
+            "Loading... 100%";
+
+        progressFill.style.width =
+            "100%";
 
 
-        console.log(
-            "BOOT COMPLETE"
-        );
+        /* =============================
+           完了処理
+        ============================= */
+
+        finishLoading();
 
     }
-
-
+);
     /* =====================================
        起動
     ===================================== */
