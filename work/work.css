@@ -96,7 +96,6 @@ WORK メインビジュアル
 
 .main-visual {
 
-
 position: absolute;
 
 top: 0;
@@ -111,16 +110,17 @@ z-index: 4;
 }
 
 /* =========================================
-WORK メインビジュアル画像
+WORK専用メインビジュアル画像
+元画像：1331 × 600px
 ========================================= */
 
-.main-visual-image {
+.work-main-visual-image {
 
 
 display: block;
 
 width: 100%;
 height: auto;
-
+```
 
 }
