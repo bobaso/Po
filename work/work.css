@@ -102,7 +102,23 @@ z-index: 0;
     z-index: 4;
 border: 2px solid red;
 }
+.main-visual::before {
 
+    content: "";
+
+    position: absolute;
+
+    left: 80px;
+    top: 12px;
+
+    width: 10px;
+    height: 10px;
+
+    background: red;
+
+    z-index: 100;
+
+}
 /* =========================================
    WORK専用メインビジュアル画像
    基準サイズ：1280 × 650px
