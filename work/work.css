@@ -158,3 +158,31 @@ z-index: 0;
     display: block;
 
 }
+.home-bottom-link {
+
+    position: absolute;
+
+    left: 147px;
+    top: 14px;
+
+    width: 123px;
+
+    display: block;
+
+}
+
+.home-bottom {
+
+    position: relative;
+
+    left: 0;
+    top: 0;
+
+    width: 123px;
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+
+}
