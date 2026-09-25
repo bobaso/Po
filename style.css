@@ -582,19 +582,14 @@ body::before {
    → Y = 42.1739%
 */
 .object03::before {
-    top: 42.1739%;
+    top: 46.0869%;
 
     background-position:
         0 0;
 }
 
-/* 下バー
-   X = 0px
-   Y = 230px
-   → Y = 50%
-*/
 .object03::after {
-    top: 50%;
+    top: 53.9130%;
 
     background-position:
         0 -92.1739%;
