@@ -522,76 +522,52 @@ body::before {
     content: "";
     position: absolute;
 
-    /* object03内のX位置 */
     left: 73%;
 
-    /* 377px / 377px */
     width: 26.1806%;
-
-    /* 36px / 460px */
     height: 7.8261%;
 
     background-image:
         url("images/images-object03.png");
 
     background-repeat: no-repeat;
-
-    /*
-       object03本体と同じ縮尺で
-       377px幅の画像として扱う
-    */
     background-size: 100% auto;
 
     z-index: 3;
     pointer-events: none;
 
+    /*
+       最初は中央に重ねる
+    */
+    top: 46.0869%;
+
     transition:
         transform 0.8s ease;
 }
 
-
-/* =========================================
-   上バー
-   元画像基準
-   X：0px
-   Y：0px
-   W：377px
-   H：36px
-========================================= */
-
+/* 上バー */
 .object03::before {
-
-    top: 0;
-
     background-position:
         0 0;
+
+    transform:
+        translateY(0);
 }
 
-
-/* =========================================
-   下バー
-   元画像基準
-   X：0px
-   Y：424px
-   W：377px
-   H：36px
-========================================= */
-
+/* 下バー */
 .object03::after {
-
-    top: 92.1739%;
-
     background-position:
         0 -92.1739%;
-}
 
+    transform:
+        translateY(0);
+}
 
 /* =========================================
    OPEN時
 ========================================= */
 
 .object03.is-open .object03-image {
-
     clip-path: inset(
         0
         0
@@ -600,20 +576,17 @@ body::before {
     );
 }
 
-
+/* 上バー → 中央から上へ */
 .object03.is-open::before {
-
     transform:
-        translateY(-42.1149%);
+        translateY(-46.0869%);
 }
 
-
+/* 下バー → 中央から下へ */
 .object03.is-open::after {
-
     transform:
-        translateY(42.0881%);
+        translateY(46.0869%);
 }
-
 /* =========================================
    object03内 MS-DOS風ターミナル
 ========================================= */
