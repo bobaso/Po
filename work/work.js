@@ -1,4 +1,3 @@
-```javascript
 /* =========================================
    WORK メインビジュアル
    1280 × 650px キャンバスを
@@ -53,4 +52,4 @@ window.addEventListener(
     "resize",
     resizeWorkCanvas
 );
-```
+
