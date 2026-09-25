@@ -513,6 +513,7 @@ body::before {
 
 /* =========================================
    object03 上バー・下バー
+   377 × 460px を基準に配置
 ========================================= */
 
 .object03::before,
@@ -520,16 +521,25 @@ body::before {
     content: "";
     position: absolute;
 
+    /* object03内のX位置 */
     left: 73%;
+
+    /* 377px / 377px */
     width: 26.1806%;
-    height: 36px;
+
+    /* 36px / 460px */
+    height: 7.8261%;
 
     background-image:
         url("images/images-object03.png");
 
     background-repeat: no-repeat;
-    background-size:
-        377px auto;
+
+    /*
+       object03本体と同じ縮尺で
+       377px幅の画像として扱う
+    */
+    background-size: 100% auto;
 
     z-index: 3;
     pointer-events: none;
@@ -541,6 +551,7 @@ body::before {
 
 /* =========================================
    上バー
+   元画像基準
    X：0px
    Y：0px
    W：377px
@@ -548,6 +559,7 @@ body::before {
 ========================================= */
 
 .object03::before {
+
     top: 0;
 
     background-position:
@@ -557,6 +569,7 @@ body::before {
 
 /* =========================================
    下バー
+   元画像基準
    X：0px
    Y：424px
    W：377px
@@ -564,28 +577,16 @@ body::before {
 ========================================= */
 
 .object03::after {
-    top: 424px;
+
+    top: 92.1739%;
 
     background-position:
-        0 -424px;
+        0 -92.1739%;
 }
 
 
 /* =========================================
    OPEN時
-========================================= */
-
-.object03.is-open::before {
-    transform:
-        translateY(-42.1149%);
-}
-
-.object03.is-open::after {
-    transform:
-        translateY(42.0881%);
-}
-/* =========================================
-   object03本体を完全に展開
 ========================================= */
 
 .object03.is-open .object03-image {
@@ -597,6 +598,21 @@ body::before {
         0
     );
 }
+
+
+.object03.is-open::before {
+
+    transform:
+        translateY(-42.1149%);
+}
+
+
+.object03.is-open::after {
+
+    transform:
+        translateY(42.0881%);
+}
+
 /* =========================================
    object03内 MS-DOS風ターミナル
 ========================================= */
