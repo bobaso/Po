@@ -552,8 +552,8 @@ body::before {
     left: 73%;
     width: 26.1806%;
     height: 7.8261%;
-    background-image:
-        url("images/images-object03.png");
+background-image:
+    url("../images/images-object03.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     pointer-events: none;
