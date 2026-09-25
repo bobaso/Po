@@ -64,30 +64,26 @@ z-index: 0;
 }
 
 /* =========================================
-WORK メインビジュアル全体
-基準サイズ：1331 × 600px
+   WORK メインビジュアル全体
 ========================================= */
 
 .visual-area {
 
+    position: fixed;
 
-position: fixed;
+    top: 50%;
+    left: 50%;
 
-top: 50%;
-left: 50%;
+    width: min(
+        100vw,
+        calc(100vh * 1280 / 872)
+    );
 
-width: min(
-    100vw,
-    calc(100vh * 1331 / 600)
-);
+    aspect-ratio: 1280 / 872;
 
-aspect-ratio: 1331 / 600;
+    transform: translate(-50%, -50%);
 
-transform: translate(-50%, -50%);
-
-z-index: 3;
-
-
+    z-index: 3;
 }
 
 /* =========================================
