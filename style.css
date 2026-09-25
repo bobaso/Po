@@ -549,48 +549,30 @@ body::before {
 .object03::after {
     content: "";
     position: absolute;
-
     left: 73%;
-
     width: 26.1806%;
-
     height: 7.8261%;
-
     background-image:
         url("images/images-object03.png");
-
     background-repeat: no-repeat;
-
     background-size: 100% auto;
-
-    z-index: 3;
-
     pointer-events: none;
-
     transition:
         transform 0.8s ease;
 }
 
-/* =========================================
-   閉じた状態
-   object03画像の座標を基準
-========================================= */
-
-/* 上バー
-   X = 0px
-   Y = 194px
-   → Y = 42.1739%
-*/
+/* 上バー */
 .object03::before {
+    z-index: 3;
     top: 3.7407%;
-
     background-position:
         0 0;
 }
 
+/* 下バー */
 .object03::after {
+    z-index: 3;
     top: 9.0741%;
-
     background-position:
         0 100%;
 }
