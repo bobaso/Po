@@ -208,9 +208,9 @@ body::before {
 
     z-index: 2;
 }
- /* =========================================
-    プロフィール文章エリア
-    1440 × 675 基準
+/* =========================================
+   プロフィール文章エリア
+   1440 × 675 基準
 ========================================= */
 
 .profile-text-area {
@@ -228,37 +228,6 @@ body::before {
     z-index: 5;
 
     overflow: hidden;
-
-/* =========================================
-   文章と画像の回り込み用
-========================================= */
-
-.profile-text-wrap {
-
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
-}
-
-
-/* =========================================
-   object04 回り込み用画像
-========================================= */
-
-.profile-text-float {
-
-    float: left;
-
-    width: auto;
-    height: auto;
-
-    margin-left: 862px;
-    margin-bottom: 10px;
-
-    opacity: 0;
-
-    pointer-events: none;
 }
 
 
@@ -267,6 +236,11 @@ body::before {
 ========================================= */
 
 .profile-text {
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
 
     color: #ffffff;
 
@@ -281,7 +255,27 @@ body::before {
 
     text-align: left;
 
-    white-space: normal;
-
     word-break: break-word;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   object04
+   文章を画像の左側へ回り込ませる
+========================================= */
+
+.profile-text-object04 {
+
+    float: right;
+
+    width: auto;
+    height: auto;
+
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+
+    display: block;
 }
