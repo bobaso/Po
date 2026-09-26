@@ -5,15 +5,12 @@
    基準キャンバス：
    1280 × 650px
 
-   子要素の座標は変更せず、
+   1280 × 650 の座標は変更せず、
    キャンバス全体だけを縮小する
 ========================================= */
 
 const visualArea =
     document.querySelector(".visual-area");
-
-const workCanvas =
-    document.querySelector(".work-canvas");
 
 
 /* =========================================
@@ -25,10 +22,14 @@ const canvasHeight = 650;
 
 
 /* =========================================
-   レスポンシブ縮小
+   WORK全体をレスポンシブ表示
 ========================================= */
 
 function resizeWorkCanvas() {
+
+    /* -------------------------------------
+       画面に対して何倍で表示できるか計算
+    ------------------------------------- */
 
     const scaleX =
         window.innerWidth / canvasWidth;
@@ -36,34 +37,26 @@ function resizeWorkCanvas() {
     const scaleY =
         window.innerHeight / canvasHeight;
 
-    /*
-       横・縦のうち、
-       小さい倍率を採用することで
-       1280×650全体を画面内に収める
-    */
+
+    /* -------------------------------------
+       小さい方の倍率を採用
+
+       → 横・縦どちらも画面内に収まる
+    ------------------------------------- */
 
     const scale =
         Math.min(scaleX, scaleY);
 
 
-    /* =====================================
-       1280 × 650キャンバスを中央配置
-       ＋ 全体を縮小
-    ===================================== */
+    /* -------------------------------------
+       1280 × 650 の中央を基準に縮小
+    ------------------------------------- */
 
-    workCanvas.style.transform =
-        `scale(${scale})`;
+    visualArea.style.transform =
+        `translate(-50%, -50%) scale(${scale})`;
 
-    workCanvas.style.transformOrigin =
+    visualArea.style.transformOrigin =
         "center center";
-
-
-    /* =====================================
-       visual-areaを画面中央に配置
-    ===================================== */
-
-    visualArea.style.left = "50%";
-    visualArea.style.top = "50%";
 
 }
 
@@ -76,7 +69,7 @@ resizeWorkCanvas();
 
 
 /* =========================================
-   ブラウザサイズ変更時
+   ウィンドウサイズ変更時
 ========================================= */
 
 window.addEventListener(
