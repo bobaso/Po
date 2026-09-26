@@ -1,4 +1,4 @@
-```javascript
+
 /* =========================================
    WORK レスポンシブ設定
 
@@ -83,4 +83,4 @@ window.addEventListener(
     "resize",
     resizeWorkCanvas
 );
-```
+
