@@ -217,8 +217,8 @@ body::before {
 
     position: absolute;
 
-    left: 324px;
-    top: 143px;
+    left: 332px;
+    top: 121px;
 
     width: 1022px;
     height: 444px;
@@ -228,8 +228,6 @@ body::before {
     z-index: 5;
 
     overflow: hidden;
-}
-
 
 /* =========================================
    文章と画像の回り込み用
