@@ -86,91 +86,106 @@ const works = [
     {
         title: "作品01",
         image: "../images/work-test01.png",
-        category: "product"
+        category: "product",
+        link: "works/work01.html"
     },
 
     {
         title: "作品02",
         image: "../images/work-test02.png",
-        category: "product"
+        category: "product",
+        link: "works/work02.html"
     },
 
     {
         title: "作品03",
         image: "../images/work-test03.png",
-        category: "web"
+        category: "web",
+        link: "works/work03.html"
     },
 
     {
         title: "作品04",
         image: "../images/work-test04.png",
-        category: "web"
+        category: "web",
+        link: "works/work04.html"
     },
 
     {
         title: "作品05",
         image: "../images/work-test05.png",
-        category: "event"
+        category: "event",
+        link: "works/work05.html"
     },
 
     {
         title: "作品06",
         image: "../images/work-test01.png",
-        category: "event"
+        category: "event",
+        link: "works/work06.html"
     },
 
     {
         title: "作品07",
         image: "../images/work-test02.png",
-        category: "illust"
+        category: "illust",
+        link: "works/work07.html"
     },
 
     {
         title: "作品08",
         image: "../images/work-test03.png",
-        category: "illust"
+        category: "illust",
+        link: "works/work08.html"
     },
 
     {
         title: "作品09",
         image: "../images/work-test04.png",
-        category: "product"
+        category: "product",
+        link: "works/work09.html"
     },
 
     {
         title: "作品10",
         image: "../images/work-test05.png",
-        category: "product"
+        category: "product",
+        link: "works/work10.html"
     },
 
     {
         title: "作品11",
         image: "../images/work-test01.png",
-        category: "web"
+        category: "web",
+        link: "works/work11.html"
     },
 
     {
         title: "作品12",
         image: "../images/work-test02.png",
-        category: "web"
+        category: "web",
+        link: "works/work12.html"
     },
 
     {
         title: "作品13",
         image: "../images/work-test03.png",
-        category: "event"
+        category: "event",
+        link: "works/work13.html"
     },
 
     {
         title: "作品14",
         image: "../images/work-test04.png",
-        category: "illust"
+        category: "illust",
+        link: "works/work14.html"
     },
 
     {
         title: "作品15",
         image: "../images/work-test05.png",
-        category: "illust"
+        category: "illust",
+        link: "works/work15.html"
     }
 
 ];
@@ -216,10 +231,22 @@ function displayWorks(workData) {
             "work-item-title";
 
 
-        workItem.appendChild(image);
-        workItem.appendChild(title);
+const link =
+    document.createElement("a");
 
-        worksList.appendChild(workItem);
+link.href = work.link;
+
+link.className =
+    "work-item-link";
+
+
+link.appendChild(image);
+
+
+workItem.appendChild(link);
+workItem.appendChild(title);
+
+worksList.appendChild(workItem);
 
     });
 
