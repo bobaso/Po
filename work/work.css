@@ -304,13 +304,6 @@ body::before {
 }
 /* =========================================
    作品一覧エリア
-
-   X = 5px
-   Y = 125px
-   幅 = 1242px
-   高さ = 481px
-
-   基準キャンバス：1280 × 650px
 ========================================= */
 
 .works-area {
@@ -323,7 +316,10 @@ body::before {
     width: 1242px;
     height: 481px;
 
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
 
 }
 /* =========================================
