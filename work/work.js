@@ -226,3 +226,127 @@ function displayWorks(workData) {
 }
 
 displayWorks(works);
+/* =========================================
+   カテゴリーボタン
+========================================= */
+
+const allButton =
+    document.querySelector(".all-bottom");
+
+const productButton =
+    document.querySelector(".product-bottom");
+
+const webButton =
+    document.querySelector(".web-bottom");
+
+const eventButton =
+    document.querySelector(".event-bottom");
+
+const illustButton =
+    document.querySelector(".illust-bottom");
+
+
+/* =========================================
+   カテゴリー表示
+========================================= */
+
+function filterWorks(category) {
+
+    let filteredWorks;
+
+
+    if (category === "all") {
+
+        filteredWorks = works;
+
+    } else {
+
+        filteredWorks =
+            works.filter(
+                (work) => work.category === category
+            );
+
+    }
+
+
+    displayWorks(filteredWorks);
+
+
+    /* スクロール位置を先頭に戻す */
+
+    const worksArea =
+        document.querySelector(".works-area");
+
+    worksArea.scrollTop = 0;
+
+}
+
+
+/* =========================================
+   All
+========================================= */
+
+allButton.addEventListener(
+    "click",
+    () => {
+
+        filterWorks("all");
+
+    }
+);
+
+
+/* =========================================
+   Product
+========================================= */
+
+productButton.addEventListener(
+    "click",
+    () => {
+
+        filterWorks("product");
+
+    }
+);
+
+
+/* =========================================
+   Web
+========================================= */
+
+webButton.addEventListener(
+    "click",
+    () => {
+
+        filterWorks("web");
+
+    }
+);
+
+
+/* =========================================
+   Event
+========================================= */
+
+eventButton.addEventListener(
+    "click",
+    () => {
+
+        filterWorks("event");
+
+    }
+);
+
+
+/* =========================================
+   Illust
+========================================= */
+
+illustButton.addEventListener(
+    "click",
+    () => {
+
+        filterWorks("illust");
+
+    }
+);
