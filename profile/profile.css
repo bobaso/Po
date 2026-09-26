@@ -190,3 +190,21 @@ body::before {
 
     filter: brightness(1.15);
 }
+/* =========================================
+   PROFILE内オブジェクト04
+   1440 × 675 基準
+========================================= */
+
+.profile-object04 {
+
+    position: absolute;
+
+    left: 1186px;
+    top: 136px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 2;
+}
