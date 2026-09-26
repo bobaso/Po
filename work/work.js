@@ -44,8 +44,8 @@ function resizeWorkCanvas() {
        → 横・縦どちらも画面内に収まる
     ------------------------------------- */
 
-    const scale =
-        Math.min(scaleX, scaleY);
+const scale =
+    Math.min(scaleX, scaleY) * 0.95;
 
 
     /* -------------------------------------
