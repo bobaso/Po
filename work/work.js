@@ -45,7 +45,7 @@ function resizeWorkCanvas() {
     ------------------------------------- */
 
 const scale =
-    Math.min(scaleX, scaleY) * 0.5;
+    Math.min(scaleX, scaleY) * 0.95;
 
 
     /* -------------------------------------
