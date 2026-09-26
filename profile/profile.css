@@ -143,6 +143,8 @@ body::before {
 
     position: absolute;
 
+    width: 90%;
+
     height: auto;
 
     display: block;
@@ -155,8 +157,6 @@ body::before {
         transform 0.2s ease,
         filter 0.2s ease;
 }
-
-
 /* =========================================
    WORKボタン
 ========================================= */
