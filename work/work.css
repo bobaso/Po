@@ -76,15 +76,15 @@ body::before {
     top: 50%;
     left: 50%;
 
-    width: 1440px;
-    height: 675px;
+    width: 1280px;
+    height: 650px;
 
-    transform:
-        translate(-50%, -50%);
+    margin: 0;
 
-    transform-origin: center center;
+    transform: translate(-50%, -50%);
 
     z-index: 3;
+
 }
 
 /* =========================================
@@ -96,17 +96,19 @@ body::before {
    top: ○px;
    で配置する
 ========================================= */
+
 .main-visual {
 
-    position: absolute;
+    position: relative;
 
-    top: 0;
-    left: 0;
+    width: 1280px;
+    height: 650px;
 
-    width: 1440px;
-    height: 675px;
+    margin: 0;
+    padding: 0;
 
     z-index: 4;
+
 }
 
 /* =========================================
