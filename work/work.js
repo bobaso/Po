@@ -77,3 +77,152 @@ window.addEventListener(
     resizeWorkCanvas
 );
 
+/* =========================================
+   作品データ
+========================================= */
+
+const works = [
+
+    {
+        title: "作品01",
+        image: "../images/work-test01.png",
+        category: "product"
+    },
+
+    {
+        title: "作品02",
+        image: "../images/work-test02.png",
+        category: "product"
+    },
+
+    {
+        title: "作品03",
+        image: "../images/work-test03.png",
+        category: "web"
+    },
+
+    {
+        title: "作品04",
+        image: "../images/work-test04.png",
+        category: "web"
+    },
+
+    {
+        title: "作品05",
+        image: "../images/work-test05.png",
+        category: "event"
+    },
+
+    {
+        title: "作品06",
+        image: "../images/work-test01.png",
+        category: "event"
+    },
+
+    {
+        title: "作品07",
+        image: "../images/work-test02.png",
+        category: "illust"
+    },
+
+    {
+        title: "作品08",
+        image: "../images/work-test03.png",
+        category: "illust"
+    },
+
+    {
+        title: "作品09",
+        image: "../images/work-test04.png",
+        category: "product"
+    },
+
+    {
+        title: "作品10",
+        image: "../images/work-test05.png",
+        category: "product"
+    },
+
+    {
+        title: "作品11",
+        image: "../images/work-test01.png",
+        category: "web"
+    },
+
+    {
+        title: "作品12",
+        image: "../images/work-test02.png",
+        category: "web"
+    },
+
+    {
+        title: "作品13",
+        image: "../images/work-test03.png",
+        category: "event"
+    },
+
+    {
+        title: "作品14",
+        image: "../images/work-test04.png",
+        category: "illust"
+    },
+
+    {
+        title: "作品15",
+        image: "../images/work-test05.png",
+        category: "illust"
+    }
+
+];
+/* =========================================
+   作品一覧表示
+========================================= */
+
+const worksList =
+    document.querySelector(".works-list");
+
+
+function displayWorks(workData) {
+
+    worksList.innerHTML = "";
+
+
+    workData.forEach((work) => {
+
+        const workItem =
+            document.createElement("div");
+
+        workItem.className =
+            "work-item";
+
+
+        const image =
+            document.createElement("img");
+
+        image.src = work.image;
+        image.alt = work.title;
+
+        image.className =
+            "work-item-image";
+
+
+        const title =
+            document.createElement("div");
+
+        title.textContent =
+            work.title;
+
+        title.className =
+            "work-item-title";
+
+
+        workItem.appendChild(image);
+        workItem.appendChild(title);
+
+        worksList.appendChild(workItem);
+
+    });
+
+}
+
+displayWorks(works);
