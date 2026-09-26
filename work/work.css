@@ -219,3 +219,86 @@ body::before {
     cursor: pointer;
 
 }
+/* =========================================
+   WORK カテゴリーボタン
+   基準キャンバス：1280 × 650px
+========================================= */
+
+/* All */
+.all-bottom {
+
+    position: absolute;
+
+    left: 47px;
+    top: 58px;
+
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+
+/* Product */
+.product-bottom {
+
+    position: absolute;
+
+    left: 297px;
+    top: 58px;
+
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+
+/* Web */
+.web-bottom {
+
+    position: absolute;
+
+    left: 560px;
+    top: 58px;
+
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+
+/* Event */
+.event-bottom {
+
+    position: absolute;
+
+    left: 797px;
+    top: 58px;
+
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+
+/* Illust */
+.illust-bottom {
+
+    position: absolute;
+
+    left: 1047px;
+    top: 58px;
+
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+}
