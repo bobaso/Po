@@ -132,7 +132,27 @@ body::before {
     display: block;
 
 }
+/* =========================================
+   WORK 座標キャンバス
+   基準サイズ：1280 × 650px
 
+   今後の子要素はこの中に
+   left: ○px;
+   top: ○px;
+   で配置する
+========================================= */
+
+.work-canvas {
+
+    position: relative;
+
+    width: 1280px;
+    height: 650px;
+
+    margin: 0;
+    padding: 0;
+
+}
 
 /* =========================================
    work-bottom
