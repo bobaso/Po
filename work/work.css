@@ -307,20 +307,17 @@ body::before {
 ========================================= */
 
 .works-area {
-
     position: absolute;
-
     left: 5px;
     top: 125px;
-
     width: 1242px;
     height: 481px;
-
     overflow-y: auto;
     overflow-x: hidden;
-
     box-sizing: border-box;
 
+    /* スクロールバー */
+    scrollbar-color: #3cc8d7 transparent;
 }
 /* =========================================
    作品一覧
