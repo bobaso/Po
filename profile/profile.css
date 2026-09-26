@@ -117,3 +117,81 @@ body::before {
     height: auto;
 
 }
+/* =========================================
+   PROFILE内オブジェクト
+   1440 × 675 基準
+========================================= */
+
+.profile-object01 {
+
+    position: absolute;
+
+    left: 109px;
+    top: 159px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   PROFILE内ボタン共通
+========================================= */
+
+.profile-button01,
+.profile-button02 {
+
+    position: absolute;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 3;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* =========================================
+   WORKボタン
+========================================= */
+
+.profile-button01 {
+
+    left: 106px;
+    top: 249px;
+}
+
+
+/* =========================================
+   PROFILEボタン
+========================================= */
+
+.profile-button02 {
+
+    left: 90px;
+    top: 323px;
+}
+
+
+/* =========================================
+   ボタン ホバー
+========================================= */
+
+.profile-button01:hover,
+.profile-button02:hover {
+
+    transform:
+        scale(1.05)
+        translateY(-3px);
+
+    filter: brightness(1.15);
+}
