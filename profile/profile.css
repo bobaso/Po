@@ -359,3 +359,66 @@ body::before {
 
     z-index: 1;
 }
+/* =========================================
+   PROFILE 画面2 アイコン
+   1440 × 675 基準
+========================================= */
+
+.profile-page02-aiicon {
+
+    position: absolute;
+
+    left: 374px;
+    top: 203px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
+
+
+.profile-page02-pricon {
+
+    position: absolute;
+
+    left: 374px;
+    top: 387px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
+
+
+.profile-page02-psicon {
+
+    position: absolute;
+
+    left: 850px;
+    top: 198px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
+
+
+.profile-page02-rinoicon {
+
+    position: absolute;
+
+    left: 850px;
+    top: 388px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
