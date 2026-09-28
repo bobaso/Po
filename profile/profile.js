@@ -32,15 +32,15 @@ function resizeProfilePages() {
 
     profilePages.forEach((page, index) => {
 
-        const moveY =
-            (index - currentPage) *
-            window.innerHeight;
+const moveY =
+    (index - currentPage) *
+    window.innerHeight;
 
-        page.style.transform =
-            `translateY(${moveY}px) scale(${scale})`;
+page.style.transform =
+    `translateY(${moveY}px) scale(${scale})`;
 
-        page.style.transformOrigin =
-            "top center";
+page.style.transformOrigin =
+    "center center";
 
     });
 
