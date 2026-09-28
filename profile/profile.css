@@ -293,6 +293,24 @@ body::before {
 
     z-index: 10;
 }
+/* =========================================
+   object04 回り込み範囲
+========================================= */
+
+.profile-text-object04-wrap {
+
+    position: absolute;
+
+    left: 801px;
+    top: -68px;
+
+    width: 292px;
+    height: 384px;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
 .profile-text-content {
 
     width: 100%;
