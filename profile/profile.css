@@ -148,6 +148,65 @@ body::before {
 
 }
 /* =========================================
+   PROFILE 共通ナビゲーション
+   1440 × 675 基準
+========================================= */
+
+.profile-home-bottom,
+.profile-profile-bottom {
+
+    position: absolute;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* =========================================
+   HOME
+========================================= */
+
+.profile-home-bottom {
+
+    left: 219px;
+    top: 59px;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-profile-bottom {
+
+    left: 352px;
+    top: 59px;
+}
+
+
+/* =========================================
+   ホバー
+========================================= */
+
+.profile-home-bottom:hover,
+.profile-profile-bottom:hover {
+
+    transform:
+        scale(1.05)
+        translateY(-2px);
+
+    filter: brightness(1.15);
+}
+/* =========================================
    PROFILE内オブジェクト
    1440 × 675 基準
 ========================================= */
