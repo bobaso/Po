@@ -81,45 +81,59 @@ function changeProfilePage(direction) {
     resizeProfilePages();
 
 
-    /* =========================================
+/* =========================================
    PROFILE 画面2
    パラメータバー開始
 ========================================= */
 
 if (currentPage === 1) {
 
-    const parameterFill =
-        document.querySelector(
+    const parameterFills =
+        document.querySelectorAll(
             ".profile-page02-parameter-fill"
         );
 
-    if (parameterFill) {
-
-        /* アニメーションを一旦停止 */
-
-        parameterFill.style.transition = "none";
-
-        /* 0pxへリセット */
-
-        parameterFill.style.width = "0px";
+    const parameterWidths = [
+        "292px",
+        "223px",
+        "81px",
+        "171px"
+    ];
 
 
-        /* ブラウザにリセットを反映 */
+    parameterFills.forEach(
+        (parameterFill, index) => {
 
-        parameterFill.offsetWidth;
+            /* アニメーションを一旦停止 */
 
-
-        /* アニメーションを再設定 */
-
-        parameterFill.style.transition =
-            "width 1.5s ease";
+            parameterFill.style.transition =
+                "none";
 
 
-        /* 左から右へ伸ばす */
+            /* 0pxへリセット */
 
-        parameterFill.style.width = "292px";
+            parameterFill.style.width =
+                "0px";
 
-    }
+
+            /* リセットを反映 */
+
+            parameterFill.offsetWidth;
+
+
+            /* アニメーションを再設定 */
+
+            parameterFill.style.transition =
+                "width 1.5s ease";
+
+
+            /* 指定位置まで伸ばす */
+
+            parameterFill.style.width =
+                parameterWidths[index];
+
+        }
+    );
 
 }
 
