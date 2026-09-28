@@ -552,3 +552,66 @@ body::before {
 .profile-page02-parameter-fill {
     width: 0;
 }
+/* =========================================
+   PROFILE 画面2 text03〜06
+   1440 × 675 基準
+========================================= */
+
+.profile-page02-text03 {
+
+    position: absolute;
+
+    left: 387px;
+    top: 313px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
+
+
+.profile-page02-text04 {
+
+    position: absolute;
+
+    left: 854px;
+    top: 313px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
+
+
+.profile-page02-text05 {
+
+    position: absolute;
+
+    left: 374px;
+    top: 498px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
+
+
+.profile-page02-text06 {
+
+    position: absolute;
+
+    left: 834px;
+    top: 509px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
