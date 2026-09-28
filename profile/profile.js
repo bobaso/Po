@@ -82,30 +82,46 @@ function changeProfilePage(direction) {
 
 
     /* =========================================
-       PROFILE 画面2
-       パラメータバー開始
-    ========================================= */
+   PROFILE 画面2
+   パラメータバー開始
+========================================= */
 
-    if (currentPage === 1) {
+if (currentPage === 1) {
 
-        const parameterFill =
-            document.querySelector(
-                ".profile-page02-parameter-fill"
-            );
+    const parameterFill =
+        document.querySelector(
+            ".profile-page02-parameter-fill"
+        );
 
-        if (parameterFill) {
+    if (parameterFill) {
 
-            parameterFill.style.width = "0px";
+        /* アニメーションを一旦停止 */
 
-            setTimeout(() => {
+        parameterFill.style.transition = "none";
 
-                parameterFill.style.width = "292px";
+        /* 0pxへリセット */
 
-            }, 50);
+        parameterFill.style.width = "0px";
 
-        }
+
+        /* ブラウザにリセットを反映 */
+
+        parameterFill.offsetWidth;
+
+
+        /* アニメーションを再設定 */
+
+        parameterFill.style.transition =
+            "width 1.5s ease";
+
+
+        /* 左から右へ伸ばす */
+
+        parameterFill.style.width = "292px";
 
     }
+
+}
 
 
     setTimeout(() => {
