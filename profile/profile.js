@@ -1,16 +1,20 @@
 /* =========================================
-   PROFILE
+   PROFILE 画面
+   レスポンシブ処理
 ========================================= */
 
-const visualArea =
-    document.querySelector(".visual-area");
-
+const profilePages =
+    document.querySelectorAll(".profile-page");
 
 const canvasWidth = 1440;
 const canvasHeight = 675;
 
 
-function resizeProfileCanvas() {
+/* =========================================
+   画面サイズに合わせて縮尺変更
+========================================= */
+
+function resizeProfilePages() {
 
     const scaleX =
         window.innerWidth / canvasWidth;
@@ -22,16 +26,23 @@ function resizeProfileCanvas() {
         Math.min(scaleX, scaleY);
 
 
-    visualArea.style.transform =
-        `translate(-50%, -50%) scale(${scale})`;
+    profilePages.forEach((page) => {
+
+        page.style.transform =
+            `scale(${scale})`;
+
+        page.style.transformOrigin =
+            "top center";
+
+    });
 
 }
 
 
-resizeProfileCanvas();
+resizeProfilePages();
 
 
 window.addEventListener(
     "resize",
-    resizeProfileCanvas
+    resizeProfilePages
 );
