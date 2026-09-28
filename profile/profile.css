@@ -481,10 +481,12 @@ body::before {
     left: 0;
     top: 0;
 
-    width: 292px;
+    width: 0;
     height: 100%;
 
     overflow: hidden;
+
+    transition: width 1.5s ease;
 }
 
 
