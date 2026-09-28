@@ -503,3 +503,52 @@ body::before {
     width: auto;
     height: auto;
 }
+/* =========================================
+   PROFILE 画面2 パラメータバー2
+   X：971 / Y：222
+   停止X：1194
+   ========================================= */
+
+.profile-page02-parameter.parameter02 {
+    left: 971px;
+    top: 222px;
+}
+
+.profile-page02-parameter.parameter02
+.profile-page02-parameter-fill {
+    width: 0;
+}
+
+
+/* =========================================
+   PROFILE 画面2 パラメータバー3
+   X：494 / Y：405
+   停止X：575
+   ========================================= */
+
+.profile-page02-parameter.parameter03 {
+    left: 494px;
+    top: 405px;
+}
+
+.profile-page02-parameter.parameter03
+.profile-page02-parameter-fill {
+    width: 0;
+}
+
+
+/* =========================================
+   PROFILE 画面2 パラメータバー4
+   X：971 / Y：405
+   停止X：1142
+   ========================================= */
+
+.profile-page02-parameter.parameter04 {
+    left: 971px;
+    top: 405px;
+}
+
+.profile-page02-parameter.parameter04
+.profile-page02-parameter-fill {
+    width: 0;
+}
