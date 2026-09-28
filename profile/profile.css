@@ -276,18 +276,18 @@ body::before {
 }
 /* =========================================
    object04
-   文章を画像の左側へ回り込ませる
+   実際の画像
 ========================================= */
 
 .profile-text-object04 {
 
     position: absolute;
 
-    left: 831px;
-    top: -38px;
+    left: 30px;
+    top: 30px;
 
-    width: auto;
-    height: auto;
+    width: 232px;
+    height: 324px;
 
     display: block;
 
@@ -303,4 +303,26 @@ body::before {
     box-sizing: border-box;
 
     line-height: 1.8;
+}
+/* =========================================
+   object04 回り込み範囲
+   画像より上下左右30px広い
+========================================= */
+
+.profile-text-object04-wrap {
+
+    float: right;
+
+    position: relative;
+
+    width: 292px;
+    height: 384px;
+
+    margin-top: -68px;
+    margin-right: -93px;
+
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+    z-index: 1;
 }
