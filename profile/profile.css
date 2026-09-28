@@ -452,7 +452,7 @@ body::before {
     top: 222px;
 
     width: 292px;
-    height: auto;
+    height: 100%;
 
     z-index: 5;
 }
