@@ -257,7 +257,7 @@ body::before {
 
     word-break: break-word;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* =========================================
