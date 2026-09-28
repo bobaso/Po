@@ -440,3 +440,64 @@ body::before {
 
     z-index: 5;
 }
+/* =========================================
+   PROFILE 画面2 パラメータバー
+   1440 × 675 基準
+========================================= */
+
+.profile-page02-parameter {
+    position: absolute;
+
+    left: 494px;
+    top: 222px;
+
+    width: 292px;
+    height: auto;
+
+    z-index: 5;
+}
+
+
+/* 下画像 */
+
+.profile-page02-parameter-base {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    display: block;
+
+    width: auto;
+    height: auto;
+}
+
+
+/* 上画像を表示する範囲 */
+
+.profile-page02-parameter-fill {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 292px;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+/* 上画像 */
+
+.profile-page02-parameter-top {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    display: block;
+
+    width: auto;
+    height: auto;
+}
