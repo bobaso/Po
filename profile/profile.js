@@ -9,6 +9,10 @@ const profilePages =
 const canvasWidth = 1440;
 const canvasHeight = 675;
 
+let currentPage = 0;
+
+let isScrolling = false;
+
 
 /* =========================================
    画面サイズに合わせて縮尺変更
@@ -26,10 +30,14 @@ function resizeProfilePages() {
         Math.min(scaleX, scaleY);
 
 
-    profilePages.forEach((page) => {
+    profilePages.forEach((page, index) => {
+
+        const moveY =
+            (index - currentPage) *
+            window.innerHeight;
 
         page.style.transform =
-            `scale(${scale})`;
+            `translateY(${moveY}px) scale(${scale})`;
 
         page.style.transformOrigin =
             "top center";
@@ -39,20 +47,59 @@ function resizeProfilePages() {
 }
 
 
+/* =========================================
+   初期表示
+========================================= */
+
 resizeProfilePages();
 
 
-window.addEventListener(
-    "resize",
-    resizeProfilePages
-);
 /* =========================================
-   スクロールによる画面切り替え
+   画面切り替え
 ========================================= */
 
-let currentPage = 0;
+function changeProfilePage(direction) {
 
-let isScrolling = false;
+    if (isScrolling) {
+        return;
+    }
+
+
+    const nextPage =
+        currentPage + direction;
+
+
+    /* -----------------------------------------
+       ページ範囲チェック
+    ----------------------------------------- */
+
+    if (
+        nextPage < 0 ||
+        nextPage >= profilePages.length
+    ) {
+        return;
+    }
+
+
+    isScrolling = true;
+
+    currentPage = nextPage;
+
+
+    resizeProfilePages();
+
+
+    /* -----------------------------------------
+       連続スクロール防止
+    ----------------------------------------- */
+
+    setTimeout(() => {
+
+        isScrolling = false;
+
+    }, 500);
+
+}
 
 
 /* =========================================
@@ -63,75 +110,30 @@ window.addEventListener(
     "wheel",
     (event) => {
 
-        if (isScrolling) {
-            return;
-        }
-
-
         if (event.deltaY > 0) {
 
-            // 下へ
-            if (currentPage < profilePages.length - 1) {
+            // 下方向
+            changeProfilePage(1);
 
-                currentPage++;
+        } else if (event.deltaY < 0) {
 
-            } else {
-
-                return;
-
-            }
-
-        } else {
-
-            // 上へ
-            if (currentPage > 0) {
-
-                currentPage--;
-
-            } else {
-
-                return;
-
-            }
+            // 上方向
+            changeProfilePage(-1);
 
         }
 
-
-        isScrolling = true;
-
-
-        const page =
-            profilePages[currentPage];
-
-
-        const scaleX =
-            window.innerWidth / canvasWidth;
-
-        const scaleY =
-            window.innerHeight / canvasHeight;
-
-        const scale =
-            Math.min(scaleX, scaleY);
-
-
-        const moveY =
-            currentPage *
-            canvasHeight *
-            scale;
-
-
-        window.scrollTo(
-            0,
-            moveY
-        );
-
-
-        setTimeout(() => {
-
-            isScrolling = false;
-
-        }, 500);
-
     },
-    { passive: true }
+    {
+        passive: true
+    }
+);
+
+
+/* =========================================
+   ウィンドウサイズ変更
+========================================= */
+
+window.addEventListener(
+    "resize",
+    resizeProfilePages
 );
