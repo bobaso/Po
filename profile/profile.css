@@ -293,3 +293,13 @@ body::before {
 
     z-index: 2;
 }
+.profile-text-content {
+
+    width: 100%;
+
+    padding-right: 0;
+
+    box-sizing: border-box;
+
+    line-height: 1.8;
+}
