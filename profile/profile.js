@@ -64,14 +64,8 @@ function changeProfilePage(direction) {
         return;
     }
 
-
     const nextPage =
         currentPage + direction;
-
-
-    /* -----------------------------------------
-       ページ範囲チェック
-    ----------------------------------------- */
 
     if (
         nextPage < 0 ||
@@ -80,27 +74,44 @@ function changeProfilePage(direction) {
         return;
     }
 
-
     isScrolling = true;
 
     currentPage = nextPage;
 
-
     resizeProfilePages();
 
 
-    /* -----------------------------------------
-       連続スクロール防止
-    ----------------------------------------- */
+    /* =========================================
+       PROFILE 画面2
+       パラメータバー開始
+    ========================================= */
+
+    if (currentPage === 1) {
+
+        const parameterFill =
+            document.querySelector(
+                ".profile-page02-parameter-fill"
+            );
+
+        if (parameterFill) {
+
+            parameterFill.style.width = "0px";
+
+            setTimeout(() => {
+
+                parameterFill.style.width = "292px";
+
+            }, 50);
+
+        }
+
+    }
+
 
     setTimeout(() => {
-
         isScrolling = false;
-
     }, 500);
-
 }
-
 
 /* =========================================
    マウスホイール
