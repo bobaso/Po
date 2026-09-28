@@ -1,19 +1,19 @@
 /* =========================================
-   PROFILE 画面全体
+   PROFILE 画面
 ========================================= */
 
 .profile-page {
     position: fixed;
 
-    top: 0;
+    top: 50%;
     left: 50%;
 
     width: 1440px;
     height: 675px;
 
     margin-left: -720px;
+    margin-top: -337.5px;
 }
-
 
 /* =========================================
    PROFILE 画面1・2
