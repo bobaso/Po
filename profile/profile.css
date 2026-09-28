@@ -422,3 +422,21 @@ body::before {
 
     z-index: 5;
 }
+/* =========================================
+   PROFILE 画面2 text02
+   1440 × 675 基準
+========================================= */
+
+.profile-page02-text02 {
+
+    position: absolute;
+
+    left: 363px;
+    top: 142px;
+
+    height: auto;
+
+    display: block;
+
+    z-index: 5;
+}
