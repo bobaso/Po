@@ -283,15 +283,15 @@ body::before {
 
     position: absolute;
 
-    left: 862px;
-    top: -7px;
+    left: 831px;
+    top: -38px;
 
     width: auto;
     height: auto;
 
     display: block;
 
-    z-index: 2;
+    z-index: 10;
 }
 .profile-text-content {
 
