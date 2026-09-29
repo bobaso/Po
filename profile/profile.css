@@ -725,6 +725,11 @@ body::before {
 
     width: auto;
     height: auto;
+
+    animation:
+        profile-scroll-text-blink
+        2s
+        infinite;
 }
 
 
@@ -764,6 +769,37 @@ body::before {
 
         transform:
             translateY(15px);
+
+    }
+
+}
+/* =========================================
+   SCROLL文字 点滅アニメーション
+========================================= */
+
+@keyframes profile-scroll-text-blink {
+
+    0% {
+
+        opacity: 0;
+
+    }
+
+    40% {
+
+        opacity: 1;
+
+    }
+
+    80% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 0;
 
     }
 
