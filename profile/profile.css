@@ -562,8 +562,6 @@ body::before {
 }
 /* =========================================
    PROFILE 画面2 パラメータバー2
-   X：971 / Y：222
-   停止X：1194
    ========================================= */
 
 .profile-page02-parameter.parameter02 {
@@ -579,8 +577,6 @@ body::before {
 
 /* =========================================
    PROFILE 画面2 パラメータバー3
-   X：494 / Y：405
-   停止X：575
    ========================================= */
 
 .profile-page02-parameter.parameter03 {
@@ -596,8 +592,6 @@ body::before {
 
 /* =========================================
    PROFILE 画面2 パラメータバー4
-   X：971 / Y：405
-   停止X：1142
    ========================================= */
 
 .profile-page02-parameter.parameter04 {
@@ -724,8 +718,8 @@ body::before {
 
     position: absolute;
 
-    left: 1266px;
-    top: 529px;
+    left: 1252px;
+    top: 550px;
 
     display: block;
 
