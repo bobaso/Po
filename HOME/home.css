@@ -572,7 +572,7 @@ background-image:
 /* 下バー */
 .object03::after {
     z-index: 1;
-    top: -1%;
+    top: 9.0741%;
     background-position:
         0 100%;
 }
@@ -598,7 +598,7 @@ background-image:
 
 .object03.is-open::after {
     transform:
-        translateY(450%);
+        translateY(430%);
 }
 /* =========================================
    object03内 MS-DOS風ターミナル
