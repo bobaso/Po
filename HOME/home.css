@@ -572,7 +572,7 @@ background-image:
 /* 下バー */
 .object03::after {
     z-index: 1;
-    top: 8.8%;
+    top: 5%;
     background-position:
         0 100%;
 }
