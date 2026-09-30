@@ -113,16 +113,16 @@ const terminalText =
 ========================================= */
 
 const terminalLines = [
-"C:\\SYSTEM OS> SYSTEM CHECK",
-"C:\\SYSTEM OS> MEMORY CHECK..... OK",
-"C:\\SYSTEM OS> DEVICE CHECK..... OK",
-"C:\\SYSTEM OS> NETWORK.......... OK",
-"C:\\SYSTEM OS> NFC SYSTEM.... READY",
-"C:\\SYSTEM OS> LOADING DATA...",
-"C:\\SYSTEM OS> 001010101101001",
-"C:\\SYSTEM OS> 101101001011010",
-"C:\\SYSTEM OS> 110010110010101",
-"C:\\SYSTEM OS> STARTING SYSTEM..."
+"C:\\IO.SYS> SYSTEM CHECK",
+"C:\\IO.SYS> MEMORY CHECK..... OK",
+"C:\\IO.SYS> DEVICE CHECK..... OK",
+"C:\\IO.SYS> NETWORK.......... OK",
+"C:\\IO.SYS> NFC SYSTEM.... READY",
+"C:\\IO.SYS> LOADING DATA...",
+"C:\\COMAND.SYS 13094  1-00-38 19
+"C:\\DISC.SYS    1628  5-15-27 25
+"C:\\MODE.SYS   39527  3-48-43 38
+"C:\\COM.SYS    19542  1-50-82 20
 ];
 
 
