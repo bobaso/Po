@@ -84,9 +84,9 @@ window.addEventListener(
 const works = [
 
     {
-        title: "作品01",
+        title: "ペーパーサミット２０２６<br>ディスプレイデザイン",
         image: "../images/work-test01.png",
-        category: "product",
+        category: "event",
         link: "works/work01.html"
     },
 
