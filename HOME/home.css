@@ -598,7 +598,7 @@ background-image:
 
 .object03.is-open::after {
     transform:
-        translateY(310%);
+        translateY(340%);
 }
 /* =========================================
    object03内 MS-DOS風ターミナル
