@@ -119,10 +119,10 @@ const terminalLines = [
 "C:\\IO.SYS> NETWORK.......... OK",
 "C:\\IO.SYS> NFC SYSTEM.... READY",
 "C:\\IO.SYS> LOADING DATA...",
-"C:\\COMAND.SYS 13094  1-00-38 19
-"C:\\DISC.SYS    1628  5-15-27 25
-"C:\\MODE.SYS   39527  3-48-43 38
-"C:\\COM.SYS    19542  1-50-82 20
+"C:\\COMAND.SYS 13094  1-00-38 19",
+"C:\\DISC.SYS    1628  5-15-27 25",
+"C:\\MODE.SYS   39527  3-48-43 38",
+"C:\\COM.SYS    19542  1-50-82 20",
 ];
 
 
