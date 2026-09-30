@@ -153,13 +153,21 @@ window.addEventListener(
 
         if (event.deltaY > 0) {
 
-            // 下方向
-            changeProfilePage(1);
+            /* 下方向 */
 
-        } else if (event.deltaY < 0) {
+            if (currentPage === 0) {
 
-            // 上方向
-            changeProfilePage(-1);
+                /* 画面1 → 画面2 */
+
+                changeProfilePage(1);
+
+            } else if (currentPage === 1) {
+
+                /* 画面2 → 画面1 */
+
+                changeProfilePage(-1);
+
+            }
 
         }
 
