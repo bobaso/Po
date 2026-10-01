@@ -84,108 +84,108 @@ window.addEventListener(
 const works = [
 
     {
-        title: "ペーパーサミット２０２６ディスプレイデザイン",
+        title: "ペーパーサミット<br>ディスプレイデザイン",
         image: "../images/work-test01.png",
         category: "event",
-        link: "works/work01.html"
+        link: "works/work01/index.html"
     },
 
     {
         title: "作品02",
         image: "../images/work-test02.png",
         category: "product",
-        link: "works/work02.html"
+        link: "works/work02/index.html"
     },
 
     {
         title: "作品03",
         image: "../images/work-test03.png",
         category: "web",
-        link: "works/work03.html"
+        llink: "works/work03/index.html"
     },
 
     {
         title: "作品04",
         image: "../images/work-test04.png",
         category: "web",
-        link: "works/work04.html"
+        link: "works/work04/index.html"
     },
 
     {
         title: "作品05",
         image: "../images/work-test05.png",
         category: "event",
-        link: "works/work05.html"
+        link: "works/work05/index.html"
     },
 
     {
         title: "作品06",
         image: "../images/work-test06.png",
         category: "event",
-        link: "works/work06.html"
+        link: "works/work06/index.html"
     },
 
     {
         title: "作品07",
         image: "../images/work-test07.png",
         category: "illust",
-        link: "works/work07.html"
+        link: "works/work07/index.html"
     },
 
     {
         title: "作品08",
         image: "../images/work-test08.png",
         category: "illust",
-        link: "works/work08.html"
+        link: "works/work08/index.html"
     },
 
     {
         title: "作品09",
         image: "../images/work-test09.png",
         category: "product",
-        link: "works/work09.html"
+        link: "works/work09/index.html"
     },
 
     {
         title: "作品10",
         image: "../images/work-test10.png",
         category: "product",
-        link: "works/work10.html"
+        link: "works/work10/index.html"
     },
 
     {
         title: "作品11",
         image: "../images/work-test11.png",
         category: "web",
-        link: "works/work11.html"
+        link: "works/work11/index.html"
     },
 
     {
         title: "作品12",
         image: "../images/work-test12.png",
         category: "web",
-        link: "works/work12.html"
+        link: "works/work12/index.html"
     },
 
     {
         title: "作品13",
         image: "../images/work-test13.png",
         category: "event",
-        link: "works/work13.html"
+        link: "works/work13/index.html"
     },
 
     {
         title: "作品14",
         image: "../images/work-test14.png",
         category: "illust",
-        link: "works/work14.html"
+        link: "works/work14/index.html"
     },
 
     {
         title: "作品15",
         image: "../images/work-test15.png",
         category: "illust",
-        link: "works/work15.html"
+        link: "works/work15/index.html"
     }
 
 ];
