@@ -193,7 +193,84 @@ window.addEventListener(
         passive: true
     }
 );
+/* =========================================
+   スマホ スワイプ
+========================================= */
 
+let touchStartY = 0;
+
+let touchEndY = 0;
+
+
+window.addEventListener(
+    "touchstart",
+    (event) => {
+
+        touchStartY =
+            event.touches[0].clientY;
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+window.addEventListener(
+    "touchend",
+    (event) => {
+
+        touchEndY =
+            event.changedTouches[0].clientY;
+
+
+        const swipeDistance =
+            touchEndY - touchStartY;
+
+
+        /* 短いタッチは無視 */
+
+        if (Math.abs(swipeDistance) < 50) {
+            return;
+        }
+
+
+        /* =================================
+           上方向スワイプ
+           画面1 → 画面2
+        ================================= */
+
+        if (swipeDistance < 0) {
+
+            if (currentPage === 0) {
+
+                changeProfilePage(1);
+
+            }
+
+        }
+
+
+        /* =================================
+           下方向スワイプ
+           画面2 → 画面1
+        ================================= */
+
+        else {
+
+            if (currentPage === 1) {
+
+                changeProfilePage(-1);
+
+            }
+
+        }
+
+    },
+    {
+        passive: true
+    }
+);
 
 /* =========================================
    ウィンドウサイズ変更
