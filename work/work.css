@@ -90,11 +90,6 @@ body::before {
 /* =========================================
    WORK メインビジュアル
    基準キャンバス：1280 × 650px
-
-   子要素はすべて
-   left: ○px;
-   top: ○px;
-   で配置する
 ========================================= */
 
 .main-visual {
@@ -108,7 +103,17 @@ body::before {
     padding: 0;
 
     z-index: 4;
+    opacity: 0;
 
+    transform: translateX(-100px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+.main-visual.is-visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* =========================================
