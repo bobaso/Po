@@ -213,30 +213,35 @@ function finishLoading() {
         "is-visible"
     );
 
-    object03Terminal.classList.add(
-        "is-visible"
+
+
+
+/* =============================
+   object03を開く
+============================= */
+
+setTimeout(function () {
+
+    object03.classList.add(
+        "is-open"
     );
 
-    startTerminalAnimation();
-
-
     /* =============================
-       object03を開く
+       object03が開き切った後
+       ターミナルを表示して開始
     ============================= */
 
     setTimeout(function () {
 
-        object03.classList.add(
-            "is-open"
+        object03Terminal.classList.add(
+            "is-visible"
         );
 
-    }, 200);
+        startTerminalAnimation();
 
+    }, 800);
 
-    console.log(
-        "LOADING COMPLETE"
-    );
-}
+}, 200);
     /* =====================================
        プログレスバー
     ===================================== */
