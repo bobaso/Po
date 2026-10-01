@@ -155,23 +155,34 @@ body::before {
 
     display: block;
 }
- /* =========================================
+/* =========================================
    WORKボタン
 ========================================= */
 
-.work-bottom {
+.work-bottom-link {
     position: absolute;
 
-    left: 283px;
-    top: 15px;
+    left: 362px;
+    top: 53px;
+
+    width: 114px;
+
+    display: block;
+}
+
+.work-bottom {
+    position: relative;
+
+    left: 0;
+    top: 0;
 
     width: 114px;
     height: auto;
 
     display: block;
+
+    cursor: pointer;
 }
-
-
 /* =========================================
    HOMEボタン
 ========================================= */
