@@ -228,7 +228,9 @@ window.addEventListener(
             touchEndY - touchStartY;
 
 
-        /* 短いタッチは無視 */
+        /* =================================
+           短いタッチは無視
+        ================================= */
 
         if (Math.abs(swipeDistance) < 50) {
             return;
@@ -236,11 +238,12 @@ window.addEventListener(
 
 
         /* =================================
-           上方向スワイプ
-           画面1 → 画面2
+           上方向スワイプのみ反応
         ================================= */
 
         if (swipeDistance < 0) {
+
+            /* 画面1 → 画面2 */
 
             if (currentPage === 0) {
 
@@ -248,33 +251,22 @@ window.addEventListener(
 
             }
 
+
+            /* 画面2 → 画面1 */
+
+            else if (currentPage === 1) {
+
+                changeProfilePage(-1);
+
+            }
+
         }
 
-
-/* =================================
-   上方向スワイプ
-   画面切り替え
-================================= */
-
-if (swipeDistance < 0) {
-
-    if (currentPage === 0) {
-
-        /* 画面1 → 画面2 */
-
-        changeProfilePage(1);
-
-    } else if (currentPage === 1) {
-
-        /* 画面2 → 画面1 */
-
-        changeProfilePage(-1);
-
+    },
+    {
+        passive: true
     }
-
-}
 );
-
 /* =========================================
    ウィンドウサイズ変更
 ========================================= */
