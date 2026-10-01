@@ -155,3 +155,50 @@ body::before {
 
     display: block;
 }
+ /* =========================================
+   WORKボタン
+   WORKページと同じ位置
+========================================= */
+
+.work-bottom {
+    position: absolute;
+
+    left: 283px;
+    top: 15px;
+
+    width: 114px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================================
+   HOMEボタン
+   WORKページと同じ位置
+========================================= */
+
+.home-bottom-link {
+    position: absolute;
+
+    left: 147px;
+    top: 14px;
+
+    width: 123px;
+
+    display: block;
+}
+
+.home-bottom {
+    position: relative;
+
+    left: 0;
+    top: 0;
+
+    width: 123px;
+    height: auto;
+
+    display: block;
+
+    cursor: pointer;
+}
