@@ -58,6 +58,10 @@ function resizeWorkDetail() {
 }
 
 
+/* =========================================
+   初期表示
+========================================= */
+
 resizeWorkDetail();
 
 window.addEventListener(
