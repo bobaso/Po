@@ -138,7 +138,24 @@ body::before {
     margin: 0;
     padding: 0;
 }
+/* =========================================
+   作品内容スクロール範囲
+========================================= */
 
+.work-scroll-area {
+    position: absolute;
+
+    left: 86px;
+    top: 67px;
+
+    width: 1240px;
+    height: 459px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+}
 
 /* =========================================
    works-main-visual
