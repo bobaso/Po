@@ -20,17 +20,30 @@ workDetail.innerHTML = `
                     class="works-main-visual">
 
 
+                <!-- スクロールエリア -->
+                <div class="work-scroll-area">
+
+                    <div class="work-content">
+
+                        <!-- 作品ごとの内容をここに入れる -->
+
+                    </div>
+
+                </div>
+
+
                 <!-- WORK -->
-       <a
-    href="../../work.html"
-    class="work-bottom-link">
+                <a
+                    href="../../work.html"
+                    class="work-bottom-link">
 
-    <img
-        src="../../../images/work-bottom.png"
-        alt="WORK"
-        class="work-bottom">
+                    <img
+                        src="../../../images/work-bottom.png"
+                        alt="WORK"
+                        class="work-bottom">
 
-</a>
+                </a>
+
 
                 <!-- HOME -->
                 <a
