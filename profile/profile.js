@@ -53,7 +53,24 @@ page.style.transformOrigin =
 
 resizeProfilePages();
 
+/* =========================================
+   メインビジュアル カットイン
+========================================= */
 
+const mainVisual =
+    document.querySelector(".main-visual");
+
+requestAnimationFrame(function () {
+
+    requestAnimationFrame(function () {
+
+        mainVisual.classList.add(
+            "is-visible"
+        );
+
+    });
+
+});
 /* =========================================
    画面切り替え
 ========================================= */
