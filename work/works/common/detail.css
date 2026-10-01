@@ -145,8 +145,8 @@ body::before {
 .work-scroll-area {
     position: absolute;
 
-    left: 86px;
-    top: 67px;
+    left: 6px;
+    top: 55px;
 
     width: 1240px;
     height: 459px;
