@@ -158,6 +158,22 @@ body::before {
 }
 
 /* =========================================
+   スクロールバー
+========================================= */
+
+.work-scroll-area::-webkit-scrollbar {
+    width: 31px;
+}
+
+.work-scroll-area::-webkit-scrollbar-track {
+    width: 31px;
+}
+
+.work-scroll-area::-webkit-scrollbar-thumb {
+    width: 31px;
+}
+
+/* =========================================
    works-main-visual
 ========================================= */
 
