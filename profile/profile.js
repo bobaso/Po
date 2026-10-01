@@ -251,25 +251,28 @@ window.addEventListener(
         }
 
 
-        /* =================================
-           下方向スワイプ
-           画面2 → 画面1
-        ================================= */
+/* =================================
+   上方向スワイプ
+   画面切り替え
+================================= */
 
-        else {
+if (swipeDistance < 0) {
 
-            if (currentPage === 1) {
+    if (currentPage === 0) {
 
-                changeProfilePage(-1);
+        /* 画面1 → 画面2 */
 
-            }
+        changeProfilePage(1);
 
-        }
+    } else if (currentPage === 1) {
 
-    },
-    {
-        passive: true
+        /* 画面2 → 画面1 */
+
+        changeProfilePage(-1);
+
     }
+
+}
 );
 
 /* =========================================
