@@ -298,19 +298,11 @@ function startLoadingProgress() {
 
 async function startBootSequence() {
 
-    if (isSkipped) {
-        return;
-    }
-
     for (
         let i = 0;
         i < bootLines.length;
         i++
     ) {
-
-        if (isSkipped) {
-            return;
-        }
 
         const line =
             document.getElementById(
@@ -321,7 +313,6 @@ async function startBootSequence() {
             line,
             bootLines[i]
         );
-
     }
 
 
@@ -363,7 +354,6 @@ async function startBootSequence() {
     );
 
 }
-
 /* =====================================
    SKIPボタン
 ===================================== */
