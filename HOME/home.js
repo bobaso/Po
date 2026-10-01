@@ -368,30 +368,13 @@ async function startBootSequence() {
    SKIPボタン
 ===================================== */
 
-
 loadingSkipButton.addEventListener(
     "click",
     function () {
 
-        if (isSkipped) {
-            return;
-        }
-
-        isSkipped = true;
-
-
-        /* =============================
-           起動画面を即終了
-        ============================= */
-
         bootScreen.classList.add(
             "is-hidden"
         );
-
-
-        /* =============================
-           ロードバーを表示
-        ============================= */
 
         loadingScreen.classList.add(
             "is-background"
@@ -400,24 +383,13 @@ loadingSkipButton.addEventListener(
         loadingBar.style.display =
             "block";
 
-
-        /* =============================
-           100%へ一気に進める
-        ============================= */
-
         loadingText.textContent =
             "Loading... 100%";
 
         progressFill.style.width =
             "100%";
 
-
-        /* =============================
-           完了処理
-        ============================= */
-
         finishLoading();
-
     }
 );
 /* =====================================
