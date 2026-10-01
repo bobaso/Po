@@ -368,9 +368,6 @@ async function startBootSequence() {
    SKIPボタン
 ===================================== */
 
-let isSkipped =
-    new URLSearchParams(window.location.search)
-        .get("skipLoading") === "1";
 
 loadingSkipButton.addEventListener(
     "click",
