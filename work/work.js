@@ -377,3 +377,11 @@ illustButton.addEventListener(
 
     }
 );
+
+
+const mainVisual =
+    document.querySelector(".main-visual");
+
+mainVisual.classList.add(
+    "is-visible"
+);
