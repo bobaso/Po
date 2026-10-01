@@ -27,6 +27,17 @@
 
     width: 1440px;
     height: 675px;
+    opacity: 0;
+
+    transform: translateX(-100px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+.main-visual.is-visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 /* =========================================
    ページ全体の背景
