@@ -201,20 +201,25 @@ function finishLoading() {
         "none";
 
 
-    /* =============================
-       メインビジュアルを表示
-    ============================= */
+/* =============================
+   メインビジュアルを表示
+============================= */
 
-    mainVisual.classList.add(
-        "is-visible"
-    );
+requestAnimationFrame(function () {
 
-    object03.classList.add(
-        "is-visible"
-    );
+    requestAnimationFrame(function () {
 
+        mainVisual.classList.add(
+            "is-visible"
+        );
 
+    });
 
+});
+
+object03.classList.add(
+    "is-visible"
+);
 
 /* =============================
    object03を開く
