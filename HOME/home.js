@@ -396,18 +396,6 @@ loadingSkipButton.addEventListener(
    起動
 ===================================== */
 
-if (isSkipped) {
-
-    /* =============================
-       ロード画面を完全にスキップ
-    ============================= */
-
-    finishLoading();
-
-} else {
-
-    startBootSequence();
-
-}
+startBootSequence();
 
 });
