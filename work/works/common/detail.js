@@ -23,11 +23,11 @@ workDetail.innerHTML = `
                 <!-- スクロールエリア -->
                 <div class="work-scroll-area">
 
-                    <div class="work-content">
+             <div class="work-content">
 
-                        <!-- 作品ごとの内容をここに入れる -->
+            ${workData.content}
 
-                    </div>
+             </div>
 
                 </div>
 
