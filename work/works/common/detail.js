@@ -21,11 +21,16 @@ workDetail.innerHTML = `
 
 
                 <!-- WORK -->
-                <img
-                    src="../../../images/work-bottom.png"
-                    alt="WORK"
-                    class="work-bottom">
+       <a
+    href="../../work.html"
+    class="work-bottom-link">
 
+    <img
+        src="../../../images/work-bottom.png"
+        alt="WORK"
+        class="work-bottom">
+
+</a>
 
                 <!-- HOME -->
                 <a
