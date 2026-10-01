@@ -330,16 +330,18 @@ body::before {
 
 .main-visual {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
 
     opacity: 0;
 
-    transition: opacity 0.8s ease;
+    transform: translateX(-100px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
 
     z-index: 4;
 }
@@ -350,9 +352,8 @@ body::before {
 ========================================= */
 
 .main-visual.is-visible {
-
     opacity: 1;
-
+    transform: translateX(0);
 }
 
 
