@@ -1,6 +1,6 @@
 const workData = {
 
     mainVisual:
-        "images/works-main-visual.png"
+        "../common/images/works-main-visual.png"
 
 };
