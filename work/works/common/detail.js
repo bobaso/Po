@@ -13,10 +13,31 @@ workDetail.innerHTML = `
 
             <div class="work-canvas">
 
+                <!-- メインビジュアル -->
                 <img
                     src="${workData.mainVisual}"
                     alt=""
                     class="works-main-visual">
+
+
+                <!-- WORK -->
+                <img
+                    src="../../../images/work-bottom.png"
+                    alt="WORK"
+                    class="work-bottom">
+
+
+                <!-- HOME -->
+                <a
+                    href="../../../HOME/?skipLoading=1"
+                    class="home-bottom-link">
+
+                    <img
+                        src="../../../images/home-bottom.png"
+                        alt="HOME"
+                        class="home-bottom">
+
+                </a>
 
             </div>
 
