@@ -39,6 +39,10 @@
     opacity: 1;
     transform: translateX(0);
 }
+.profile-page:nth-child(2) .main-visual {
+    opacity: 1;
+    transform: translateX(0);
+}
 /* =========================================
    ページ全体の背景
 ========================================= */
