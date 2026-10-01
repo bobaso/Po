@@ -386,6 +386,20 @@ loadingSkipButton.addEventListener(
    起動
 ===================================== */
 
-startBootSequence();
+const skipLoading =
+    new URLSearchParams(
+        window.location.search
+    ).get("skipLoading") === "1";
+
+
+if (skipLoading) {
+
+    finishLoading();
+
+} else {
+
+    startBootSequence();
+
+}
 
 });
