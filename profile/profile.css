@@ -349,10 +349,9 @@ body::before {
 
     color: #ffffff;
 
-    font-family:
-        "Courier New",
-        "ＭＳ ゴシック",
-        monospace;
+font-family:
+    "ＭＳ ゴシック",
+    sans-serif;
 
     font-size: 18px;
 
@@ -894,10 +893,9 @@ body::before {
 
     color: #ffffff;
 
-    font-family:
-        "Courier New",
-        "ＭＳ ゴシック",
-        monospace;
+font-family:
+    "ＭＳ ゴシック",
+    sans-serif;
 
     font-size: 16px;
     line-height: 1.4;
