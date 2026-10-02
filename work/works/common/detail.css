@@ -145,10 +145,10 @@ body::before {
 .work-scroll-area {
     position: absolute;
 
-    left: 86px;
-    top: 67px;
+    left: 6px;
+    top: 5px;
 
-    width: 1193px;
+    width: 1240px;
     height: 549px;
 
     overflow-y: scroll;
