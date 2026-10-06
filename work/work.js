@@ -83,11 +83,14 @@ window.addEventListener(
 
 const works = [
 
-    {
-        title: "ペーパーサミット<br>ディスプレイデザイン",
-        image: "../images/work-test01.png",
-        category: "event",
-        link: "works/work01/index.html"
+   {
+    title: [
+        "ペーパーサミット",
+        "ディスプレイデザイン"
+    ],
+    image: "../images/work-test01.png",
+    category: "event",
+    link: "works/work01/index.html"
     },
 
     {
@@ -221,14 +224,35 @@ function displayWorks(workData) {
             "work-item-image";
 
 
-        const title =
-            document.createElement("div");
+const title =
+    document.createElement("div");
 
-        title.textContent =
-            work.title;
+title.className =
+    "work-item-title";
 
-        title.className =
-            "work-item-title";
+
+/* =========================================
+   タイトルを配列ごとに改行して表示
+========================================= */
+
+work.title.forEach((line, index) => {
+
+    title.appendChild(
+        document.createTextNode(line)
+    );
+
+
+    /* 最後の行以外に改行を入れる */
+
+    if (index < work.title.length - 1) {
+
+        title.appendChild(
+            document.createElement("br")
+        );
+
+    }
+
+});
 
 
 const link =
