@@ -307,6 +307,37 @@ body::before {
 
     cursor: pointer;
 }
+
+/* =========================================
+   WORK カテゴリーボタン
+   ホバー時に暗くする
+========================================= */
+
+.all-bottom,
+.product-bottom,
+.web-bottom,
+.event-bottom,
+.illust-bottom {
+
+    transition:
+        filter 0.2s ease;
+
+}
+
+
+/* =========================================
+   カーソルを合わせたとき
+========================================= */
+
+.all-bottom:hover,
+.product-bottom:hover,
+.web-bottom:hover,
+.event-bottom:hover,
+.illust-bottom:hover {
+
+    filter: brightness(0.65);
+
+}
 /* =========================================
    作品一覧エリア
 ========================================= */
