@@ -83,11 +83,7 @@ window.addEventListener(
 
 const works = [
 
-   {
-    title: [
-        "ペーパーサミット",
-        "ディスプレイデザイン"
-    ],
+    title: "ペーパーサミット<br>ディスプレイデザイン",
     image: "../images/work-test01.png",
     category: "event",
     link: "works/work01/index.html"
@@ -104,7 +100,7 @@ const works = [
         title: "作品03",
         image: "../images/work-test03.png",
         category: "web",
-        llink: "works/work03/index.html"
+        link: "works/work03/index.html"
     },
 
     {
@@ -232,27 +228,12 @@ title.className =
 
 
 /* =========================================
-   タイトルを配列ごとに改行して表示
+   タイトル表示
+   <br> を改行として認識
 ========================================= */
 
-work.title.forEach((line, index) => {
-
-    title.appendChild(
-        document.createTextNode(line)
-    );
-
-
-    /* 最後の行以外に改行を入れる */
-
-    if (index < work.title.length - 1) {
-
-        title.appendChild(
-            document.createElement("br")
-        );
-
-    }
-
-});
+title.innerHTML =
+    work.title;
 
 
 const link =
