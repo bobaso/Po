@@ -398,3 +398,30 @@ body::before {
     line-height: 1.8;
 
 }
+/* =========================================
+   作品画像 ホバーズーム
+========================================= */
+
+.work-item-image {
+
+    display: block;
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   カーソルを合わせたとき
+========================================= */
+
+.work-item-link:hover .work-item-image {
+
+    transform: scale(1.08);
+
+}
