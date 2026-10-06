@@ -81,12 +81,14 @@ window.addEventListener(
    作品データ
 ========================================= */
 
+
 const works = [
 
-    title: "ペーパーサミット<br>ディスプレイデザイン",
-    image: "../images/work-test01.png",
-    category: "event",
-    link: "works/work01/index.html"
+    {
+        title: "ペーパーサミット<br>ディスプレイデザイン",
+        image: "../images/work-test01.png",
+        category: "event",
+        link: "works/work01/index.html"
     },
 
     {
@@ -213,49 +215,58 @@ function displayWorks(workData) {
         const image =
             document.createElement("img");
 
-        image.src = work.image;
-        image.alt = work.title;
+        image.src =
+            work.image;
+
+        image.alt =
+            work.title.replace(/<br>/g, " ");
 
         image.className =
             "work-item-image";
 
 
-const title =
-    document.createElement("div");
+        /* =========================================
+           作品タイトル
+           <br>を改行として認識
+        ========================================= */
 
-title.className =
-    "work-item-title";
+        const title =
+            document.createElement("div");
 
+        title.className =
+            "work-item-title";
 
-/* =========================================
-   タイトル表示
-   <br> を改行として認識
-========================================= */
-
-title.innerHTML =
-    work.title;
-
-
-const link =
-    document.createElement("a");
-
-link.href = work.link;
-
-link.className =
-    "work-item-link";
+        title.innerHTML =
+            work.title;
 
 
-link.appendChild(image);
+        /* =========================================
+           リンク
+        ========================================= */
+
+        const link =
+            document.createElement("a");
+
+        link.href =
+            work.link;
+
+        link.className =
+            "work-item-link";
 
 
-workItem.appendChild(link);
-workItem.appendChild(title);
+        link.appendChild(image);
 
-worksList.appendChild(workItem);
+
+        workItem.appendChild(link);
+
+        workItem.appendChild(title);
+
+        worksList.appendChild(workItem);
 
     });
 
 }
+
 
 displayWorks(works);
 /* =========================================
