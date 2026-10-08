@@ -6,8 +6,8 @@
 .work01-image01 {
     position: absolute;
 
-    left: 43px;
-    top: 0px;
+    left: 40px;
+    top: 40px;
 
     display: block;
 }
@@ -43,6 +43,6 @@
 .work01-body {
     position: absolute;
 
-    left: 42px;
+    left: 40px;
     top: 513px;
 }
