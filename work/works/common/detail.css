@@ -271,3 +271,26 @@ body::before {
 
     overflow: visible;
 }
+
+/* =========================================
+   作品詳細
+   大見出し 共通スタイル
+========================================= */
+
+.work01-heading-large {
+    color: #ffffff;
+
+    font-family:
+        "ＭＳ ゴシック",
+        sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+    word-break: break-word;
+
+    overflow: visible;
+}
