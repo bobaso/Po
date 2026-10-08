@@ -249,3 +249,25 @@ body::before {
 
     padding: 30px;
 }
+/* =========================================
+   作品詳細
+   本文 共通スタイル
+========================================= */
+
+.work01-body {
+    color: #ffffff;
+
+    font-family:
+        "ＭＳ ゴシック",
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+    word-break: break-word;
+
+    overflow: visible;
+}
