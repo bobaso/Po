@@ -213,7 +213,7 @@ requestAnimationFrame(function () {
 
             await typingAnimation(
                 headingSmall,
-                50
+                20
             );
 
         }
@@ -225,7 +225,7 @@ requestAnimationFrame(function () {
 
             await typingAnimation(
                 headingLarge,
-                50
+                20
             );
 
         }
@@ -237,7 +237,7 @@ requestAnimationFrame(function () {
 
             await typingAnimation(
                 body,
-                50
+                20
             );
 
         }
