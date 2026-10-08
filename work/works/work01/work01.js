@@ -30,6 +30,11 @@ const workData = {
     src="../images/work01-02.png"
     alt=""
     class="work01-image02">
+
+    <div class="work01-heading-small typing-text">
+    ISSUE/RESEARCH
+</div>
+
     `
 
 };
