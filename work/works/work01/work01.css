@@ -58,7 +58,18 @@
 
 .work01-body {
     position: absolute;
+   
+/* =========================================
+   work01
+   ISSUE / RESEARCH
+========================================= */
 
+.work01-heading-small-research {
+    position: absolute;
+
+    left: 685px;
+    top: 707px;
+}
     left: 40px;
     top: 513px;
 }
