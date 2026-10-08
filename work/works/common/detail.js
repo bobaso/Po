@@ -227,7 +227,7 @@ requestAnimationFrame(function () {
 
             await typingAnimation(
                 element,
-                20
+                15
             );
 
         }
