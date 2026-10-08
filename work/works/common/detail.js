@@ -140,11 +140,6 @@ function typingAnimation(element, speed = 50) {
         const originalHTML =
             element.innerHTML;
 
-        /* 最初から文字を非表示 */
-
-        element.style.visibility =
-            "hidden";
-
         /* 文字を空にする */
 
         element.innerHTML = "";
@@ -205,56 +200,21 @@ requestAnimationFrame(function () {
 
     requestAnimationFrame(async function () {
 
-        const headingSmall =
-            document.querySelector(
-                ".work01-heading-small"
-            );
+const typingTexts =
+    document.querySelectorAll(
+        ".typing-text"
+    );
 
-        const headingLarge =
-            document.querySelector(
-                ".work01-heading-large"
-            );
+/* 上から順番にタイピング */
 
-        const body =
-            document.querySelector(
-                ".work01-body"
-            );
+for (const element of typingTexts) {
 
+    await typingAnimation(
+        element,
+        20
+    );
 
-        /* 小見出し */
-
-        if (headingSmall) {
-
-            await typingAnimation(
-                headingSmall,
-                20
-            );
-
-        }
-
-
-        /* 大見出し */
-
-        if (headingLarge) {
-
-            await typingAnimation(
-                headingLarge,
-                20
-            );
-
-        }
-
-
-        /* 本文 */
-
-        if (body) {
-
-            await typingAnimation(
-                body,
-                20
-            );
-
-        }
+}
 
     });
 
