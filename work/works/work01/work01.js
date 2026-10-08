@@ -20,7 +20,11 @@ const workData = {
             EQUIPMENT.大型プリンター<br>
             MATERIAL.プラダン、スチレンボード
         </div>
-
+        
+       <div class="work01-body">
+           ペーパーサミット2026に出展し、展示用什器の設計製作および<br>
+           展示物等の総合デザインを担当しました。
+      </div>
     `
 
 };
