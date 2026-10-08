@@ -240,20 +240,18 @@ body::before {
     z-index: 10;
 }
 /* =========================================
-   作品コンテンツ内側余白
-   上下左右 30px
+   作品コンテンツ
+   座標基準：1280 × 650
 ========================================= */
 
 .work-content {
     position: relative;
 
     width: 1280px;
-    min-height: 1000px;
+    height: 1200px;
 
-    margin-left: -6px;
-    margin-top: -54px;
+    margin: 0;
+    padding: 0;
 
     box-sizing: border-box;
-
-    padding: 0;
 }
