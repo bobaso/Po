@@ -14,6 +14,13 @@ const workData = {
             ペーパーサミット ディスプレイデザイン
         </div>
 
+        <div class="work01-heading-small">
+            DATA.2026/04/02-2026/04/30<br>
+            CATEGORY.展示設計デザイン<br>
+            EQUIPMENT.大型プリンター<br>
+            MATERIAL.プラダン、スチレンボード
+        </div>
+
     `
 
 };
