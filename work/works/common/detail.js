@@ -194,27 +194,43 @@ function typingAnimation(element, speed = 50) {
 
 /* =========================================
    テキストを上から順番に開始
+   画面上の位置が上のものから順番に表示
 ========================================= */
 
 requestAnimationFrame(function () {
 
     requestAnimationFrame(async function () {
 
-const typingTexts =
-    document.querySelectorAll(
-        ".typing-text"
-    );
+        const typingTexts =
+            Array.from(
+                document.querySelectorAll(
+                    ".typing-text"
+                )
+            );
 
-/* 上から順番にタイピング */
 
-for (const element of typingTexts) {
+        /* Y座標が上のものから並べ替え */
 
-    await typingAnimation(
-        element,
-        20
-    );
+        typingTexts.sort(function (a, b) {
 
-}
+            return (
+                a.getBoundingClientRect().top -
+                b.getBoundingClientRect().top
+            );
+
+        });
+
+
+        /* 上から順番にタイピング */
+
+        for (const element of typingTexts) {
+
+            await typingAnimation(
+                element,
+                20
+            );
+
+        }
 
     });
 
