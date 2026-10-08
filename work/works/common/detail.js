@@ -140,14 +140,28 @@ function typingAnimation(element, speed = 50) {
         const originalHTML =
             element.innerHTML;
 
+        /* 最初から文字を非表示 */
+
+        element.style.visibility =
+            "hidden";
+
+        /* 一度だけ中身を保存して空にする */
+
         element.innerHTML = "";
+
+        /* タイピング開始 */
+
+        element.style.visibility =
+            "visible";
 
         let index = 0;
 
         function typeNext() {
 
             if (index >= originalHTML.length) {
+
                 resolve();
+
                 return;
             }
 
@@ -181,67 +195,6 @@ function typingAnimation(element, speed = 50) {
 
     });
 }
-
-
-/* =========================================
-   テキストを上から順番に開始
-========================================= */
-
-requestAnimationFrame(function () {
-
-    requestAnimationFrame(async function () {
-
-        const headingSmall =
-            document.querySelector(
-                ".work01-heading-small"
-            );
-
-        const headingLarge =
-            document.querySelector(
-                ".work01-heading-large"
-            );
-
-        const body =
-            document.querySelector(
-                ".work01-body"
-            );
-
-
-        /* 小見出し */
-
-        if (headingSmall) {
-
-            await typingAnimation(
-                headingSmall,
-                20
-            );
-
-        }
-
-
-        /* 大見出し */
-
-        if (headingLarge) {
-
-            await typingAnimation(
-                headingLarge,
-                20
-            );
-
-        }
-
-
-        /* 本文 */
-
-        if (body) {
-
-            await typingAnimation(
-                body,
-                20
-            );
-
-        }
-
     });
 
 });
