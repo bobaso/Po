@@ -130,61 +130,75 @@ requestAnimationFrame(function () {
 });
 /* =========================================
    テキスト タイピングアニメーション
+   上から順番に表示
 ========================================= */
 
 function typingAnimation(element, speed = 50) {
 
-    const originalHTML = element.innerHTML;
+    return new Promise(function (resolve) {
 
-    element.innerHTML = "";
+        const originalHTML =
+            element.innerHTML;
 
-    let index = 0;
+        element.innerHTML = "";
 
-    function typeNext() {
+        let index = 0;
 
-        if (index >= originalHTML.length) {
-            element.innerHTML = originalHTML;
-            return;
+        function typeNext() {
+
+            if (index >= originalHTML.length) {
+                resolve();
+                return;
+            }
+
+            if (
+                originalHTML.substring(
+                    index,
+                    index + 4
+                ) === "<br>"
+            ) {
+
+                element.innerHTML += "<br>";
+
+                index += 4;
+
+            } else {
+
+                element.innerHTML +=
+                    originalHTML.charAt(index);
+
+                index++;
+
+            }
+
+            setTimeout(
+                typeNext,
+                speed
+            );
         }
 
-        if (originalHTML.substring(index, index + 4) === "<br>") {
+        typeNext();
 
-            element.innerHTML += "<br>";
-
-            index += 4;
-
-        } else {
-
-            element.innerHTML +=
-                originalHTML.charAt(index);
-
-            index++;
-
-        }
-
-        setTimeout(typeNext, speed);
-    }
-
-    typeNext();
+    });
 }
 
 
 /* =========================================
-   3種類のテキストを順番に開始
+   テキストを上から順番に開始
 ========================================= */
 
 requestAnimationFrame(function () {
 
-    requestAnimationFrame(function () {
-
-        const headingLarge =
-            document.querySelector(
-                ".work01-heading-large"
-            );
+    requestAnimationFrame(async function () {
 
         const headingSmall =
             document.querySelector(
                 ".work01-heading-small"
+            );
+
+        const headingLarge =
+            document.querySelector(
+                ".work01-heading-large"
             );
 
         const body =
@@ -193,25 +207,39 @@ requestAnimationFrame(function () {
             );
 
 
-        if (headingLarge) {
-            typingAnimation(
-                headingLarge,
-                50
-            );
-        }
+        /* 小見出し */
 
         if (headingSmall) {
-            typingAnimation(
+
+            await typingAnimation(
                 headingSmall,
                 50
             );
+
         }
 
+
+        /* 大見出し */
+
+        if (headingLarge) {
+
+            await typingAnimation(
+                headingLarge,
+                50
+            );
+
+        }
+
+
+        /* 本文 */
+
         if (body) {
-            typingAnimation(
+
+            await typingAnimation(
                 body,
                 50
             );
+
         }
 
     });
