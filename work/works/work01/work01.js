@@ -5,9 +5,10 @@ const workData = {
 
     content: `
 
-        <p>
-            作品01の内容をここに入れます。
-        </p>
+        <img
+            src="../images/work01-01.png"
+            alt=""
+            class="work01-image01">
 
     `
 
