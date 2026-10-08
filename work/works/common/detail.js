@@ -145,7 +145,7 @@ function typingAnimation(element, speed = 50) {
         element.style.visibility =
             "hidden";
 
-        /* 一度だけ中身を保存して空にする */
+        /* 文字を空にする */
 
         element.innerHTML = "";
 
@@ -195,6 +195,67 @@ function typingAnimation(element, speed = 50) {
 
     });
 }
+
+
+/* =========================================
+   テキストを上から順番に開始
+========================================= */
+
+requestAnimationFrame(function () {
+
+    requestAnimationFrame(async function () {
+
+        const headingSmall =
+            document.querySelector(
+                ".work01-heading-small"
+            );
+
+        const headingLarge =
+            document.querySelector(
+                ".work01-heading-large"
+            );
+
+        const body =
+            document.querySelector(
+                ".work01-body"
+            );
+
+
+        /* 小見出し */
+
+        if (headingSmall) {
+
+            await typingAnimation(
+                headingSmall,
+                20
+            );
+
+        }
+
+
+        /* 大見出し */
+
+        if (headingLarge) {
+
+            await typingAnimation(
+                headingLarge,
+                20
+            );
+
+        }
+
+
+        /* 本文 */
+
+        if (body) {
+
+            await typingAnimation(
+                body,
+                20
+            );
+
+        }
+
     });
 
 });
