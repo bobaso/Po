@@ -58,7 +58,11 @@
 
 .work01-body {
     position: absolute;
-   
+
+    left: 40px;
+    top: 513px;
+}
+
 /* =========================================
    work01
    ISSUE / RESEARCH
@@ -69,7 +73,4 @@
 
     left: 685px;
     top: 707px;
-}
-    left: 40px;
-    top: 513px;
 }
