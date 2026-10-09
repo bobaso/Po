@@ -38,6 +38,13 @@ const workData = {
 <div class="work01-body work01-body-research">
     課題とリサーチ
 </div>
+
+<div class="work01-body work01-body-description">
+    ペーパーサミットとは、全国の印刷会社が製作した
+    <br>オリジナル商品やアートなどを一般の人に触れてもらうことで、
+    <br>より印刷の魅力を知ってもらうというコンセプトのイベントです。
+</div>
+
     `
 
 };
