@@ -35,6 +35,9 @@ const workData = {
     ISSUE/RESEARCH
 </div>
 
+<div class="work01-body-research">
+    課題とリサーチ
+</div>
     `
 
 };
