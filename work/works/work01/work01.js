@@ -31,7 +31,7 @@ const workData = {
     alt=""
     class="work01-image02">
 
-    <div class="work01-heading-small typing-text">
+    <div class="work01-heading-small work01-heading-small-research typing-text">
     ISSUE/RESEARCH
 </div>
 
