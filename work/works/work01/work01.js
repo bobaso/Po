@@ -61,3 +61,17 @@ const workData = {
     `
 
 };
+
+
+// Y=640px付近までスクロールしたら画像アニメーションを開始
+const workScrollArea = document.querySelector(".work-scroll-area");
+
+if (workScrollArea) {
+    workScrollArea.addEventListener("scroll", () => {
+        if (workScrollArea.scrollTop >= 640) {
+            document.querySelector(".work01-image02")?.classList.add("is-open");
+            document.querySelector(".work01-image03")?.classList.add("is-open");
+            document.querySelector(".work01-image04")?.classList.add("is-open");
+        }
+    }, { once: true });
+}
