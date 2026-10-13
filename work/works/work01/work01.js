@@ -72,6 +72,10 @@ const workData = {
     PROCESS
 </div>
 
+<div class="work01-body work01-body-process typing-text">
+    製作過程
+</div>
+
     `
 
 };
