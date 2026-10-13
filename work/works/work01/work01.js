@@ -26,10 +26,23 @@ const workData = {
            展示物等の総合デザインを担当しました。
       </div>
 
-      <img
-    src="../images/work01-02.png"
-    alt=""
-    class="work01-image02">
+    <!-- 画像02 -->
+    <img
+        src="../images/work01-02.png"
+        alt=""
+        class="work01-image02">
+
+    <!-- 画像03-->
+    <img
+        src="../images/work01-03.png"
+        alt=""
+        class="work01-image03">
+
+    <!-- 画像04 -->
+    <img
+        src="../images/work01-04.png"
+        alt=""
+        class="work01-image04">
 
     <div class="work01-heading-small work01-heading-small-research typing-text">
     ISSUE/RESEARCH
