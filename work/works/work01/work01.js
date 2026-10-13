@@ -68,6 +68,9 @@ const workData = {
  <br>より多くの来場者に人気商品やNFCなどに興味を持ってもらえる<br>ようにすることを目標に製作しました。
 </div>
 
+<div class="work01-heading-small work01-heading-small-process typing-text">
+    PROCESS
+</div>
 
     `
 
