@@ -202,44 +202,60 @@ function typingAnimation(element, speed = 50) {
 
 
 /* =========================================
-   テキストを上から順番に開始
-   画面上の位置が上のものから順番に表示
+   テキスト タイピングアニメーション
+   各文章ごとに独立して表示
+========================================= */
+
+function typingAnimation(element, speed = 15) {
+
+    return new Promise(function (resolve) {
+
+        const originalHTML = element.innerHTML;
+
+        element.innerHTML = "";
+        element.style.visibility = "visible";
+
+        let index = 0;
+
+        function typeNext() {
+
+            if (index >= originalHTML.length) {
+                resolve();
+                return;
+            }
+
+            if (
+                originalHTML.substring(index, index + 4) === "<br>"
+            ) {
+                element.innerHTML += "<br>";
+                index += 4;
+            } else {
+                element.innerHTML += originalHTML.charAt(index);
+                index++;
+            }
+
+            setTimeout(typeNext, speed);
+        }
+
+        typeNext();
+    });
+}
+
+
+/* =========================================
+   各文章のタイピングを個別に開始
 ========================================= */
 
 requestAnimationFrame(function () {
 
-    requestAnimationFrame(async function () {
+    const typingTexts = document.querySelectorAll(".typing-text");
 
-        const typingTexts =
-            Array.from(
-                document.querySelectorAll(
-                    ".typing-text"
-                )
-            );
+    typingTexts.forEach(function (element, index) {
 
-
-        /* Y座標が上のものから並べ替え */
-
-        typingTexts.sort(function (a, b) {
-
-            return (
-                a.getBoundingClientRect().top -
-                b.getBoundingClientRect().top
-            );
-
-        });
-
-
-        /* 上から順番にタイピング */
-
-        for (const element of typingTexts) {
-
-            await typingAnimation(
-                element,
-                15
-            );
-
-        }
+        /* 文章ごとに開始時間をずらす */
+        setTimeout(function () {
+            typingAnimation(element, 15);
+        }, index * 300);
 
     });
 
