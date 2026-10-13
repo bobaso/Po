@@ -58,11 +58,17 @@ const workData = {
     <br>より印刷の魅力を知ってもらうというコンセプトのイベントです。
 </div>
 
-          <div class="work01-body work01-body-purpose typing-text">
+<div class="work01-body work01-body-purpose typing-text">
               本イベントの企業としての目的は、
-              <br>NFCを一般の人により多く知ってもらう事でした。
-          </div>
-          
+     <br>NFCを一般の人により多く知ってもらう事でした。
+ </div>
+
+<div class="work01-body work01-body-goal typing-text">
+              そこで目を引くようなディスプレイを製作して、
+ <br>より多くの来場者に人気商品やNFCなどに興味を持ってもらえるようにすることを目標に製作しました。
+</div>
+
+
     `
 
 };
