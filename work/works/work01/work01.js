@@ -94,7 +94,7 @@ function initWork01ImageAnimation() {
 
         if (
             headingRect.bottom > scrollRect.top &&
-            headingRect.top < scrollRect.bottom
+            headingRect.top < scrollRect.top + 100
         ) {
 
             animationStarted = true;
