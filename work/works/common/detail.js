@@ -71,6 +71,16 @@ workDetail.innerHTML = `
 ========================================= */
 const visualArea =
     document.querySelector(".visual-area");
+/* =========================================
+   work01専用アニメーションの初期化
+========================================= */
+
+if (
+    typeof initWork01ImageAnimation === "function"
+) {
+    initWork01ImageAnimation();
+}
+
 
 const canvasWidth = 1280;
 const canvasHeight = 650;
