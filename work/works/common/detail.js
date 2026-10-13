@@ -69,7 +69,39 @@ workDetail.innerHTML = `
 /* =========================================
    基準キャンバス
 ========================================= */
+/* =========================================
+   ISSUE/RESEARCH表示時に画像02〜04を展開
+========================================= */
 
+const workScrollArea = document.querySelector(".work-scroll-area");
+const researchHeading = document.querySelector(".work01-heading-small-research");
+
+if (workScrollArea && researchHeading) {
+    let animationStarted = false;
+
+    function checkResearchHeading() {
+        if (animationStarted) return;
+
+        const headingRect = researchHeading.getBoundingClientRect();
+        const scrollRect = workScrollArea.getBoundingClientRect();
+
+        if (
+            headingRect.bottom > scrollRect.top &&
+            headingRect.top < scrollRect.bottom
+        ) {
+            animationStarted = true;
+
+            document.querySelector(".work01-image02")?.classList.add("is-open");
+            document.querySelector(".work01-image03")?.classList.add("is-open");
+            document.querySelector(".work01-image04")?.classList.add("is-open");
+
+            workScrollArea.removeEventListener("scroll", checkResearchHeading);
+        }
+    }
+
+    workScrollArea.addEventListener("scroll", checkResearchHeading);
+    requestAnimationFrame(checkResearchHeading);
+}
 const visualArea =
     document.querySelector(".visual-area");
 
