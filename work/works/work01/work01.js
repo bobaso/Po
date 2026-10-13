@@ -65,7 +65,7 @@ const workData = {
 
 <div class="work01-body work01-body-goal typing-text">
               そこで目を引くようなディスプレイを製作して、
- <br>より多くの来場者に人気商品やNFCなどに興味を持ってもらえるようにすることを目標に製作しました。
+ <br>より多くの来場者に人気商品やNFCなどに興味を持ってもらえる<br>ようにすることを目標に製作しました。
 </div>
 
 
