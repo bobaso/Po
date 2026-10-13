@@ -63,10 +63,11 @@ const workData = {
 };
 
 
-// ISSUE/RESEARCHの文字が見え始めたら画像アニメーションを開始
+// ISSUE/RESEARCHがスクロール領域内に見え始めたら画像を展開
+const workScrollArea = document.querySelector(".work-scroll-area");
 const researchHeading = document.querySelector(".work01-heading-small-research");
 
-if (researchHeading) {
+if (workScrollArea && researchHeading) {
     const researchObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -78,6 +79,7 @@ if (researchHeading) {
             }
         });
     }, {
+        root: workScrollArea,
         threshold: 0
     });
 
