@@ -176,6 +176,18 @@ PROCESS
     top: 1368px;
 }
 
+/* =========================================
+長方形オブジェクト
+========================================= */
+.work01-process-rectangle {
+    position: absolute;
+    left: 121px;
+    top: 1433px;
+    width: 1010px;
+    height: 163px;
+    background-color: #3cc8d7;
+}
+
 
 
 /* =========================================
