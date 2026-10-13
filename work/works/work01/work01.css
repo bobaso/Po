@@ -175,7 +175,7 @@
 .work01-image02.is-open,
 .work01-image03.is-open,
 .work01-image04.is-open {
-    animation: window-open 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: window-open 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* 画像03：少し遅れて展開 */
