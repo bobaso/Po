@@ -136,3 +136,52 @@
     left: 633px;
     top: 796px;
 }
+
+
+
+/* =========================================
+   work01
+   画像02〜04 ウィンドウ展開アニメーション
+========================================= */
+
+/* アニメーション開始前 */
+.work01-image02,
+.work01-image03,
+.work01-image04 {
+    clip-path: inset(49.5% 0 49.5% 0);
+    opacity: 0;
+    animation: window-open 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transform-origin: center center;
+}
+
+/* 画像02：最初に展開 */
+.work01-image02 {
+    animation-delay: 0.3s;
+}
+
+/* 画像03：少し遅れて展開 */
+.work01-image03 {
+    animation-delay: 0.75s;
+}
+
+/* 画像04：最後に展開 */
+.work01-image04 {
+    animation-delay: 1.2s;
+}
+
+/* 中央の細い線から上下に開く */
+@keyframes window-open {
+    0% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
