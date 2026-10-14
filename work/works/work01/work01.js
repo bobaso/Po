@@ -105,6 +105,11 @@ const workData = {
     空間全体をイメージする為<br>
     Adobe Illustratorで見取り図を書く
 </div>
+
+<img src="../images/work01-07.png" alt="" class="work01-image07">
+
+
+
     `
 };
 
