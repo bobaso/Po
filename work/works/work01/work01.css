@@ -191,14 +191,14 @@ PROCESS
 .work01-process-number {
     position: absolute;
     left: 121;
-    top: 1400px;
+    top: 9px;
     z-index: 2;
 }
 /* 製作過程 01：本文 */
 .work01-process-description {
     position: absolute;
     left: 37px;
-    top: 97px;
+    top: 90px;
     z-index: 2;
    text-align: center;
 }
