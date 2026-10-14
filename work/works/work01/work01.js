@@ -59,13 +59,14 @@ const workData = {
 </div>
 
 <div class="work01-body work01-body-purpose typing-text">
-              本イベントの企業としての目的は、
-     <br>NFCを一般の人により多く知ってもらう事でした。
+    本イベントの企業としての目的は、<br>
+    また一般的には認知度が低く使い道などが知られていない<br>
+    NFCという製品をより多くの人に知ってもらう事でした。
  </div>
 
 <div class="work01-body work01-body-goal typing-text">
               そこで目を引くようなディスプレイを製作して、
- <br>より多くの来場者に人気商品やNFCなどに興味を持ってもらえる<br>ようにすることを目標に製作しました。
+ <br>より多くの来場者に人気ノベルティ商品やNFCの技術などに興味を持ってもらえる<br>ようにすることを目標に製作しました。
 </div>
 
 <div class="work01-heading-small work01-heading-small-process typing-text">
