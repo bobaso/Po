@@ -25,7 +25,16 @@ workDetail.innerHTML = `
 
              <div class="work-content">
 
-            ${workData.content}
+                ${workData.content}
+
+                <!-- Back to list -->
+                <div class="back-to-list-area">
+                    <a
+                        href="https://bobaso.github.io/Po/work/work.html"
+                        class="work01-heading-small back-to-list">
+                        Back to list
+                    </a>
+                </div>
 
              </div>
 
