@@ -80,9 +80,12 @@ const workData = {
 
     <div class="work01-heading-large work01-process-number">01</div>
 
-    <div class="work01-body work01-process-description typing-text">
-        空間全体をイメージする為<br>Adobe Illustratorで見取り図を書き<br>デザインを考える。
-    </div>
+<div class="work01-heading-small work01-process-description typing-text">
+    空間全体をイメージする為<br>
+    Adobe Illustratorで見取り図を書き<br>
+    デザインを考える。
+</div>
+
 
     <img src="../images/work01-05.png" alt="" class="work01-image05">
 
