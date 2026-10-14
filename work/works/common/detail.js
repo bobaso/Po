@@ -89,6 +89,7 @@ const backToListArea =
    Back to list の自動配置
 ========================================= */
 
+
 function updateBackToListPosition() {
 
     if (
@@ -101,9 +102,10 @@ function updateBackToListPosition() {
 
     let maxBottom = 0;
 
-    const scrollRect =
-        scrollArea.getBoundingClientRect();
-
+    /*
+     * work-content 内の各要素について、
+     * スクロール領域の先頭からの位置を調べる
+     */
     const elements =
         workContent.querySelectorAll("*");
 
@@ -112,10 +114,29 @@ function updateBackToListPosition() {
         const rect =
             element.getBoundingClientRect();
 
+        const contentTop =
+            element.offsetTop;
+
+        /*
+         * offsetTop の基準となる親要素をたどり、
+         * work-content からの位置を合計する
+         */
+        let top = 0;
+        let current = element;
+
+        while (
+            current &&
+            current !== workContent
+        ) {
+            top += current.offsetTop;
+            current = current.offsetParent;
+        }
+
+        /*
+         * 画面上での実際の高さを加算する
+         */
         const bottom =
-            rect.bottom -
-            scrollRect.top +
-            scrollArea.scrollTop;
+            top + rect.height;
 
         if (bottom > maxBottom) {
             maxBottom = bottom;
@@ -123,14 +144,21 @@ function updateBackToListPosition() {
 
     });
 
+    /*
+     * コンテンツ末尾から30px下に配置
+     */
     const gap = 30;
 
     backToListArea.style.position = "absolute";
     backToListArea.style.left = "0";
     backToListArea.style.right = "0";
+
     backToListArea.style.top =
         (maxBottom + gap) + "px";
 
+    /*
+     * スクロールできる領域の高さを確保
+     */
     workContent.style.minHeight =
         (
             maxBottom +
@@ -139,6 +167,7 @@ function updateBackToListPosition() {
             30
         ) + "px";
 }
+
 
 
 /* =========================================
