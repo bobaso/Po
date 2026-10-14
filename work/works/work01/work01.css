@@ -163,7 +163,7 @@ PROCESS
 ========================================= */
 .work01-heading-small-process {
     position: absolute;
-    left: 526px;
+    left: 550px;
     top: 1319px;
 }
 
@@ -176,9 +176,7 @@ PROCESS
     top: 1368px;
 }
 
-/* =========================================
-長方形オブジェクト
-========================================= */
+/* 長方形 */
 .work01-process-rectangle {
     position: absolute;
     left: 121px;
@@ -186,6 +184,17 @@ PROCESS
     width: 1010px;
     height: 163px;
     background-color: #3cc8d7;
+    z-index: 1;
+}
+
+/* 大見出し 01 */
+.work01-process-number {
+    position: absolute;
+    left: 0;
+    top: -33px;
+    z-index: 2;
+    font-size: 60px;
+    color: #fff;
 }
 
 
