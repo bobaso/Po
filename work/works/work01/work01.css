@@ -248,7 +248,15 @@ PROCESS
     height: auto;
     z-index: 2;
 }
-
+/* 製作過程02の小見出し */
+.work01-process-description02 {
+    position: absolute;
+    left: 37px;
+    top: 97px;
+    width: 900px;
+    text-align: center;
+    z-index: 2;
+}
 
 
 
