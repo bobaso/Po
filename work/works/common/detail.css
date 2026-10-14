@@ -324,6 +324,54 @@ body::before {
     overflow: visible;
 }
 /* =========================================
+   Back to list
+   全作品ページ共通
+========================================= */
+
+.back-to-list-area {
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    /* 文字の上に30pxの余白 */
+    padding-top: 30px;
+
+    /* 文字の下に30pxの余白 */
+    padding-bottom: 30px;
+
+    text-align: center;
+}
+
+.back-to-list {
+    display: inline-block;
+
+    position: static;
+
+    color: #ffffff;
+
+    font-family:
+        "ＭＳ ゴシック",
+        sans-serif;
+
+    font-size: 27px;
+
+    line-height: 1.8;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+/* マウスを合わせたとき */
+.back-to-list:hover {
+    opacity: 0.7;
+}
+
+/* =========================================
    タイピングアニメーション
    初期状態
 ========================================= */
