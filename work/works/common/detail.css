@@ -159,9 +159,15 @@ body::before {
     z-index: 5;
 }
 
+
 /* =========================================
    WORK スクロールバー
+   作品一覧ページと同じ色
 ========================================= */
+
+.work-scroll-area {
+    scrollbar-color: #3cc8d7 transparent;
+}
 
 .work-scroll-area::-webkit-scrollbar {
     width: 31px;
@@ -172,7 +178,7 @@ body::before {
 }
 
 .work-scroll-area::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5);
+    background: #3cc8d7;
     border-radius: 0;
 }
 
