@@ -94,21 +94,35 @@ const workData = {
 <img src="../images/work01-11.png" alt="" class="work01-image11">
    
         
+
 <!-- 製作過程02の親要素 -->
 <div class="work01-process-rectangle02">
 
-    <img src="../images/work01-08.png" alt="" class="work01-process-number02">
+    <!-- 番号画像 -->
+    <img
+        src="../images/work01-08.png"
+        alt=""
+        class="work01-process-number02">
+
+    <!-- 説明文 -->
+    <div class="work01-heading-small work01-process-description02 typing-text">
+        空間全体をイメージする為<br>
+        Adobe Illustratorで見取り図を書く
+    </div>
+
+    <!-- 製作画像 -->
+    <img
+        src="../images/work01-07.png"
+        alt=""
+        class="work01-image07">
 
 </div>
 
- <div class="work01-heading-small work01-process-description02 typing-text">
-    空間全体をイメージする為<br>
-    Adobe Illustratorで見取り図を書く
-</div>
-
-<img src="../images/work01-07.png" alt="" class="work01-image07">
-<img src="../images/work01-11.png" alt="" class="work01-image11-bottom">
-
+<!-- 親要素の外側に配置する画像 -->
+<img
+    src="../images/work01-11.png"
+    alt=""
+    class="work01-image11-bottom">
 
     `
 };
