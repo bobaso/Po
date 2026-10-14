@@ -90,6 +90,8 @@ const workData = {
     <img src="../images/work01-05.png" alt="" class="work01-image05">
 
 </div>
+
+<img src="../images/work01-11.png" alt="" class="work01-image11">
     `
 
 };
