@@ -247,13 +247,16 @@ body::before {
 }
 /* =========================================
    作品コンテンツ内側余白
-   上下左右 30px
 ========================================= */
 
 .work-content {
+    position: relative;
+
     box-sizing: border-box;
 
     padding: 30px;
+
+    width: 100%;
 }
 /* =========================================
    作品詳細
@@ -329,16 +332,18 @@ body::before {
 ========================================= */
 
 .back-to-list-area {
-    position: relative;
+    position: absolute;
 
-    width: 100%;
+    left: 30px;
+    right: 30px;
+
+    top: 0;
+
+    width: auto;
 
     box-sizing: border-box;
 
-    /* 文字の上に30pxの余白 */
     padding-top: 30px;
-
-    /* 文字の下に30pxの余白 */
     padding-bottom: 30px;
 
     text-align: center;
@@ -366,7 +371,6 @@ body::before {
     transition: opacity 0.2s ease;
 }
 
-/* マウスを合わせたとき */
 .back-to-list:hover {
     opacity: 0.7;
 }
