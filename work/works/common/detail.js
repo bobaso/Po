@@ -23,20 +23,24 @@ workDetail.innerHTML = `
                 <!-- スクロールエリア -->
                 <div class="work-scroll-area">
 
-             <div class="work-content">
+<div class="work-content">
 
-                ${workData.content}
+    <div class="work-content-inner">
 
-                <!-- Back to list -->
-                <div class="back-to-list-area">
-                    <a
-                        href="https://bobaso.github.io/Po/work/work.html"
-                        class="work01-heading-small back-to-list">
-                        Back to list
-                    </a>
-                </div>
+        ${workData.content}
 
-             </div>
+    </div>
+
+    <!-- Back to list -->
+    <div class="back-to-list-area">
+        <a
+            href="https://bobaso.github.io/Po/work/work.html"
+            class="back-to-list">
+            Back to list
+        </a>
+    </div>
+
+</div>
 
                 </div>
 
