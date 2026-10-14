@@ -200,6 +200,7 @@ PROCESS
     left: 37px;
     top: 97px;
     z-index: 2;
+   text-align: center;
 }
 /* 製作過程01の画像 */
 .work01-image05 {
