@@ -92,7 +92,7 @@ const works = [
     },
 
     {
-        title: "作品02",
+        title: "恐竜知育パズル",
         image: "../images/work-test02.png",
         category: "product",
         link: "works/work02/index.html"
