@@ -198,7 +198,7 @@ PROCESS
 .work01-process-description {
     position: absolute;
     left: 37px;
-    top: 90px;
+    top: 85px;
     z-index: 2;
    text-align: center;
 }
