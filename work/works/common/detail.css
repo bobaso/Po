@@ -331,23 +331,18 @@ body::before {
    全作品ページ共通
 ========================================= */
 
+
 .back-to-list-area {
     position: absolute;
-
-    left: 30px;
-    right: 30px;
-
-    top: 0;
-
-    width: auto;
-
+    left: 0;
+    right: 0;
+    width: 100%;
     box-sizing: border-box;
-
-    padding-top: 30px;
+    padding-top: 0;
     padding-bottom: 30px;
-
     text-align: center;
 }
+
 
 .back-to-list {
     display: inline-block;
