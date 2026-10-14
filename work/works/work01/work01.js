@@ -134,18 +134,19 @@ const workData = {
         alt=""
         class="work01-image10">
 
-    <!-- 画像 work01-09.png -->
-    <img
-        src="../images/work01-09.png"
-        alt=""
-        class="work01-image09">
-
-</div>
+<!-- 画像 work01-09.png -->
+<img
+    src="../images/work01-09.png"
+    alt=""
+    class="work01-image09">
 
 <!-- 製作過程03の説明文 -->
 <div class="work01-heading-small work01-process-description03 typing-text">
     割図の寸法通りにプラダンを切って製作組み立てます。
 </div>
+
+</div>
+
 
 
     `
@@ -159,6 +160,8 @@ const workData = {
 
 function initWork01ImageAnimation() {
 
+  initWork01ProcessAnimation();
+    
     const workScrollArea =
         document.querySelector(".work-scroll-area");
 
