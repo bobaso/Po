@@ -224,7 +224,9 @@ PROCESS
     height: auto;
     z-index: 2;
 }
-
+/* =========================================
+製作過程02
+========================================= */
 /* 製作過程02の親要素 */
 .work01-process-rectangle02 {
     position: absolute;
@@ -235,6 +237,18 @@ PROCESS
     background-color: #3cc8d7;
     z-index: 1;
 }
+/* 製作過程02の数字画像 */
+.work01-process-number02 {
+    position: absolute;
+    left: 0;
+    top: -33px;
+    width: auto;
+    height: auto;
+    z-index: 2;
+}
+
+
+
 
 
 /* =========================================
