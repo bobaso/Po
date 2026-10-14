@@ -456,3 +456,25 @@ body::before {
     transform: scale(1.08);
 
 }
+
+
+/* =========================================
+   WORK・HOMEボタン共通ホバーアニメーション
+========================================= */
+
+.work-bottom,
+.home-bottom {
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+/* カーソルを合わせたとき */
+.work-bottom:hover,
+.home-bottom:hover {
+    transform:
+        scale(1.05)
+        translateY(-2px);
+
+    filter: brightness(1.15);
+}
