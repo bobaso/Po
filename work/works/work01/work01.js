@@ -211,3 +211,48 @@ function initWork01ImageAnimation() {
 
     requestAnimationFrame(checkResearchHeading);
 }
+
+/* =========================================
+   work01専用
+   製作過程01〜03のフェードイン
+========================================= */
+
+function initWork01ProcessAnimation() {
+
+    const workScrollArea =
+        document.querySelector(".work-scroll-area");
+
+    if (!workScrollArea) return;
+
+    const processRectangles = document.querySelectorAll(
+        ".work01-process-rectangle, " +
+        ".work01-process-rectangle02, " +
+        ".work01-process-rectangle03"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("is-visible");
+
+                    // 一度表示したら再アニメーションしない
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            root: workScrollArea,
+            threshold: 0.15
+        }
+    );
+
+    processRectangles.forEach((rectangle) => {
+        observer.observe(rectangle);
+    });
+}
