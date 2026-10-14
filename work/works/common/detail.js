@@ -25,11 +25,7 @@ workDetail.innerHTML = `
 
 <div class="work-content">
 
-    <div class="work-content-inner">
-
-        ${workData.content}
-
-    </div>
+    ${workData.content}
 
     <!-- Back to list -->
     <div class="back-to-list-area">
@@ -41,7 +37,6 @@ workDetail.innerHTML = `
     </div>
 
 </div>
-
                 </div>
 
 
