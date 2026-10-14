@@ -224,6 +224,19 @@ PROCESS
     height: auto;
     z-index: 2;
 }
+
+/* 製作過程02の親要素 */
+.work01-process-rectangle02 {
+    position: absolute;
+    left: 121px;
+    top: 1812px;
+    width: 1010px;
+    height: 263px;
+    background-color: #3cc8d7;
+    z-index: 1;
+}
+
+
 /* =========================================
    work01
    画像02〜04 ウィンドウ展開アニメーション
