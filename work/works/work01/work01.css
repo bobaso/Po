@@ -190,7 +190,7 @@ PROCESS
 /* 01画像 */
 .work01-process-number {
     position: absolute;
-    left: 2;
+    left: 5;
     top: -33px;
     z-index: 2;
     width: auto;
@@ -224,6 +224,8 @@ PROCESS
     height: auto;
     z-index: 2;
 }
+
+
 /* =========================================
 製作過程02
 ========================================= */
