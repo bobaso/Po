@@ -194,7 +194,13 @@ PROCESS
     top: 1400px;
     z-index: 2;
 }
-
+/* 製作過程 01：本文 */
+.work01-process-description {
+    position: absolute;
+    left: 37px;
+    top: 97px;
+    z-index: 2;
+}
 
 
 /* =========================================
