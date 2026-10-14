@@ -190,11 +190,9 @@ PROCESS
 /* 大見出し 01 */
 .work01-process-number {
     position: absolute;
-    left: 0;
-    top: -33px;
+    left: 121;
+    top: 1400px;
     z-index: 2;
-    font-size: 60px;
-    color: #fff;
 }
 
 
