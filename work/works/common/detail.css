@@ -372,6 +372,26 @@ body::before {
 }
 
 /* =========================================
+   WORK・HOMEボタン共通ホバーアニメーション
+========================================= */
+
+.work-bottom,
+.home-bottom {
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+/* マウスを合わせたとき */
+.work-bottom:hover,
+.home-bottom:hover {
+    transform:
+        scale(1.05)
+        translateY(-2px);
+
+    filter: brightness(1.15);
+}
+/* =========================================
    タイピングアニメーション
    初期状態
 ========================================= */
