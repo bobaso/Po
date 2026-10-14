@@ -142,6 +142,11 @@ const workData = {
 
 </div>
 
+<!-- 製作過程03の説明文 -->
+<div class="work01-heading-small work01-process-description03 typing-text">
+    割図の寸法通りにプラダンを切って製作組み立てます。
+</div>
+
 
     `
 };
