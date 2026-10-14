@@ -191,7 +191,7 @@ PROCESS
 .work01-process-number {
     position: absolute;
     left: 121;
-    top: 0px;
+    top: -33px;
     z-index: 2;
 }
 /* 製作過程 01：本文 */
