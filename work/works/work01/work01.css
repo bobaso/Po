@@ -289,6 +289,26 @@ PROCESS
     z-index: 1;
 }
 
+/*製作過程03の画像10*/
+.work01-image10 {
+    position: absolute;
+    left: 0;
+    top: -33px;
+    width: auto;
+    height: auto;
+    z-index: 2;
+}
+
+/*製作過程03の画像09*/
+.work01-image09 {
+    position: absolute;
+    left: 514px;
+    top: 9px;
+    width: auto;
+    height: auto;
+    z-index: 2;
+}
+
 
 
 
