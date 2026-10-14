@@ -77,10 +77,15 @@ const workData = {
 </div>
 
 <div class="work01-process-rectangle">
+
     <div class="work01-heading-large work01-process-number">01</div>
-</div>
-<div class="work01-body work01-process-description typing-text">
-    空間全体をイメージする為Adobe Illustratorで見取り図を書きデザインを考える。
+
+    <div class="work01-body work01-process-description typing-text">
+        空間全体をイメージする為Adobe Illustratorで見取り図を書きデザインを考える。
+    </div>
+
+    <img src="../images/work01-05.png" alt="" class="work01-image05">
+
 </div>
     `
 
