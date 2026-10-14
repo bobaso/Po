@@ -78,7 +78,7 @@ const workData = {
 
 <div class="work01-process-rectangle">
 
-    <div class="work01-heading-large work01-process-number">01</div>
+<img src="../images/work01-06.png" alt="" class="work01-process-number">
 
 <div class="work01-heading-small work01-process-description typing-text">
     空間全体をイメージする為<br>
