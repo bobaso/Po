@@ -187,13 +187,16 @@ PROCESS
     z-index: 1;
 }
 
-/* 大見出し 01 */
+/* 01画像 */
 .work01-process-number {
     position: absolute;
-    left: 121px;
+    left: 0;
     top: -33px;
     z-index: 2;
+    width: auto;
+    height: auto;
 }
+
 /* 製作過程 01：本文 */
 .work01-process-description {
     position: absolute;
