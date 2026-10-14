@@ -1,3 +1,4 @@
+
 /* =========================================
    共通HTML
 ========================================= */
@@ -6,120 +7,7 @@ const workDetail =
     document.getElementById("work-detail");
 
 workDetail.innerHTML = `
-/* =========================================
-   Back to list
-   作品本文の最下部に自動配置
-========================================= */
 
-function updateBackToListPosition() {
-
-    const workContent =
-        document.querySelector(".work-content");
-
-    const workScrollArea =
-        document.querySelector(".work-scroll-area");
-
-    const backToListArea =
-        document.querySelector(".back-to-list-area");
-
-    if (
-        !workContent ||
-        !workScrollArea ||
-        !backToListArea
-    ) {
-        return;
-    }
-
-    const contentRect =
-        workContent.getBoundingClientRect();
-
-    let maxBottom = 0;
-
-    const elements =
-        workContent.querySelectorAll("*");
-
-    elements.forEach(function (element) {
-
-        // Back to list 自体は計算対象外
-        if (
-            element === backToListArea ||
-            backToListArea.contains(element)
-        ) {
-            return;
-        }
-
-        const rect =
-            element.getBoundingClientRect();
-
-        // 画面上の位置をスクロール前の座標に変換
-        const bottom =
-            rect.bottom -
-            contentRect.top +
-            workScrollArea.scrollTop;
-
-        maxBottom = Math.max(
-            maxBottom,
-            bottom
-        );
-
-    });
-
-    // 最後の作品要素から30px空ける
-    const gap = 30;
-
-    const backTop =
-        maxBottom + gap;
-
-    backToListArea.style.top =
-        backTop + "px";
-
-    // Back to list までスクロールできる高さを確保
-    const requiredHeight =
-        backTop +
-        backToListArea.offsetHeight +
-        30;
-
-    workContent.style.minHeight =
-        requiredHeight + "px";
-}
-
-
-/* =========================================
-   初期表示・画像読み込み後・画面サイズ変更時
-========================================= */
-
-// 初期表示
-requestAnimationFrame(function () {
-    updateBackToListPosition();
-});
-
-// 画像読み込み完了後
-document.querySelectorAll(".work-content img")
-    .forEach(function (img) {
-
-        if (!img.complete) {
-
-            img.addEventListener(
-                "load",
-                updateBackToListPosition,
-                { once: true }
-            );
-
-            img.addEventListener(
-                "error",
-                updateBackToListPosition,
-                { once: true }
-            );
-
-        }
-
-    });
-
-// 画面サイズ変更時
-window.addEventListener(
-    "resize",
-    updateBackToListPosition
-);
     <div class="visual-area">
 
         <section class="main-visual">
@@ -132,50 +20,43 @@ window.addEventListener(
                     alt=""
                     class="works-main-visual">
 
-
                 <!-- スクロールエリア -->
                 <div class="work-scroll-area">
 
-<div class="work-content">
+                    <!-- 作品コンテンツ -->
+                    <div class="work-content">
+                        ${workData.content}
+                    </div>
 
-    ${workData.content}
+                    <!-- Back to list -->
+                    <div class="back-to-list-area">
+                        <a
+                            href="https://bobaso.github.io/Po/work/work.html"
+                            class="back-to-list">
+                            Back to list
+                        </a>
+                    </div>
 
-    <!-- Back to list -->
-    <div class="back-to-list-area">
-        <a
-            href="https://bobaso.github.io/Po/work/work.html"
-            class="back-to-list">
-            Back to list
-        </a>
-    </div>
-
-</div>
                 </div>
-
 
                 <!-- WORK -->
                 <a
                     href="../../work.html"
                     class="work-bottom-link">
-
                     <img
                         src="../../../images/work-bottom.png"
                         alt="WORK"
                         class="work-bottom">
-
                 </a>
-
 
                 <!-- HOME -->
                 <a
                     href="../../../HOME/?skipLoading=1"
                     class="home-bottom-link">
-
                     <img
                         src="../../../images/home-bottom.png"
                         alt="HOME"
                         class="home-bottom">
-
                 </a>
 
             </div>
@@ -190,26 +71,118 @@ window.addEventListener(
 /* =========================================
    基準キャンバス
 ========================================= */
+
 const visualArea =
     document.querySelector(".visual-area");
+
+const scrollArea =
+    document.querySelector(".work-scroll-area");
+
+const workContent =
+    document.querySelector(".work-content");
+
+const backToListArea =
+    document.querySelector(".back-to-list-area");
+
+
+/* =========================================
+   Back to list の自動配置
+========================================= */
+
+function updateBackToListPosition() {
+
+    if (
+        !scrollArea ||
+        !workContent ||
+        !backToListArea
+    ) {
+        return;
+    }
+
+    let maxBottom = 0;
+
+    const scrollRect =
+        scrollArea.getBoundingClientRect();
+
+    const elements =
+        workContent.querySelectorAll("*");
+
+    elements.forEach(function (element) {
+
+        const rect =
+            element.getBoundingClientRect();
+
+        const bottom =
+            rect.bottom -
+            scrollRect.top +
+            scrollArea.scrollTop;
+
+        if (bottom > maxBottom) {
+            maxBottom = bottom;
+        }
+
+    });
+
+    const gap = 30;
+
+    backToListArea.style.position = "absolute";
+    backToListArea.style.left = "0";
+    backToListArea.style.right = "0";
+    backToListArea.style.top =
+        (maxBottom + gap) + "px";
+
+    workContent.style.minHeight =
+        (
+            maxBottom +
+            gap +
+            backToListArea.offsetHeight +
+            30
+        ) + "px";
+}
+
+
+/* =========================================
+   初回配置・画像読み込み後の再計算
+========================================= */
+
+requestAnimationFrame(function () {
+    updateBackToListPosition();
+});
+
+workContent.querySelectorAll("img").forEach(function (img) {
+
+    if (!img.complete) {
+
+        img.addEventListener(
+            "load",
+            updateBackToListPosition
+        );
+
+        img.addEventListener(
+            "error",
+            updateBackToListPosition
+        );
+
+    }
+
+});
+
+
 /* =========================================
    work01専用アニメーションの初期化
 ========================================= */
 
-if (
-    typeof initWork01ImageAnimation === "function"
-) {
+if (typeof initWork01ImageAnimation === "function") {
     initWork01ImageAnimation();
 }
-
-
-const canvasWidth = 1280;
-const canvasHeight = 650;
 
 
 /* =========================================
    画面サイズに合わせて縮小
 ========================================= */
+
+const canvasWidth = 1280;
+const canvasHeight = 650;
 
 function resizeWorkDetail() {
 
@@ -224,11 +197,13 @@ function resizeWorkDetail() {
 
     visualArea.style.transform =
         `translate(-50%, -50%) scale(${scale})`;
+
+    updateBackToListPosition();
 }
 
 
 /* =========================================
-   初期表示
+   初期表示・画面サイズ変更
 ========================================= */
 
 resizeWorkDetail();
@@ -246,85 +221,19 @@ window.addEventListener(
 const mainVisual =
     document.querySelector(".main-visual");
 
-
 requestAnimationFrame(function () {
 
     requestAnimationFrame(function () {
 
-        mainVisual.classList.add(
-            "is-visible"
-        );
+        mainVisual.classList.add("is-visible");
 
     });
 
 });
-/* =========================================
-   テキスト タイピングアニメーション
-   上から順番に表示
-========================================= */
-
-function typingAnimation(element, speed = 50) {
-
-    return new Promise(function (resolve) {
-
-        const originalHTML =
-            element.innerHTML;
-
-        /* 文字を空にする */
-
-        element.innerHTML = "";
-
-        /* タイピング開始 */
-
-        element.style.visibility =
-            "visible";
-
-        let index = 0;
-
-        function typeNext() {
-
-            if (index >= originalHTML.length) {
-
-                resolve();
-
-                return;
-            }
-
-            if (
-                originalHTML.substring(
-                    index,
-                    index + 4
-                ) === "<br>"
-            ) {
-
-                element.innerHTML += "<br>";
-
-                index += 4;
-
-            } else {
-
-                element.innerHTML +=
-                    originalHTML.charAt(index);
-
-                index++;
-
-            }
-
-            setTimeout(
-                typeNext,
-                speed
-            );
-        }
-
-        typeNext();
-
-    });
-}
 
 
 /* =========================================
    テキスト タイピングアニメーション
-   各文章ごとに独立して表示
 ========================================= */
 
 function typingAnimation(element, speed = 15) {
@@ -341,6 +250,7 @@ function typingAnimation(element, speed = 15) {
         function typeNext() {
 
             if (index >= originalHTML.length) {
+                updateBackToListPosition();
                 resolve();
                 return;
             }
@@ -353,6 +263,10 @@ function typingAnimation(element, speed = 15) {
             } else {
                 element.innerHTML += originalHTML.charAt(index);
                 index++;
+            }
+
+            if (index % 10 === 0) {
+                updateBackToListPosition();
             }
 
             setTimeout(typeNext, speed);
@@ -369,11 +283,11 @@ function typingAnimation(element, speed = 15) {
 
 requestAnimationFrame(function () {
 
-    const typingTexts = document.querySelectorAll(".typing-text");
+    const typingTexts =
+        document.querySelectorAll(".typing-text");
 
     typingTexts.forEach(function (element, index) {
 
-        /* 文章ごとに開始時間をずらす */
         setTimeout(function () {
             typingAnimation(element, 15);
         }, index * 300);
