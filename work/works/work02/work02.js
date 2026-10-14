@@ -8,9 +8,9 @@ const workData = {
     // work02のコンテンツ
 content: `
   <img
-            src="../images/work01-01.png"
+            src="../images/work02-1.png"
             alt=""
-            class="work01-image01">
+            class="work02-image01">
 
         <div class="work01-heading-large typing-text">
             恐竜知育パズル
