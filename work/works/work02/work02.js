@@ -6,7 +6,7 @@ const workData = {
         "../images/works-main-visual.png",
 
     // work02のコンテンツ
-     `
+content: `
   <img
             src="../images/work01-01.png"
             alt=""
