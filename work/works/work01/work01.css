@@ -280,6 +280,7 @@ PROCESS
    画像02〜04 ウィンドウ展開アニメーション
 ========================================= */
 
+
 /* アニメーション開始前 */
 .work01-image02,
 .work01-image03,
@@ -296,14 +297,19 @@ PROCESS
     animation: window-open 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* 画像03：少し遅れて展開 */
+/* 画像02：最初に表示 */
+.work01-image02.is-open {
+    animation-delay: 0s;
+}
+
+/* 画像03：画像02から2秒後 */
 .work01-image03.is-open {
     animation-delay: 2s;
 }
 
-/* 画像04：最後に展開 */
+/* 画像04：画像03から2秒後 */
 .work01-image04.is-open {
-    animation-delay: 2;
+    animation-delay: 4s;
 }
 
 /* 中央の細い線から上下に開く */
@@ -322,3 +328,4 @@ PROCESS
         opacity: 1;
     }
 }
+
