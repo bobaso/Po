@@ -170,7 +170,7 @@ body::before {
 }
 
 .work-scroll-area::-webkit-scrollbar {
-    width: 31px;
+    width: 26px;
 }
 
 .work-scroll-area::-webkit-scrollbar-track {
