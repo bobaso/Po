@@ -149,10 +149,6 @@ const workData = {
 
 </div>
 
-<div class="work01-heading-small work01-back-to-list">
-    Back to list
-</div>
-
     `
 };
 
