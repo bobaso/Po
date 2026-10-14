@@ -6,7 +6,120 @@ const workDetail =
     document.getElementById("work-detail");
 
 workDetail.innerHTML = `
+/* =========================================
+   Back to list
+   作品本文の最下部に自動配置
+========================================= */
 
+function updateBackToListPosition() {
+
+    const workContent =
+        document.querySelector(".work-content");
+
+    const workScrollArea =
+        document.querySelector(".work-scroll-area");
+
+    const backToListArea =
+        document.querySelector(".back-to-list-area");
+
+    if (
+        !workContent ||
+        !workScrollArea ||
+        !backToListArea
+    ) {
+        return;
+    }
+
+    const contentRect =
+        workContent.getBoundingClientRect();
+
+    let maxBottom = 0;
+
+    const elements =
+        workContent.querySelectorAll("*");
+
+    elements.forEach(function (element) {
+
+        // Back to list 自体は計算対象外
+        if (
+            element === backToListArea ||
+            backToListArea.contains(element)
+        ) {
+            return;
+        }
+
+        const rect =
+            element.getBoundingClientRect();
+
+        // 画面上の位置をスクロール前の座標に変換
+        const bottom =
+            rect.bottom -
+            contentRect.top +
+            workScrollArea.scrollTop;
+
+        maxBottom = Math.max(
+            maxBottom,
+            bottom
+        );
+
+    });
+
+    // 最後の作品要素から30px空ける
+    const gap = 30;
+
+    const backTop =
+        maxBottom + gap;
+
+    backToListArea.style.top =
+        backTop + "px";
+
+    // Back to list までスクロールできる高さを確保
+    const requiredHeight =
+        backTop +
+        backToListArea.offsetHeight +
+        30;
+
+    workContent.style.minHeight =
+        requiredHeight + "px";
+}
+
+
+/* =========================================
+   初期表示・画像読み込み後・画面サイズ変更時
+========================================= */
+
+// 初期表示
+requestAnimationFrame(function () {
+    updateBackToListPosition();
+});
+
+// 画像読み込み完了後
+document.querySelectorAll(".work-content img")
+    .forEach(function (img) {
+
+        if (!img.complete) {
+
+            img.addEventListener(
+                "load",
+                updateBackToListPosition,
+                { once: true }
+            );
+
+            img.addEventListener(
+                "error",
+                updateBackToListPosition,
+                { once: true }
+            );
+
+        }
+
+    });
+
+// 画面サイズ変更時
+window.addEventListener(
+    "resize",
+    updateBackToListPosition
+);
     <div class="visual-area">
 
         <section class="main-visual">
