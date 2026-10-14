@@ -106,8 +106,7 @@ const workData = {
 
     <!-- 説明文 -->
     <div class="work01-heading-small work01-process-description02 typing-text">
-        空間全体をイメージする為<br>
-        Adobe Illustratorで見取り図を書く
+        見取り図を元に購入した<br>プラダンに合わせて割図を考える
     </div>
 
     <!-- 製作画像 -->
