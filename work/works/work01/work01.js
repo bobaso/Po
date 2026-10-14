@@ -100,7 +100,11 @@ const workData = {
     <img src="../images/work01-08.png" alt="" class="work01-process-number02">
 
 </div>
- 
+
+ <div class="work01-heading-small work01-process-description02 typing-text">
+    空間全体をイメージする為<br>
+    Adobe Illustratorで見取り図を書く
+</div>
     `
 };
 
