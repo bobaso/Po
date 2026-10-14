@@ -96,7 +96,7 @@ const workData = {
 <!-- 製作過程02の親要素 -->
 <div class="work01-process-rectangle02">
 </div>
-    
+ <img src="../images/work01-11.png" alt="" class="work01-image11">   
 };
 
 
