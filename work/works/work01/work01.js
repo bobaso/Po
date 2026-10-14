@@ -124,9 +124,24 @@ const workData = {
     class="work01-image11-bottom">
 
 
+
 <!-- 製作過程03の親要素 -->
 <div class="work01-process-rectangle03">
+
+    <!-- 画像 work01-10.png -->
+    <img
+        src="../images/work01-10.png"
+        alt=""
+        class="work01-image10">
+
+    <!-- 画像 work01-09.png -->
+    <img
+        src="../images/work01-09.png"
+        alt=""
+        class="work01-image09">
+
 </div>
+
 
     `
 };
