@@ -318,6 +318,39 @@ PROCESS
 }
 
 
+/* =========================================
+   製作過程01〜03
+   下から上へフェードイン
+========================================= */
+
+/* アニメーション開始前 */
+.work01-process-rectangle,
+.work01-process-rectangle02,
+.work01-process-rectangle03 {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* 画面内に入ったとき */
+.work01-process-rectangle.is-visible,
+.work01-process-rectangle02.is-visible,
+.work01-process-rectangle03.is-visible {
+    animation: process-fade-up 0.8s ease-out forwards;
+}
+
+/* 下から上へ移動しながら表示 */
+@keyframes process-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* =========================================
    work01
