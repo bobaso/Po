@@ -215,6 +215,15 @@ PROCESS
     z-index: 2;
 }
 
+/* 製作過程の画像11 */
+.work01-image11 {
+    position: absolute;
+    left: 484px;
+    top: 302px;
+    width: auto;
+    height: auto;
+    z-index: 2;
+}
 /* =========================================
    work01
    画像02〜04 ウィンドウ展開アニメーション
