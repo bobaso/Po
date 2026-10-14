@@ -257,8 +257,15 @@ PROCESS
     text-align: center;
     z-index: 2;
 }
-
-
+/* 製作過程02の画像 */
+.work01-image07 {
+    position: absolute;
+    left: 514px;
+    top: 9px;
+    width: auto;
+    height: auto;
+    z-index: 2;
+}
 
 
 /* =========================================
