@@ -90,6 +90,7 @@ const backToListArea =
 ========================================= */
 
 
+
 function updateBackToListPosition() {
 
     if (
@@ -102,28 +103,17 @@ function updateBackToListPosition() {
 
     let maxBottom = 0;
 
-    /*
-     * work-content 内の各要素について、
-     * スクロール領域の先頭からの位置を調べる
-     */
     const elements =
         workContent.querySelectorAll("*");
 
     elements.forEach(function (element) {
 
-        const rect =
-            element.getBoundingClientRect();
-
-        const contentTop =
-            element.offsetTop;
-
-        /*
-         * offsetTop の基準となる親要素をたどり、
-         * work-content からの位置を合計する
-         */
         let top = 0;
         let current = element;
 
+        /*
+         * work-content からの位置を計算
+         */
         while (
             current &&
             current !== workContent
@@ -133,22 +123,26 @@ function updateBackToListPosition() {
         }
 
         /*
-         * 画面上での実際の高さを加算する
+         * work-content 内にある要素だけを対象にする
          */
-        const bottom =
-            top + rect.height;
+        if (current === workContent) {
 
-        if (bottom > maxBottom) {
-            maxBottom = bottom;
+            const bottom =
+                top + element.offsetHeight;
+
+            if (bottom > maxBottom) {
+                maxBottom = bottom;
+            }
+
         }
 
     });
 
-    /*
-     * コンテンツ末尾から30px下に配置
-     */
     const gap = 30;
 
+    /*
+     * コンテンツ末尾の30px下に配置
+     */
     backToListArea.style.position = "absolute";
     backToListArea.style.left = "0";
     backToListArea.style.right = "0";
@@ -157,7 +151,7 @@ function updateBackToListPosition() {
         (maxBottom + gap) + "px";
 
     /*
-     * スクロールできる領域の高さを確保
+     * リンクの下にも余白を確保
      */
     workContent.style.minHeight =
         (
@@ -167,8 +161,6 @@ function updateBackToListPosition() {
             30
         ) + "px";
 }
-
-
 
 /* =========================================
    初回配置・画像読み込み後の再計算
