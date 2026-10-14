@@ -309,6 +309,13 @@ PROCESS
     z-index: 2;
 }
 
+/*製作過程03の小見出し */
+.work01-process-description03 {
+    position: absolute;
+    left: 37px;
+    top: 97px;
+    z-index: 2;
+}
 
 
 
