@@ -76,7 +76,9 @@ const workData = {
     製作過程
 </div>
 
-<div class="work01-process-rectangle"></div>
+<div class="work01-process-rectangle">
+    <div class="work01-process-number">01</div>
+</div>
 
     `
 
