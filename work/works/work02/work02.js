@@ -8,7 +8,7 @@ const workData = {
     // work02のコンテンツ
 content: `
   <img
-            src="../images/work02-1.png"
+            src="../images/work02-01.png"
             alt=""
             class="work02-image01">
 
