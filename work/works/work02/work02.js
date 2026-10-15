@@ -19,7 +19,7 @@ content: `
         <div class="work01-heading-small typing-text">
             DATA.2026/04/03-2026/04/25<br>
             CATEGORY.プロダクトデザイン<br>
-            EQUIPMENT.カッティングプロッター、オンデマンドプリンター<br>
+            EQUIPMENT.カッティングプロッター<br>オンデマンドプリンター<br>
             MATERIAL.
         </div>
         
