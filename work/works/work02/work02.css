@@ -15,7 +15,7 @@
    作品タイトル
 ========================================= */
 
-.work01-heading-large {
+.work02-heading-large {
     position: absolute;
 
     left: 40px;
@@ -25,7 +25,7 @@
    小見出し
 ========================================= */
 
-.work01-heading-small {
+.work02-heading-small {
     position: absolute;
 
     left: 734px;
@@ -36,7 +36,7 @@
    本文
 ========================================= */
 
-.work01-body {
+.work02-body {
     position: absolute;
 
     left: 40px;
@@ -47,7 +47,7 @@
    BACK GROUND
 ========================================= */
 
-.work01-heading-small-research {
+.work02-heading-small-research {
     position: absolute;
 
     left: 750px;
@@ -58,7 +58,7 @@
    背景
 ========================================= */
 
-.work01-body-research {
+.work02-body-research {
     position: absolute;
 
     left: 808px;
@@ -69,7 +69,7 @@
   説明文
 ========================================= */
 
-.work01-body-description {
+.work02-body-description {
     position: absolute;
 
     left: 633px;
