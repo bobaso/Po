@@ -70,6 +70,10 @@ const workData = {
  <br>持ってもらえるようにすることを目標に製作しました。
 </div>
 
+<div class="work-body work01-body-nfc-awareness typing-text">
+    NFCの認知度の低さ
+</div>
+
 <div class="work-heading-small work01-heading-small-process typing-text">
     PROCESS
 </div>
