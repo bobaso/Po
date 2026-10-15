@@ -33,6 +33,20 @@ content: `
         src="../images/work02-02.png"
         alt=""
         class="work02-image02">
+
+ <div class="work01-heading-small work01-heading-small-research typing-text">
+    BACKGOUND
+</div>
+
+<div class="work01-body work01-body-research">
+    背景
+</div>
+
+<div class="work01-body work01-body-description">
+    ペーパーサミット2026の出展に向けて<br>
+    シールパズルを製作したいという指示を受けて開発しました。
+</div>
+        
     `
 
 };
