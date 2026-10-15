@@ -20,7 +20,7 @@ content: `
     DATA.2026/04/03-2026/04/25<br>
     CATEGORY.プロダクトデザイン<br>
     EQUIPMENT.カッティングプロッター<br>オンデマンドプリンター<br>
-    MATERIAL.
+    MATERIAL.サンカード、アートリピール、マットPP
     </div>
         
  <div class="work-body work02-body typing-text">
