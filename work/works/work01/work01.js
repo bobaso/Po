@@ -78,7 +78,7 @@ const workData = {
     製作過程
 </div>
 
-<div class="work-process-rectangle">
+<div class="work01-process-rectangle">
 
 <img src="../images/work01-06.png" alt="" class="work01-process-number">
 
