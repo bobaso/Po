@@ -10,18 +10,18 @@ const workData = {
             alt=""
             class="work01-image01">
 
-        <div class="work01-heading-large typing-text">
+        <div class="work-heading-large work01-heading-large typing-text">
             ペーパーサミット ディスプレイデザイン
         </div>
 
-        <div class="work01-heading-small typing-text">
+        <div class="work-heading-small work01-heading-small typing-text">
             DATA.2026/04/02-2026/04/30<br>
             CATEGORY.展示設計デザイン<br>
             EQUIPMENT.大型プリンター<br>
             MATERIAL.プラダン、スチレンボード
         </div>
         
-       <div class="work01-body typing-text">
+       <div class="work-body work01-body typing-text">
            ペーパーサミット2026に出展し、展示用什器の設計製作および<br>
            展示物等の総合デザインを担当しました。
       </div>
@@ -44,45 +44,45 @@ const workData = {
         alt=""
         class="work01-image04">
 
-    <div class="work01-heading-small work01-heading-small-research typing-text">
+    <div class="work-heading-small work01-heading-small-research typing-text">
     ISSUE/RESEARCH
 </div>
 
-<div class="work01-body work01-body-research">
+<div class="work-body work01-body-research">
     課題とリサーチ
 </div>
 
-<div class="work01-body work01-body-description">
+<div class="work-body work01-body-description">
     ペーパーサミットとは、全国の印刷会社が製作した
     <br>オリジナル商品やアートなどを一般の人に触れてもらうことで、
     <br>より印刷の魅力を知ってもらうというコンセプトのイベントです。
 </div>
 
-<div class="work01-body work01-body-purpose typing-text">
+<div class="work-body work01-body-purpose typing-text">
     本イベントの企業としての目的は、<br>
     また一般的には認知度が低く使い道などが知られていない<br>
     NFCという製品をより多くの人に知ってもらう事でした。
  </div>
 
-<div class="work01-body work01-body-goal typing-text">
+<div class="work-body work01-body-goal typing-text">
               そこで目を引くようなディスプレイを製作して、
  <br>より多くの来場者に人気ノベルティ商品やNFCの技術などに興味を
  <br>持ってもらえるようにすることを目標に製作しました。
 </div>
 
-<div class="work01-heading-small work01-heading-small-process typing-text">
+<div class="work-heading-small work01-heading-small-process typing-text">
     PROCESS
 </div>
 
-<div class="work01-body work01-body-process typing-text">
+<div class="work-body work01-body-process typing-text">
     製作過程
 </div>
 
-<div class="work01-process-rectangle">
+<div class="work-process-rectangle">
 
 <img src="../images/work01-06.png" alt="" class="work01-process-number">
 
-<div class="work01-heading-small work01-process-description typing-text">
+<div class="work-heading-small work01-process-description typing-text">
     空間全体をイメージする為<br>
     Adobe Illustratorで見取り図を書き<br>
     デザインを考える。
@@ -107,7 +107,7 @@ const workData = {
         class="work01-process-number02">
 
     <!-- 説明文 -->
-    <div class="work01-heading-small work01-process-description02 typing-text">
+    <div class="work-heading-small work01-process-description02 typing-text">
         見取り図を元に購入した<br>プラダンに合わせて割図を考える
     </div>
 
@@ -143,7 +143,7 @@ const workData = {
     class="work01-image09">
 
 <!-- 製作過程03の説明文 -->
-<div class="work01-heading-small work01-process-description03 typing-text">
+<div class="work-heading-small work01-process-description03 typing-text">
     割図の寸法通りに<br>プラダンを切って製作組み立てます。
 </div>
 
