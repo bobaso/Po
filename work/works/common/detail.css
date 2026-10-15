@@ -263,22 +263,14 @@ body::before {
    本文 共通スタイル
 ========================================= */
 
-.work01-body {
-    color: #ffffff;
-
-    font-family:
-        "ＭＳ ゴシック",
-        sans-serif;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    text-align: left;
-
-    word-break: break-word;
-
-    overflow: visible;
+.work-body {
+color: #ffffff;
+font-family: "ＭＳ ゴシック", sans-serif;
+font-size: 18px;
+line-height: 1.8;
+text-align: left;
+word-break: break-word;
+overflow: visible;
 }
 
 /* =========================================
@@ -286,22 +278,14 @@ body::before {
    小見出し 共通スタイル
 ========================================= */
 
-.work01-heading-small {
-    color: #ffffff;
-
-    font-family:
-        "ＭＳ ゴシック",
-        sans-serif;
-
-    font-size: 27px;
-
-    line-height: 1.8;
-
-    text-align: left;
-
-    word-break: break-word;
-
-    overflow: visible;
+.work-heading-small {
+color: #ffffff;
+font-family: "ＭＳ ゴシック", sans-serif;
+font-size: 27px;
+line-height: 1.8;
+text-align: left;
+word-break: break-word;
+overflow: visible;
 }
 
 /* =========================================
@@ -309,22 +293,14 @@ body::before {
    大見出し 共通スタイル
 ========================================= */
 
-.work01-heading-large {
-    color: #ffffff;
-
-    font-family:
-        "ＭＳ ゴシック",
-        sans-serif;
-
-    font-size: 36px;
-
-    line-height: 1.8;
-
-    text-align: left;
-
-    word-break: break-word;
-
-    overflow: visible;
+.work-heading-large {
+color: #ffffff;
+font-family: "ＭＳ ゴシック", sans-serif;
+font-size: 36px;
+line-height: 1.8;
+text-align: left;
+word-break: break-word;
+overflow: visible;
 }
 /* =========================================
    Back to list
