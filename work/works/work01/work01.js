@@ -71,7 +71,16 @@ const workData = {
 </div>
 
 <div class="work-body work01-body-nfc-awareness typing-text">
-    NFCの認知度の低さ
+    NFCの知名度の低さ
+</div>
+
+<div class="work-body work01-body-text typing-text">
+    オサイフケータイやSuicaクレジットカードのタッチ決済など、
+    <br>日常的に使用する事の多いNFC技術ですが、
+    <br>一般的な認知度は低くKDDIのアンケート調査では
+    <br>88%の人がNFCを知らないと回答しました。
+    <br>NFC製品でノベルティー製作をしている私たちにとって
+    <br>より多くの顧客を獲得する為、NFCに興味を持ってもらいの知名度を高めていくことが重要だと考えました。
 </div>
 
 <div class="work-heading-small work01-heading-small-process typing-text">
