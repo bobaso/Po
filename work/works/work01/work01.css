@@ -206,7 +206,7 @@
 
 
 /* =========================================
-   画像12：右側からフェードイン
+   画像12
 ========================================= */
 
 .work01-image12 {
@@ -215,18 +215,6 @@
     top: 1306px;
     z-index: 3;
 
-    opacity: 0;
-    transform: translateX(150px);
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
-}
-
-/* 円グラフが回り切った後に表示 */
-.work01-image12.is-slide-visible {
-    opacity: 1;
-    transform: translateX(0);
-}
 
 
 
