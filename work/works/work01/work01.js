@@ -27,16 +27,13 @@ const workData = {
       </div>
 
     <!-- 画像02 -->
-    <img
-        src="../images/work01-02.png"
-        alt=""
-        class="work01-image02">
+  <img src="../images/work01-02.png" alt="" class="work01-image02">
+
+<div class="work-body work01-image02-text">
+    過去に参加した時のブース
 
     <!-- 画像03-->
-    <img
-        src="../images/work01-03.png"
-        alt=""
-        class="work01-image03">
+<img src="../images/work01-03.png" alt="" class="work01-image03">
 
     <!-- 画像04 -->
     <img
