@@ -215,19 +215,9 @@ function initWork01ImageAnimation() {
                     if (entry.isIntersecting) {
 
                         
-chartImage.classList.add("is-chart-animating");
-
-/* 円グラフが回り切った後に画像12を表示 */
-chartImage.addEventListener("animationend", () => {
-
-    const image12 =
-        document.querySelector(".work01-image12");
-
-    if (image12) {
-        image12.classList.add("is-slide-visible");
-    }
-
-}, { once: true });
+chartImage.classList.add(
+    "is-chart-animating"
+);
 
 
                         // 一度開始したら再実行しない
