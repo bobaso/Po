@@ -23,8 +23,8 @@
     left: 40px;
     top: 663px;
 
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 
     display: block;
    z-index: 1;
@@ -40,8 +40,8 @@
     left: 64px;
     top: 703px;
 
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 
     display: block;
 
@@ -59,8 +59,8 @@
     left: 85px;
     top: 743px;
 
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 
     display: block;
 
@@ -86,7 +86,7 @@
     position: absolute;
 
     left: 734px;
-    top: 90px;
+    top: 85px;
 }
 
 /* =========================================
