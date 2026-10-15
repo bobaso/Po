@@ -12,21 +12,21 @@ content: `
             alt=""
             class="work02-image01">
 
-        <div class="work02-heading-large typing-text">
-            恐竜知育パズル
-        </div>
+       <div class="work-heading-large work02-heading-large typing-text">
+    恐竜知育パズル
+       </div>
 
-        <div class="work02-heading-small typing-text">
-            DATA.2026/04/03-2026/04/25<br>
-            CATEGORY.プロダクトデザイン<br>
-            EQUIPMENT.カッティングプロッター<br>オンデマンドプリンター<br>
-            MATERIAL.
-        </div>
+       <div class="work-heading-small work02-heading-small typing-text">
+    DATA.2026/04/03-2026/04/25<br>
+    CATEGORY.プロダクトデザイン<br>
+    EQUIPMENT.カッティングプロッター<br>オンデマンドプリンター<br>
+    MATERIAL.
+    </div>
         
-       <div class="work02-body typing-text">
-           ペーパーサミット2026に出展し、物販用の商品開発<br>
-           およびパッケージデザインを行いました。
-      </div>
+ <div class="work-body work02-body typing-text">
+ペーパーサミット2026に出展し、物販用の商品開発<br>
+およびパッケージデザインを行いました。
+</div>
 
           <!-- 画像02 -->
     <img
@@ -34,15 +34,15 @@ content: `
         alt=""
         class="work02-image02">
 
- <div class="work02-heading-small work02-heading-small-research typing-text">
-    BACKGOUND
+<div class="work-heading-small work02-heading-small-research typing-text">
+    BACKGROUND
 </div>
 
-<div class="work02-body work02-body-research">
+<div class="work-body work02-body-research">
     背景
 </div>
 
-<div class="work02-body work02-body-description">
+<div class="work-body work02-body-description">
     ペーパーサミット2026の出展に向けて<br>
     シールパズルを製作したいという指示を受けて開発しました。
 </div>
