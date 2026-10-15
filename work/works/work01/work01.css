@@ -504,7 +504,7 @@ PROCESS
 
 /* 円グラフが見え始めたらアニメーション開始 */
 .work01-image13.is-chart-animating {
-    animation: work01-chart-reveal 2s linear forwards;
+    animation: work01-chart-reveal 1.5s linear forwards;
 }
 
 @keyframes work01-chart-reveal {
