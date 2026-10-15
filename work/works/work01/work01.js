@@ -80,7 +80,8 @@ const workData = {
     <br>一般的な認知度は低くKDDIのアンケート調査では
     <br>88%の人がNFCを知らないと回答しました。
     <br>NFC製品でノベルティー製作をしている私たちにとって
-    <br>より多くの顧客を獲得する為、NFCに興味を持ってもらいの知名度を高めていくことが重要だと考えました。
+    <br>より多くの顧客を獲得する為、NFCに興味を持ってもらい
+    <br>知名度を高めていくことが重要だと考えました。
 </div>
 
 <div class="work-heading-small work01-heading-small-process typing-text">
