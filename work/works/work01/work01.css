@@ -188,7 +188,7 @@ PROCESS
 .work01-heading-small-process {
     position: absolute;
     left: 550px;
-    top: 1319px;
+    top: 1946px;
 }
 
 /* =========================================
@@ -197,14 +197,14 @@ PROCESS
 .work01-body-process {
     position: absolute;
     left: 578px;
-    top: 1368px;
+    top: 1995px;
 }
 
 /* 長方形 */
 .work01-process-rectangle {
     position: absolute;
     left: 121px;
-    top: 1433px;
+    top: 2060px;
     width: 1010px;
     height: 263px;
     background-color: #3cc8d7;
@@ -257,7 +257,7 @@ PROCESS
 .work01-process-rectangle02 {
     position: absolute;
     left: 121px;
-    top: 1812px;
+    top: 2438px;
     width: 1010px;
     height: 263px;
     background-color: #3cc8d7;
@@ -306,7 +306,7 @@ PROCESS
 .work01-process-rectangle03 {
     position: absolute;
     left: 121px;
-    top: 2191px;
+    top: 2818px;
     width: 1010px;
     height: 263px;
     background-color: #3cc8d7;
