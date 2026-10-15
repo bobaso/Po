@@ -466,3 +466,54 @@ PROCESS
     }
 }
 
+/* =========================================
+   画像13：円グラフの時計回り表示アニメーション
+========================================= */
+
+@property --work01-chart-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.work01-image13 {
+    position: absolute;
+    left: 763px;
+    top: 1407px;
+    z-index: 1;
+
+    /* 初期状態：非表示 */
+    --work01-chart-angle: 0deg;
+
+    -webkit-mask-image: conic-gradient(
+        from 0deg,
+        #000 0deg,
+        #000 var(--work01-chart-angle),
+        transparent var(--work01-chart-angle),
+        transparent 360deg
+    );
+
+    mask-image: conic-gradient(
+        from 0deg,
+        #000 0deg,
+        #000 var(--work01-chart-angle),
+        transparent var(--work01-chart-angle),
+        transparent 360deg
+    );
+}
+
+/* 円グラフが見え始めたらアニメーション開始 */
+.work01-image13.is-chart-animating {
+    animation: work01-chart-reveal 2s linear forwards;
+}
+
+@keyframes work01-chart-reveal {
+    from {
+        --work01-chart-angle: 0deg;
+    }
+
+    to {
+        --work01-chart-angle: 360deg;
+    }
+}
+
