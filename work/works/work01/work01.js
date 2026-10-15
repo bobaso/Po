@@ -198,6 +198,42 @@ function initWork01ImageAnimation() {
     const workScrollArea =
         document.querySelector(".work-scroll-area");
 
+    /* =========================================
+       円グラフ：見え始めたら時計回りに表示
+    ========================================= */
+
+    const chartImage =
+        document.querySelector(".work01-image13");
+
+    if (workScrollArea && chartImage) {
+
+        const chartObserver = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        chartImage.classList.add(
+                            "is-chart-animating"
+                        );
+
+                        // 一度開始したら再実行しない
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+
+            },
+            {
+                root: workScrollArea,
+                threshold: 0
+            }
+        );
+
+        chartObserver.observe(chartImage);
+    }
+
     const researchHeading =
         document.querySelector(".work01-heading-small-research");
 
