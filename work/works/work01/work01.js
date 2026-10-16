@@ -188,6 +188,7 @@ const workData = {
 
 
 
+
 /* =========================================
    work01専用
    ISSUE/RESEARCH：スクロール・スワイプで画像02〜04を順番に展開
@@ -225,7 +226,6 @@ function initWork01ImageAnimation() {
 
                         observer.unobserve(entry.target);
                     }
-
                 });
 
             },
@@ -261,24 +261,23 @@ function initWork01ImageAnimation() {
         return;
     }
 
-    // 0：まだ開始していない
-    // 1：画像02表示済み
-    // 2：画像03表示済み
-    // 3：画像04表示済み
+    // 1：画像02表示
+    // 2：画像03表示
+    // 3：画像04表示
     let imageStep = 0;
 
     let sequenceStarted = false;
     let wheelReady = true;
     let wheelTimer = null;
 
-    // スマホのタッチ操作用
+    // スマホ用
     let touchStartY = 0;
     let touchStartX = 0;
     let touchMoved = false;
-}
+
 
     /* =========================================
-       スクロール操作の連続入力を調整
+       スクロール入力の連続処理を調整
     ========================================= */
 
     function resetWheelReady() {
@@ -297,7 +296,6 @@ function initWork01ImageAnimation() {
 
     function checkResearchHeading() {
 
-        // 一度開始したら再び開始しない
         if (sequenceStarted || imageStep > 0) return;
 
         const headingRect =
@@ -309,13 +307,11 @@ function initWork01ImageAnimation() {
         const viewportCenter =
             scrollRect.top + scrollRect.height / 2;
 
-        // 見出しの上端が中央に到達したら開始
         if (headingRect.top <= viewportCenter) {
 
             sequenceStarted = true;
             imageStep = 1;
 
-            // 表示倍率を考慮して見出しを中央に合わせる
             const scale =
                 workScrollArea.clientHeight > 0
                     ? scrollRect.height /
@@ -328,9 +324,10 @@ function initWork01ImageAnimation() {
             const correction =
                 (headingCenter - viewportCenter) / scale;
 
-            workScrollArea.scrollTop += correction+ 200;
+            // 停止位置の微調整値
+            workScrollArea.scrollTop += correction + 200;
 
-            // 画像02だけを展開
+            // 画像02を表示
             image02.classList.add("is-open");
         }
     }
@@ -340,118 +337,165 @@ function initWork01ImageAnimation() {
        PC：マウスホイール・トラックパッド
     ========================================= */
 
-  
-function handleImageWheel(event) {
+    function handleImageWheel(event) {
 
-    if (!sequenceStarted) return;
+        if (!sequenceStarted) return;
 
-    // 画像02より前では上方向の通常スクロールを許可
-    if (imageStep === 1 && event.deltaY < 0) return;
+        // 画像02の状態で上に戻る操作は通常スクロール
+        if (imageStep === 1 && event.deltaY < 0) {
+            sequenceStarted = false;
+            return;
+        }
 
-    // 画像04表示後の下方向は通常スクロールへ戻る
-    if (imageStep >= 3 && event.deltaY > 0) {
-        sequenceStarted = false;
-        return;
-    }
+        // 画像04表示後、さらに下へ進む
+        if (imageStep === 3 && event.deltaY > 0) {
+            sequenceStarted = false;
+            return;
+        }
 
-    // 画像の切り替え中はページのスクロールを止める
-    event.preventDefault();
+        event.preventDefault();
 
-    if (!wheelReady) {
+        if (!wheelReady) {
+            resetWheelReady();
+            return;
+        }
+
+        wheelReady = false;
+
+        if (event.deltaY > 0) {
+
+            // 下方向：画像を展開
+            if (imageStep === 1) {
+                image03.classList.add("is-open");
+                imageStep = 2;
+            } else if (imageStep === 2) {
+                image04.classList.add("is-open");
+                imageStep = 3;
+            }
+
+        } else if (event.deltaY < 0) {
+
+            // 上方向：画像を戻す
+            if (imageStep === 3) {
+                image04.classList.remove("is-open");
+                imageStep = 2;
+            } else if (imageStep === 2) {
+                image03.classList.remove("is-open");
+                imageStep = 1;
+            }
+        }
+
         resetWheelReady();
-        return;
     }
-
-    wheelReady = false;
-
-    if (event.deltaY > 0) {
-
-        // 下方向：画像を順番に表示
-        if (imageStep === 1) {
-            image03.classList.add("is-open");
-            imageStep = 2;
-        } else if (imageStep === 2) {
-            image04.classList.add("is-open");
-            imageStep = 3;
-        }
-
-    } else if (event.deltaY < 0) {
-
-        // 上方向：画像を逆順に戻す
-        if (imageStep === 3) {
-            image04.classList.remove("is-open");
-            imageStep = 2;
-        } else if (imageStep === 2) {
-            image03.classList.remove("is-open");
-            imageStep = 1;
-        }
-
-    }
-
-    resetWheelReady();
-}
-
 
 
     /* =========================================
-       スマホ：指でのスワイプ
+       スマホ：タッチ開始位置を記録
     ========================================= */
 
+    function handleTouchStart(event) {
 
-function handleTouchEnd(event) {
+        if (event.touches.length !== 1) return;
 
-    if (!sequenceStarted) return;
-    if (!touchMoved) return;
-
-    const changedTouch = event.changedTouches[0];
-
-    if (!changedTouch) return;
-
-    const deltaY = touchStartY - changedTouch.clientY;
-    const deltaX = touchStartX - changedTouch.clientX;
-
-    // 横方向の操作や小さな動きは無視
-    if (Math.abs(deltaX) > Math.abs(deltaY)) return;
-    if (Math.abs(deltaY) < 35) return;
-
-    // 下方向へのスワイプ：画像を表示
-    if (deltaY > 0) {
-
-        // 画像04表示後は通常スクロールへ戻る
-        if (imageStep >= 3) {
-            sequenceStarted = false;
-            touchMoved = false;
-            return;
-        }
-
-        if (imageStep === 1) {
-            image03.classList.add("is-open");
-            imageStep = 2;
-        } else if (imageStep === 2) {
-            image04.classList.add("is-open");
-            imageStep = 3;
-        }
-
-    } else {
-
-        // 上方向へのスワイプ：画像を逆順に戻す
-        if (imageStep === 3) {
-            image04.classList.remove("is-open");
-            imageStep = 2;
-        } else if (imageStep === 2) {
-            image03.classList.remove("is-open");
-            imageStep = 1;
-        } else if (imageStep === 1) {
-            // 画像02表示中は、通常スクロールへ戻る
-            sequenceStarted = false;
-            touchMoved = false;
-            return;
-        }
-
+        touchStartY = event.touches[0].clientY;
+        touchStartX = event.touches[0].clientX;
+        touchMoved = false;
     }
 
-    touchMoved = false;
-}
+
+    /* =========================================
+       スマホ：画像切り替え中のページ移動を制御
+    ========================================= */
+
+    function handleTouchMove(event) {
+
+        if (!sequenceStarted) return;
+        if (event.touches.length !== 1) return;
+
+        const currentY = event.touches[0].clientY;
+        const currentX = event.touches[0].clientX;
+
+        const deltaY = touchStartY - currentY;
+        const deltaX = touchStartX - currentX;
+
+        // 横方向のスワイプには干渉しない
+        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+
+        // 画像02から上へ戻る操作は通常スクロール
+        if (imageStep === 1 && deltaY < 0) return;
+
+        // 画像04からさらに下へ進む操作は通常スクロール
+        if (imageStep === 3 && deltaY > 0) return;
+
+        // 画像を切り替える間はページの移動を止める
+        if (Math.abs(deltaY) > 5) {
+            event.preventDefault();
+            touchMoved = true;
+        }
+    }
+
+
+    /* =========================================
+       スマホ：スワイプ方向に応じて画像を切り替え
+    ========================================= */
+
+    function handleTouchEnd(event) {
+
+        if (!sequenceStarted) return;
+
+        const changedTouch = event.changedTouches[0];
+
+        if (!changedTouch) return;
+
+        const deltaY = touchStartY - changedTouch.clientY;
+        const deltaX = touchStartX - changedTouch.clientX;
+
+        // 横方向の操作や小さな動きは無視
+        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+        if (Math.abs(deltaY) < 35) return;
+
+        // 上方向へのページ移動を再開
+        if (imageStep === 1 && deltaY < 0) {
+            sequenceStarted = false;
+            touchMoved = false;
+            return;
+        }
+
+        // 画像04の次は下方向へのページ移動を再開
+        if (imageStep === 3 && deltaY > 0) {
+            sequenceStarted = false;
+            touchMoved = false;
+            return;
+        }
+
+        if (!touchMoved) return;
+
+        if (deltaY > 0) {
+
+            // 指を上に動かす：画像を展開
+            if (imageStep === 1) {
+                image03.classList.add("is-open");
+                imageStep = 2;
+            } else if (imageStep === 2) {
+                image04.classList.add("is-open");
+                imageStep = 3;
+            }
+
+        } else {
+
+            // 指を下に動かす：画像を戻す
+            if (imageStep === 3) {
+                image04.classList.remove("is-open");
+                imageStep = 2;
+            } else if (imageStep === 2) {
+                image03.classList.remove("is-open");
+                imageStep = 1;
+            }
+        }
+
+        touchMoved = false;
+    }
+
 
     /* =========================================
        イベント登録
@@ -489,50 +533,6 @@ function handleTouchEnd(event) {
     requestAnimationFrame(checkResearchHeading);
 }
 
-/* =========================================
-   work01専用
-   製作過程01〜03のフェードイン
-========================================= */
-
-function initWork01ProcessAnimation() {
-
-    const workScrollArea =
-        document.querySelector(".work-scroll-area");
-
-    if (!workScrollArea) return;
-
-    const processRectangles = document.querySelectorAll(
-        ".work01-process-rectangle, " +
-        ".work01-process-rectangle02, " +
-        ".work01-process-rectangle03"
-    );
-
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("is-visible");
-
-                    // 一度表示したら再アニメーションしない
-                    observer.unobserve(entry.target);
-                }
-
-            });
-
-        },
-        {
-            root: workScrollArea,
-            threshold: 0.15
-        }
-    );
-
-    processRectangles.forEach((rectangle) => {
-        observer.observe(rectangle);
-    });
-}
 
 /* =========================================
    work01専用
@@ -564,7 +564,6 @@ function initWork01ProcessAnimation() {
                     // 一度表示したら再アニメーションしない
                     observer.unobserve(entry.target);
                 }
-
             });
 
         },
@@ -578,3 +577,4 @@ function initWork01ProcessAnimation() {
         observer.observe(rectangle);
     });
 }
+
