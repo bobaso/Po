@@ -102,7 +102,7 @@ PROCESS
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 1299px;
+    top: 1968px;
 }
 
 /* =========================================
@@ -112,14 +112,14 @@ PROCESS
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 1348px;
+    top: 2016px;
 }
 
 /* 長方形 */
 .work01-process-rectangle {
     position: absolute;
-    left: 121px;
-    top: 1374px;
+    left: 64px;
+    top: 2101px;
     width: 1125px;
     height: 400px;
     background-color: #3cc8d7;
