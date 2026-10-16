@@ -189,15 +189,18 @@ const workData = {
 
 /* =========================================
    work01専用
-   ISSUE/RESEARCH表示時に画像02〜04を展開
+   ISSUE/RESEARCH：スクロール操作で画像02〜04を順番に展開
 ========================================= */
 
 function initWork01ImageAnimation() {
 
-  initWork01ProcessAnimation();
-    
+    initWork01ProcessAnimation();
+
     const workScrollArea =
         document.querySelector(".work-scroll-area");
+
+    if (!workScrollArea) return;
+
 
     /* =========================================
        円グラフ：見え始めたら時計回りに表示
@@ -206,7 +209,7 @@ function initWork01ImageAnimation() {
     const chartImage =
         document.querySelector(".work01-image13");
 
-    if (workScrollArea && chartImage) {
+    if (chartImage) {
 
         const chartObserver = new IntersectionObserver(
             (entries, observer) => {
@@ -215,13 +218,10 @@ function initWork01ImageAnimation() {
 
                     if (entry.isIntersecting) {
 
-                        
-chartImage.classList.add(
-    "is-chart-animating"
-);
+                        chartImage.classList.add(
+                            "is-chart-animating"
+                        );
 
-
-                        // 一度開始したら再実行しない
                         observer.unobserve(entry.target);
                     }
 
@@ -237,18 +237,61 @@ chartImage.classList.add(
         chartObserver.observe(chartImage);
     }
 
-    const researchHeading =
-        document.querySelector(".work01-heading-small-research");
 
-    if (!workScrollArea || !researchHeading) {
+    /* =========================================
+       ISSUE/RESEARCH：画像02〜04の順番表示
+    ========================================= */
+
+    const researchHeading =
+        document.querySelector(
+            ".work01-heading-small-research"
+        );
+
+    const image02 =
+        document.querySelector(".work01-image02");
+
+    const image03 =
+        document.querySelector(".work01-image03");
+
+    const image04 =
+        document.querySelector(".work01-image04");
+
+    if (!researchHeading || !image02 || !image03 || !image04) {
         return;
     }
 
-    let animationStarted = false;
+    // 0：通常スクロール
+    // 1：画像02表示済み
+    // 2：画像03表示済み
+    // 3：画像04表示済み
+    let imageStep = 0;
+
+    let sequenceStarted = false;
+    let wheelReady = false;
+    let wheelTimer = null;
+
+
+    /* =========================================
+       スクロール操作を受け付けられる状態にする
+    ========================================= */
+
+    function resetWheelReady() {
+
+        clearTimeout(wheelTimer);
+
+        wheelTimer = setTimeout(() => {
+            wheelReady = true;
+        }, 220);
+    }
+
+
+    /* =========================================
+       見出しが中央に来たら位置を固定して画像02を表示
+    ========================================= */
 
     function checkResearchHeading() {
 
-        if (animationStarted) return;
+        if (sequenceStarted) return;
 
         const headingRect =
             researchHeading.getBoundingClientRect();
@@ -256,37 +299,165 @@ chartImage.classList.add(
         const scrollRect =
             workScrollArea.getBoundingClientRect();
 
-        if (
-            headingRect.bottom > scrollRect.top &&
-            headingRect.top < scrollRect.top + 100
-        ) {
+        const viewportCenter =
+            scrollRect.top + scrollRect.height / 2;
 
-            
-            animationStarted = true;
+        // 見出しの上端が画面中央に到達したら開始
+        if (headingRect.top <= viewportCenter) {
 
-            document.querySelector(".work01-image02")
-                ?.classList.add("is-open");
+            sequenceStarted = true;
+            imageStep = 1;
 
-            document.querySelector(".work01-image03")
-                ?.classList.add("is-open");
+            /*
+             * CSS transformで拡大縮小されている場合も
+             * 正しい位置に止めるため、表示倍率を計算
+             */
+            const scale =
+                workScrollArea.clientHeight > 0
+                    ? scrollRect.height / workScrollArea.clientHeight
+                    : 1;
 
-            document.querySelector(".work01-image04")
-                ?.classList.add("is-open");
+            const headingCenter =
+                (headingRect.top + headingRect.bottom) / 2;
 
+            const correction =
+                (headingCenter - viewportCenter) / scale;
 
-            workScrollArea.removeEventListener(
-                "scroll",
-                checkResearchHeading
-            );
+            // 先に固定状態にしてからスクロール位置を調整
+            workScrollArea.scrollTop += correction;
+
+            // まず画像02だけを展開
+            image02.classList.add("is-open");
+
+            wheelReady = false;
+            resetWheelReady();
         }
     }
 
+
+    /* =========================================
+       次のスクロール操作で画像を1枚ずつ展開
+    ========================================= */
+
+    function handleImageWheel(event) {
+
+        if (!sequenceStarted) return;
+
+        // 上方向のスクロールでは画像展開を進めない
+        if (event.deltaY <= 0) return;
+
+        /*
+         * 画像04まで表示した後は、
+         * 次の操作から通常スクロールに戻す
+         */
+        if (imageStep >= 3) {
+
+            if (!wheelReady) {
+                event.preventDefault();
+                resetWheelReady();
+                return;
+            }
+
+            sequenceStarted = false;
+
+            workScrollArea.removeEventListener(
+                "wheel",
+                handleImageWheel
+            );
+
+            return;
+        }
+
+        // 画像を展開する間はページのスクロールを止める
+        event.preventDefault();
+
+        /*
+         * トラックパッドなどで発生する連続イベントを
+         * 1回のスクロール操作としてまとめる
+         */
+        if (!wheelReady) {
+            resetWheelReady();
+            return;
+        }
+
+        wheelReady = false;
+
+        if (imageStep === 1) {
+
+            image03.classList.add("is-open");
+            imageStep = 2;
+
+        } else if (imageStep === 2) {
+
+            image04.classList.add("is-open");
+            imageStep = 3;
+
+        }
+
+        resetWheelReady();
+    }
+
+
+    // 見出しが中央に到達したか確認
     workScrollArea.addEventListener(
         "scroll",
         checkResearchHeading
     );
 
+    // 画像を順番に展開するためのスクロール処理
+    workScrollArea.addEventListener(
+        "wheel",
+        handleImageWheel,
+        { passive: false }
+    );
+
     requestAnimationFrame(checkResearchHeading);
+}
+
+
+/* =========================================
+   work01専用
+   製作過程01〜03のフェードイン
+========================================= */
+
+function initWork01ProcessAnimation() {
+
+    const workScrollArea =
+        document.querySelector(".work-scroll-area");
+
+    if (!workScrollArea) return;
+
+    const processRectangles = document.querySelectorAll(
+        ".work01-process-rectangle, " +
+        ".work01-process-rectangle02, " +
+        ".work01-process-rectangle03"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("is-visible");
+
+                    // 一度表示したら再アニメーションしない
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            root: workScrollArea,
+            threshold: 0.15
+        }
+    );
+
+    processRectangles.forEach((rectangle) => {
+        observer.observe(rectangle);
+    });
 }
 
 /* =========================================
