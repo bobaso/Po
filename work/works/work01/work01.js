@@ -409,24 +409,21 @@ if (imageStep >= 3) {
 
     
   
+
     /* 上方向：画像を順番に閉じる */
     if (event.deltaY < 0) {
-
-        // 画像を閉じた直後の連続入力では、
-        // 通常スクロールを発生させない
-        if (upwardWheelLocked) {
-            event.preventDefault();
-            lockUpwardWheel();
-            return;
-        }
 
         // 画像02だけの状態なら通常スクロールを許可
         if (imageStep <= 1) {
             return;
         }
 
-        // 画像を閉じる間はスクロールを停止
+        // 画像03・04を閉じる間は通常スクロールを停止
         event.preventDefault();
+
+        if (!wheelReady) return;
+
+        wheelReady = false;
 
         if (imageStep === 3) {
 
@@ -453,9 +450,9 @@ if (imageStep >= 3) {
             imageStep = 1;
         }
 
-        // 上方向の連続入力を一時的にロック
-        lockUpwardWheel();
+        resetWheelReady();
     }
+
 
 }
 
