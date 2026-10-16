@@ -187,9 +187,10 @@ const workData = {
 };
 
 
+
 /* =========================================
    work01専用
-   ISSUE/RESEARCH：スクロール操作で画像02〜04を順番に展開
+   ISSUE/RESEARCH：スクロール・スワイプで画像02〜04を順番に展開
 ========================================= */
 
 function initWork01ImageAnimation() {
@@ -260,19 +261,24 @@ function initWork01ImageAnimation() {
         return;
     }
 
-    // 0：通常スクロール
+    // 0：まだ開始していない
     // 1：画像02表示済み
     // 2：画像03表示済み
     // 3：画像04表示済み
     let imageStep = 0;
 
     let sequenceStarted = false;
-    let wheelReady = false;
+    let wheelReady = true;
     let wheelTimer = null;
+
+    // スマホのタッチ操作用
+    let touchStartY = 0;
+    let touchStartX = 0;
+    let touchMoved = false;
 
 
     /* =========================================
-       スクロール操作を受け付けられる状態にする
+       スクロール操作の連続入力を調整
     ========================================= */
 
     function resetWheelReady() {
@@ -286,12 +292,13 @@ function initWork01ImageAnimation() {
 
 
     /* =========================================
-       見出しが中央に来たら位置を固定して画像02を表示
+       見出しが中央に来たら停止して画像02を表示
     ========================================= */
 
     function checkResearchHeading() {
 
-        if (sequenceStarted) return;
+        // 一度開始したら再び開始しない
+        if (sequenceStarted || imageStep > 0) return;
 
         const headingRect =
             researchHeading.getBoundingClientRect();
@@ -302,19 +309,17 @@ function initWork01ImageAnimation() {
         const viewportCenter =
             scrollRect.top + scrollRect.height / 2;
 
-        // 見出しの上端が画面中央に到達したら開始
+        // 見出しの上端が中央に到達したら開始
         if (headingRect.top <= viewportCenter) {
 
             sequenceStarted = true;
             imageStep = 1;
 
-            /*
-             * CSS transformで拡大縮小されている場合も
-             * 正しい位置に止めるため、表示倍率を計算
-             */
+            // 表示倍率を考慮して見出しを中央に合わせる
             const scale =
                 workScrollArea.clientHeight > 0
-                    ? scrollRect.height / workScrollArea.clientHeight
+                    ? scrollRect.height /
+                      workScrollArea.clientHeight
                     : 1;
 
             const headingCenter =
@@ -323,58 +328,34 @@ function initWork01ImageAnimation() {
             const correction =
                 (headingCenter - viewportCenter) / scale;
 
-            // 先に固定状態にしてからスクロール位置を調整
             workScrollArea.scrollTop += correction;
 
-            // まず画像02だけを展開
+            // 画像02だけを展開
             image02.classList.add("is-open");
-
-            wheelReady = false;
-            resetWheelReady();
         }
     }
 
 
     /* =========================================
-       次のスクロール操作で画像を1枚ずつ展開
+       PC：マウスホイール・トラックパッド
     ========================================= */
 
     function handleImageWheel(event) {
 
         if (!sequenceStarted) return;
 
-        // 上方向のスクロールでは画像展開を進めない
+        // 上方向のスクロールは通常どおり
         if (event.deltaY <= 0) return;
 
-        /*
-         * 画像04まで表示した後は、
-         * 次の操作から通常スクロールに戻す
-         */
+        // 画像04まで表示済みなら通常スクロールへ戻る
         if (imageStep >= 3) {
-
-            if (!wheelReady) {
-                event.preventDefault();
-                resetWheelReady();
-                return;
-            }
-
             sequenceStarted = false;
-
-            workScrollArea.removeEventListener(
-                "wheel",
-                handleImageWheel
-            );
-
             return;
         }
 
-        // 画像を展開する間はページのスクロールを止める
+        // 画像展開中はページを動かさない
         event.preventDefault();
 
-        /*
-         * トラックパッドなどで発生する連続イベントを
-         * 1回のスクロール操作としてまとめる
-         */
         if (!wheelReady) {
             resetWheelReady();
             return;
@@ -398,22 +379,119 @@ function initWork01ImageAnimation() {
     }
 
 
-    // 見出しが中央に到達したか確認
+    /* =========================================
+       スマホ：指でのスワイプ
+    ========================================= */
+
+    function handleTouchStart(event) {
+
+        if (event.touches.length !== 1) return;
+
+        touchStartY = event.touches[0].clientY;
+        touchStartX = event.touches[0].clientX;
+        touchMoved = false;
+    }
+
+
+    function handleTouchMove(event) {
+
+        if (!sequenceStarted) return;
+        if (event.touches.length !== 1) return;
+
+        const currentY = event.touches[0].clientY;
+        const currentX = event.touches[0].clientX;
+
+        const deltaY = touchStartY - currentY;
+        const deltaX = touchStartX - currentX;
+
+        // 横方向の操作は妨げない
+        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+
+        // 画像04表示後は通常スクロールを許可
+        if (imageStep >= 3) return;
+
+        // 画像02〜04を展開する間はページを固定
+        if (Math.abs(deltaY) > 5) {
+            event.preventDefault();
+            touchMoved = true;
+        }
+    }
+
+
+    function handleTouchEnd(event) {
+
+        if (!sequenceStarted) return;
+        if (!touchMoved) return;
+
+        const changedTouch = event.changedTouches[0];
+
+        if (!changedTouch) return;
+
+        const deltaY = touchStartY - changedTouch.clientY;
+        const deltaX = touchStartX - changedTouch.clientX;
+
+        // 横方向の操作や小さな動きは無視
+        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+        if (deltaY < 35) return;
+
+        // 画像04まで表示済みなら、次のスワイプで通常スクロールへ
+        if (imageStep >= 3) {
+            sequenceStarted = false;
+            return;
+        }
+
+        // 1回の上スワイプにつき画像を1枚だけ展開
+        if (imageStep === 1) {
+
+            image03.classList.add("is-open");
+            imageStep = 2;
+
+        } else if (imageStep === 2) {
+
+            image04.classList.add("is-open");
+            imageStep = 3;
+
+        }
+
+        touchMoved = false;
+    }
+
+
+    /* =========================================
+       イベント登録
+    ========================================= */
+
     workScrollArea.addEventListener(
         "scroll",
         checkResearchHeading
     );
 
-    // 画像を順番に展開するためのスクロール処理
     workScrollArea.addEventListener(
         "wheel",
         handleImageWheel,
         { passive: false }
     );
 
+    workScrollArea.addEventListener(
+        "touchstart",
+        handleTouchStart,
+        { passive: true }
+    );
+
+    workScrollArea.addEventListener(
+        "touchmove",
+        handleTouchMove,
+        { passive: false }
+    );
+
+    workScrollArea.addEventListener(
+        "touchend",
+        handleTouchEnd,
+        { passive: true }
+    );
+
     requestAnimationFrame(checkResearchHeading);
 }
-
 
 /* =========================================
    work01専用
