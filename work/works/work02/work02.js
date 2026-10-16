@@ -66,6 +66,19 @@ content: `
 <!-- 製作過程の親要素 -->
 <div class="work02-process-rectangle">
 </div>
+
+<div class="work-heading-small work02-heading-small-concept typing-text">
+    CONCEPT/EVIDENCE
+</div>
+<!-- コンセプト/エビデンス -->
+<div class="work-body work02-body-concept">
+    コンセプト/エビデンス
+</div>
+<!-- 説明テキスト -->
+<div class="work-body work02-body-concept-text">
+    テキスト
+</div>
+
     `
 
 };
