@@ -261,37 +261,18 @@ chartImage.classList.add(
             headingRect.top < scrollRect.top + 100
         ) {
 
+            
             animationStarted = true;
 
-                       const image02 =
-                document.querySelector(".work01-image02");
+            document.querySelector(".work01-image02")
+                ?.classList.add("is-open");
 
-            const image03 =
-                document.querySelector(".work01-image03");
+            document.querySelector(".work01-image03")
+                ?.classList.add("is-open");
 
-            const image04 =
-                document.querySelector(".work01-image04");
+            document.querySelector(".work01-image04")
+                ?.classList.add("is-open");
 
-            const image02Text =
-                document.querySelector(".work01-image02-text");
-
-            // 画像02の表示アニメーションが終わったら文字を表示
-            if (image02) {
-
-                image02.addEventListener(
-                    "animationend",
-                    () => {
-                        image02Text?.classList.add("is-text-visible");
-                    },
-                    { once: true }
-                );
-
-                image02.classList.add("is-open");
-            }
-
-            // 画像03・04は既存のアニメーションを維持
-            image03?.classList.add("is-open");
-            image04?.classList.add("is-open");
 
             workScrollArea.removeEventListener(
                 "scroll",
