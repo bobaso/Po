@@ -270,10 +270,6 @@ function initWork01ImageAnimation() {
     let wheelReady = true;
     let wheelTimer = null;
 
-    // 画像03を閉じた直後のスクロール制御
-    let imageClosing = false;
-    let imageClosingTimer = null;
-
     // スマホ用
     let touchStartY = 0;
     let touchStartX = 0;
@@ -391,73 +387,7 @@ if (imageStep >= 3) {
         }
 
         resetWheelReady();
-        return;
     }
-
-    
-  
-
-
-    /* 上方向：画像を順番に閉じる */
-    if (event.deltaY < 0) {
-
-        // 画像03を閉じた直後は、通常スクロールを止める
-        if (imageClosing) {
-            event.preventDefault();
-            return;
-        }
-
-        // 画像02だけの状態なら通常スクロールを許可
-        if (imageStep <= 1) {
-            return;
-        }
-
-        // 画像を閉じる操作中は通常スクロールを止める
-        event.preventDefault();
-
-        if (!wheelReady) return;
-
-        wheelReady = false;
-
-        if (imageStep === 3) {
-
-            // 画像04を閉じる
-            image04.classList.remove("is-open");
-            image04.classList.remove("is-closing");
-
-            void image04.offsetWidth;
-
-            image04.classList.add("is-closing");
-
-            imageStep = 2;
-
-        } else if (imageStep === 2) {
-
-            // 画像03を閉じる
-            image03.classList.remove("is-open");
-            image03.classList.remove("is-closing");
-
-            void image03.offsetWidth;
-
-            image03.classList.add("is-closing");
-
-            imageStep = 1;
-
-            // 閉じるアニメーション中のスクロールを抑える
-            imageClosing = true;
-
-            clearTimeout(imageClosingTimer);
-
-            imageClosingTimer = setTimeout(() => {
-                imageClosing = false;
-            }, 450);
-        }
-
-        resetWheelReady();
-    }
-
-
-
 }
 
     /* =========================================
@@ -478,6 +408,7 @@ if (imageStep >= 3) {
 /* =========================================
    スマホ：スワイプ方向に応じて画像を切り替え
 ========================================= */
+
 
 function handleTouchEnd(event) {
 
@@ -506,9 +437,9 @@ function handleTouchEnd(event) {
         return;
     }
 
+    // 上スワイプ：画像を順番に展開
     if (deltaY > 0) {
 
-        // 上スワイプ：画像を展開
         if (imageStep === 1) {
             image03.classList.remove("is-closing");
             image03.classList.add("is-open");
@@ -519,29 +450,10 @@ function handleTouchEnd(event) {
             image04.classList.add("is-open");
             imageStep = 3;
         }
-
-    } else {
-
-        // 下スワイプ：画像を収納
-        if (imageStep === 3) {
-            image04.classList.remove("is-open");
-            image04.classList.remove("is-closing");
-            void image04.offsetWidth;
-            image04.classList.add("is-closing");
-            imageStep = 2;
-
-        } else if (imageStep === 2) {
-            image03.classList.remove("is-open");
-            image03.classList.remove("is-closing");
-            void image03.offsetWidth;
-            image03.classList.add("is-closing");
-            imageStep = 1;
-        }
     }
 
     touchMoved = false;
 }
-
 
 /* =========================================
    スマホ：スワイプ中のスクロール制御
