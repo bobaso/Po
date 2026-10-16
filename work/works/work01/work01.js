@@ -33,11 +33,6 @@ const workData = {
     alt=""
     class="work01-image02">
 
-<!-- 画像02の説明文 -->
-<div class="work-body work01-image02-text">
-    過去に参加した時のブース
-</div>
-
 <!-- 画像03 -->
 <img
     src="../images/work01-03.png"
