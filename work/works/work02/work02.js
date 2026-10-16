@@ -79,6 +79,12 @@ content: `
     テキスト
 </div>
 
+<!-- 画像03 -->
+<img
+    src="../images/work02-03.png"
+    alt=""
+    class="work02-image03">
+
     `
 
 };
