@@ -328,7 +328,7 @@ function initWork01ImageAnimation() {
             const correction =
                 (headingCenter - viewportCenter) / scale;
 
-            workScrollArea.scrollTop += correction;
+            workScrollArea.scrollTop += correction+ 200;
 
             // 画像02だけを展開
             image02.classList.add("is-open");
