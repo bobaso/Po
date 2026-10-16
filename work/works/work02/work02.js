@@ -62,6 +62,10 @@ content: `
 <div class="work-body work01-body-process typing-text">
     製作過程
 </div>
+
+<!-- 製作過程の親要素 -->
+<div class="work02-process-rectangle">
+</div>
     `
 
 };
