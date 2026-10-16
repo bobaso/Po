@@ -266,9 +266,13 @@ function initWork01ImageAnimation() {
     // 3：画像04表示
     let imageStep = 0;
 
-    let sequenceStarted = false;
+        let sequenceStarted = false;
     let wheelReady = true;
     let wheelTimer = null;
+
+    // 画像03を閉じた直後のスクロール制御
+    let imageClosing = false;
+    let imageClosingTimer = null;
 
     // スマホ用
     let touchStartY = 0;
@@ -393,15 +397,22 @@ if (imageStep >= 3) {
     
   
 
+
     /* 上方向：画像を順番に閉じる */
     if (event.deltaY < 0) {
+
+        // 画像03を閉じた直後は、通常スクロールを止める
+        if (imageClosing) {
+            event.preventDefault();
+            return;
+        }
 
         // 画像02だけの状態なら通常スクロールを許可
         if (imageStep <= 1) {
             return;
         }
 
-        // 画像03・04を閉じる間は通常スクロールを停止
+        // 画像を閉じる操作中は通常スクロールを止める
         event.preventDefault();
 
         if (!wheelReady) return;
@@ -431,10 +442,20 @@ if (imageStep >= 3) {
             image03.classList.add("is-closing");
 
             imageStep = 1;
+
+            // 閉じるアニメーション中のスクロールを抑える
+            imageClosing = true;
+
+            clearTimeout(imageClosingTimer);
+
+            imageClosingTimer = setTimeout(() => {
+                imageClosing = false;
+            }, 450);
         }
 
         resetWheelReady();
     }
+
 
 
 }
