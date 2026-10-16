@@ -440,21 +440,12 @@ PROCESS
     animation: window-open 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* 画像02：最初に表示 */
-.work01-image02.is-open {
+/* スクロール操作で順番に表示するため時間差をなくす */
+.work01-image02.is-open,
+.work01-image03.is-open,
+.work01-image04.is-open {
     animation-delay: 0s;
 }
-
-/* 画像03：画像02から2秒後 */
-.work01-image03.is-open {
-    animation-delay: 2s;
-}
-
-/* 画像04：画像03から2秒後 */
-.work01-image04.is-open {
-    animation-delay: 4s;
-}
-
 /* 中央の細い線から上下に開く */
 @keyframes window-open {
     0% {
