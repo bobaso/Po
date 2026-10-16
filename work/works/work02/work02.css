@@ -50,8 +50,11 @@
 .work02-heading-small-research {
     position: absolute;
 
-    left: 750px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 690px;
+
+    text-align: center;
 }
 
 /* =========================================
@@ -61,8 +64,11 @@
 .work02-body-research {
     position: absolute;
 
-    left: 808px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 733px;
+
+    text-align: center;
 }
 
 /* =========================================
