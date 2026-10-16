@@ -50,7 +50,14 @@ content: `
     台紙に書かれた番号の順に指定されたシールを貼っていき、<br>
     １つの絵を完成させる知育玩具です。
 </div>
-        
+
+        <div class="work-heading-small work01-heading-small-process typing-text">
+    PROCESS
+</div>
+
+<div class="work-body work01-body-process typing-text">
+    製作過程
+</div>
     `
 
 };
