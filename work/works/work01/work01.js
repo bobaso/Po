@@ -340,122 +340,118 @@ function initWork01ImageAnimation() {
        PC：マウスホイール・トラックパッド
     ========================================= */
 
-    function handleImageWheel(event) {
+  
+function handleImageWheel(event) {
 
-        if (!sequenceStarted) return;
+    if (!sequenceStarted) return;
 
-        // 上方向のスクロールは通常どおり
-        if (event.deltaY <= 0) return;
+    // 画像02より前では上方向の通常スクロールを許可
+    if (imageStep === 1 && event.deltaY < 0) return;
 
-        // 画像04まで表示済みなら通常スクロールへ戻る
-        if (imageStep >= 3) {
-            sequenceStarted = false;
-            return;
-        }
+    // 画像04表示後の下方向は通常スクロールへ戻る
+    if (imageStep >= 3 && event.deltaY > 0) {
+        sequenceStarted = false;
+        return;
+    }
 
-        // 画像展開中はページを動かさない
-        event.preventDefault();
+    // 画像の切り替え中はページのスクロールを止める
+    event.preventDefault();
 
-        if (!wheelReady) {
-            resetWheelReady();
-            return;
-        }
+    if (!wheelReady) {
+        resetWheelReady();
+        return;
+    }
 
-        wheelReady = false;
+    wheelReady = false;
 
+    if (event.deltaY > 0) {
+
+        // 下方向：画像を順番に表示
         if (imageStep === 1) {
-
             image03.classList.add("is-open");
             imageStep = 2;
-
         } else if (imageStep === 2) {
-
             image04.classList.add("is-open");
             imageStep = 3;
-
         }
 
-        resetWheelReady();
+    } else if (event.deltaY < 0) {
+
+        // 上方向：画像を逆順に戻す
+        if (imageStep === 3) {
+            image04.classList.remove("is-open");
+            imageStep = 2;
+        } else if (imageStep === 2) {
+            image03.classList.remove("is-open");
+            imageStep = 1;
+        }
+
     }
+
+    resetWheelReady();
+}
+
 
 
     /* =========================================
        スマホ：指でのスワイプ
     ========================================= */
 
-    function handleTouchStart(event) {
 
-        if (event.touches.length !== 1) return;
+function handleTouchEnd(event) {
 
-        touchStartY = event.touches[0].clientY;
-        touchStartX = event.touches[0].clientX;
-        touchMoved = false;
-    }
+    if (!sequenceStarted) return;
+    if (!touchMoved) return;
 
+    const changedTouch = event.changedTouches[0];
 
-    function handleTouchMove(event) {
+    if (!changedTouch) return;
 
-        if (!sequenceStarted) return;
-        if (event.touches.length !== 1) return;
+    const deltaY = touchStartY - changedTouch.clientY;
+    const deltaX = touchStartX - changedTouch.clientX;
 
-        const currentY = event.touches[0].clientY;
-        const currentX = event.touches[0].clientX;
+    // 横方向の操作や小さな動きは無視
+    if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+    if (Math.abs(deltaY) < 35) return;
 
-        const deltaY = touchStartY - currentY;
-        const deltaX = touchStartX - currentX;
+    // 下方向へのスワイプ：画像を表示
+    if (deltaY > 0) {
 
-        // 横方向の操作は妨げない
-        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
-
-        // 画像04表示後は通常スクロールを許可
-        if (imageStep >= 3) return;
-
-        // 画像02〜04を展開する間はページを固定
-        if (Math.abs(deltaY) > 5) {
-            event.preventDefault();
-            touchMoved = true;
-        }
-    }
-
-
-    function handleTouchEnd(event) {
-
-        if (!sequenceStarted) return;
-        if (!touchMoved) return;
-
-        const changedTouch = event.changedTouches[0];
-
-        if (!changedTouch) return;
-
-        const deltaY = touchStartY - changedTouch.clientY;
-        const deltaX = touchStartX - changedTouch.clientX;
-
-        // 横方向の操作や小さな動きは無視
-        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
-        if (deltaY < 35) return;
-
-        // 画像04まで表示済みなら、次のスワイプで通常スクロールへ
+        // 画像04表示後は通常スクロールへ戻る
         if (imageStep >= 3) {
             sequenceStarted = false;
+            touchMoved = false;
             return;
         }
 
-        // 1回の上スワイプにつき画像を1枚だけ展開
         if (imageStep === 1) {
-
             image03.classList.add("is-open");
             imageStep = 2;
-
         } else if (imageStep === 2) {
-
             image04.classList.add("is-open");
             imageStep = 3;
-
         }
 
-        touchMoved = false;
+    } else {
+
+        // 上方向へのスワイプ：画像を逆順に戻す
+        if (imageStep === 3) {
+            image04.classList.remove("is-open");
+            imageStep = 2;
+        } else if (imageStep === 2) {
+            image03.classList.remove("is-open");
+            imageStep = 1;
+        } else if (imageStep === 1) {
+            // 画像02表示中は、通常スクロールへ戻る
+            sequenceStarted = false;
+            touchMoved = false;
+            return;
+        }
+
     }
 
+    touchMoved = false;
+}
 
     /* =========================================
        イベント登録
