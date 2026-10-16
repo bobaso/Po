@@ -268,11 +268,7 @@ function initWork01ImageAnimation() {
 
     let sequenceStarted = false;
     let wheelReady = true;
-let wheelTimer = null;
-
-// 上方向の連続スクロールを制御
-let upwardWheelLocked = false;
-let upwardWheelTimer = null;
+    let wheelTimer = null;
 
     // スマホ用
     let touchStartY = 0;
@@ -293,20 +289,7 @@ let upwardWheelTimer = null;
         }, 220);
     }
 
-/* =========================================
-   上方向の連続スクロールを制御
-========================================= */
 
-function lockUpwardWheel() {
-
-    upwardWheelLocked = true;
-
-    clearTimeout(upwardWheelTimer);
-
-    upwardWheelTimer = setTimeout(() => {
-        upwardWheelLocked = false;
-    }, 450);
-}
     /* =========================================
        見出しが中央に来たら停止して画像02を表示
     ========================================= */
