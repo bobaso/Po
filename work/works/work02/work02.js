@@ -70,3 +70,46 @@ content: `
 
 };
 
+/* =========================================
+   work02専用
+   製作過程の長方形をフェードイン
+========================================= */
+
+function initWork02ProcessAnimation() {
+
+    const workScrollArea =
+        document.querySelector(".work-scroll-area");
+
+    if (!workScrollArea) return;
+
+    const processRectangles = document.querySelectorAll(
+        ".work02-process-rectangle, " +
+        ".work02-process-rectangle02"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("is-visible");
+
+                    // 一度表示したら再アニメーションしない
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            root: workScrollArea,
+            threshold: 0.15
+        }
+    );
+
+    processRectangles.forEach((rectangle) => {
+        observer.observe(rectangle);
+    });
+}
