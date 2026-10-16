@@ -275,7 +275,7 @@ function initWork01ImageAnimation() {
     let touchStartY = 0;
     let touchStartX = 0;
     let touchMoved = false;
-
+}
 
     /* =========================================
        スクロール操作の連続入力を調整
