@@ -78,3 +78,34 @@
     top: 796px;
    text-align: center;
 }
+
+/* =========================================
+PROCESS  
+========================================= */
+.work01-heading-small-process {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1946px;
+}
+
+/* =========================================
+製作過程
+========================================= */
+.work01-body-process {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1995px;
+}
+
+/* 長方形 */
+.work01-process-rectangle {
+    position: absolute;
+    left: 121px;
+    top: 2060px;
+    width: 1010px;
+    height: 263px;
+    background-color: #3cc8d7;
+    z-index: 1;
+}
