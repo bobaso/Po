@@ -346,11 +346,12 @@ function handleImageWheel(event) {
     /* 下方向：画像を順番に開く */
     if (event.deltaY > 0) {
 
-        // 画像04まで開いたら通常スクロールへ
-        if (imageStep >= 3) {
-            sequenceStarted = false;
-            return;
-        }
+        
+ // 画像04まで開いたら通常スクロールへ
+if (imageStep >= 3) {
+    return;
+}
+
 
         event.preventDefault();
 
@@ -376,11 +377,12 @@ function handleImageWheel(event) {
     /* 上方向：画像を順番に閉じる */
     if (event.deltaY < 0) {
 
-        // 画像02だけになったら通常スクロールへ
-        if (imageStep <= 1) {
-            sequenceStarted = false;
-            return;
-        }
+        
+ // 画像02だけになったら通常スクロールへ
+if (imageStep <= 1) {
+    return;
+}
+
 
         event.preventDefault();
 
@@ -453,19 +455,22 @@ function handleTouchEnd(event) {
     if (Math.abs(deltaX) > Math.abs(deltaY)) return;
     if (Math.abs(deltaY) < 35) return;
 
-    // 画像02の状態で指を下に動かしたら通常スクロール
-    if (imageStep === 1 && deltaY < 0) {
-        sequenceStarted = false;
-        touchMoved = false;
-        return;
+  
+ // 画像02の状態で指を下に動かしたら通常スクロール
+if (imageStep === 1 && deltaY < 0) {
+    touchMoved = false;
+    return;
+}
+
     }
 
-    // 画像04の次に指を上に動かしたら通常スクロール
-    if (imageStep === 3 && deltaY > 0) {
-        sequenceStarted = false;
-        touchMoved = false;
-        return;
-    }
+    
+ // 画像04の次に指を上に動かしたら通常スクロール
+if (imageStep === 3 && deltaY > 0) {
+    touchMoved = false;
+    return;
+}
+
 
     if (!touchMoved) return;
 
