@@ -294,46 +294,62 @@ function initWork01ImageAnimation() {
        見出しが中央に来たら停止して画像02を表示
     ========================================= */
 
-    function checkResearchHeading() {
 
-        if (sequenceStarted || imageStep > 0) return;
+function checkResearchHeading() {
 
-        const headingRect =
-            researchHeading.getBoundingClientRect();
+    const headingRect =
+        researchHeading.getBoundingClientRect();
 
-        const scrollRect =
-            workScrollArea.getBoundingClientRect();
+    const scrollRect =
+        workScrollArea.getBoundingClientRect();
 
-        const viewportCenter =
-            scrollRect.top + scrollRect.height / 2;
+    const viewportCenter =
+        scrollRect.top + scrollRect.height / 2;
 
-        if (headingRect.top <= viewportCenter) {
+    // 上方向に戻り、見出しが表示範囲の中央より下へ
+    // 抜けたら、次回の表示に備えて初期状態へ戻す
+    if (
+        sequenceStarted &&
+        headingRect.top > viewportCenter
+    ) {
+        sequenceStarted = false;
+        imageStep = 0;
 
-            sequenceStarted = true;
-            imageStep = 1;
+        image02.classList.remove("is-open");
+        image03.classList.remove("is-open", "is-closing");
+        image04.classList.remove("is-open", "is-closing");
 
-            const scale =
-                workScrollArea.clientHeight > 0
-                    ? scrollRect.height /
-                      workScrollArea.clientHeight
-                    : 1;
-
-            const headingCenter =
-                (headingRect.top + headingRect.bottom) / 2;
-
-            const correction =
-                (headingCenter - viewportCenter) / scale;
-
-            // 停止位置の微調整値
-            workScrollArea.scrollTop += correction + 200;
-
-            // 画像02を表示
-            image02.classList.add("is-open");
-        }
+        return;
     }
 
+    // すでに開始している場合は再度位置調整しない
+    if (sequenceStarted || imageStep > 0) return;
 
-    
+    if (headingRect.top <= viewportCenter) {
+
+        sequenceStarted = true;
+        imageStep = 1;
+
+        const scale =
+            workScrollArea.clientHeight > 0
+                ? scrollRect.height /
+                  workScrollArea.clientHeight
+                : 1;
+
+        const headingCenter =
+            (headingRect.top + headingRect.bottom) / 2;
+
+        const correction =
+            (headingCenter - viewportCenter) / scale;
+
+        // 初回と同じ停止位置に調整
+        workScrollArea.scrollTop += correction + 200;
+
+        // 画像02を表示
+        image02.classList.add("is-open");
+    }
+}
+
 
 /* =========================================
    PC：マウスホイール・トラックパッド
