@@ -96,6 +96,29 @@
 }
 
 /* =========================================
+   work02
+   CONCEPT / EVIDENCE
+========================================= */
+/* 小見出し */
+.work02-heading-small-concept {
+    position: absolute;
+    left: 93px;
+    top: 1337px;
+}
+/* コンセプト / エビデンス */
+.work02-body-concept {
+    position: absolute;
+    left: 181px;
+    top: 1386px;
+}
+/* 説明テキスト */
+.work02-body-concept-text {
+    position: absolute;
+    left: 35px;
+    top: 1448px;
+}
+
+/* =========================================
 PROCESS  
 ========================================= */
 .work01-heading-small-process {
