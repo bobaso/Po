@@ -440,6 +440,45 @@ function handleImageWheel(event) {
 
 function handleTouchEnd(event) {
 
+    
+/* =========================================
+   スマホ：スワイプ中のスクロール制御
+========================================= */
+
+function handleTouchMove(event) {
+
+    if (!sequenceStarted) return;
+
+    // 1本指での操作だけを対象にする
+    if (event.touches.length !== 1) return;
+
+    const currentTouch = event.touches[0];
+
+    const deltaY =
+        touchStartY - currentTouch.clientY;
+
+    const deltaX =
+        touchStartX - currentTouch.clientX;
+
+    // 横方向のスワイプは通常どおり許可
+    if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+
+    // 小さな動きは無視
+    if (Math.abs(deltaY) < 5) return;
+
+    // 画像02だけの状態で下方向へ動かす場合は通常スクロール
+    if (imageStep === 1 && deltaY < 0) return;
+
+    // 画像04まで開いた状態で、さらに下へ進む操作は通常スクロール
+    if (imageStep === 3 && deltaY > 0) return;
+
+    // 画像の開閉操作中は通常スクロールを止める
+    event.preventDefault();
+
+    touchMoved = true;
+}
+
+
     if (!sequenceStarted) return;
 
     const changedTouch = event.changedTouches[0];
