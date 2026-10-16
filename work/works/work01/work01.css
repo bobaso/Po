@@ -109,9 +109,7 @@
 
 .work01-heading-small-research {
     position: absolute;
-
-    left: 50%;
-    transform: translateX(-50%);
+    left: 750px;
     top: 690px;
 
     text-align: center;
@@ -123,9 +121,7 @@
 ========================================= */
 .work01-body-research {
     position: absolute;
-
-    left: 50%;
-    transform: translateX(-50%);
+    left: 808px;
     top: 733px;
 
     text-align: center;
@@ -228,7 +224,8 @@ PROCESS
 ========================================= */
 .work01-heading-small-process {
     position: absolute;
-    left: 550px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 1946px;
 }
 
@@ -237,7 +234,8 @@ PROCESS
 ========================================= */
 .work01-body-process {
     position: absolute;
-    left: 578px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 1995px;
 }
 
