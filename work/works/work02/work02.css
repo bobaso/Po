@@ -125,3 +125,35 @@ PROCESS
     background-color: #3cc8d7;
     z-index: 1;
 }
+
+
+/* =========================================
+   work02
+   製作過程の長方形：フェードイン
+========================================= */
+
+/* アニメーション開始前 */
+.work02-process-rectangle,
+.work02-process-rectangle02 {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* 表示範囲に入ったとき */
+.work02-process-rectangle.is-visible,
+.work02-process-rectangle02.is-visible {
+    animation: work02-process-fade-up 0.8s ease-out forwards;
+}
+
+/* 下から上へ移動しながら表示 */
+@keyframes work02-process-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
