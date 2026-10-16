@@ -333,60 +333,68 @@ function initWork01ImageAnimation() {
     }
 
 
-    /* =========================================
-       PC：マウスホイール・トラックパッド
-    ========================================= */
+    
+/* =========================================
+   PC：マウスホイール・トラックパッド
+========================================= */
 
-    function handleImageWheel(event) {
+function handleImageWheel(event) {
 
-        if (!sequenceStarted) return;
+    if (!sequenceStarted) return;
 
-        // 画像02の状態で上に戻る操作は通常スクロール
-        if (imageStep === 1 && event.deltaY < 0) {
-            sequenceStarted = false;
-            return;
-        }
+    // 下方向へのスクロール：画像を順番に開く
+    if (event.deltaY > 0) {
 
-        // 画像04表示後、さらに下へ進む
-        if (imageStep === 3 && event.deltaY > 0) {
+        // 画像04まで表示済みなら通常スクロール
+        if (imageStep >= 3) {
             sequenceStarted = false;
             return;
         }
 
         event.preventDefault();
 
-        if (!wheelReady) {
-            resetWheelReady();
-            return;
-        }
+        if (!wheelReady) return;
 
         wheelReady = false;
 
-        if (event.deltaY > 0) {
+        if (imageStep === 1) {
+            image03.classList.add("is-open");
+            imageStep = 2;
+        } else if (imageStep === 2) {
+            image04.classList.add("is-open");
+            imageStep = 3;
+        }
 
-            // 下方向：画像を展開
-            if (imageStep === 1) {
-                image03.classList.add("is-open");
-                imageStep = 2;
-            } else if (imageStep === 2) {
-                image04.classList.add("is-open");
-                imageStep = 3;
-            }
+        resetWheelReady();
+        return;
+    }
 
-        } else if (event.deltaY < 0) {
+    // 上方向へのスクロール：画像を順番に閉じる
+    if (event.deltaY < 0) {
 
-            // 上方向：画像を戻す
-            if (imageStep === 3) {
-                image04.classList.remove("is-open");
-                imageStep = 2;
-            } else if (imageStep === 2) {
-                image03.classList.remove("is-open");
-                imageStep = 1;
-            }
+        // 画像02まで戻っていたら通常スクロール
+        if (imageStep <= 1) {
+            sequenceStarted = false;
+            return;
+        }
+
+        event.preventDefault();
+
+        if (!wheelReady) return;
+
+        wheelReady = false;
+
+        if (imageStep === 3) {
+            image04.classList.remove("is-open");
+            imageStep = 2;
+        } else if (imageStep === 2) {
+            image03.classList.remove("is-open");
+            imageStep = 1;
         }
 
         resetWheelReady();
     }
+}
 
 
     /* =========================================
