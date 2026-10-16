@@ -440,51 +440,43 @@ if (imageStep <= 1) {
    スマホ：スワイプ方向に応じて画像を切り替え
 ========================================= */
 
+f
 function handleTouchEnd(event) {
 
     if (!sequenceStarted) return;
 
     const changedTouch = event.changedTouches[0];
-
     if (!changedTouch) return;
 
     const deltaY = touchStartY - changedTouch.clientY;
     const deltaX = touchStartX - changedTouch.clientX;
 
-    // 横方向の操作や小さな動きは無視
     if (Math.abs(deltaX) > Math.abs(deltaY)) return;
     if (Math.abs(deltaY) < 35) return;
 
-  
- // 画像02の状態で指を下に動かしたら通常スクロール
-if (imageStep === 1 && deltaY < 0) {
-    touchMoved = false;
-    return;
-}
+    if (!touchMoved) return;
 
+    // 画像02の状態で下方向なら通常スクロール
+    if (imageStep === 1 && deltaY < 0) {
+        touchMoved = false;
+        return;
     }
 
-    
- // 画像04の次に指を上に動かしたら通常スクロール
-if (imageStep === 3 && deltaY > 0) {
-    touchMoved = false;
-    return;
-}
-
-
-    if (!touchMoved) return;
+    // 画像04の状態で上方向なら通常スクロール
+    if (imageStep === 3 && deltaY > 0) {
+        touchMoved = false;
+        return;
+    }
 
     if (deltaY > 0) {
 
-        // 指を上に動かす：画像を順番に開く
+        // 上スワイプ：画像を展開
         if (imageStep === 1) {
-
             image03.classList.remove("is-closing");
             image03.classList.add("is-open");
             imageStep = 2;
 
         } else if (imageStep === 2) {
-
             image04.classList.remove("is-closing");
             image04.classList.add("is-open");
             imageStep = 3;
@@ -492,34 +484,27 @@ if (imageStep === 3 && deltaY > 0) {
 
     } else {
 
-        // 指を下に動かす：画像を順番に閉じる
+        // 下スワイプ：画像を収納
         if (imageStep === 3) {
-
             image04.classList.remove("is-open");
             image04.classList.remove("is-closing");
-
             void image04.offsetWidth;
-
             image04.classList.add("is-closing");
-
             imageStep = 2;
 
         } else if (imageStep === 2) {
-
             image03.classList.remove("is-open");
             image03.classList.remove("is-closing");
-
             void image03.offsetWidth;
-
             image03.classList.add("is-closing");
-
             imageStep = 1;
         }
     }
 
     touchMoved = false;
 }
-    
+
+
 /* =========================================
    スマホ：スワイプ中のスクロール制御
 ========================================= */
@@ -527,35 +512,25 @@ if (imageStep === 3 && deltaY > 0) {
 function handleTouchMove(event) {
 
     if (!sequenceStarted) return;
-
-    // 1本指での操作だけを対象にする
     if (event.touches.length !== 1) return;
 
     const currentTouch = event.touches[0];
 
-    const deltaY =
-        touchStartY - currentTouch.clientY;
+    const deltaY = touchStartY - currentTouch.clientY;
+    const deltaX = touchStartX - currentTouch.clientX;
 
-    const deltaX =
-        touchStartX - currentTouch.clientX;
-
-    // 横方向のスワイプは通常どおり許可
+    // 横方向の操作は許可
     if (Math.abs(deltaX) > Math.abs(deltaY)) return;
-
-    // 小さな動きは無視
     if (Math.abs(deltaY) < 5) return;
 
-    // 画像02だけの状態で下方向へ動かす場合は通常スクロール
+    // 端では通常スクロールを許可
     if (imageStep === 1 && deltaY < 0) return;
-
-    // 画像04まで開いた状態で、さらに下へ進む操作は通常スクロール
     if (imageStep === 3 && deltaY > 0) return;
 
-    // 画像の開閉操作中は通常スクロールを止める
     event.preventDefault();
-
     touchMoved = true;
 }
+
 
 
     /* =========================================
