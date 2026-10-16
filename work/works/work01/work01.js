@@ -268,7 +268,11 @@ function initWork01ImageAnimation() {
 
     let sequenceStarted = false;
     let wheelReady = true;
-    let wheelTimer = null;
+let wheelTimer = null;
+
+// 上方向の連続スクロールを制御
+let upwardWheelLocked = false;
+let upwardWheelTimer = null;
 
     // スマホ用
     let touchStartY = 0;
@@ -289,7 +293,20 @@ function initWork01ImageAnimation() {
         }, 220);
     }
 
+/* =========================================
+   上方向の連続スクロールを制御
+========================================= */
 
+function lockUpwardWheel() {
+
+    upwardWheelLocked = true;
+
+    clearTimeout(upwardWheelTimer);
+
+    upwardWheelTimer = setTimeout(() => {
+        upwardWheelLocked = false;
+    }, 450);
+}
     /* =========================================
        見出しが中央に来たら停止して画像02を表示
     ========================================= */
@@ -391,26 +408,25 @@ if (imageStep >= 3) {
     }
 
     
+  
     /* 上方向：画像を順番に閉じる */
     if (event.deltaY < 0) {
 
-        // 画像02だけの状態では通常スクロールを許可する。
-        // ただし、画像を閉じた直後の連続入力は止める。
-        if (imageStep <= 1) {
-
-            if (!wheelReady) {
-                event.preventDefault();
-                resetWheelReady();
-            }
-
+        // 画像を閉じた直後の連続入力では、
+        // 通常スクロールを発生させない
+        if (upwardWheelLocked) {
+            event.preventDefault();
+            lockUpwardWheel();
             return;
         }
 
+        // 画像02だけの状態なら通常スクロールを許可
+        if (imageStep <= 1) {
+            return;
+        }
+
+        // 画像を閉じる間はスクロールを停止
         event.preventDefault();
-
-        if (!wheelReady) return;
-
-        wheelReady = false;
 
         if (imageStep === 3) {
 
@@ -437,8 +453,10 @@ if (imageStep >= 3) {
             imageStep = 1;
         }
 
-        resetWheelReady();
+        // 上方向の連続入力を一時的にロック
+        lockUpwardWheel();
     }
+
 }
 
     /* =========================================
