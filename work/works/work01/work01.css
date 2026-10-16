@@ -433,12 +433,70 @@ PROCESS
     transform-origin: center center;
 }
 
-/* 画像02〜04の展開アニメーション */
+
+/* =========================================
+   画像02〜04
+   開く・閉じるアニメーション
+========================================= */
+
+/* 初期状態：中央の線に閉じた状態 */
+.work01-image02,
+.work01-image03,
+.work01-image04 {
+    clip-path: inset(49.5% 0 49.5% 0);
+    opacity: 0;
+    transform-origin: center center;
+}
+
+/* 開くアニメーション */
 .work01-image02.is-open,
 .work01-image03.is-open,
 .work01-image04.is-open {
     animation: window-open 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0s;
 }
+
+/* 閉じるアニメーション */
+.work01-image02.is-closing,
+.work01-image03.is-closing,
+.work01-image04.is-closing {
+    animation: window-close 0.5s ease-in forwards;
+}
+
+/* 中央の線から上下に開く */
+@keyframes window-open {
+    0% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+/* 上下から中央へ閉じる */
+@keyframes window-close {
+    0% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+}
+
 
 /* スクロール操作で順番に表示するため時間差をなくす */
 .work01-image02.is-open,
