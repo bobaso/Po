@@ -440,7 +440,6 @@ if (imageStep <= 1) {
    スマホ：スワイプ方向に応じて画像を切り替え
 ========================================= */
 
-f
 function handleTouchEnd(event) {
 
     if (!sequenceStarted) return;
