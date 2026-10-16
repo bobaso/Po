@@ -334,6 +334,7 @@ function initWork01ImageAnimation() {
 
 
     
+
 /* =========================================
    PC：マウスホイール・トラックパッド
 ========================================= */
@@ -342,10 +343,10 @@ function handleImageWheel(event) {
 
     if (!sequenceStarted) return;
 
-    // 下方向へのスクロール：画像を順番に開く
+    /* 下方向：画像を順番に開く */
     if (event.deltaY > 0) {
 
-        // 画像04まで表示済みなら通常スクロール
+        // 画像04まで開いたら通常スクロールへ
         if (imageStep >= 3) {
             sequenceStarted = false;
             return;
@@ -358,9 +359,12 @@ function handleImageWheel(event) {
         wheelReady = false;
 
         if (imageStep === 1) {
+            image03.classList.remove("is-closing");
             image03.classList.add("is-open");
             imageStep = 2;
+
         } else if (imageStep === 2) {
+            image04.classList.remove("is-closing");
             image04.classList.add("is-open");
             imageStep = 3;
         }
@@ -369,10 +373,10 @@ function handleImageWheel(event) {
         return;
     }
 
-    // 上方向へのスクロール：画像を順番に閉じる
+    /* 上方向：画像を順番に閉じる */
     if (event.deltaY < 0) {
 
-        // 画像02まで戻っていたら通常スクロール
+        // 画像02だけになったら通常スクロールへ
         if (imageStep <= 1) {
             sequenceStarted = false;
             return;
@@ -385,17 +389,35 @@ function handleImageWheel(event) {
         wheelReady = false;
 
         if (imageStep === 3) {
+
+            // 画像04を閉じる
             image04.classList.remove("is-open");
+            image04.classList.remove("is-closing");
+
+            // アニメーションを再スタートできるようにする
+            void image04.offsetWidth;
+
+            image04.classList.add("is-closing");
+
             imageStep = 2;
+
         } else if (imageStep === 2) {
+
+            // 画像03を閉じる
             image03.classList.remove("is-open");
+            image03.classList.remove("is-closing");
+
+            // アニメーションを再スタートできるようにする
+            void image03.offsetWidth;
+
+            image03.classList.add("is-closing");
+
             imageStep = 1;
         }
 
         resetWheelReady();
     }
 }
-
 
     /* =========================================
        スマホ：タッチ開始位置を記録
@@ -411,98 +433,88 @@ function handleImageWheel(event) {
     }
 
 
-    /* =========================================
-       スマホ：画像切り替え中のページ移動を制御
-    ========================================= */
 
-    function handleTouchMove(event) {
+/* =========================================
+   スマホ：スワイプ方向に応じて画像を切り替え
+========================================= */
 
-        if (!sequenceStarted) return;
-        if (event.touches.length !== 1) return;
+function handleTouchEnd(event) {
 
-        const currentY = event.touches[0].clientY;
-        const currentX = event.touches[0].clientX;
+    if (!sequenceStarted) return;
 
-        const deltaY = touchStartY - currentY;
-        const deltaX = touchStartX - currentX;
+    const changedTouch = event.changedTouches[0];
 
-        // 横方向のスワイプには干渉しない
-        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+    if (!changedTouch) return;
 
-        // 画像02から上へ戻る操作は通常スクロール
-        if (imageStep === 1 && deltaY < 0) return;
+    const deltaY = touchStartY - changedTouch.clientY;
+    const deltaX = touchStartX - changedTouch.clientX;
 
-        // 画像04からさらに下へ進む操作は通常スクロール
-        if (imageStep === 3 && deltaY > 0) return;
+    // 横方向の操作や小さな動きは無視
+    if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+    if (Math.abs(deltaY) < 35) return;
 
-        // 画像を切り替える間はページの移動を止める
-        if (Math.abs(deltaY) > 5) {
-            event.preventDefault();
-            touchMoved = true;
-        }
-    }
-
-
-    /* =========================================
-       スマホ：スワイプ方向に応じて画像を切り替え
-    ========================================= */
-
-    function handleTouchEnd(event) {
-
-        if (!sequenceStarted) return;
-
-        const changedTouch = event.changedTouches[0];
-
-        if (!changedTouch) return;
-
-        const deltaY = touchStartY - changedTouch.clientY;
-        const deltaX = touchStartX - changedTouch.clientX;
-
-        // 横方向の操作や小さな動きは無視
-        if (Math.abs(deltaX) > Math.abs(deltaY)) return;
-        if (Math.abs(deltaY) < 35) return;
-
-        // 上方向へのページ移動を再開
-        if (imageStep === 1 && deltaY < 0) {
-            sequenceStarted = false;
-            touchMoved = false;
-            return;
-        }
-
-        // 画像04の次は下方向へのページ移動を再開
-        if (imageStep === 3 && deltaY > 0) {
-            sequenceStarted = false;
-            touchMoved = false;
-            return;
-        }
-
-        if (!touchMoved) return;
-
-        if (deltaY > 0) {
-
-            // 指を上に動かす：画像を展開
-            if (imageStep === 1) {
-                image03.classList.add("is-open");
-                imageStep = 2;
-            } else if (imageStep === 2) {
-                image04.classList.add("is-open");
-                imageStep = 3;
-            }
-
-        } else {
-
-            // 指を下に動かす：画像を戻す
-            if (imageStep === 3) {
-                image04.classList.remove("is-open");
-                imageStep = 2;
-            } else if (imageStep === 2) {
-                image03.classList.remove("is-open");
-                imageStep = 1;
-            }
-        }
-
+    // 画像02の状態で指を下に動かしたら通常スクロール
+    if (imageStep === 1 && deltaY < 0) {
+        sequenceStarted = false;
         touchMoved = false;
+        return;
     }
+
+    // 画像04の次に指を上に動かしたら通常スクロール
+    if (imageStep === 3 && deltaY > 0) {
+        sequenceStarted = false;
+        touchMoved = false;
+        return;
+    }
+
+    if (!touchMoved) return;
+
+    if (deltaY > 0) {
+
+        // 指を上に動かす：画像を順番に開く
+        if (imageStep === 1) {
+
+            image03.classList.remove("is-closing");
+            image03.classList.add("is-open");
+            imageStep = 2;
+
+        } else if (imageStep === 2) {
+
+            image04.classList.remove("is-closing");
+            image04.classList.add("is-open");
+            imageStep = 3;
+        }
+
+    } else {
+
+        // 指を下に動かす：画像を順番に閉じる
+        if (imageStep === 3) {
+
+            image04.classList.remove("is-open");
+            image04.classList.remove("is-closing");
+
+            void image04.offsetWidth;
+
+            image04.classList.add("is-closing");
+
+            imageStep = 2;
+
+        } else if (imageStep === 2) {
+
+            image03.classList.remove("is-open");
+            image03.classList.remove("is-closing");
+
+            void image03.offsetWidth;
+
+            image03.classList.add("is-closing");
+
+            imageStep = 1;
+        }
+    }
+
+    touchMoved = false;
+}
+
 
 
     /* =========================================
