@@ -110,20 +110,25 @@
 .work01-heading-small-research {
     position: absolute;
 
-    left: 750px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 690px;
+
+    text-align: center;
 }
 
 /* =========================================
    work01
    課題とリサーチ
 ========================================= */
-
 .work01-body-research {
     position: absolute;
 
-    left: 808px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 733px;
+
+    text-align: center;
 }
 
 /* =========================================
