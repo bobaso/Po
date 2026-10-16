@@ -390,15 +390,21 @@ if (imageStep >= 3) {
         return;
     }
 
+    
     /* 上方向：画像を順番に閉じる */
     if (event.deltaY < 0) {
 
-        
- // 画像02だけになったら通常スクロールへ
-if (imageStep <= 1) {
-    return;
-}
+        // 画像02だけの状態では通常スクロールを許可する。
+        // ただし、画像を閉じた直後の連続入力は止める。
+        if (imageStep <= 1) {
 
+            if (!wheelReady) {
+                event.preventDefault();
+                resetWheelReady();
+            }
+
+            return;
+        }
 
         event.preventDefault();
 
@@ -412,7 +418,6 @@ if (imageStep <= 1) {
             image04.classList.remove("is-open");
             image04.classList.remove("is-closing");
 
-            // アニメーションを再スタートできるようにする
             void image04.offsetWidth;
 
             image04.classList.add("is-closing");
@@ -425,7 +430,6 @@ if (imageStep <= 1) {
             image03.classList.remove("is-open");
             image03.classList.remove("is-closing");
 
-            // アニメーションを再スタートできるようにする
             void image03.offsetWidth;
 
             image03.classList.add("is-closing");
@@ -435,7 +439,7 @@ if (imageStep <= 1) {
 
         resetWheelReady();
     }
-}
+
 
     /* =========================================
        スマホ：タッチ開始位置を記録
