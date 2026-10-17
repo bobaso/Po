@@ -197,6 +197,16 @@ if (typeof initWork01ImageAnimation === "function") {
     initWork01ImageAnimation();
 }
 
+
+/* =========================================
+   work02専用アニメーションの初期化
+========================================= */
+
+if (typeof initWork02OpenAnimation === "function") {
+    initWork02OpenAnimation();
+}
+
+
 /* =========================================
    共通フェードインアニメーション
    下から上へフェードイン
