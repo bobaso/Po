@@ -187,3 +187,59 @@ function initWork02ProcessAnimation() {
         observer.observe(rectangle);
     });
 }
+
+
+/* =========================================
+   work02専用
+   画像07・08・09の展開アニメーション
+========================================= */
+
+function initWork02OpenAnimation() {
+
+    const workScrollArea =
+        document.querySelector(".work-scroll-area");
+
+    const image07 =
+        document.querySelector(".work02-image07");
+
+    const image08 =
+        document.querySelector(".work02-image08");
+
+    const image09 =
+        document.querySelector(".work02-image09");
+
+    if (!workScrollArea || !image07 || !image08 || !image09) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    // 画像07・08を同時に展開
+                    image07.classList.add("is-open");
+                    image08.classList.add("is-open");
+
+                    // 画像07・08より0.3秒遅れて画像09を展開
+                    setTimeout(function () {
+                        image09.classList.add("is-open");
+                    }, 300);
+
+                    // 一度開始したら再実行しない
+                    observer.unobserve(image07);
+                }
+
+            });
+
+        },
+        {
+            root: workScrollArea,
+            threshold: 0
+        }
+    );
+
+    observer.observe(image07);
+}
