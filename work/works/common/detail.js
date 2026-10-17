@@ -197,6 +197,45 @@ if (typeof initWork01ImageAnimation === "function") {
     initWork01ImageAnimation();
 }
 
+/* =========================================
+   共通フェードインアニメーション
+   下から上へフェードイン
+========================================= */
+
+const fadeUpElements =
+    document.querySelectorAll(".fade-up");
+
+if (fadeUpElements.length > 0) {
+
+    const fadeUpObserver = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("is-visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+    fadeUpElements.forEach(function (element) {
+
+        fadeUpObserver.observe(element);
+
+    });
+
+}
+
 
 /* =========================================
    画面サイズに合わせて縮小
