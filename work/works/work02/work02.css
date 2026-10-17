@@ -155,5 +155,15 @@ PROCESS
     display: block;
 }
 
+/* =========================================
+   work02
+   画像05
+========================================= */
 
+.work02-image05 {
+    position: absolute;
+    left: 64px;
+    top: 2552px;
+    display: block;
+}
 
