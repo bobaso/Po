@@ -50,10 +50,19 @@ ECサイト内のリデザイン、リニューアルを行いました。
     
 </div>
 
+<!-- 画像02：フレーム画像 -->
 <img
     src="../images/work03-02.png"
     alt=""
     class="work03-image02">
+
+<!-- 画像03：スクロール表示範囲 -->
+<div class="work03-scroll-window">
+    <img
+        src="../images/work03-03.png"
+        alt=""
+        class="work03-image03">
+</div>
     `
 };
 
