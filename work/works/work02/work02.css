@@ -335,3 +335,20 @@ PROCESS
 .work02-image05.is-visible {
     animation: process-fade-up 0.8s ease-out forwards;
 }
+
+/* =========================================
+   製作過程 画像04・05
+   下から上へフェードイン
+========================================= */
+
+@keyframes process-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
