@@ -22,7 +22,7 @@ const workData = {
     MATERIAL.
     </div>
 
- <div class="work-body work02-body typing-text">
+<div class="work-body work02-body typing-text">
 ペーパーサミット2026に出展し、物販用の商品開発<br>
 およびパッケージデザインを行いました。
 </div>
