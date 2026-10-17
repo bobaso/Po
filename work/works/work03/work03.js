@@ -22,20 +22,20 @@ const workData = {
     MATERIAL.
     </div>
 
-<div class="work-body work02-body typing-text">
+<div class="work-body work03-body typing-text">
 BtoB、BtoC向けにノベルティー制作事業を進めていく為<br>
 ECサイト内のリデザイン、リニューアルを行いました。
 </div>
 
-div class="work-heading-small work02-heading-small-research typing-text">
+div class="work-heading-small work03-heading-small-research typing-text">
     BACKGROUND
 </div>
 
-<div class="work-body work02-body-research">
+<div class="work-body work03-body-research">
     背景
 </div>
 
-<div class="work-body work02-body-description">
+<div class="work-body work03-body-description">
     前任者が制作したECサイトを引き継ぎましたが、<br>
     情報が古くなっていた為、ECサイトのリニューアルを行いました。
     その際に同業他社が制作したECサイトを比較し、サイトに不足している情報や<br>
