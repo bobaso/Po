@@ -178,3 +178,65 @@ PROCESS
     display: block;
 }
 
+
+
+
+
+/* =========================================
+   work02
+   画像02・画像06 交互切り替えアニメーション
+========================================= */
+
+/* 2枚の画像を重ねる */
+.work02-switch-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    clip-path: inset(49.5% 0 49.5% 0);
+    opacity: 0;
+    transform-origin: center center;
+    animation: work02-image-cycle 4s linear infinite;
+}
+
+/* 画像02：最初に表示 */
+.work02-switch-image01 {
+    animation-delay: 0s;
+}
+
+/* 画像06：2秒遅れて表示 */
+.work02-switch-image02 {
+    animation-delay: -2s;
+}
+
+/* 中央の線から開き、2秒ごとに交互に切り替える */
+@keyframes work02-image-cycle {
+    0% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    25% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+
+    49.9% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+
+    50% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    100% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+}
