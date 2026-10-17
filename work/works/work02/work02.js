@@ -112,6 +112,16 @@ content: `
     alt=""
     class="work02-image05">
 
+<!-- SPECIFICATION -->
+<div class="work-heading-small work02-heading-small-specification typing-text">
+    SPECIFICATION
+</div>
+
+<!-- 仕様 / こだわり -->
+<div class="work-body work02-body-specification">
+    仕様/こだわり
+</div>
+
     `
 
 };
