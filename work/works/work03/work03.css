@@ -68,4 +68,14 @@
     text-align: center;
 }
 
+/* =========================================
+  説明文
+========================================= */
 
+.work03-body-description {
+    position: absolute;
+
+    left: 633px;
+    top: 796px;
+   text-align: center;
+}
