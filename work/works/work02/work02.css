@@ -439,3 +439,29 @@ PROCESS
         opacity: 1;
     }
 }
+
+/* =========================================
+   work02
+   画像03：棒グラフのゲージアニメーション
+========================================= */
+
+/* 最初はゲージを非表示 */
+.work02-image03 {
+    clip-path: inset(100% 0 0 0);
+}
+
+/* アニメーション開始 */
+.work02-image03.is-gauge-visible {
+    animation: work02-gauge-rise 1.5s ease-out forwards;
+}
+
+/* 下から上へゲージを伸ばす */
+@keyframes work02-gauge-rise {
+    from {
+        clip-path: inset(100% 0 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
