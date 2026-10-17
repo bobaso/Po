@@ -12,7 +12,7 @@ const workData = {
             class="work03-image01">
 
        <div class="work-heading-large work03-heading-large typing-text">
-    ECサイト<br>リニューアル
+    ECサイトリニューアル
        </div>
 
        <div class="work-heading-small work03-heading-small typing-text">
