@@ -207,26 +207,30 @@ const fadeUpElements =
 
 if (fadeUpElements.length > 0) {
 
-    const fadeUpObserver = new IntersectionObserver(
-        function (entries, observer) {
 
-            entries.forEach(function (entry) {
+const fadeUpObserver = new IntersectionObserver(
+    function (entries, observer) {
 
-                if (entry.isIntersecting) {
+        entries.forEach(function (entry) {
 
-                    entry.target.classList.add("is-visible");
+            if (entry.isIntersecting) {
 
-                    observer.unobserve(entry.target);
+                entry.target.classList.add("is-visible");
 
-                }
+                // 一度表示したら再アニメーションしない
+                observer.unobserve(entry.target);
 
-            });
+            }
 
-        },
-        {
-            threshold: 0.1
-        }
-    );
+        });
+
+    },
+    {
+        root: scrollArea,
+        threshold: 0.1
+    }
+);
+
 
     fadeUpElements.forEach(function (element) {
 
