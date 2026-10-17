@@ -202,22 +202,20 @@ PROCESS
     clip-path: inset(49.5% 0 49.5% 0);
     opacity: 0;
     transform-origin: center center;
-
-    animation: work02-image-cycle 8s linear infinite;
 }
 
-/* 画像02：最初に動く */
+/* 画像02 */
 .work02-switch-image01 {
-    animation-delay: 0s;
+    animation: work02-image02-cycle 12s linear infinite;
 }
 
-/* 画像06：2秒遅れて動く */
+/* 画像06 */
 .work02-switch-image02 {
-    animation-delay: -4s;
+    animation: work02-image06-cycle 12s linear infinite;
 }
 
-/* 中央から開く → 閉じる */
-@keyframes work02-image-cycle {
+/* 画像02：展開 → 約3秒表示 → 折り畳む */
+@keyframes work02-image02-cycle {
 
     /* 閉じた状態 */
     0% {
@@ -225,30 +223,75 @@ PROCESS
         opacity: 0;
     }
 
-    /* 開き始める */
+    /* 展開開始 */
     2% {
         opacity: 1;
     }
 
     /* 全開 */
-    15% {
+    10% {
         clip-path: inset(0 0 0 0);
         opacity: 1;
     }
 
-    /* 全開のまま約3秒キープ */
-    52.5% {
+    /* 全開で約3秒キープ */
+    35% {
         clip-path: inset(0 0 0 0);
         opacity: 1;
     }
 
-    /* 閉じる */
-    62.5% {
+    /* 折り畳み完了 */
+    43% {
         clip-path: inset(49.5% 0 49.5% 0);
         opacity: 0;
     }
 
-    /* 閉じた状態を維持 */
+    /* 画像06の表示中は非表示 */
+    100% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+}
+
+/* 画像06：画像02が閉じてから展開 */
+@keyframes work02-image06-cycle {
+
+    /* 画像02の表示中は非表示 */
+    0% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    /* 画像02が閉じた後に展開開始 */
+    52% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    /* 展開開始 */
+    54% {
+        opacity: 1;
+    }
+
+    /* 全開 */
+    62% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+
+    /* 全開で約3秒キープ */
+    87% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+
+    /* 折り畳み完了 */
+    95% {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    /* 次のサイクルまで非表示 */
     100% {
         clip-path: inset(49.5% 0 49.5% 0);
         opacity: 0;
