@@ -23,8 +23,8 @@ const workData = {
     </div>
 
 <div class="work-body work02-body typing-text">
-ペーパーサミット2026に出展し、物販用の商品開発<br>
-およびパッケージデザインを行いました。
+BtoB、BtoC向けにノベルティー制作を<br>
+行って、ECサイト内のリデザイン、ニューアルを行いました。
 </div>
 
     `
