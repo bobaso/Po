@@ -408,12 +408,12 @@ PROCESS
 /* 画像07・08：先に展開 */
 .work02-image07.is-open,
 .work02-image08.is-open {
-    animation: work02-open-once 0.8s linear forwards;
+    animation: work02-open-once 0.5s linear forwards;
 }
 
 /* 画像09：少し遅れて展開 */
 .work02-image09.is-open {
-    animation: work02-open-once 0.8s linear forwards;
+    animation: work02-open-once 0.5s linear forwards;
 }
 
 /* 中央から上下に広がる */
