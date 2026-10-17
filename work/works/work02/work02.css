@@ -78,7 +78,7 @@
 
 .work02-heading-small-research {
     position: absolute;
-    left: 800px;
+    left: 850px;
     top: 690px;
 
     text-align: center;
@@ -115,7 +115,7 @@
 /* 小見出し */
 .work02-heading-small-concept {
     position: absolute;
-    left: 100px;
+    left: 150px;
     top: 1337px;
 }
 /* コンセプト / エビデンス */
@@ -129,6 +129,7 @@
     position: absolute;
     left: 35px;
     top: 1448px;
+   text-align: center;
 }
 
 
