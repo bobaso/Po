@@ -118,6 +118,7 @@
 }
 
 
+
 /* =========================================
    画像03：自動スクロール
 ========================================= */
@@ -125,10 +126,11 @@
 .work03-image03 {
     display: block;
 
-    width: 100%;
-    height: auto;
+    width: 469px;
+    height: 2470px;
+    max-width: none;
 
-    animation: work03-auto-scroll 12s linear infinite;
+    animation: work03-auto-scroll 20s linear infinite;
 }
 
 
@@ -142,6 +144,7 @@
     }
 
     to {
-        transform: translateY(-50%);
+        transform: translateY(-1754px);
     }
 }
+
