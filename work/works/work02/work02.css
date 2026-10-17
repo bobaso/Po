@@ -151,7 +151,8 @@ PROCESS
 
 .work02-body-process-description {
     position: absolute;
-    left: 576px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 2018px;
 }
 /* =========================================
