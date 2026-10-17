@@ -187,15 +187,21 @@ PROCESS
    画像02・画像06 交互切り替えアニメーション
 ========================================= */
 
-/* 2枚の画像を重ねる */
+/* 2枚の画像を同じ位置・サイズに重ねる */
 .work02-switch-image {
     position: absolute;
-    left: 0;
-    top: 0;
+
+    left: 65px;
+    top: 700px;
+
+    width: 500px;
+    height: 500px;
+
     display: block;
     clip-path: inset(49.5% 0 49.5% 0);
     opacity: 0;
     transform-origin: center center;
+
     animation: work02-image-cycle 4s linear infinite;
 }
 
