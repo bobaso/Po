@@ -242,6 +242,7 @@ PROCESS
 }
 
 
+
 /* =========================================
    work02
    画像02・画像06 交互切り替えアニメーション
@@ -390,5 +391,40 @@ PROCESS
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* =========================================
+   work02
+   画像07〜09 展開アニメーション
+========================================= */
+
+/* 展開前 */
+.work02-open-image {
+    clip-path: inset(49.5% 0 49.5% 0);
+    opacity: 0;
+}
+
+/* 画像07・08：先に展開 */
+.work02-image07.is-open,
+.work02-image08.is-open {
+    animation: work02-open-once 0.8s linear forwards;
+}
+
+/* 画像09：少し遅れて展開 */
+.work02-image09.is-open {
+    animation: work02-open-once 0.8s linear forwards;
+}
+
+/* 中央から上下に広がる */
+@keyframes work02-open-once {
+    from {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
     }
 }
