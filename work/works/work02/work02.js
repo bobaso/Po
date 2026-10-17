@@ -87,6 +87,12 @@ content: `
     alt=""
     class="work02-image03">
 
+<!-- 画像05 -->
+<img
+    src="../images/work02-05.png"
+    alt=""
+    class="work02-image05">
+
     `
 
 };
