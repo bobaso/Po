@@ -63,9 +63,11 @@ content: `
     製作過程
 </div>
 
-<!-- 製作過程の親要素 -->
-<div class="work02-process-rectangle">
-</div>
+<!-- 画像04 -->
+<img
+    src="../images/work02-04.png"
+    alt=""
+    class="work02-image04">
 
 <div class="work-heading-small work02-heading-small-concept typing-text">
     CONCEPT/EVIDENCE
