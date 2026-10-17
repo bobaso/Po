@@ -48,7 +48,7 @@
    BACK GROUND
 ========================================= */
 
-.work02-heading-small-research {
+.work03-heading-small-research {
     position: absolute;
     left: 820px;
     top: 690px;
@@ -60,7 +60,7 @@
    背景
 ========================================= */
 
-.work02-body-research {
+.work03-body-research {
     position: absolute;
     left: 905px;
     top: 733px;
@@ -68,10 +68,4 @@
     text-align: center;
 }
 
-<div class="work-heading-small work02-heading-small-research typing-text">
-    BACKGROUND
-</div>
 
-<div class="work-body work02-body-research">
-    背景
-</div>
