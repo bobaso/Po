@@ -249,3 +249,45 @@ function initWork02OpenAnimation() {
 
     observer.observe(image07);
 }
+
+/* =========================================
+   work02専用
+   画像03：ゲージアニメーション
+========================================= */
+
+function initWork02GaugeAnimation() {
+
+    const workScrollArea =
+        document.querySelector(".work-scroll-area");
+
+    const gaugeImage =
+        document.querySelector(".work02-image03");
+
+    if (!workScrollArea || !gaugeImage) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    gaugeImage.classList.add("is-gauge-visible");
+
+                    // 一度アニメーションしたら再実行しない
+                    observer.unobserve(gaugeImage);
+                }
+
+            });
+
+        },
+        {
+            root: workScrollArea,
+            threshold: 0.1
+        }
+    );
+
+    observer.observe(gaugeImage);
+}
