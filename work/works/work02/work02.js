@@ -44,6 +44,11 @@ content: `
     src="../images/work02-03.png"
     alt=""
     class="work02-image03">
+
+    <img
+    src="../images/work02-10.png"
+    alt=""
+    class="work02-image10">
     
 <div class="work-heading-small work02-heading-small-research typing-text">
     BACKGROUND
