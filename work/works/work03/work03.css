@@ -43,3 +43,27 @@
     left: 40px;
     top: 450px;
 }
+
+/* =========================================
+   BACK GROUND
+========================================= */
+
+.work02-heading-small-research {
+    position: absolute;
+    left: 820px;
+    top: 690px;
+
+    text-align: center;
+}
+
+/* =========================================
+   背景
+========================================= */
+
+.work02-body-research {
+    position: absolute;
+    left: 905px;
+    top: 733px;
+
+    text-align: center;
+}
