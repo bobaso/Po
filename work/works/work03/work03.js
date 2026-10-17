@@ -50,6 +50,10 @@ ECサイト内のリデザイン、リニューアルを行いました。
     
 </div>
 
+<img
+    src="../images/work03-02.png"
+    alt=""
+    class="work03-image02">
     `
 };
 
