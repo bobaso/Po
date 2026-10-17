@@ -179,7 +179,26 @@ PROCESS
     display: block;
 }
 
+/* =========================================
+   work02
+   SPECIFICATION
+========================================= */
 
+/* 小見出し */
+.work02-heading-small-specification {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3009px;
+}
+
+/* 仕様 / こだわり */
+.work02-body-specification {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3057px;
+}
 
 
 
