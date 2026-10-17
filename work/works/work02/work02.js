@@ -34,6 +34,12 @@ content: `
         alt=""
         class="work02-image02">
 
+<!-- 画像03 -->
+<img
+    src="../images/work02-03.png"
+    alt=""
+    class="work02-image03">
+    
 <div class="work-heading-small work02-heading-small-research typing-text">
     BACKGROUND
 </div>
@@ -59,8 +65,9 @@ content: `
     PROCESS
 </div>
 
-<div class="work-body work01-body-process typing-text">
-    製作過程
+<!-- 制作過程の本文 -->
+<div class="work-body work02-body-process-description">
+    制作過程
 </div>
 
 <!-- 画像04 -->
@@ -81,11 +88,7 @@ content: `
     テキスト
 </div>
 
-<!-- 画像03 -->
-<img
-    src="../images/work02-03.png"
-    alt=""
-    class="work02-image03">
+
 
 <!-- 画像05 -->
 <img
