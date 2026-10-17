@@ -99,7 +99,7 @@ const works = [
     },
 
     {
-        title: "ECサイトリニューアル",
+        title: "ECサイト<br>リニューアル",
         image: "../images/work-test03.png",
         category: "web",
         link: "works/work03/index.html"
