@@ -27,7 +27,7 @@ BtoB、BtoC向けにノベルティー制作事業を進めていく為<br>
 ECサイト内のリデザイン、リニューアルを行いました。
 </div>
 
-div class="work-heading-small work03-heading-small-research typing-text">
+<div class="work-heading-small work03-heading-small-research typing-text">
     BACKGROUND
 </div>
 
