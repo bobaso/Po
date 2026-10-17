@@ -28,11 +28,16 @@ content: `
 およびパッケージデザインを行いました。
 </div>
 
-          <!-- 画像02 -->
-    <img
-        src="../images/work02-02.png"
-        alt=""
-        class="work02-image02">
+    <!-- 画像02・画像06 切り替え表示 -->
+<img
+    src="../images/work02-02.png"
+    alt=""
+    class="work02-image02 work02-switch-image work02-switch-image01">
+
+<img
+    src="../images/work02-06.png"
+    alt=""
+    class="work02-switch-image work02-switch-image02">
 
 <!-- 画像03 -->
 <img
