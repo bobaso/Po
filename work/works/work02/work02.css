@@ -316,3 +316,22 @@ PROCESS
         opacity: 0;
     }
 }
+
+
+/* =========================================
+   製作過程 画像04・05
+   下から上へフェードイン
+========================================= */
+
+/* アニメーション開始前 */
+.work02-image04,
+.work02-image05 {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* 画面内に入ったとき */
+.work02-image04.is-visible,
+.work02-image05.is-visible {
+    animation: process-fade-up 0.8s ease-out forwards;
+}
