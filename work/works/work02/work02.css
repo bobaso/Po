@@ -78,7 +78,7 @@
 
 .work02-heading-small-research {
     position: absolute;
-    left: 835px;
+    left: 810px;
     top: 690px;
 
     text-align: center;
@@ -202,7 +202,7 @@ PROCESS
     opacity: 0;
     transform-origin: center center;
 
-    animation: work02-image-cycle 4s linear infinite;
+    animation: work02-image-cycle 8s linear infinite;
 }
 
 /* 画像02：最初に動く */
@@ -212,7 +212,7 @@ PROCESS
 
 /* 画像06：2秒遅れて動く */
 .work02-switch-image02 {
-    animation-delay: -2s;
+    animation-delay: -4s;
 }
 
 /* 中央から開く → 閉じる */
@@ -235,14 +235,14 @@ PROCESS
         opacity: 1;
     }
 
-    /* 全開のまま少し見せる */
-    25% {
+    /* 全開のまま約3秒キープ */
+    52.5% {
         clip-path: inset(0 0 0 0);
         opacity: 1;
     }
 
-    /* 閉じ始める */
-    50% {
+    /* 閉じる */
+    62.5% {
         clip-path: inset(49.5% 0 49.5% 0);
         opacity: 0;
     }
