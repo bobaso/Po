@@ -206,6 +206,14 @@ if (typeof initWork02OpenAnimation === "function") {
     initWork02OpenAnimation();
 }
 
+/* =========================================
+   work02専用
+   ゲージアニメーションの初期化
+========================================= */
+
+if (typeof initWork02GaugeAnimation === "function") {
+    initWork02GaugeAnimation();
+}
 
 /* =========================================
    共通フェードインアニメーション
