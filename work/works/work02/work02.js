@@ -75,12 +75,6 @@ content: `
     制作過程
 </div>
 
-<!-- 画像04 -->
-<img
-    src="../images/work02-04.png"
-    alt=""
-    class="work02-image04">
-
 <div class="work-heading-small work02-heading-small-concept typing-text">
     CONCEPT/EVIDENCE
 </div>
@@ -104,7 +98,11 @@ content: `
     2024年頃から確実にブームの追い風が吹きつつあるジャンルと言えます。
 </div>
 
-
+<!-- 画像04 -->
+<img
+    src="../images/work02-04.png"
+    alt=""
+    class="work02-image04">
 
 <!-- 画像05 -->
 <img
