@@ -102,13 +102,13 @@ content: `
 <img
     src="../images/work02-04.png"
     alt=""
-    class="work02-image04">
+    class="work02-image04 fade-up">
 
 <!-- 画像05 -->
 <img
     src="../images/work02-05.png"
     alt=""
-    class="work02-image05">
+    class="work02-image05 fade-up">
 
 <!-- SPECIFICATION -->
 <div class="work-heading-small work02-heading-small-specification typing-text">
