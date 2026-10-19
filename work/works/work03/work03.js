@@ -106,9 +106,9 @@ ECサイト内のリデザイン、リニューアルを行いました。
         onclick="event.stopPropagation()">
 
         <img
-            src="../images/work03-06.png"
-            alt="拡大画像"
-            class="work03-image-expanded">
+    src="../images/work03-06-large.png"
+    alt="拡大画像"
+    class="work03-image-expanded">
 
     </div>
 
