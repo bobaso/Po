@@ -70,7 +70,7 @@ body::before {
    基準サイズ：1440 × 675
 ========================================= */
 
-.make-visual-area {
+.visual-area {
     position: fixed;
 
     top: 50%;
@@ -89,7 +89,7 @@ body::before {
    メインビジュアル
 ========================================= */
 
-.make-main-visual {
+.main-visual {
     position: absolute;
 
     top: 0;
@@ -110,7 +110,7 @@ body::before {
 
 /* 表示アニメーション */
 
-.make-main-visual.is-visible {
+.main-visual.is-visible {
     opacity: 1;
     transform: translateX(0);
 }
@@ -119,7 +119,7 @@ body::before {
    メインビジュアル画像
 ========================================= */
 
-.make-main-visual-image {
+.main-visual-image {
     display: block;
 
     width: 100%;
