@@ -281,3 +281,53 @@
     }
 }
 
+/* =========================================
+   画像06：クリック可能
+========================================= */
+
+.work03-image06 {
+    cursor: zoom-in;
+}
+
+
+/* =========================================
+   画像06：拡大表示の背景
+========================================= */
+
+#work03-image-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    z-index: 99999;
+
+    cursor: zoom-out;
+}
+
+
+/* 拡大表示中 */
+
+#work03-image-overlay.is-visible {
+    display: flex;
+}
+
+
+/* 拡大画像 */
+
+.work03-image-expanded {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+}
