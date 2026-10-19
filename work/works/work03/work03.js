@@ -79,11 +79,13 @@ ECサイト内のリデザイン、リニューアルを行いました。
 
     
 <!-- 画像06：画像05の内側でスクロール -->
-<img
-    src="../images/work03-06.png"
-    alt="拡大表示する画像"
-    class="work03-image06"
-    onclick="openWork03Image()">
+<div class="work03-scroll-window02">
+    <img
+        src="../images/work03-06.png"
+        alt="拡大表示する画像"
+        class="work03-image06"
+        onclick="openWork03Image()">
+</div>
 <!-- 画像06の拡大表示 -->
 <div
     id="work03-image-overlay"
