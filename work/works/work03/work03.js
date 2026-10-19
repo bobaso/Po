@@ -67,8 +67,10 @@ ECサイト内のリデザイン、リニューアルを行いました。
 <!-- 画像04 -->
 <img
     src="../images/work03-04.png"
-    alt=""
-    class="work03-image04">
+    alt="HOW TO MAKEページを開く"
+    class="work03-image04"
+    onclick="window.location.href='https://bobaso.github.io/Po/make/'"
+    style="cursor: pointer;">
 
 <!-- 画像05 -->
 <img
