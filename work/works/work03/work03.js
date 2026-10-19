@@ -75,6 +75,17 @@ ECサイト内のリデザイン、リニューアルを行いました。
     src="../images/work03-05.png"
     alt=""
     class="work03-image05">
+
+
+    
+<!-- 画像06：画像05の内側でスクロール -->
+<div class="work03-scroll-window02">
+    <img
+        src="../images/work03-06.png"
+        alt=""
+        class="work03-image06">
+</div>
+
     `
 };
 
