@@ -126,3 +126,114 @@ body::before {
     height: auto;
 }
 
+
+/* =========================================
+   MAKE 共通ナビゲーション
+   1440 × 675 基準
+========================================= */
+
+.make-home-bottom,
+.make-profile-bottom {
+    position: absolute;
+    height: auto;
+    display: block;
+    z-index: 10;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+/* HOME */
+
+.make-home-bottom {
+    left: 219px;
+    top: 68px;
+}
+
+/* PROFILE */
+
+.make-profile-bottom {
+    left: 352px;
+    top: 68px;
+}
+
+/* =========================================
+   MAKE内オブジェクト01
+========================================= */
+
+.make-object01 {
+    position: absolute;
+    left: 117px;
+    top: 136px;
+    height: auto;
+    display: block;
+    z-index: 2;
+}
+
+/* =========================================
+   MAKE内ボタン
+========================================= */
+
+.make-button01,
+.make-button02 {
+    position: absolute;
+    height: auto;
+    display: block;
+    z-index: 3;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+/* WORK */
+
+.make-button01 {
+    left: 114px;
+    top: 226px;
+}
+
+/* PROFILE */
+
+.make-button02 {
+    left: 98px;
+    top: 301px;
+}
+
+/* =========================================
+   オブジェクト04
+========================================= */
+
+.make-object04 {
+    position: absolute;
+    left: 1186px;
+    top: 136px;
+    height: auto;
+    display: block;
+    z-index: 2;
+}
+
+/* =========================================
+   ホバーアニメーション
+========================================= */
+
+.make-home-bottom:hover,
+.make-profile-bottom:hover {
+    transform:
+        scale(1.05)
+        translateY(-2px);
+
+    filter: brightness(1.15);
+}
+
+.make-button01:hover,
+.make-button02:hover {
+    transform:
+        scale(1.05)
+        translateY(-3px);
+
+    filter: brightness(1.15);
+}
