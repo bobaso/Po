@@ -70,6 +70,11 @@ ECサイト内のリデザイン、リニューアルを行いました。
     alt=""
     class="work03-image04">
 
+<!-- 画像05 -->
+<img
+    src="../images/work03-05.png"
+    alt=""
+    class="work03-image05">
     `
 };
 
