@@ -160,6 +160,75 @@
 
     display: block;
 }
+
+
+/* =========================================
+   画像05：フレーム
+========================================= */
+
+.work03-image05 {
+    position: absolute;
+
+    left: 64px;
+    top: 1651px;
+
+    width: 500px;
+    height: 800px;
+
+    display: block;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   画像06：スクロール表示範囲
+========================================= */
+
+.work03-scroll-window02 {
+    position: absolute;
+
+    left: 79px;
+    top: 1692px;
+
+    width: 469px;
+    height: 716px;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   画像06：自動スクロール
+========================================= */
+
+.work03-image06 {
+    display: block;
+
+    width: 469px;
+    height: 1249px;
+    max-width: none;
+
+    animation: work03-auto-scroll02 15s linear infinite;
+}
+
+
+/* =========================================
+   自動スクロールアニメーション
+========================================= */
+
+@keyframes work03-auto-scroll02 {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-533px);
+    }
+}
+
 /* =========================================
    自動スクロールアニメーション
 ========================================= */
