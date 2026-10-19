@@ -79,11 +79,11 @@ ECサイト内のリデザイン、リニューアルを行いました。
 
     
 <!-- 画像06：画像05の内側でスクロール -->
-<div class="work03-scroll-window02">
-    <img
-        src="../images/work03-06.png"
-        alt=""
-        class="work03-image06">
+<img
+    src="../images/work03-06.png"
+    alt="拡大表示する画像"
+    class="work03-image06"
+    onclick="openWork03Image()">
 
         
 <!-- 小見出し：RENEWAL -->
@@ -112,4 +112,22 @@ ECサイト内のリデザイン、リニューアルを行いました。
 
     `
 };
+
+// =========================================
+// WORK03 画像06の拡大表示
+// =========================================
+
+function openWork03Image() {
+    const overlay = document.getElementById("work03-image-overlay");
+    if (overlay) {
+        overlay.classList.add("is-visible");
+    }
+}
+
+function closeWork03Image() {
+    const overlay = document.getElementById("work03-image-overlay");
+    if (overlay) {
+        overlay.classList.remove("is-visible");
+    }
+}
 
