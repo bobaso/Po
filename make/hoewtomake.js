@@ -5,10 +5,10 @@
 ========================================= */
 
 const makeVisualArea =
-    document.querySelector(".make-visual-area");
+    document.querySelector(".visual-area");
 
 const makeMainVisual =
-    document.querySelector(".make-main-visual");
+    document.querySelector(".main-visual");
 
 const canvasWidth = 1440;
 const canvasHeight = 675;
@@ -31,7 +31,6 @@ function resizeMakePage() {
 
     makeVisualArea.style.transform =
         `translate(-50%, -50%) scale(${scale})`;
-
 }
 
 
@@ -65,9 +64,6 @@ requestAnimationFrame(function () {
             "is-visible"
         );
 
-      
-
     });
 
 });
-
