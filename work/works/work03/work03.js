@@ -63,6 +63,13 @@ ECサイト内のリデザイン、リニューアルを行いました。
         alt=""
         class="work03-image03">
 </div>
+
+<!-- 画像04 -->
+<img
+    src="../images/work03-04.png"
+    alt=""
+    class="work03-image04">
+
     `
 };
 
