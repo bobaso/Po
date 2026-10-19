@@ -146,6 +146,7 @@
     display: block;
 
     z-index: 3;
+   cursor: pointer;
 }
 
 /* =========================================
