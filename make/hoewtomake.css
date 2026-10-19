@@ -105,7 +105,7 @@ body::before {
         opacity 0.3s ease,
         transform 0.3s ease;
 
-    z-index: 4;
+    z-index: 2;
 }
 
 /* 表示アニメーション */
@@ -137,7 +137,7 @@ body::before {
     position: absolute;
     height: auto;
     display: block;
-    z-index: 10;
+    z-index: 3;
     cursor: pointer;
 
     transition:
@@ -169,7 +169,7 @@ body::before {
     top: 136px;
     height: auto;
     display: block;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* =========================================
