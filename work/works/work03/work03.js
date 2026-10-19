@@ -84,6 +84,23 @@ ECサイト内のリデザイン、リニューアルを行いました。
         src="../images/work03-06.png"
         alt=""
         class="work03-image06">
+
+        
+<!-- 小見出し：RENEWAL -->
+<div class="work-heading-small work03-heading-small-renewal typing-text">
+    RENEWAL
+</div>
+
+<!-- 本文：リニューアル -->
+<div class="work-body work03-body-renewal typing-text">
+    リニューアル
+</div>
+
+<!-- 本文：テキスト -->
+<div class="work-body work03-body-text typing-text">
+    テキスト
+</div>
+
 </div>
 
     `
