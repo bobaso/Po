@@ -84,7 +84,17 @@ ECサイト内のリデザイン、リニューアルを行いました。
     alt="拡大表示する画像"
     class="work03-image06"
     onclick="openWork03Image()">
+<!-- 画像06の拡大表示 -->
+<div
+    id="work03-image-overlay"
+    onclick="closeWork03Image()">
 
+    <img
+        src="../images/work03-06.png"
+        alt="拡大画像"
+        class="work03-image-expanded">
+
+</div>
         
 <!-- 小見出し：RENEWAL -->
 <div class="work-heading-small work03-heading-small-renewal typing-text">
