@@ -86,18 +86,34 @@ ECサイト内のリデザイン、リニューアルを行いました。
         class="work03-image06"
         onclick="openWork03Image()">
 </div>
+
 <!-- 画像06の拡大表示 -->
 <div
     id="work03-image-overlay"
     onclick="closeWork03Image()">
 
-    <img
-        src="../images/work03-06.png"
-        alt="拡大画像"
-        class="work03-image-expanded">
+    <!-- 戻るボタン -->
+    <button
+        type="button"
+        class="work03-image-close"
+        onclick="event.stopPropagation(); closeWork03Image()">
+        × 閉じる
+    </button>
+
+    <!-- 拡大画像のスクロール領域 -->
+    <div
+        class="work03-image-overlay-scroll"
+        onclick="event.stopPropagation()">
+
+        <img
+            src="../images/work03-06.png"
+            alt="拡大画像"
+            class="work03-image-expanded">
+
+    </div>
 
 </div>
-        
+
 <!-- 小見出し：RENEWAL -->
 <div class="work-heading-small work03-heading-small-renewal typing-text">
     RENEWAL
@@ -129,17 +145,44 @@ ECサイト内のリデザイン、リニューアルを行いました。
 // WORK03 画像06の拡大表示
 // =========================================
 
+
+/* =========================================
+   WORK03 画像06の拡大表示
+========================================= */
+
 function openWork03Image() {
     const overlay = document.getElementById("work03-image-overlay");
-    if (overlay) {
-        overlay.classList.add("is-visible");
+
+    if (!overlay) return;
+
+    /*
+       拡大表示を画面全体に固定するため、
+       body直下へ移動する
+    */
+    if (overlay.parentElement !== document.body) {
+        document.body.appendChild(overlay);
+    }
+
+    overlay.classList.add("is-visible");
+
+    // 拡大画像を先頭位置から表示
+    const scrollArea = overlay.querySelector(
+        ".work03-image-overlay-scroll"
+    );
+
+    if (scrollArea) {
+        scrollArea.scrollTop = 0;
+        scrollArea.scrollLeft = 0;
     }
 }
 
+
 function closeWork03Image() {
     const overlay = document.getElementById("work03-image-overlay");
+
     if (overlay) {
         overlay.classList.remove("is-visible");
     }
 }
+
 
