@@ -132,18 +132,25 @@ if (currentIndex === 1) {
    make02-03.png 吹き出しフェードイン
 ========================================= */
 
+
+/* =========================================
+   make02-03.png 吹き出しフェードイン
+========================================= */
+
 function showMake02Images() {
     const image = document.querySelector(".make02-image03");
 
     if (!image) return;
 
+    // いったん非表示状態から表示を開始
+    image.classList.remove("is-visible");
     image.style.display = "block";
 
-    // display変更後にフェードインを開始
+    // ブラウザに非表示状態を反映させてからフェードイン
+    void image.offsetWidth;
+
     requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            image.classList.add("is-visible");
-        });
+        image.classList.add("is-visible");
     });
 }
 
@@ -154,9 +161,11 @@ function hideMake02Images() {
 
     image.classList.remove("is-visible");
 
+    // フェードアウト完了後に非表示
     setTimeout(() => {
         if (!image.classList.contains("is-visible")) {
             image.style.display = "none";
         }
     }, 1000);
 }
+
