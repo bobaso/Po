@@ -440,55 +440,6 @@ body::before {
 
 
 
-/* =========================================
-   矢印
-========================================= */
-
-.make-scroll-arrow {
-    position: absolute;
-
-    left: 1230px;
-    top: 525px;
-
-    display: block;
-
-    width: 32px;
-    height: 24px;
-
-    background-color: #00508c;
-
-    -webkit-mask: url("../images/scroll-arrow.png") center / 100% 100% no-repeat;
-    mask: url("../images/scroll-arrow.png") center / 100% 100% no-repeat;
-
-    animation: profile-scroll-down 2s infinite;
-}
-
-
-/* =========================================
-   SCROLL文字
-========================================= */
-
-.make-scroll-text {
-    position: absolute;
-
-    left: 1215px;
-    top: 498px;
-
-    display: block;
-
-    width: 59px;
-    height: 17px;
-
-    background-color: #00508c;
-
-    -webkit-mask: url("../images/scroll-text.png") center / 100% 100% no-repeat;
-    mask: url("../images/scroll-text.png") center / 100% 100% no-repeat;
-
-    animation: profile-scroll-text-blink 2s infinite;
-}
-
-
-
 /* 矢印のアニメーション */
 
 @keyframes profile-scroll-down {
