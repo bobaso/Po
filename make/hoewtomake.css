@@ -301,6 +301,7 @@ body::before {
     filter: brightness(1.15);
 }
 
+
 /* =========================================
    make02用アニメーション画像
 ========================================= */
@@ -322,6 +323,7 @@ body::before {
 
 /* フェードイン表示 */
 .make02-image03.is-visible {
+    display: block;
     opacity: 1;
 }
 
@@ -336,3 +338,4 @@ body::before {
     left: 783px;
     top: 26px;
 }
+
