@@ -403,3 +403,11 @@ body::before {
     left: 686px;
     top: 386px;
 }
+
+/* =========================================
+   make03-01.png：左からフェードイン
+========================================= */
+
+.make03-image01.animate-fadeInLeft {
+    animation: fadeInLeft 0.5s ease 1 both;
+}
