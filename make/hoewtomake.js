@@ -133,39 +133,61 @@ if (currentIndex === 1) {
 ========================================= */
 
 
-/* =========================================
-   make02-03.png 吹き出しフェードイン
-========================================= */
+let make02AnimationTimer = null;
 
 function showMake02Images() {
-    const image = document.querySelector(".make02-image03");
+    const speechBubble = document.querySelector(".make02-image03");
+    const image02 = document.querySelector(".make02-image02");
 
-    if (!image) return;
+    if (!speechBubble || !image02) return;
 
-    // いったん非表示状態から表示を開始
-    image.classList.remove("is-visible");
-    image.style.display = "block";
+    clearTimeout(make02AnimationTimer);
 
-    // ブラウザに非表示状態を反映させてからフェードイン
-    void image.offsetWidth;
+    // 以前のアニメーションをリセット
+    speechBubble.classList.remove("is-visible");
+    image02.classList.remove("animate-fadeInLeft");
+
+    speechBubble.style.display = "block";
+    image02.style.display = "none";
+    image02.style.opacity = "0";
+
+    // 吹き出しをフェードイン
+    void speechBubble.offsetWidth;
 
     requestAnimationFrame(() => {
-        image.classList.add("is-visible");
+        speechBubble.classList.add("is-visible");
     });
+
+    // 吹き出しのフェードイン終了後に画像02を表示
+    make02AnimationTimer = setTimeout(() => {
+        image02.style.display = "block";
+
+        void image02.offsetWidth;
+
+        image02.classList.add("animate-fadeInLeft");
+    }, 1000);
 }
 
 function hideMake02Images() {
-    const image = document.querySelector(".make02-image03");
+    const speechBubble = document.querySelector(".make02-image03");
+    const image02 = document.querySelector(".make02-image02");
 
-    if (!image) return;
+    clearTimeout(make02AnimationTimer);
 
-    image.classList.remove("is-visible");
+    if (speechBubble) {
+        speechBubble.classList.remove("is-visible");
 
-    // フェードアウト完了後に非表示
-    setTimeout(() => {
-        if (!image.classList.contains("is-visible")) {
-            image.style.display = "none";
-        }
-    }, 1000);
+        setTimeout(() => {
+            if (!speechBubble.classList.contains("is-visible")) {
+                speechBubble.style.display = "none";
+            }
+        }, 1000);
+    }
+
+    if (image02) {
+        image02.classList.remove("animate-fadeInLeft");
+        image02.style.display = "none";
+        image02.style.opacity = "0";
+    }
 }
 
