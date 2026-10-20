@@ -437,7 +437,12 @@ body::before {
 }
 
 
-/* 矢印 */
+
+
+/* =========================================
+   矢印
+   32 × 24 px
+========================================= */
 
 .make-scroll-arrow {
     position: absolute;
@@ -447,14 +452,31 @@ body::before {
 
     display: block;
 
-    width: auto;
-    height: auto;
+    width: 32px;
+    height: 24px;
+
+    background-color: #00508c;
+
+    -webkit-mask-image: url("../images/scroll-arrow.png");
+    mask-image: url("../images/scroll-arrow.png");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 
     animation: profile-scroll-down 2s infinite;
 }
 
 
-/* SCROLL文字 */
+/* =========================================
+   SCROLL文字
+   59 × 17 px
+========================================= */
 
 .make-scroll-text {
     position: absolute;
@@ -464,11 +486,26 @@ body::before {
 
     display: block;
 
-    width: auto;
-    height: auto;
+    width: 59px;
+    height: 17px;
+
+    background-color: #00508c;
+
+    -webkit-mask-image: url("../images/scroll-text.png");
+    mask-image: url("../images/scroll-text.png");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 
     animation: profile-scroll-text-blink 2s infinite;
 }
+
 
 
 /* 矢印のアニメーション */
