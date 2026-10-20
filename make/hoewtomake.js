@@ -110,11 +110,16 @@ requestAnimationFrame(function () {
             // メイン画像を切り替え
 makeImage.src = images[currentIndex];
 
-// make02のときだけ吹き出しを表示
+// 画像ごとのアニメーションを切り替え
 if (currentIndex === 1) {
     showMake02Images();
+    hideMake03Images();
+} else if (currentIndex === 2) {
+    hideMake02Images();
+    showMake03Images();
 } else {
     hideMake02Images();
+    hideMake03Images();
 }
         }
 
@@ -213,4 +218,36 @@ function hideMake02Images() {
         speechBubble01.classList.remove("is-visible");
         speechBubble01.style.display = "none";
     }
+}
+/* =========================================
+   make03-03.png 吹き出しフェードイン
+========================================= */
+
+function showMake03Images() {
+    const image = document.querySelector(".make03-image03");
+
+    if (!image) return;
+
+    image.style.display = "block";
+    image.classList.remove("is-visible");
+
+    void image.offsetWidth;
+
+    requestAnimationFrame(() => {
+        image.classList.add("is-visible");
+    });
+}
+
+function hideMake03Images() {
+    const image = document.querySelector(".make03-image03");
+
+    if (!image) return;
+
+    image.classList.remove("is-visible");
+
+    setTimeout(() => {
+        if (!image.classList.contains("is-visible")) {
+            image.style.display = "none";
+        }
+    }, 1000);
 }
