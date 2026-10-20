@@ -275,3 +275,24 @@ window.addEventListener(
     "resize",
     resizeProfilePages
 );
+
+
+/* =========================================
+   PROFILE画面1 object05
+   展開アニメーション
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const object05 = document.querySelector(
+        ".profile-page01 .profile-object05"
+    );
+
+    if (!object05) return;
+
+    // ページ表示時に展開
+    requestAnimationFrame(() => {
+        object05.classList.add("is-open");
+    });
+
+});
