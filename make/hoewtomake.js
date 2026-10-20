@@ -119,3 +119,36 @@ requestAnimationFrame(function () {
 
     }, { passive: false });
 })();
+
+/* =========================================
+   make02-03.png 吹き出しフェードイン
+========================================= */
+
+function showMake02Images() {
+    const image = document.querySelector(".make02-image03");
+
+    if (!image) return;
+
+    image.style.display = "block";
+
+    // display変更後にフェードインを開始
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            image.classList.add("is-visible");
+        });
+    });
+}
+
+function hideMake02Images() {
+    const image = document.querySelector(".make02-image03");
+
+    if (!image) return;
+
+    image.classList.remove("is-visible");
+
+    setTimeout(() => {
+        if (!image.classList.contains("is-visible")) {
+            image.style.display = "none";
+        }
+    }, 1000);
+}
