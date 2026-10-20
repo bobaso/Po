@@ -392,10 +392,16 @@ body::before {
     opacity: 1;
 }
 
-/* make03-02.png */
 .make03-image02 {
     left: 649px;
     top: 313px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.make03-image02.is-visible {
+    display: block;
+    opacity: 1;
 }
 
 /* make03-01.png */
