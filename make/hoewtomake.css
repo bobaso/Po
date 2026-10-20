@@ -315,8 +315,8 @@ body::before {
 
 /* make02-03.png：吹き出しフェードイン */
 .make02-image03 {
-    left: 37px;
-    top: 26px;
+    left: 403px;
+    top: 313px;
     opacity: 0;
     transition: opacity 1s ease;
 }
