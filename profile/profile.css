@@ -976,19 +976,44 @@ font-family:
     cursor: pointer;
 }
 
+/* =========================================
+   PROFILE画面1 object05
+   中央から上下に広がる展開アニメーション
+========================================= */
+
 .profile-object05 {
     display: block;
-
     width: auto;
     height: auto;
+
+    /* 最初は中央の細い線の状態 */
+    clip-path: inset(49.5% 0 49.5% 0);
+    opacity: 0;
 
     transition:
         transform 0.2s ease,
         filter 0.2s ease;
 }
 
-/* ホバー */
+/* 展開アニメーション開始 */
+.profile-object05.is-open {
+    animation: profile-object05-open 0.5s linear forwards;
+}
 
+/* 中央から上下に広がる */
+@keyframes profile-object05-open {
+    from {
+        clip-path: inset(49.5% 0 49.5% 0);
+        opacity: 0;
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+/* ホバー */
 .profile-object05-link:hover .profile-object05 {
     transform: scale(1.05) translateY(-2px);
     filter: brightness(1.15);
