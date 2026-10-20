@@ -107,7 +107,15 @@ requestAnimationFrame(function () {
                     (currentIndex - 1 + images.length) % images.length;
             }
 
-            makeImage.src = images[currentIndex];
+            // メイン画像を切り替え
+makeImage.src = images[currentIndex];
+
+// make02のときだけ吹き出しを表示
+if (currentIndex === 1) {
+    showMake02Images();
+} else {
+    hideMake02Images();
+}
         }
 
         // スクロール操作が止まってから次の切り替えを許可
