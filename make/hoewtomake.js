@@ -128,58 +128,77 @@ if (currentIndex === 1) {
     }, { passive: false });
 })();
 
+
 /* =========================================
-   make02-03.png 吹き出しフェードイン
+   make02用アニメーション
 ========================================= */
 
-
 let make02AnimationTimer = null;
+let make02AnimationTimer2 = null;
 
 function showMake02Images() {
-    const speechBubble = document.querySelector(".make02-image03");
+    const speechBubble03 = document.querySelector(".make02-image03");
     const image02 = document.querySelector(".make02-image02");
+    const speechBubble01 = document.querySelector(".make02-image01");
 
-    if (!speechBubble || !image02) return;
+    if (!speechBubble03 || !image02 || !speechBubble01) return;
 
     clearTimeout(make02AnimationTimer);
+    clearTimeout(make02AnimationTimer2);
 
-    // 以前のアニメーションをリセット
-    speechBubble.classList.remove("is-visible");
+    // すべてのアニメーションをリセット
+    speechBubble03.classList.remove("is-visible");
     image02.classList.remove("animate-fadeInLeft");
+    speechBubble01.classList.remove("is-visible");
 
-    speechBubble.style.display = "block";
+    speechBubble03.style.display = "block";
     image02.style.display = "none";
     image02.style.opacity = "0";
+    speechBubble01.style.display = "none";
 
-    // 吹き出しをフェードイン
-    void speechBubble.offsetWidth;
+    // ① make02-03.png：吹き出しフェードイン
+    void speechBubble03.offsetWidth;
 
     requestAnimationFrame(() => {
-        speechBubble.classList.add("is-visible");
+        speechBubble03.classList.add("is-visible");
     });
 
-    // 吹き出しのフェードイン終了後に画像02を表示
+    // ② make02-02.png：左からフェードイン
     make02AnimationTimer = setTimeout(() => {
         image02.style.display = "block";
 
         void image02.offsetWidth;
 
         image02.classList.add("animate-fadeInLeft");
+
+        // ③ make02-01.png：②の終了後に吹き出しフェードイン
+        make02AnimationTimer2 = setTimeout(() => {
+            speechBubble01.style.display = "block";
+
+            void speechBubble01.offsetWidth;
+
+            requestAnimationFrame(() => {
+                speechBubble01.classList.add("is-visible");
+            });
+        }, 1000);
+
     }, 1000);
 }
 
 function hideMake02Images() {
-    const speechBubble = document.querySelector(".make02-image03");
+    const speechBubble03 = document.querySelector(".make02-image03");
     const image02 = document.querySelector(".make02-image02");
+    const speechBubble01 = document.querySelector(".make02-image01");
 
     clearTimeout(make02AnimationTimer);
+    clearTimeout(make02AnimationTimer2);
 
-    if (speechBubble) {
-        speechBubble.classList.remove("is-visible");
+    if (speechBubble03) {
+        speechBubble03.classList.remove("is-visible");
 
         setTimeout(() => {
-            if (!speechBubble.classList.contains("is-visible")) {
-                speechBubble.style.display = "none";
+            if (!speechBubble03.classList.contains("is-visible")) {
+                speechBubble03.style.display = "none";
             }
         }, 1000);
     }
@@ -189,5 +208,9 @@ function hideMake02Images() {
         image02.style.display = "none";
         image02.style.opacity = "0";
     }
-}
 
+    if (speechBubble01) {
+        speechBubble01.classList.remove("is-visible");
+        speechBubble01.style.display = "none";
+    }
+}
