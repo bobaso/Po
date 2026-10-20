@@ -954,3 +954,42 @@ font-family:
         translateX(-50%)
         translateY(-4px);
 }
+
+/* =========================================
+   PROFILE画面1 object05
+   1440 × 675 基準
+========================================= */
+
+.profile-object05-link {
+    position: absolute;
+
+    left: 851px;
+    top: 519px;
+
+    display: block;
+
+    width: fit-content;
+    height: fit-content;
+
+    z-index: 15;
+
+    cursor: pointer;
+}
+
+.profile-object05 {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+/* ホバー */
+
+.profile-object05-link:hover .profile-object05 {
+    transform: scale(1.05) translateY(-2px);
+    filter: brightness(1.15);
+}
