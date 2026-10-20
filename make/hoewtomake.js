@@ -220,34 +220,63 @@ function hideMake02Images() {
     }
 }
 /* =========================================
-   make03-03.png 吹き出しフェードイン
+   make03用アニメーション
 ========================================= */
 
+let make03AnimationTimer = null;
+
 function showMake03Images() {
-    const image = document.querySelector(".make03-image03");
+    const speechBubble = document.querySelector(".make03-image03");
+    const image01 = document.querySelector(".make03-image01");
 
-    if (!image) return;
+    if (!speechBubble || !image01) return;
 
-    image.style.display = "block";
-    image.classList.remove("is-visible");
+    clearTimeout(make03AnimationTimer);
 
-    void image.offsetWidth;
+    // アニメーションをリセット
+    speechBubble.classList.remove("is-visible");
+    image01.classList.remove("animate-fadeInLeft");
+
+    speechBubble.style.display = "block";
+    image01.style.display = "none";
+    image01.style.opacity = "0";
+
+    // ① make03-03.png：吹き出しフェードイン
+    void speechBubble.offsetWidth;
 
     requestAnimationFrame(() => {
-        image.classList.add("is-visible");
+        speechBubble.classList.add("is-visible");
     });
+
+    // ② 吹き出しのフェードイン終了後に左から表示
+    make03AnimationTimer = setTimeout(() => {
+        image01.style.display = "block";
+
+        void image01.offsetWidth;
+
+        image01.classList.add("animate-fadeInLeft");
+    }, 1000);
 }
 
 function hideMake03Images() {
-    const image = document.querySelector(".make03-image03");
+    const speechBubble = document.querySelector(".make03-image03");
+    const image01 = document.querySelector(".make03-image01");
 
-    if (!image) return;
+    clearTimeout(make03AnimationTimer);
 
-    image.classList.remove("is-visible");
+    if (speechBubble) {
+        speechBubble.classList.remove("is-visible");
 
-    setTimeout(() => {
-        if (!image.classList.contains("is-visible")) {
-            image.style.display = "none";
-        }
-    }, 1000);
+        setTimeout(() => {
+            if (!speechBubble.classList.contains("is-visible")) {
+                speechBubble.style.display = "none";
+            }
+        }, 1000);
+    }
+
+    if (image01) {
+        image01.classList.remove("animate-fadeInLeft");
+        image01.style.display = "none";
+        image01.style.opacity = "0";
+    }
 }
