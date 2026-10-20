@@ -312,10 +312,17 @@ body::before {
     z-index: 6;
 }
 
-/* make02-03.png */
+/* make02-03.png：吹き出しフェードイン */
 .make02-image03 {
     left: 37px;
     top: 26px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* フェードイン表示 */
+.make02-image03.is-visible {
+    opacity: 1;
 }
 
 /* make02-02.png */
