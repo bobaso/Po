@@ -339,3 +339,22 @@ body::before {
     top: 313px;
 }
 
+/* =========================================
+   make02-02.png：左からフェードイン
+========================================= */
+
+.make02-image02.animate-fadeInLeft {
+    animation: fadeInLeft 1s ease 1 both;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0px, 0px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
