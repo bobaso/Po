@@ -300,3 +300,32 @@ body::before {
 
     filter: brightness(1.15);
 }
+
+/* =========================================
+   make02用アニメーション画像
+========================================= */
+
+.make02-image {
+    position: absolute;
+    height: auto;
+    display: none;
+    z-index: 6;
+}
+
+/* make02-03.png */
+.make02-image03 {
+    left: 37px;
+    top: 26px;
+}
+
+/* make02-02.png */
+.make02-image02 {
+    left: 248px;
+    top: 76px;
+}
+
+/* make02-01.png */
+.make02-image01 {
+    left: 783px;
+    top: 26px;
+}
