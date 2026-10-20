@@ -219,24 +219,26 @@ function hideMake02Images() {
         speechBubble01.style.display = "none";
     }
 }
+
 /* =========================================
    make03用アニメーション
 ========================================= */
 
 let make03AnimationTimer = null;
-let make03AnimationTimer2 = null;
 
 function showMake03Images() {
     const speechBubble = document.querySelector(".make03-image03");
     const image01 = document.querySelector(".make03-image01");
     const image02 = document.querySelector(".make03-image02");
 
-    if (!speechBubble || !image01 || !image02) return;
+    if (!speechBubble || !image01 || !image02) {
+        console.error("make03用画像が見つかりません");
+        return;
+    }
 
     clearTimeout(make03AnimationTimer);
-    clearTimeout(make03AnimationTimer2);
 
-    // アニメーションをリセット
+    // 前回のアニメーションをリセット
     speechBubble.classList.remove("is-visible");
     image01.classList.remove("animate-fadeInLeft");
     image02.classList.remove("is-visible");
@@ -256,7 +258,7 @@ function showMake03Images() {
         speechBubble.classList.add("is-visible");
     });
 
-    // ② make03-01.png：吹き出しの後に左から表示
+    // ② 吹き出しの表示開始から1秒後にmake03-01.pngを表示
     make03AnimationTimer = setTimeout(() => {
         image01.style.display = "block";
 
@@ -264,19 +266,19 @@ function showMake03Images() {
 
         image01.classList.add("animate-fadeInLeft");
 
-        // ③ make03-01.pngのアニメーション終了後、
-        //    make03-02.pngをフェードイン
-        make03AnimationTimer2 = setTimeout(() => {
-            image02.style.display = "block";
+        // ③ make03-01.pngのアニメーション終了後にmake03-02.pngを表示
+        image01.addEventListener("animationend", function onAnimationEnd(event) {
+            if (event.animationName !== "fadeInLeft") return;
 
+            image01.removeEventListener("animationend", onAnimationEnd);
+
+            image02.style.display = "block";
             void image02.offsetWidth;
 
             requestAnimationFrame(() => {
                 image02.classList.add("is-visible");
             });
-
-        }, 700);
-
+        });
     }, 1000);
 }
 
@@ -286,9 +288,7 @@ function hideMake03Images() {
     const image02 = document.querySelector(".make03-image02");
 
     clearTimeout(make03AnimationTimer);
-    clearTimeout(make03AnimationTimer2);
 
-    // make03-03.png：吹き出しをフェードアウト
     if (speechBubble) {
         speechBubble.classList.remove("is-visible");
 
@@ -299,14 +299,12 @@ function hideMake03Images() {
         }, 1000);
     }
 
-    // make03-01.png：非表示にしてアニメーションをリセット
     if (image01) {
         image01.classList.remove("animate-fadeInLeft");
         image01.style.display = "none";
         image01.style.opacity = "0";
     }
 
-    // make03-02.png：非表示にしてアニメーションをリセット
     if (image02) {
         image02.classList.remove("is-visible");
         image02.style.display = "none";
