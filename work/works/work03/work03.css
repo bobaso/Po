@@ -363,3 +363,15 @@
     margin: 0 auto;
 }
 
+/* =========================================
+   WORK03：Back to list の表示確認
+========================================= */
+
+.back-to-list-area {
+    z-index: 100;
+}
+
+.back-to-list {
+    position: relative;
+    z-index: 101;
+}
