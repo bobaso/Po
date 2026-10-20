@@ -419,21 +419,40 @@ body::before {
 }
 /* =========================================
    HOW TO MAKE スクロールガイド
-   1440 × 675 基準
 ========================================= */
 
 .make-scroll {
     position: absolute;
-
     left: 0;
     top: 0;
-
     width: 100%;
     height: 100%;
-
     z-index: 20;
-
     pointer-events: none;
+}
+
+/* 矢印 */
+
+.make-scroll-arrow {
+    position: absolute;
+    left: 1230px;
+    top: 525px;
+    display: block;
+    width: 32px;
+    height: 24px;
+    animation: profile-scroll-down 2s infinite;
+}
+
+/* SCROLL文字 */
+
+.make-scroll-text {
+    position: absolute;
+    left: 1215px;
+    top: 498px;
+    display: block;
+    width: 59px;
+    height: 17px;
+    animation: profile-scroll-text-blink 2s infinite;
 }
 
 
