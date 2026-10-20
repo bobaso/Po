@@ -439,9 +439,9 @@ body::before {
 
 
 
+
 /* =========================================
    矢印
-   32 × 24 px
 ========================================= */
 
 .make-scroll-arrow {
@@ -457,17 +457,8 @@ body::before {
 
     background-color: #00508c;
 
-    -webkit-mask-image: url("../images/scroll-arrow.png");
-    mask-image: url("../images/scroll-arrow.png");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
+    -webkit-mask: url("../images/scroll-arrow.png") center / 100% 100% no-repeat;
+    mask: url("../images/scroll-arrow.png") center / 100% 100% no-repeat;
 
     animation: profile-scroll-down 2s infinite;
 }
@@ -475,7 +466,6 @@ body::before {
 
 /* =========================================
    SCROLL文字
-   59 × 17 px
 ========================================= */
 
 .make-scroll-text {
@@ -491,17 +481,8 @@ body::before {
 
     background-color: #00508c;
 
-    -webkit-mask-image: url("../images/scroll-text.png");
-    mask-image: url("../images/scroll-text.png");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
+    -webkit-mask: url("../images/scroll-text.png") center / 100% 100% no-repeat;
+    mask: url("../images/scroll-text.png") center / 100% 100% no-repeat;
 
     animation: profile-scroll-text-blink 2s infinite;
 }
