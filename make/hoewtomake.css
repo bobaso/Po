@@ -435,7 +435,7 @@ body::before {
 
 .make-scroll-arrow {
     position: absolute;
-    left: 1330px;
+    left: 1280px;
     top: 525px;
     display: block;
     width: 32px;
@@ -447,7 +447,7 @@ body::before {
 
 .make-scroll-text {
     position: absolute;
-    left: 1315px;
+    left: 1265px;
     top: 498px;
     display: block;
     width: 59px;
