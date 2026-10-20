@@ -502,3 +502,41 @@ body::before {
         opacity: 0;
     }
 }
+
+/* =========================================
+   HOW TO MAKE ボタン
+   1440 × 675 基準
+========================================= */
+
+.make-how-to-link {
+    position: absolute;
+
+    left: 492px;
+    top: 59px;
+
+    display: block;
+
+    z-index: 10;
+
+    line-height: 0;
+}
+
+.make-how-to-image {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+/* ホバー */
+
+.make-how-to-link:hover .make-how-to-image {
+    transform: scale(1.05) translateY(-2px);
+    filter: brightness(1.15);
+}
