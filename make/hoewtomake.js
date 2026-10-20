@@ -267,18 +267,24 @@ function showMake03Images() {
         image01.classList.add("animate-fadeInLeft");
 
         // ③ make03-01.pngのアニメーション終了後にmake03-02.pngを表示
-        image01.addEventListener("animationend", function onAnimationEnd(event) {
-            if (event.animationName !== "fadeInLeft") return;
 
-            image01.removeEventListener("animationend", onAnimationEnd);
+image01.addEventListener("animationend", function onAnimationEnd(event) {
+    if (event.animationName !== "fadeInLeft") return;
 
-            image02.style.display = "block";
-            void image02.offsetWidth;
+    image01.removeEventListener("animationend", onAnimationEnd);
 
-            requestAnimationFrame(() => {
-                image02.classList.add("is-visible");
-            });
-        });
+    image02.style.display = "block";
+
+    // JavaScriptで直接指定している透明度0を解除
+    image02.style.opacity = "";
+
+    void image02.offsetWidth;
+
+    requestAnimationFrame(() => {
+        image02.classList.add("is-visible");
+    });
+});
+
     }, 1000);
 }
 
