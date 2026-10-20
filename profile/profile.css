@@ -997,7 +997,7 @@ font-family:
 
 /* 展開アニメーション開始 */
 .profile-object05.is-open {
-    animation: profile-object05-open 0.5s linear forwards;
+    animation: profile-object05-open 1s linear forwards;
 }
 
 /* 中央から上下に広がる */
