@@ -492,6 +492,7 @@ PROCESS
     cursor: zoom-out;
 }
 
+
 /* 拡大表示する画像 */
 .work02-image-zoomed {
     position: static !important;
@@ -500,7 +501,8 @@ PROCESS
     width: auto !important;
     height: auto !important;
 
-    max-width: 100%;
+    /* 最大1000pxまで拡大 */
+    max-width: min(1000px, 92vw);
     max-height: 90vh;
 
     object-fit: contain;
@@ -508,6 +510,7 @@ PROCESS
 
     cursor: zoom-out;
 }
+
 
 /* =========================================
    WORK02 画像07〜09：クリック・タップ拡大
