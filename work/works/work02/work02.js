@@ -291,3 +291,46 @@ function initWork02GaugeAnimation() {
 
     observer.observe(gaugeImage);
 }
+
+
+/* =========================================
+   WORK02 画像01：クリック・タップ拡大
+========================================= */
+
+document.addEventListener("click", function (event) {
+
+    const image = event.target.closest(".work02-image01");
+
+    // 対象画像以外がクリックされた場合は何もしない
+    if (!image) return;
+
+    // 拡大表示中なら閉じる
+    const currentOverlay = document.querySelector(
+        ".work02-image-zoom-overlay"
+    );
+
+    if (currentOverlay) {
+        currentOverlay.remove();
+        return;
+    }
+
+    // 拡大表示用の背景を作成
+    const overlay = document.createElement("div");
+    overlay.className = "work02-image-zoom-overlay";
+
+    // 元画像を複製
+    const zoomedImage = image.cloneNode(true);
+
+    zoomedImage.classList.remove("work02-image01");
+    zoomedImage.classList.add("work02-image-zoomed");
+
+    // 拡大画像を背景に配置
+    overlay.appendChild(zoomedImage);
+    document.body.appendChild(overlay);
+
+    // 背景をクリック・タップすると閉じる
+    overlay.addEventListener("click", function () {
+        overlay.remove();
+    });
+
+});
