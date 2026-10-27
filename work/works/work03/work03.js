@@ -116,26 +116,31 @@ ECサイト内のリデザイン、リニューアルを行いました。
 
 </div>
 
-<!-- 小見出し：RENEWAL -->
-<div class="work-heading-small work03-heading-small-renewal typing-text">
-    RENEWAL
-</div>
+<!-- RENEWAL：見出し・ふりがな・本文 -->
+<div class="work03-renewal-group">
 
-<!-- 本文：リニューアル -->
-<div class="work-body work03-body-renewal typing-text">
-    リニューアル
-</div>
+    <!-- 見出し -->
+    <div class="work-heading-small work03-heading-small-renewal typing-text">
+        RENEWAL
+    </div>
 
-<!-- 本文：テキスト -->
-<div class="work-body work03-body-text typing-text">
-    サイト全体の文字数を減らし、<br>
-    変わりに絵や図などを使って説明することで<br>
-    利用者が理解しやすいように配慮しました。<br>
-    また、ページのヘッダーにカテゴリー欄を追加したことで、<br>
-    UIの改善にも取り組みました。<br>
-    そうすることで１ページあたりの情報量を減らして、<br>
-    さらに情報が欲しい人向けにトピック欄を作成し<br>
-    別ページのリンク先で詳細を語る構造にしました。
+    <!-- ふりがな -->
+    <div class="work-body work03-body-renewal typing-text">
+        リニューアル
+    </div>
+
+    <!-- 本文 -->
+    <div class="work-body work03-body-text typing-text">
+        サイト全体の文字数を減らし、<br>
+        変わりに絵や図などを使って説明することで<br>
+        利用者が理解しやすいように配慮しました。<br>
+        また、ページのヘッダーにカテゴリー欄を追加したことで、<br>
+        UIの改善にも取り組みました。<br>
+        そうすることで１ページあたりの情報量を減らして、<br>
+        さらに情報が欲しい人向けにトピック欄を作成し<br>
+        別ページのリンク先で詳細を語る構造にしました。
+    </div>
+
 </div>
 
 
