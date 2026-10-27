@@ -204,38 +204,61 @@
 
 
 /* =========================================
-   小見出し：RENEWAL
+   RENEWAL：右側の文字領域
+========================================= */
+
+.work03-renewal-group {
+    position: absolute;
+
+    /* 右側の領域 */
+    left: 600px;
+    top: 1651px;
+
+    width: 600px;
+    height: 800px;
+
+    box-sizing: border-box;
+
+    /* 領域の中央に文字グループを配置 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   見出し
 ========================================= */
 
 .work03-heading-small-renewal {
-    position: absolute;
-
-    left: 770px;
-    top: 1655px;
+    position: static;
+    width: 100%;
+    text-align: center;
 }
 
 
 /* =========================================
-   本文：リニューアル
+   ふりがな
 ========================================= */
 
 .work03-body-renewal {
-    position: absolute;
-
-    left: 868px;
-    top: 1704px;
+    position: static;
+    width: 100%;
+    text-align: center;
 }
 
 
 /* =========================================
-   本文：テキスト
+   本文
 ========================================= */
 
 .work03-body-text {
-    position: absolute;
-
-    left: 630px;
-    top: 2014px;
+    position: static;
+    width: 100%;
+    text-align: center;
 }
 
 
