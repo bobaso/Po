@@ -293,15 +293,21 @@ function initWork02GaugeAnimation() {
 }
 
 
+
 /* =========================================
-   WORK02 画像01：クリック・タップ拡大
+   WORK02 画像01・07〜09：クリック・タップ拡大
 ========================================= */
 
 document.addEventListener("click", function (event) {
 
-    const image = event.target.closest(".work02-image01");
+    const image = event.target.closest(
+        ".work02-image01, " +
+        ".work02-image07, " +
+        ".work02-image08, " +
+        ".work02-image09"
+    );
 
-    // 対象画像以外がクリックされた場合は何もしない
+    // 対象画像以外なら何もしない
     if (!image) return;
 
     // 拡大表示中なら閉じる
@@ -321,14 +327,31 @@ document.addEventListener("click", function (event) {
     // 元画像を複製
     const zoomedImage = image.cloneNode(true);
 
-    zoomedImage.classList.remove("work02-image01");
+    // 元画像の配置・アニメーション用クラスを除去
+    zoomedImage.classList.remove(
+        "work02-image01",
+        "work02-image07",
+        "work02-image08",
+        "work02-image09",
+        "work02-open-image",
+        "is-open",
+        "is-visible"
+    );
+
+    // 拡大表示用クラスを追加
     zoomedImage.classList.add("work02-image-zoomed");
 
-    // 拡大画像を背景に配置
+    // アニメーションの影響を受けないようにする
+    zoomedImage.style.animation = "none";
+    zoomedImage.style.clipPath = "none";
+    zoomedImage.style.opacity = "1";
+    zoomedImage.style.transform = "none";
+
+    // 背景に画像を配置
     overlay.appendChild(zoomedImage);
     document.body.appendChild(overlay);
 
-    // 背景をクリック・タップすると閉じる
+    // 背景または拡大画像をクリック・タップすると閉じる
     overlay.addEventListener("click", function () {
         overlay.remove();
     });
