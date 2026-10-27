@@ -186,28 +186,3 @@ function closeWork03Image() {
     }
 }
 
-/* =========================================
-   WORK03専用
-   Back to list の位置補正
-========================================= */
-
-function updateWork03BackToList() {
-    const content = document.querySelector(".work-content");
-    const backArea = document.querySelector(".back-to-list-area");
-
-    if (!content || !backArea) return;
-
-    const lastText = content.querySelector(".work03-body-text");
-
-    if (!lastText) return;
-
-    const bottom = lastText.offsetTop + lastText.offsetHeight;
-
-    backArea.style.position = "absolute";
-    backArea.style.top = (bottom + 60) + "px";
-}
-
-window.addEventListener("load", updateWork03BackToList);
-
-setTimeout(updateWork03BackToList, 1000);
-setTimeout(updateWork03BackToList, 3000);
