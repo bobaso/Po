@@ -82,8 +82,8 @@ function initWork04Carousel() {
     }
 
     /* 拡大表示 */
-    function openLightbox(image) {
-        lightboxImage.src = image.dataset.large || image.src;
+       function openLightbox(image) {
+        lightboxImage.src = image.src;
         lightboxImage.alt = image.alt;
         lightbox.classList.add("is-open");
     }
@@ -93,14 +93,8 @@ function initWork04Carousel() {
         lightbox.classList.remove("is-open");
         lightboxImage.src = "";
     }
-
-    /* 元画像の2倍サイズを指定 */
+    /* 画像クリックで拡大表示 */
     images.forEach((image) => {
-        image.dataset.large = image.src.replace(
-            /work04-(\d+)\.png$/,
-            "work04-$1-large.png"
-        );
-
         image.addEventListener("click", function (event) {
             event.stopPropagation();
             openLightbox(image);
