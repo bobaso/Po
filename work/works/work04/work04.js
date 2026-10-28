@@ -4,7 +4,7 @@
 ========================================= */
 
 const workData = {
-    mainVisual: "../common/images/works-main-visual.png",
+    mainVisual: "../images/works-main-visual.png",
     content: `
         <div class="work04-carousel">
 
