@@ -64,3 +64,11 @@ function initWork04Carousel() {
 }
 
 window.initWork04Carousel = initWork04Carousel;
+
+/* =========================================
+   カルーセル初期化
+========================================= */
+
+requestAnimationFrame(function () {
+    initWork04Carousel();
+});
