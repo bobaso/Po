@@ -53,12 +53,14 @@ const workData = {
 
         <!-- 大見出し -->
         <p class="work-heading-large work04-heading-large">
-            テキスト
+            恐竜キラカード
         </p>
 
         <!-- 本文 -->
         <p class="work-body work04-body">
-            テキスト
+            2026年ペーパーサミットの出展にあたり、<br>
+            物販のブースの商品企画で子供をターゲットに<br>
+            ホロ加工のトレーディングカードを制作デザインしました。
         </p>
 
         
