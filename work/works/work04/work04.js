@@ -12,18 +12,17 @@ const workData = {
                 ＜
             </button>
 
-            <div class="work04-carousel-images">
-                <img src="../images/work04-01.png"
-                     alt=""
-                     class="work04-carousel-image is-active">
+            <img src="../images/work04-01.png"
+     alt=""
+     class="work04-carousel-image work-image-zoom is-active">
 
                 <img src="../images/work04-02.png"
-                     alt=""
-                     class="work04-carousel-image">
+     alt=""
+     class="work04-carousel-image work-image-zoom">
 
                 <img src="../images/work04-03.png"
-                     alt=""
-                     class="work04-carousel-image">
+     alt=""
+     class="work04-carousel-image">
             </div>
 
             <button class="work04-arrow work04-next" type="button" aria-label="次の画像">
@@ -38,10 +37,6 @@ const workData = {
 
         </div>
 
-        <!-- 拡大表示 -->
-        <div class="work04-lightbox">
-            <img src="" alt="" class="work04-lightbox-image">
-        </div>
 
                 <!-- 小見出し -->
         <p class="work-heading-small work04-heading-small">
@@ -103,25 +98,6 @@ function initWork04Carousel() {
         });
     }
 
-    /* 拡大表示 */
-       function openLightbox(image) {
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-        lightbox.classList.add("is-open");
-    }
-
-    /* 拡大表示を閉じる */
-    function closeLightbox() {
-        lightbox.classList.remove("is-open");
-        lightboxImage.src = "";
-    }
-    /* 画像クリックで拡大表示 */
-    images.forEach((image) => {
-        image.addEventListener("click", function (event) {
-            event.stopPropagation();
-            openLightbox(image);
-        });
-    });
 
     /* 前の画像 */
     prevButton.addEventListener("click", function (event) {
@@ -143,8 +119,6 @@ function initWork04Carousel() {
         });
     });
 
-    /* 拡大画像をクリック・タップして閉じる */
-    lightbox.addEventListener("click", closeLightbox);
 
     showImage(0);
 }
