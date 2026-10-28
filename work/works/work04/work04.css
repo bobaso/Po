@@ -107,3 +107,29 @@
     background: #fff;
     transform: scale(1.3);
 }
+
+/* =========================================
+   WORK04 文字配置
+========================================= */
+
+/* 小見出し：X710 Y124 */
+.work04-heading-small {
+    position: absolute;
+    left: 710px;
+    top: 124px;
+}
+
+/* 大見出し：X759 Y298 */
+.work04-heading-large {
+    position: absolute;
+    left: 759px;
+    top: 298px;
+}
+
+/* 本文：X713 Y394・中央揃え */
+.work04-body {
+    position: absolute;
+    left: 713px;
+    top: 394px;
+    text-align: center;
+}
