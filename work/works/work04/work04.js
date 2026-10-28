@@ -42,6 +42,23 @@ const workData = {
         <div class="work04-lightbox">
             <img src="" alt="" class="work04-lightbox-image">
         </div>
+
+                <!-- 小見出し -->
+        <p class="work-heading-small work04-heading-small">
+            テキスト
+        </p>
+
+        <!-- 大見出し -->
+        <p class="work-heading-large work04-heading-large">
+            テキスト
+        </p>
+
+        <!-- 本文 -->
+        <p class="work-body work04-body">
+            テキスト
+        </p>
+
+        
     `
 };
 
