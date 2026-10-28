@@ -1,1 +1,48 @@
 
+/* =========================================
+   WORK04 画像カルーセル
+========================================= */
+
+.work04-carousel {
+    position: absolute;
+
+    left: 124px;
+    top: 159px;
+
+    width: 500px;
+    height: 350px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   カルーセル画像
+========================================= */
+
+.work04-carousel-image {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+/* 表示中の画像 */
+
+.work04-carousel-image.is-active {
+    opacity: 1;
+}
+
