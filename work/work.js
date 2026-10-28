@@ -106,7 +106,7 @@ const works = [
     },
 
     {
-        title: "恐竜トレカデザイン",
+        title: "恐竜キラカード<br>デザイン",
         image: "../images/work-test04.png",
         category: "illust",
         link: "works/work04/index.html"
