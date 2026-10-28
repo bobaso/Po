@@ -45,7 +45,10 @@ const workData = {
 
                 <!-- 小見出し -->
         <p class="work-heading-small work04-heading-small">
-            テキスト
+            DATA.2026/04/28-2026/05/07<br>
+    CATEGORY.イラスト<br>
+    EQUIPMENT.ibisPaint
+    MATERIAL.サンカード
         </p>
 
         <!-- 大見出し -->
