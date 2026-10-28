@@ -37,16 +37,25 @@ const workData = {
             </div>
 
         </div>
+
+        <!-- 拡大表示 -->
+        <div class="work04-lightbox">
+            <img src="" alt="" class="work04-lightbox-image">
+        </div>
     `
 };
 
 /* =========================================
-   WORK04 カルーセル
+   WORK04 カルーセル・拡大表示
 ========================================= */
 
 function initWork04Carousel() {
     const carousel = document.querySelector(".work04-carousel");
-    if (!carousel || carousel.dataset.initialized === "true") return;
+    const lightbox = document.querySelector(".work04-lightbox");
+
+    if (!carousel || !lightbox || carousel.dataset.initialized === "true") {
+        return;
+    }
 
     carousel.dataset.initialized = "true";
 
@@ -55,8 +64,11 @@ function initWork04Carousel() {
     const prevButton = carousel.querySelector(".work04-prev");
     const nextButton = carousel.querySelector(".work04-next");
 
+    const lightboxImage = lightbox.querySelector(".work04-lightbox-image");
+
     let currentIndex = 0;
 
+    /* 画像切り替え */
     function showImage(index) {
         currentIndex = (index + images.length) % images.length;
 
@@ -69,22 +81,54 @@ function initWork04Carousel() {
         });
     }
 
+    /* 拡大表示 */
+    function openLightbox(image) {
+        lightboxImage.src = image.dataset.large || image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("is-open");
+    }
+
+    /* 拡大表示を閉じる */
+    function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        lightboxImage.src = "";
+    }
+
+    /* 元画像の2倍サイズを指定 */
+    images.forEach((image) => {
+        image.dataset.large = image.src.replace(
+            /work04-(\d+)\.png$/,
+            "work04-$1-large.png"
+        );
+
+        image.addEventListener("click", function (event) {
+            event.stopPropagation();
+            openLightbox(image);
+        });
+    });
+
+    /* 前の画像 */
     prevButton.addEventListener("click", function (event) {
         event.stopPropagation();
         showImage(currentIndex - 1);
     });
 
+    /* 次の画像 */
     nextButton.addEventListener("click", function (event) {
         event.stopPropagation();
         showImage(currentIndex + 1);
     });
 
+    /* ドットで画像を選択 */
     dots.forEach((dot, index) => {
         dot.addEventListener("click", function (event) {
             event.stopPropagation();
             showImage(index);
         });
     });
+
+    /* 拡大画像をクリック・タップして閉じる */
+    lightbox.addEventListener("click", closeLightbox);
 
     showImage(0);
 }
