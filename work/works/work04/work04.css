@@ -36,7 +36,7 @@
 
     opacity: 0;
     transition: opacity 0.4s ease;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 .work04-carousel-image.is-active {
