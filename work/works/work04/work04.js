@@ -53,7 +53,7 @@ const workData = {
 
         <!-- 大見出し -->
         <p class="work-heading-large work04-heading-large">
-            <br>恐竜キラカード
+            恐竜キラカード
         </p>
 
         <!-- 本文 -->
