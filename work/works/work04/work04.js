@@ -47,13 +47,13 @@ const workData = {
         <p class="work-heading-small work04-heading-small">
             DATA.2026/04/28-2026/05/07<br>
     CATEGORY.イラスト<br>
-    EQUIPMENT.ibisPaint
+    EQUIPMENT.ibisPaint<br>
     MATERIAL.サンカード
         </p>
 
         <!-- 大見出し -->
         <p class="work-heading-large work04-heading-large">
-            恐竜キラカード
+            <br>恐竜キラカード
         </p>
 
         <!-- 本文 -->
