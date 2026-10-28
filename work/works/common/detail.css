@@ -374,3 +374,38 @@ overflow: visible;
 .typing-text {
     visibility: hidden;
 }
+
+/* =========================================
+   共通：画像拡大表示
+========================================= */
+
+.work-image-zoom-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    cursor: zoom-out;
+}
+
+.work-image-zoomed {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 95vw;
+    max-height: 95vh;
+
+    object-fit: contain;
+
+    cursor: zoom-out;
+}
