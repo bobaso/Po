@@ -8,27 +8,42 @@ const workData = {
     content: `
         <div class="work04-carousel">
 
-            <button class="work04-arrow work04-prev" type="button" aria-label="前の画像">
+            <!-- 画像表示領域 -->
+            <div class="work04-carousel-images">
+
+                <img
+                    src="../images/work04-01.png"
+                    alt=""
+                    class="work04-carousel-image work-image-zoom is-active">
+
+                <img
+                    src="../images/work04-02.png"
+                    alt=""
+                    class="work04-carousel-image work-image-zoom">
+
+                <img
+                    src="../images/work04-03.png"
+                    alt=""
+                    class="work04-carousel-image work-image-zoom">
+
+            </div>
+
+            <!-- 左右の矢印 -->
+            <button
+                class="work04-arrow work04-prev"
+                type="button"
+                aria-label="前の画像">
                 ＜
             </button>
 
-            <img src="../images/work04-01.png"
-     alt=""
-     class="work04-carousel-image work-image-zoom is-active">
-
-                <img src="../images/work04-02.png"
-     alt=""
-     class="work04-carousel-image work-image-zoom">
-
-                <img src="../images/work04-03.png"
-     alt=""
-     class="work04-carousel-image">
-            </div>
-
-            <button class="work04-arrow work04-next" type="button" aria-label="次の画像">
+            <button
+                class="work04-arrow work04-next"
+                type="button"
+                aria-label="次の画像">
                 ＞
             </button>
 
+            <!-- インジケーター -->
             <div class="work04-dots">
                 <button class="work04-dot is-active" type="button" aria-label="1枚目"></button>
                 <button class="work04-dot" type="button" aria-label="2枚目"></button>
@@ -37,13 +52,12 @@ const workData = {
 
         </div>
 
-
-                <!-- 小見出し -->
+        <!-- 小見出し -->
         <p class="work-heading-small work04-heading-small">
             DATA.2026/04/28-2026/05/07<br>
-    CATEGORY.イラスト<br>
-    EQUIPMENT.ibisPaint<br>
-    MATERIAL.サンカード
+            CATEGORY.イラスト<br>
+            EQUIPMENT.ibisPaint<br>
+            MATERIAL.サンカード
         </p>
 
         <!-- 大見出し -->
@@ -57,47 +71,71 @@ const workData = {
             物販のブースの商品企画で子供をターゲットに<br>
             ホロ加工のトレーディングカードを制作デザインしました。
         </p>
-
-        
     `
 };
 
+
 /* =========================================
-   WORK04 カルーセル・拡大表示
+   WORK04 カルーセル初期化
 ========================================= */
 
 function initWork04Carousel() {
-    const carousel = document.querySelector(".work04-carousel");
-    const lightbox = document.querySelector(".work04-lightbox");
 
-    if (!carousel || !lightbox || carousel.dataset.initialized === "true") {
+    const carousel = document.querySelector(".work04-carousel");
+
+    if (
+        !carousel ||
+        carousel.dataset.initialized === "true"
+    ) {
         return;
     }
 
     carousel.dataset.initialized = "true";
 
-    const images = carousel.querySelectorAll(".work04-carousel-image");
-    const dots = carousel.querySelectorAll(".work04-dot");
-    const prevButton = carousel.querySelector(".work04-prev");
-    const nextButton = carousel.querySelector(".work04-next");
+    const images =
+        carousel.querySelectorAll(".work04-carousel-image");
 
-    const lightboxImage = lightbox.querySelector(".work04-lightbox-image");
+    const dots =
+        carousel.querySelectorAll(".work04-dot");
+
+    const prevButton =
+        carousel.querySelector(".work04-prev");
+
+    const nextButton =
+        carousel.querySelector(".work04-next");
+
+    if (
+        images.length === 0 ||
+        !prevButton ||
+        !nextButton ||
+        dots.length !== images.length
+    ) {
+        console.error("WORK04カルーセル：必要な要素が見つかりません。");
+        return;
+    }
 
     let currentIndex = 0;
 
-    /* 画像切り替え */
+    /* 画像とインジケーターを切り替える */
     function showImage(index) {
-        currentIndex = (index + images.length) % images.length;
 
-        images.forEach((image, i) => {
-            image.classList.toggle("is-active", i === currentIndex);
+        currentIndex =
+            (index + images.length) % images.length;
+
+        images.forEach(function (image, i) {
+            image.classList.toggle(
+                "is-active",
+                i === currentIndex
+            );
         });
 
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("is-active", i === currentIndex);
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle(
+                "is-active",
+                i === currentIndex
+            );
         });
     }
-
 
     /* 前の画像 */
     prevButton.addEventListener("click", function (event) {
@@ -111,17 +149,17 @@ function initWork04Carousel() {
         showImage(currentIndex + 1);
     });
 
-    /* ドットで画像を選択 */
-    dots.forEach((dot, index) => {
+    /* インジケーター */
+    dots.forEach(function (dot, index) {
         dot.addEventListener("click", function (event) {
             event.stopPropagation();
             showImage(index);
         });
     });
 
-
     showImage(0);
 }
+
 
 /* =========================================
    カルーセル初期化
