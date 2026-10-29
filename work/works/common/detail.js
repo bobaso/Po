@@ -378,19 +378,26 @@ requestAnimationFrame(function () {
 
 });
 
+
 /* =========================================
    共通：画像クリック・タップ拡大表示
 ========================================= */
 
 document.addEventListener("click", function (event) {
 
-    /* 拡大対象の画像を取得 */
-    const image = event.target.closest(
-        ".work-image-zoom"
+    const image = event.target.closest(".work-image-zoom");
+
+    if (!image) return;
+
+    /* すでに拡大表示があれば閉じる */
+    const existingOverlay = document.querySelector(
+        ".work-image-zoom-overlay"
     );
 
-    /* 対象画像以外なら何もしない */
-    if (!image) return;
+    if (existingOverlay) {
+        existingOverlay.remove();
+        return;
+    }
 
     /* 拡大表示用の背景を作成 */
     const overlay = document.createElement("div");
@@ -399,7 +406,6 @@ document.addEventListener("click", function (event) {
     /* 元画像を複製 */
     const zoomedImage = image.cloneNode(true);
 
-    /* 配置・アニメーション用のクラスを除去 */
     zoomedImage.classList.remove(
         "work-image-zoom",
         "is-open",
@@ -408,33 +414,34 @@ document.addEventListener("click", function (event) {
         "fade-up"
     );
 
-    /* 拡大表示用クラスを追加 */
     zoomedImage.classList.add("work-image-zoomed");
 
-    /* 元画像のアニメーションや配置の影響を解除 */
-    zoomedImage.style.position = "static";
-    zoomedImage.style.left = "auto";
-    zoomedImage.style.top = "auto";
-    zoomedImage.style.right = "auto";
-    zoomedImage.style.bottom = "auto";
-    zoomedImage.style.width = "auto";
-    zoomedImage.style.height = "auto";
-    zoomedImage.style.maxWidth = "95vw";
-    zoomedImage.style.maxHeight = "95vh";
-    zoomedImage.style.margin = "0";
-    zoomedImage.style.opacity = "1";
-    zoomedImage.style.transform = "none";
-    zoomedImage.style.animation = "none";
-    zoomedImage.style.clipPath = "none";
-    zoomedImage.style.objectFit = "contain";
+    /* 元画像の配置・アニメーションの影響を解除 */
+    Object.assign(zoomedImage.style, {
+        position: "static",
+        left: "auto",
+        top: "auto",
+        right: "auto",
+        bottom: "auto",
+        width: "auto",
+        height: "auto",
+        maxWidth: "95vw",
+        maxHeight: "95vh",
+        margin: "0",
+        opacity: "1",
+        transform: "none",
+        animation: "none",
+        clipPath: "none",
+        objectFit: "contain"
+    });
 
-    /* 背景に画像を配置 */
     overlay.appendChild(zoomedImage);
     document.body.appendChild(overlay);
 
-    /* 背景または拡大画像をクリック・タップして閉じる */
+    /* 背景をクリックして閉じる */
     overlay.addEventListener("click", function () {
         overlay.remove();
     });
 
 });
+
