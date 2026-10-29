@@ -116,7 +116,7 @@
 .work04-text-group {
     position: absolute;
     left: 710px;
-    top: 60px;
+    top: 50px;
     width: 530px;
     height: 400px;
 }
@@ -131,7 +131,7 @@
 /* 大見出し */
 .work04-heading-large {
     position: absolute;
-    left: 120px;
+    left: 125px;
     top: 224px;
    text-align: center;
 }
