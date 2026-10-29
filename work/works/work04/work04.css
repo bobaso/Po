@@ -131,14 +131,14 @@
 /* 大見出し */
 .work04-heading-large {
     position: absolute;
-    left: 60px;
-    top: 174px;
+    left: 80px;
+    top: 194px;
 }
 
 /* 本文 */
 .work04-body {
     position: absolute;
     left: 3px;
-    top: 270px;
+    top: 290px;
     text-align: center;
 }
