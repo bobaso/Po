@@ -52,25 +52,32 @@ const workData = {
 
         </div>
 
-        <!-- 小見出し -->
-        <p class="work-heading-small work04-heading-small">
-            DATA.2026/04/28-2026/05/07<br>
-            CATEGORY.イラスト<br>
-            EQUIPMENT.ibisPaint<br>
-            MATERIAL.サンカード
-        </p>
+        
+        <!-- 文字グループ -->
+        <div class="work04-text-group">
 
-        <!-- 大見出し -->
-        <p class="work-heading-large work04-heading-large">
-            恐竜キラカード
-        </p>
+            <!-- 小見出し -->
+            <p class="work-heading-small work04-heading-small">
+                DATA.2026/04/28-2026/05/07<br>
+                CATEGORY.イラスト<br>
+                EQUIPMENT.ibisPaint<br>
+                MATERIAL.サンカード
+            </p>
 
-        <!-- 本文 -->
-        <p class="work-body work04-body">
-            2026年ペーパーサミットの出展にあたり、<br>
-            物販のブースの商品企画で子供をターゲットに<br>
-            ホロ加工のトレーディングカードを制作デザインしました。
-        </p>
+            <!-- 大見出し -->
+            <p class="work-heading-large work04-heading-large">
+                恐竜キラカード
+            </p>
+
+            <!-- 本文 -->
+            <p class="work-body work04-body">
+                2026年ペーパーサミットの出展にあたり、<br>
+                物販のブースの商品企画で子供をターゲットに<br>
+                ホロ加工のトレーディングカードを制作デザインしました。
+            </p>
+
+        </div>
+
     `
 };
 
