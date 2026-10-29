@@ -112,25 +112,33 @@
    WORK04 文字配置
 ========================================= */
 
-/* 小見出し：X710 Y124 */
-.work04-heading-small {
+/* 文字グループ全体 */
+.work04-text-group {
     position: absolute;
     left: 710px;
     top: 124px;
+    width: 530px;
+    height: 400px;
 }
 
-/* 大見出し：X759 Y298 */
+/* 小見出し */
+.work04-heading-small {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* 大見出し */
 .work04-heading-large {
     position: absolute;
-    left: 759px;
-    top: 298px;
+    left: 49px;
+    top: 174px;
 }
 
-/* 本文：X713 Y394・中央揃え */
+/* 本文 */
 .work04-body {
     position: absolute;
-    left: 713px;
-    top: 394px;
+    left: 3px;
+    top: 270px;
     text-align: center;
 }
-
