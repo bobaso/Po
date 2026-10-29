@@ -36,11 +36,15 @@
 
     opacity: 0;
     transition: opacity 0.4s ease;
-    pointer-events: auto;
+
+    /* 非表示の画像はクリックできないようにする */
+    pointer-events: none;
 }
 
+/* 現在表示されている画像だけクリック可能にする */
 .work04-carousel-image.is-active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* 左右の矢印 */
