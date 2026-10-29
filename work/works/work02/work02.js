@@ -8,9 +8,9 @@ const workData = {
     // work02のコンテンツ
 content: `
   <img
-            src="../images/work02-01.png"
-            alt=""
-            class="work02-image01">
+    src="../images/work02-01.png"
+    alt=""
+    class="work02-image01 work-image-zoom">
 
        <div class="work-heading-large work02-heading-large typing-text">
     恐竜知育パズル
@@ -131,19 +131,19 @@ content: `
 <img
     src="../images/work02-07.png"
     alt=""
-    class="work02-image07">
+    class="work02-image07 work-image-zoom">
 
 <!-- 画像08 -->
 <img
     src="../images/work02-08.png"
     alt=""
-    class="work02-image08">
+    class="work02-image08 work-image-zoom">
 
 <!-- 画像09 -->
 <img
     src="../images/work02-09.png"
     alt=""
-    class="work02-image09">
+    class="work02-image09 work-image-zoom">
 
 
     `
@@ -294,66 +294,4 @@ function initWork02GaugeAnimation() {
 
 
 
-/* =========================================
-   WORK02 画像01・07〜09：クリック・タップ拡大
-========================================= */
 
-document.addEventListener("click", function (event) {
-
-    const image = event.target.closest(
-        ".work02-image01, " +
-        ".work02-image07, " +
-        ".work02-image08, " +
-        ".work02-image09"
-    );
-
-    // 対象画像以外なら何もしない
-    if (!image) return;
-
-    // 拡大表示中なら閉じる
-    const currentOverlay = document.querySelector(
-        ".work02-image-zoom-overlay"
-    );
-
-    if (currentOverlay) {
-        currentOverlay.remove();
-        return;
-    }
-
-    // 拡大表示用の背景を作成
-    const overlay = document.createElement("div");
-    overlay.className = "work02-image-zoom-overlay";
-
-    // 元画像を複製
-    const zoomedImage = image.cloneNode(true);
-
-    // 元画像の配置・アニメーション用クラスを除去
-    zoomedImage.classList.remove(
-        "work02-image01",
-        "work02-image07",
-        "work02-image08",
-        "work02-image09",
-        "work02-open-image",
-        "is-open",
-        "is-visible"
-    );
-
-    // 拡大表示用クラスを追加
-    zoomedImage.classList.add("work02-image-zoomed");
-
-    // アニメーションの影響を受けないようにする
-    zoomedImage.style.animation = "none";
-    zoomedImage.style.clipPath = "none";
-    zoomedImage.style.opacity = "1";
-    zoomedImage.style.transform = "none";
-
-    // 背景に画像を配置
-    overlay.appendChild(zoomedImage);
-    document.body.appendChild(overlay);
-
-    // 背景または拡大画像をクリック・タップすると閉じる
-    overlay.addEventListener("click", function () {
-        overlay.remove();
-    });
-
-});
