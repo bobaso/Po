@@ -21,8 +21,8 @@ const workData = {
             <p class="work-heading-small work05-heading-small">
                 DATA.2026/04/4-2026/04/07<br>
                 CATEGORY.イラスト<br>
-                EQUIPMENT.XXXX<br>
-                MATERIAL.アートタック黄セパ
+                EQUIPMENT.Adobe Illustrator<br>
+                MATERIAL.アートタック・黄色セパレーター
             </p>
 
             <!-- 大見出し -->
