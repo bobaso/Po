@@ -71,11 +71,11 @@
 }
 
 .work04-prev {
-    left: 12px;
+    left: -10px;
 }
 
 .work04-next {
-    right: 12px;
+    right: -10px;
 }
 
 .work04-arrow:hover {
