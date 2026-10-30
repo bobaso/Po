@@ -416,6 +416,14 @@ document.addEventListener("click", function (event) {
 
     zoomedImage.classList.add("work-image-zoomed");
 
+   /* WORK03専用クラス */
+if (
+    image.classList.contains("work03-image06") ||
+    image.classList.contains("work03-image03")
+) {
+    zoomedImage.classList.add("work03-zoomed");
+}
+
     /* 元画像の配置・アニメーションの影響を解除 */
     Object.assign(zoomedImage.style, {
         position: "static",
