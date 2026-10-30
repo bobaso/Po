@@ -409,3 +409,22 @@ overflow: visible;
 
     cursor: zoom-out;
 }
+/* =========================================
+   WORK03専用：縦長画像のスクロール拡大
+========================================= */
+
+.work-image-zoom-overlay:has(.work03-zoomed) {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.work-image-zoom-overlay .work03-zoomed {
+    display: block;
+    width: 95vw;
+    height: auto;
+    max-width: 95vw;
+    max-height: none;
+    margin: 0 auto;
+}
