@@ -22,7 +22,7 @@ const workData = {
                 DATA.2026/04/4-2026/04/07<br>
                 CATEGORY.イラスト<br>
                 EQUIPMENT.Adobe Illustrator<br>
-                MATERIAL.アートタック・黄色セパレーター
+                MATERIAL.アートタック
             </p>
 
             <!-- 大見出し -->
