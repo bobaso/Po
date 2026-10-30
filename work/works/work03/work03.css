@@ -327,3 +327,18 @@
     position: relative;
     z-index: 101;
 }
+
+/* =========================================
+   WORK03専用：縦長画像の拡大表示
+========================================= */
+
+.work-image-zoom-overlay:has(.work03-image-expanded) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: flex-start;
+}
+
+.work-image-zoom-overlay .work03-image-expanded {
+    max-width: 100%;
+    max-height: none;
+}
