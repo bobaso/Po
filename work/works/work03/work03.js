@@ -122,3 +122,9 @@ ECサイト内のリデザイン、リニューアルを行いました。
     `
 };
 
+if (
+    image.classList.contains("work03-image06") ||
+    image.classList.contains("work03-image03")
+) {
+    zoomedImage.classList.add("work03-zoomed");
+}
