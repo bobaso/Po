@@ -87,77 +87,48 @@ const workData = {
    WORK04 カルーセル初期化
 ========================================= */
 
+
 function initWork04Carousel() {
-
     const carousel = document.querySelector(".work04-carousel");
-
-    if (
-        !carousel ||
-        carousel.dataset.initialized === "true"
-    ) {
-        return;
-    }
-
+    if (!carousel || carousel.dataset.initialized === "true") return;
     carousel.dataset.initialized = "true";
 
-    const images =
-        carousel.querySelectorAll(".work04-carousel-image");
+    const images = carousel.querySelectorAll(".work04-carousel-image");
+    const dots = carousel.querySelectorAll(".work04-dot");
+    const prevButton = carousel.querySelector(".work04-prev");
+    const nextButton = carousel.querySelector(".work04-next");
 
-    const dots =
-        carousel.querySelectorAll(".work04-dot");
-
-    const prevButton =
-        carousel.querySelector(".work04-prev");
-
-    const nextButton =
-        carousel.querySelector(".work04-next");
-
-    if (
-        images.length === 0 ||
-        !prevButton ||
-        !nextButton ||
-        dots.length !== images.length
-    ) {
+    if (images.length === 0 || !prevButton || !nextButton || dots.length !== images.length) {
         console.error("WORK04カルーセル：必要な要素が見つかりません。");
         return;
     }
 
     let currentIndex = 0;
 
-    /* 画像とインジケーターを切り替える */
     function showImage(index) {
-
-        currentIndex =
-            (index + images.length) % images.length;
+        currentIndex = (index + images.length) % images.length;
 
         images.forEach(function (image, i) {
-            image.classList.toggle(
-                "is-active",
-                i === currentIndex
-            );
+            image.classList.toggle("is-active", i === currentIndex);
         });
 
         dots.forEach(function (dot, i) {
-            dot.classList.toggle(
-                "is-active",
-                i === currentIndex
-            );
+            dot.classList.toggle("is-active", i === currentIndex);
         });
     }
 
-    /* 前の画像 */
+    // 左右の矢印
     prevButton.addEventListener("click", function (event) {
         event.stopPropagation();
         showImage(currentIndex - 1);
     });
 
-    /* 次の画像 */
     nextButton.addEventListener("click", function (event) {
         event.stopPropagation();
         showImage(currentIndex + 1);
     });
 
-    /* インジケーター */
+    // インジケーター
     dots.forEach(function (dot, index) {
         dot.addEventListener("click", function (event) {
             event.stopPropagation();
@@ -165,8 +136,51 @@ function initWork04Carousel() {
         });
     });
 
+    // スワイプ操作
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let isSwiping = false;
+
+    carousel.addEventListener("touchstart", function (event) {
+        if (event.touches.length !== 1) return;
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+        isSwiping = true;
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", function (event) {
+        if (!isSwiping || !event.changedTouches.length) return;
+
+        const touchEndX = event.changedTouches[0].clientX;
+        const touchEndY = event.changedTouches[0].clientY;
+
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        isSwiping = false;
+
+        // 横方向の移動が十分大きい場合だけ切り替える
+        if (Math.abs(diffX) < 50) return;
+        if (Math.abs(diffX) < Math.abs(diffY)) return;
+
+        if (diffX < 0) {
+            showImage(currentIndex + 1);
+        } else {
+            showImage(currentIndex - 1);
+        }
+    }, { passive: true });
+
+    carousel.addEventListener("touchcancel", function () {
+        isSwiping = false;
+    });
+
     showImage(0);
 }
+
+requestAnimationFrame(function () {
+    initWork04Carousel();
+});
 
 
 /* =========================================
