@@ -425,23 +425,37 @@ if (
 }
 
     /* 元画像の配置・アニメーションの影響を解除 */
-    Object.assign(zoomedImage.style, {
-        position: "static",
-        left: "auto",
-        top: "auto",
-        right: "auto",
-        bottom: "auto",
-        width: "auto",
-        height: "auto",
-        maxWidth: "95vw",
-        maxHeight: "95vh",
-        margin: "0",
-        opacity: "1",
-        transform: "none",
-        animation: "none",
-        clipPath: "none",
-        objectFit: "contain"
-    });
+Object.assign(zoomedImage.style, {
+    position: "static",
+    left: "auto",
+    top: "auto",
+    right: "auto",
+    bottom: "auto",
+    width: "auto",
+    height: "auto",
+    maxWidth: "95vw",
+    maxHeight: "95vh",
+    margin: "0 auto",
+    opacity: "1",
+    transform: "none",
+    animation: "none",
+    clipPath: "none",
+    objectFit: "contain"
+});
+
+/* =========================================
+   WORK03専用：縦長画像の拡大設定
+========================================= */
+
+if (
+    image.classList.contains("work03-image03") ||
+    image.classList.contains("work03-image06")
+) {
+    zoomedImage.style.width = "95vw";
+    zoomedImage.style.height = "auto";
+    zoomedImage.style.maxWidth = "95vw";
+    zoomedImage.style.maxHeight = "none";
+}
 
     overlay.appendChild(zoomedImage);
     document.body.appendChild(overlay);
