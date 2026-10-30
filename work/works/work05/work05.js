@@ -27,7 +27,7 @@ const workData = {
 
             <!-- 大見出し -->
             <p class="work-heading-large work05-heading-large">
-                作品タイトル
+                NFCステッカー展示用デザイン
             </p>
 
             <!-- 本文 -->
