@@ -113,9 +113,9 @@ const works = [
     },
 
     {
-        title: "作品05",
+        title: "NFCステッカー<br>展示用デザイン",
         image: "../images/work-test05.png",
-        category: "event",
+        category: "illust",
         link: "works/work05/index.html"
     },
 
