@@ -53,11 +53,18 @@ const workData = {
     課題とリサーチ
 </div>
 
-<div class="work-body work01-body-description">
-    ペーパーサミットとは、全国の印刷会社が製作した
-    <br>オリジナル商品やアートなどを一般の人に触れてもらうことで、
-    <br>より印刷の魅力を知ってもらうというコンセプトのイベントです。
-</div>
+<!-- テキストボックスの高さに応じて後続要素を移動 -->
+<div class="work-text-flow">
+
+    <!-- 自動で高さが変わるテキストボックス -->
+    <div class="work-body work-textbox work01-body-description">
+        ペーパーサミットとは、全国の印刷会社が製作した
+        <br>オリジナル商品やアートなどを一般の人に触れてもらうことで、
+        <br>より印刷の魅力を知ってもらうというコンセプトのイベントです。
+    </div>
+
+    <!-- ここから後ろの要素が移動対象 -->
+    <div class="work-text-flow-content">
 
 <div class="work-body work01-body-purpose typing-text">
     本イベントの企業としての目的は、<br>
@@ -182,6 +189,9 @@ const workData = {
 </div>
 
 </div>
+
+    </div>
+    </div>
 
     `
 };
