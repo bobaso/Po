@@ -166,6 +166,11 @@ function updateBackToListPosition() {
    テキストボックスの高さに応じて後続要素を移動
 ========================================= */
 
+/* =========================================
+   テキストボックスの高さに応じて後続要素を移動
+   複数テキストボックス対応・共通機能
+========================================= */
+
 function initWorkTextFlow() {
 
     const textFlows =
@@ -173,20 +178,32 @@ function initWorkTextFlow() {
 
     textFlows.forEach(flow => {
 
-        const textBox =
-            flow.querySelector(".work-textbox");
+        const textBoxes = Array.from(
+            flow.querySelectorAll(".work-textbox")
+        );
 
         const flowContent =
             flow.querySelector(".work-text-flow-content");
 
-        if (!textBox || !flowContent) return;
+        if (textBoxes.length === 0 || !flowContent) return;
+
+        // 各テキストボックスの初期高さを保存
+        const originalHeights = new Map();
+
+        textBoxes.forEach(textBox => {
+            originalHeights.set(
+                textBox,
+                textBox.offsetHeight
+            );
+        });
 
         // 後続要素の初期位置を保存
         const targets = Array.from(
             flowContent.querySelectorAll("*")
         ).filter(element => {
 
-            const style = window.getComputedStyle(element);
+            const style =
+                window.getComputedStyle(element);
 
             return (
                 style.position === "absolute" &&
@@ -202,22 +219,37 @@ function initWorkTextFlow() {
             )
         }));
 
-        // 初期高さを保存
-        let initialHeight = textBox.offsetHeight;
-
-        // 高さの変化を監視
+        // テキストボックスの高さを監視
         const observer = new ResizeObserver(() => {
 
-            const currentHeight = textBox.offsetHeight;
-
-            const difference =
-                currentHeight - initialHeight;
-
-            // 後続要素を初期位置から移動
             originalPositions.forEach(item => {
 
+                let totalDifference = 0;
+
+                textBoxes.forEach(textBox => {
+
+                    const isBefore =
+                        textBox.compareDocumentPosition(
+                            item.element
+                        ) & Node.DOCUMENT_POSITION_FOLLOWING;
+
+                    if (isBefore) {
+
+                        const currentHeight =
+                            textBox.offsetHeight;
+
+                        const originalHeight =
+                            originalHeights.get(textBox);
+
+                        totalDifference +=
+                            currentHeight - originalHeight;
+                    }
+
+                });
+
+                // 初期位置から高さの変化分だけ移動
                 item.element.style.top =
-                    (item.top + difference) + "px";
+                    (item.top + totalDifference) + "px";
 
             });
 
@@ -225,7 +257,9 @@ function initWorkTextFlow() {
 
         });
 
-        observer.observe(textBox);
+        textBoxes.forEach(textBox => {
+            observer.observe(textBox);
+        });
 
     });
 
