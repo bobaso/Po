@@ -12,7 +12,19 @@ const workData = {
             src="../images/work05-01.png"
             alt=""
             class="work05-image01 work-image-zoom">
+<!-- 外部サイトへのリンクボタン -->
+<a
+    href="https://sites.google.com/view/umaki-test001/ホーム"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="work05-button-link">
 
+    <img
+        src="../images/work05-02.png"
+        alt=""
+        class="work05-button">
+
+</a>
 
         <!-- 文字グループ -->
         <div class="work05-text-group">
