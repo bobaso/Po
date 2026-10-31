@@ -72,11 +72,11 @@ const workData = {
     持ってもらえるようにすることを目標に製作しました。
 </div>
 
-<div class="work-body work01-body-nfc-awareness typing-text">
+<div class="work-body work01-body-nfc-awareness">
     NFCの知名度の低さ
 </div>
 
-<div class="work-body work-textbox work01-body-text typing-text">
+<div class="work-body work-textbox work01-body-text">
     オサイフケータイや、Suicaクレジットカードのタッチ決済
     など日常的に使用する事の多いNFC技術ですが、
     一般的な認知度は低くKDDIのアンケート調査では
@@ -110,11 +110,11 @@ const workData = {
 
 </div>
 
-<div class="work-heading-small work01-heading-small-process typing-text">
+<div class="work-heading-small work01-heading-small-process">
     PROCESS
 </div>
 
-<div class="work-body work01-body-process typing-text">
+<div class="work-body work01-body-process">
     製作過程
 </div>
 
@@ -122,7 +122,7 @@ const workData = {
 
 <img src="../images/work01-06.png" alt="" class="work01-process-number">
 
-<div class="work-heading-small work01-process-description typing-text">
+<div class="work-heading-small work01-process-description">
     空間全体をイメージする為<br>
     Adobe Illustratorで見取り図を書き<br>
     デザインを考える。
@@ -147,7 +147,7 @@ const workData = {
         class="work01-process-number02">
 
     <!-- 説明文 -->
-    <div class="work-heading-small work01-process-description02 typing-text">
+    <div class="work-heading-small work01-process-description02">
         見取り図を元に購入した<br>プラダンに合わせて割図を考える
     </div>
 
@@ -183,7 +183,7 @@ const workData = {
     class="work01-image09">
 
 <!-- 製作過程03の説明文 -->
-<div class="work-heading-small work01-process-description03 typing-text">
+<div class="work-heading-small work01-process-description03">
     割図の寸法通りに<br>プラダンを切って製作組み立てます。
 </div>
 
