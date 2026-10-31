@@ -129,7 +129,7 @@
 
 /* =========================================
    work01
-   ペーパーサミット説明文
+   ISSUE / RESEARCH 説明文
 ========================================= */
 
 .work01-body-description {
@@ -137,31 +137,13 @@
 
     left: 550px;
     top: 796px;
-   width: 556px;
+
+    width: 556px;
     height: auto;
+
     box-sizing: border-box;
     white-space: normal;
     overflow: visible;
-}
-/* =========================================
-   work01
-   イベントの目的
-========================================= */
-
-.work01-body-purpose {
-    position: absolute;
-    left: 550px;
-    top: 950px;
-}
-/* =========================================
-   work01
-   ディスプレイ製作の目標
-========================================= */
-
-.work01-body-goal {
-    position: absolute;
-    left: 550px;
-    top: 1075px;
 }
 
 /* =========================================
