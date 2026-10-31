@@ -60,3 +60,21 @@
 
     text-align: center;
 }
+
+/* =========================================
+   WORK05 外部サイトリンクボタン
+========================================= */
+
+.work05-button-link {
+    position: absolute;
+
+    left: 63px;
+    top: 638px;
+
+    display: block;
+    cursor: pointer;
+}
+
+.work05-button {
+    display: block;
+}
