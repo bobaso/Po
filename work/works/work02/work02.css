@@ -112,19 +112,18 @@
 }
 
 /* =========================================
-  説明文
+   説明文テキストボックス
 ========================================= */
 
 .work02-body-description {
-    position: absolute;
-    left: 633px;
+    position: relative;
+    left: 603px;
     top: 796px;
-    width: 556px;
-    height: auto;
-    box-sizing: border-box;
-    white-space: normal;
-    overflow: visible;
 
+    width: 556px;
+    --textbox-width: 556px;
+
+    text-align: center;
 }
 
 /* =========================================
