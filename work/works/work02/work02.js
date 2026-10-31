@@ -108,7 +108,7 @@ content: `
             コンセプト/エビデンス
         </div>
 
-        <!-- コンセプト説明テキストボックス -->
+<!-- コンセプト説明テキストボックス -->
 <div class="work-body work-textbox work02-body-concept-text">
             ペーパーサミットにはファミリー層が多く<br>
             来場されると聞いたので、来場する子供をターゲットに<br>
