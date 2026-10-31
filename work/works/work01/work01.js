@@ -86,23 +86,28 @@ const workData = {
 </div>
 
 
-<!-- 画像1：最背面 -->
-<img
-    src="../images/work01-13.png"
-    alt=""
-    class="work01-image13">
+<!-- 画像12・13・14：グループ -->
+<div class="work01-image-group">
 
-<!-- 画像2：中間 -->
-<img
-    src="../images/work01-14.png"
-    alt=""
-    class="work01-image14">
+    <!-- 画像13：最背面 -->
+    <img
+        src="../images/work01-13.png"
+        alt=""
+        class="work01-image13">
 
-<!-- 画像3：最前面 -->
-<img
-    src="../images/work01-12.png"
-    alt=""
-    class="work01-image12">
+    <!-- 画像14：中間 -->
+    <img
+        src="../images/work01-14.png"
+        alt=""
+        class="work01-image14">
+
+    <!-- 画像12：最前面 -->
+    <img
+        src="../images/work01-12.png"
+        alt=""
+        class="work01-image12">
+
+</div>
 
 <div class="work-heading-small work01-heading-small-process typing-text">
     PROCESS
