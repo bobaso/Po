@@ -59,23 +59,23 @@ const workData = {
     <!-- 自動で高さが変わるテキストボックス -->
     <div class="work-body work-textbox work01-body-description">
         ペーパーサミットとは、全国の印刷会社が製作した
-        <br>オリジナル商品やアートなどを一般の人に触れてもらうことで、
-        <br>より印刷の魅力を知ってもらうというコンセプトのイベントです。
+        オリジナル商品やアートなどを一般の人に触れてもらうことで、
+        より印刷の魅力を知ってもらうというコンセプトのイベントです。
     </div>
 
     <!-- ここから後ろの要素が移動対象 -->
     <div class="work-text-flow-content">
 
 <div class="work-body work01-body-purpose typing-text">
-    本イベントの企業としての目的は、<br>
-    また一般的には認知度が低く使い道などが知られていない<br>
+    本イベントの企業としての目的は、
+    また一般的には認知度が低く使い道などが知られていない
     NFCという製品をより多くの人に知ってもらう事でした。
  </div>
 
 <div class="work-body work01-body-goal typing-text">
               そこで目を引くようなディスプレイを製作して、
- <br>より多くの来場者に人気ノベルティ商品やNFCの技術などに興味を
- <br>持ってもらえるようにすることを目標に製作しました。
+ より多くの来場者に人気ノベルティ商品やNFCの技術などに興味を
+ 持ってもらえるようにすることを目標に製作しました。
 </div>
 
 <div class="work-body work01-body-nfc-awareness typing-text">
