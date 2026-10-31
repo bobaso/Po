@@ -141,13 +141,16 @@
     animation: work05-image-loop 4s linear infinite;
 }
 
-/* 上方向へのループ移動 */
+/* =========================================
+   上方向へのループ移動
+========================================= */
+
 @keyframes work05-image-loop {
     from {
         transform: translateY(0);
     }
 
     to {
-        transform: translateY(-400px);
+        transform: translateY(-193px);
     }
 }
