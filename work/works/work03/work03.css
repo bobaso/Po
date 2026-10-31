@@ -258,7 +258,8 @@
 .work03-body-text {
     position: static;
     width: 100%;
-    
+
+    transform: translateX(-20px);
 }
 
 
