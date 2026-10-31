@@ -14,11 +14,20 @@ const workData = {
             class="work05-image01 work-image-zoom">
 <!-- 外部サイトへのリンクボタン -->
 <a
-    href="https://sites.google.com/view/umaki-test001/ホーム"
+    href="https://sites.google.com/view/umaki-test001/%E3%83%9B%E3%83%BC%E3%83%A0"
     target="_blank"
     rel="noopener noreferrer"
     class="work05-button-link">
 
+    <!-- 下で動く画像 -->
+    <span class="work05-button-window">
+        <img
+            src="../images/work05-03.png"
+            alt=""
+            class="work05-button-animation">
+    </span>
+
+    <!-- 上に重ねるボタン画像 -->
     <img
         src="../images/work05-02.png"
         alt=""
