@@ -93,7 +93,10 @@
     height: 207px;
 
     overflow: hidden;
-   z-index: 1;
+    z-index: 1;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 /* 下で動く画像 */
@@ -126,6 +129,11 @@
 /* ホバー時のボタン */
 .work05-button-link:hover {
     transform: translateY(-6px) scale(1.05);
+}
+
+/* ホバー中だけ下の画像を表示 */
+.work05-button-link:hover .work05-button-window {
+    opacity: 1;
 }
 
 /* ホバー中だけ下の画像を動かす */
