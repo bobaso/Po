@@ -181,15 +181,31 @@
 
 
 /* =========================================
+   work01
+   画像12・13・14 グループ
+========================================= */
+
+.work01-image-group {
+    position: absolute;
+
+    left: 763px;
+    top: 1306px;
+}
+
+
+/* =========================================
    画像13：最背面
 ========================================= */
 
 .work01-image13 {
     position: absolute;
-    left: 763px;
-    top: 1407px;
+
+    left: 0;
+    top: 101px;
+
     z-index: 1;
 }
+
 
 /* =========================================
    画像14：中間
@@ -197,20 +213,24 @@
 
 .work01-image14 {
     position: absolute;
-    left: 818px;
-    top: 1462px;
+
+    left: 55px;
+    top: 156px;
+
     z-index: 2;
 }
 
 
 /* =========================================
-   画像12
+   画像12：最前面
 ========================================= */
 
 .work01-image12 {
     position: absolute;
-    left: 767px;
-    top: 1306px;
+
+    left: 4px;
+    top: 0;
+
     z-index: 3;
 }
 
@@ -466,12 +486,6 @@ PROCESS
 }
 
 .work01-image13 {
-    position: absolute;
-    left: 763px;
-    top: 1407px;
-    z-index: 1;
-
-    /* 初期状態：非表示 */
     --work01-chart-angle: 0deg;
 
     -webkit-mask-image: conic-gradient(
@@ -491,7 +505,6 @@ PROCESS
     );
 }
 
-/* 円グラフが見え始めたらアニメーション開始 */
 .work01-image13.is-chart-animating {
     animation: work01-chart-reveal 1.5s linear forwards;
 }
