@@ -428,3 +428,29 @@ overflow: visible;
     max-height: none;
     margin: 0 auto;
 }
+
+/* =========================================
+   共通：テキストボックス自動レイアウト
+========================================= */
+
+.work-text-flow {
+    position: relative;
+    display: flow-root;
+    width: 100%;
+}
+
+.work-textbox {
+    position: relative;
+    display: block;
+    width: var(--textbox-width, 100%);
+    height: auto;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: visible;
+}
+
+.work-text-flow-content {
+    position: relative;
+    display: flow-root;
+    width: 100%;
+}
