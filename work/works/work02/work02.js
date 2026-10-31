@@ -108,8 +108,8 @@ content: `
             コンセプト/エビデンス
         </div>
 
-        <!-- コンセプト説明 -->
-        <div class="work-body work02-body-concept-text">
+        <!-- コンセプト説明テキストボックス -->
+<div class="work-body work-textbox work02-body-concept-text">
             ペーパーサミットにはファミリー層が多く<br>
             来場されると聞いたので、来場する子供をターゲットに<br>
             物販用の商品展開には、近年特に人気が高まりつつある<br>
