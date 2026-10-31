@@ -72,7 +72,7 @@ content: `
 
     <div class="work-body work-textbox work02-body-description">
         ペーパーサミット2026の出展に向けて<br>
-        自社でシールパズルを制作するという目標で開発しました。
+        自社でシールパズルを制作する目標で開発しました。
         <br>
         <br>シールパズルとは？<br><br>
         台紙に書かれた番号の順に指定されたシールを
