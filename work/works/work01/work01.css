@@ -162,13 +162,21 @@
    NFCテキスト
 ========================================= */
 
-
 .work01-body-text {
     position: absolute;
+
     left: 110px;
     top: 1450px;
+
+    width: 556px;
+    height: auto;
+
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: visible;
+
     z-index: 3;
-   text-align: center;
+    text-align: center;
 }
 
 
