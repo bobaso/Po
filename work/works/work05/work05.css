@@ -73,8 +73,16 @@
 
     display: block;
     cursor: pointer;
+
+    transition: transform 0.3s ease;
 }
 
+/* ボタン画像 */
 .work05-button {
     display: block;
+}
+
+/* ホバー時 */
+.work05-button-link:hover {
+    transform: translateY(-6px) scale(1.05);
 }
