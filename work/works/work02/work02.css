@@ -147,12 +147,24 @@
     left: 240px;
     top: 1386px;
 }
-/* 説明テキスト */
+/* =========================================
+   コンセプト説明テキストボックス
+========================================= */
+
 .work02-body-concept-text {
     position: absolute;
+
     left: 100px;
     top: 1448px;
-   text-align: center;
+
+    width: 556px;
+    height: auto;
+
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: visible;
+
+    text-align: center;
 }
 
 
