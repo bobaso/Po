@@ -163,6 +163,67 @@ function updateBackToListPosition() {
 }
 
 /* =========================================
+   テキストボックスの高さに応じて後続要素を移動
+========================================= */
+
+function initWorkTextFlow() {
+
+    const textFlows = workContent.querySelectorAll(".work-text-flow");
+
+    textFlows.forEach(flow => {
+
+        const textBox = flow.querySelector(".work-textbox");
+        const flowContent = flow.querySelector(".work-text-flow-content");
+
+        if (!textBox || !flowContent) return;
+
+        // 後続要素の初期位置を保存
+        const targets = Array.from(
+            flowContent.querySelectorAll("*")
+        ).filter(element => {
+
+            const style = window.getComputedStyle(element);
+
+            return (
+                style.position === "absolute" &&
+                style.top !== "auto"
+            );
+
+        });
+
+        const originalPositions = targets.map(element => ({
+            element: element,
+            top: parseFloat(window.getComputedStyle(element).top)
+        }));
+
+        // テキストボックスの初期高さ
+        const initialHeight = textBox.offsetHeight;
+
+        // 高さの変化を監視
+        const observer = new ResizeObserver(() => {
+
+            const currentHeight = textBox.offsetHeight;
+            const difference = currentHeight - initialHeight;
+
+            // 後続要素を初期位置から移動
+            originalPositions.forEach(item => {
+
+                item.element.style.top =
+                    (item.top + difference) + "px";
+
+            });
+
+            updateBackToListPosition();
+
+        });
+
+        observer.observe(textBox);
+
+    });
+
+}
+
+/* =========================================
    初回配置・画像読み込み後の再計算
 ========================================= */
 
@@ -214,6 +275,8 @@ if (typeof initWork02OpenAnimation === "function") {
 if (typeof initWork02GaugeAnimation === "function") {
     initWork02GaugeAnimation();
 }
+
+initWorkTextFlow();
 
 /* =========================================
    共通フェードインアニメーション
