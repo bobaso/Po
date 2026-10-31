@@ -56,8 +56,9 @@ const workData = {
 <!-- テキストボックスの高さに応じて後続要素を移動 -->
 <div class="work-text-flow">
 
-    <!-- 自動で高さが変わるテキストボックス -->
-    <div class="work-body work-textbox work01-body-description">
+    <div class="work-text-flow-content">
+
+        <div class="work-body work-textbox work01-body-description">
     ペーパーサミットとは、全国の印刷会社が製作した
     オリジナル商品やアートなどを一般の人に触れてもらうことで、
     より印刷の魅力を知ってもらうというコンセプトのイベントです。
@@ -188,7 +189,7 @@ const workData = {
 
 </div>
 
-    </div>
+   　　 </div>
     </div>
 
     `
