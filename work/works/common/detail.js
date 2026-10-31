@@ -168,12 +168,16 @@ function updateBackToListPosition() {
 
 function initWorkTextFlow() {
 
-    const textFlows = workContent.querySelectorAll(".work-text-flow");
+    const textFlows =
+        workContent.querySelectorAll(".work-text-flow");
 
     textFlows.forEach(flow => {
 
-        const textBox = flow.querySelector(".work-textbox");
-        const flowContent = flow.querySelector(".work-text-flow-content");
+        const textBox =
+            flow.querySelector(".work-textbox");
+
+        const flowContent =
+            flow.querySelector(".work-text-flow-content");
 
         if (!textBox || !flowContent) return;
 
@@ -193,17 +197,21 @@ function initWorkTextFlow() {
 
         const originalPositions = targets.map(element => ({
             element: element,
-            top: parseFloat(window.getComputedStyle(element).top)
+            top: parseFloat(
+                window.getComputedStyle(element).top
+            )
         }));
 
-        // テキストボックスの初期高さ
-        const initialHeight = textBox.offsetHeight;
+        // 初期高さを保存
+        let initialHeight = textBox.offsetHeight;
 
         // 高さの変化を監視
         const observer = new ResizeObserver(() => {
 
             const currentHeight = textBox.offsetHeight;
-            const difference = currentHeight - initialHeight;
+
+            const difference =
+                currentHeight - initialHeight;
 
             // 後続要素を初期位置から移動
             originalPositions.forEach(item => {
