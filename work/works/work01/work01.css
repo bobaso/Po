@@ -168,7 +168,7 @@
     left: 50px;
     top: 1450px;
 
-    width: 400px;
+    width: 450px;
     height: auto;
 
     box-sizing: border-box;
@@ -186,7 +186,7 @@
 
 .work01-image13 {
     position: absolute;
-    left: 763px;
+    left: 663px;
     top: 1407px;
     z-index: 1;
 }
@@ -197,7 +197,7 @@
 
 .work01-image14 {
     position: absolute;
-    left: 818px;
+    left: 718px;
     top: 1462px;
     z-index: 2;
 }
@@ -209,7 +209,7 @@
 
 .work01-image12 {
     position: absolute;
-    left: 767px;
+    left: 667px;
     top: 1306px;
     z-index: 3;
 }
