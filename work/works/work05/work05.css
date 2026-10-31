@@ -72,17 +72,71 @@
     top: 620px;
 
     display: block;
+    width: 207px;
+    height: 590px;
+
     cursor: pointer;
 
     transition: transform 0.3s ease;
 }
 
-/* ボタン画像 */
-.work05-button {
-    display: block;
+/* 下の画像を表示する範囲 */
+.work05-button-window {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 207px;
+    height: 590px;
+
+    overflow: hidden;
 }
 
-/* ホバー時 */
+/* 下で動く画像 */
+.work05-button-animation {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 207px;
+    height: 400px;
+
+    object-fit: contain;
+}
+
+/* 上に重ねるボタン画像 */
+.work05-button {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 207px;
+    height: 590px;
+
+    z-index: 2;
+}
+
+/* ホバー時のボタン */
 .work05-button-link:hover {
     transform: translateY(-6px) scale(1.05);
+}
+
+/* ホバー中だけ下の画像を動かす */
+.work05-button-link:hover .work05-button-animation {
+    animation: work05-image-loop 4s linear infinite;
+}
+
+/* 上方向へのループ移動 */
+@keyframes work05-image-loop {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-400px);
+    }
 }
