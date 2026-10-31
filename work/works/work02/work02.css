@@ -117,10 +117,14 @@
 
 .work02-body-description {
     position: absolute;
-
     left: 633px;
     top: 796px;
-   text-align: center;
+    width: 556px;
+    height: auto;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: visible;
+
 }
 
 /* =========================================
