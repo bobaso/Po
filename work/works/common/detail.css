@@ -434,7 +434,7 @@ overflow: visible;
 ========================================= */
 
 .work-text-flow {
-    position: relative;
+    position: static;
     display: flow-root;
     width: 100%;
 }
@@ -450,7 +450,7 @@ overflow: visible;
 }
 
 .work-text-flow-content {
-    position: relative;
+    position: static;
     display: flow-root;
     width: 100%;
 }
