@@ -116,12 +116,17 @@
 ========================================= */
 
 .work02-body-description {
-    position: relative;
+    position: absolute;
+
     left: 603px;
     top: 796px;
 
     width: 556px;
-    --textbox-width: 556px;
+    height: auto;
+
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: visible;
 
     text-align: center;
 }
