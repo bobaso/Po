@@ -137,6 +137,11 @@
 
     left: 633px;
     top: 796px;
+   width: 556px;
+    height: auto;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: visible;
 }
 /* =========================================
    work01
