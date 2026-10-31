@@ -50,6 +50,10 @@ content: `
     alt=""
     class="work02-image10">
     
+<!-- =========================================
+     BACKGROUND
+========================================= -->
+
 <div class="work-heading-small work02-heading-small-research typing-text">
     BACKGROUND
 </div>
@@ -58,92 +62,112 @@ content: `
     背景
 </div>
 
-<div class="work-body work02-body-description">
-    ペーパーサミット2026の出展に向けて<br>
-    シールパズルを製作したいという指示を受けて開発しました。
-    <br>
-    <br>シールパズルとは？<br><br>
-    台紙に書かれた番号の順に指定されたシールを<br>
-    貼っていき、１つの絵を完成させる知育玩具です。<br>
-    指先を使うことで脳が刺激を受ける為、知育にも良いと学研にも認められ<br>
-    動物やのりもの、キャラクターものなど子供向けの商品から<br>
-    有名な名画や美しい風景など大人も楽しめる複雑なパズルもあり<br>
-    老若男女に幅広く人気の高い商品だと言えます。
-</div>
+
+<!-- =========================================
+     説明文テキストボックス
+     この文章の高さを基準に後続要素を移動
+========================================= -->
+
+<div class="work-text-flow">
+
+    <div class="work-body work-textbox work02-body-description">
+        ペーパーサミット2026の出展に向けて<br>
+        シールパズルを製作したいという指示を受けて開発しました。
+        <br>
+        <br>シールパズルとは？<br><br>
+        台紙に書かれた番号の順に指定されたシールを<br>
+        貼っていき、１つの絵を完成させる知育玩具です。<br>
+        指先を使うことで脳が刺激を受ける為、知育にも良いと学研にも認められ<br>
+        動物やのりもの、キャラクターものなど子供向けの商品から<br>
+        有名な名画や美しい風景など大人も楽しめる複雑なパズルもあり<br>
+        老若男女に幅広く人気の高い商品だと言えます。
+    </div>
+
+    <!-- =========================================
+         ここから後続要素
+         テキストボックスが伸びた分だけ移動
+    ========================================= -->
+
+    <div class="work-text-flow-content">
 
         <div class="work-heading-small work01-heading-small-process typing-text">
-    PROCESS
+            PROCESS
+        </div>
+
+        <!-- 制作過程の本文 -->
+        <div class="work-body work02-body-process-description">
+            制作過程
+        </div>
+
+        <!-- CONCEPT / EVIDENCE -->
+        <div class="work-heading-small work02-heading-small-concept typing-text">
+            CONCEPT/EVIDENCE
+        </div>
+
+        <div class="work-body work02-body-concept">
+            コンセプト/エビデンス
+        </div>
+
+        <!-- コンセプト説明 -->
+        <div class="work-body work02-body-concept-text">
+            ペーパーサミットにはファミリー層が多く<br>
+            来場されると聞いたので、来場する子供をターゲットに<br>
+            物販用の商品展開には、近年特に人気が高まりつつある<br>
+            恐竜をモチーフに加えることにしました。<br>
+            <br>
+            「恐竜」は昔から人気が衰えることの<br>
+            ないジャンルだと思われがちですが<br>
+            近年の福井県立恐竜博物館のリニューアル、<br>
+            それに伴い北陸新幹線の福井県内開業、<br>
+            「ジュラシック・ワールド復活の大地」は<br>
+            公開3日間で興行収入約11.33億円を記録するなど<br>
+            2024年頃から確実にブームの追い風が吹きつつある<br>
+            旬のジャンルであることが明らかです。
+        </div>
+
+        <!-- 画像04 -->
+        <img
+            src="../images/work02-04.png"
+            alt=""
+            class="work02-image04 fade-up">
+
+        <!-- 画像05 -->
+        <img
+            src="../images/work02-05.png"
+            alt=""
+            class="work02-image05 fade-up">
+
+        <!-- SPECIFICATION -->
+        <div class="work-heading-small work02-heading-small-specification typing-text">
+            SPECIFICATION
+        </div>
+
+        <!-- 仕様 / こだわり -->
+        <div class="work-body work02-body-specification">
+            仕様/こだわり
+        </div>
+
+        <!-- 画像07 -->
+        <img
+            src="../images/work02-07.png"
+            alt=""
+            class="work02-image07 work-image-zoom">
+
+        <!-- 画像08 -->
+        <img
+            src="../images/work02-08.png"
+            alt=""
+            class="work02-image08 work-image-zoom">
+
+        <!-- 画像09 -->
+        <img
+            src="../images/work02-09.png"
+            alt=""
+            class="work02-image09 work-image-zoom">
+
+    </div>
+
 </div>
-
-<!-- 制作過程の本文 -->
-<div class="work-body work02-body-process-description">
-    制作過程
-</div>
-
-<div class="work-heading-small work02-heading-small-concept typing-text">
-    CONCEPT/EVIDENCE
-</div>
-<!-- コンセプト/エビデンス -->
-<div class="work-body work02-body-concept">
-    コンセプト/エビデンス
-</div>
-<!-- 説明テキスト -->
-<div class="work-body work02-body-concept-text">
-    ペーパーサミットにはファミリー層が多く<br>
-    来場されると聞いたので、来場する子供をターゲットに<br>
-    物販用の商品展開には、近年特に人気が高まりつつある<br>
-    恐竜をモチーフに加えることにしました。<br>
-    <br>
-    「恐竜」は昔から人気が衰えることの<br>
-    ないジャンルだと思われがちですが<br>
-    近年の福井県立恐竜博物館のリニューアル、<br>
-    それに伴い北陸新幹線の福井県内開業、<br>
-    「ジュラシック・ワールド復活の大地」は<br>
-    公開3日間で興行収入約11.33億円を記録するなど<br>
-    2024年頃から確実にブームの追い風が吹きつつある<br>
-    旬のジャンルであることが明らかです。
-</div>
-
-<!-- 画像04 -->
-<img
-    src="../images/work02-04.png"
-    alt=""
-    class="work02-image04 fade-up">
-
-<!-- 画像05 -->
-<img
-    src="../images/work02-05.png"
-    alt=""
-    class="work02-image05 fade-up">
-
-<!-- SPECIFICATION -->
-<div class="work-heading-small work02-heading-small-specification typing-text">
-    SPECIFICATION
-</div>
-
-<!-- 仕様 / こだわり -->
-<div class="work-body work02-body-specification">
-    仕様/こだわり
-</div>
-
-
-<!-- 画像07 -->
-<img
-    src="../images/work02-07.png"
-    alt=""
-    class="work02-image07 work-image-zoom">
-
-<!-- 画像08 -->
-<img
-    src="../images/work02-08.png"
-    alt=""
-    class="work02-image08 work-image-zoom">
-
-<!-- 画像09 -->
-<img
-    src="../images/work02-09.png"
-    alt=""
-    class="work02-image09 work-image-zoom">
 
 
     `
