@@ -72,8 +72,8 @@
     top: 620px;
 
     display: block;
-    width: 207px;
-    height: 590px;
+    width: 590px;
+    height: 207px;
 
     cursor: pointer;
 
@@ -87,8 +87,8 @@
     left: 0;
     top: 0;
 
-    width: 207px;
-    height: 590px;
+    width: 590px;
+    height: 207px;
 
     overflow: hidden;
 }
@@ -100,7 +100,7 @@
     left: 0;
     top: 0;
 
-    width: 207px;
+    width: 590px;
     height: 400px;
 
     object-fit: contain;
