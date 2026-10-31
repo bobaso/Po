@@ -138,13 +138,13 @@
 /* 小見出し */
 .work02-heading-small-concept {
     position: absolute;
-    left: 180px;
+    left: 170px;
     top: 1337px;
 }
 /* コンセプト / エビデンス */
 .work02-body-concept {
     position: absolute;
-    left: 220px;
+    left: 210px;
     top: 1386px;
 }
 /* =========================================
@@ -280,7 +280,7 @@ PROCESS
 
 .work02-image09 {
     position: absolute;
-    left: 390px;
+    left: 400px;
     top: 3300px;
 
     width: 400px;
