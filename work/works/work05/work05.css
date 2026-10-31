@@ -93,6 +93,7 @@
     height: 207px;
 
     overflow: hidden;
+   z-index: 1;
 }
 
 /* 下で動く画像 */
