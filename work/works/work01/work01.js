@@ -419,76 +419,112 @@ if (imageStep >= 3) {
 ========================================= */
 
 
+
 function handleTouchEnd(event) {
 
-    if (!sequenceStarted) return;
+    if (!sequenceStarted) {
+        touchMoved = false;
+        return;
+    }
 
     const changedTouch = event.changedTouches[0];
-    if (!changedTouch) return;
 
-    const deltaY = touchStartY - changedTouch.clientY;
-    const deltaX = touchStartX - changedTouch.clientX;
+    if (!changedTouch) {
+        touchMoved = false;
+        return;
+    }
 
-    if (Math.abs(deltaX) > Math.abs(deltaY)) return;
-    if (Math.abs(deltaY) < 35) return;
+    const deltaY =
+        touchStartY - changedTouch.clientY;
 
+    const deltaX =
+        touchStartX - changedTouch.clientX;
+
+    // 横方向の操作は対象外
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        touchMoved = false;
+        return;
+    }
+
+    // 小さな動きは無視
+    if (Math.abs(deltaY) < 35) {
+        touchMoved = false;
+        return;
+    }
+
+    // 指を下に動かした場合は画像を切り替えない
+    if (deltaY < 0) {
+        touchMoved = false;
+        return;
+    }
+
+    // preventDefaultされたスワイプだけを画像切り替えに使用
     if (!touchMoved) return;
 
-    // 画像02の状態で下方向なら通常スクロール
-    if (imageStep === 1 && deltaY < 0) {
-        touchMoved = false;
-        return;
+    // image02からimage03へ
+    if (imageStep === 1) {
+
+        image03.classList.add("is-open");
+
+        imageStep = 2;
+
     }
 
-    // 画像04の状態で上方向なら通常スクロール
-    if (imageStep === 3 && deltaY > 0) {
-        touchMoved = false;
-        return;
-    }
+    // image03からimage04へ
+    else if (imageStep === 2) {
 
-    // 上スワイプ：画像を順番に展開
-    if (deltaY > 0) {
+        image04.classList.add("is-open");
 
-        if (imageStep === 1) {
-            image03.classList.remove("is-closing");
-            image03.classList.add("is-open");
-            imageStep = 2;
+        imageStep = 3;
 
-        } else if (imageStep === 2) {
-            image04.classList.remove("is-closing");
-            image04.classList.add("is-open");
-            imageStep = 3;
-        }
     }
 
     touchMoved = false;
+
 }
+
 
 /* =========================================
    スマホ：スワイプ中のスクロール制御
 ========================================= */
 
+
 function handleTouchMove(event) {
 
     if (!sequenceStarted) return;
+
     if (event.touches.length !== 1) return;
 
     const currentTouch = event.touches[0];
 
-    const deltaY = touchStartY - currentTouch.clientY;
-    const deltaX = touchStartX - currentTouch.clientX;
+    const deltaY =
+        touchStartY - currentTouch.clientY;
 
-    // 横方向の操作は許可
+    const deltaX =
+        touchStartX - currentTouch.clientX;
+
+    // 横方向の操作は対象外
     if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+
+    // 小さな動きは無視
     if (Math.abs(deltaY) < 5) return;
 
-    // 端では通常スクロールを許可
-    if (imageStep === 1 && deltaY < 0) return;
-    if (imageStep === 3 && deltaY > 0) return;
+    // 指を下に動かした場合は、通常の上方向スクロールを許可
+    if (deltaY < 0) return;
 
-    event.preventDefault();
-    touchMoved = true;
+    // image04表示後は通常のスクロールを許可
+    if (imageStep >= 3) return;
+
+    // image02・image03表示中の上方向スワイプだけを画像切り替えに使用
+    if (imageStep === 1 || imageStep === 2) {
+
+        event.preventDefault();
+
+        touchMoved = true;
+    }
+
 }
+
 
 
 
