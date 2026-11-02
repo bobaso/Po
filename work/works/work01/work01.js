@@ -125,19 +125,19 @@ const workData = {
 <img
     src="../images/work01-05.png"
     alt=""
-    class="work01-process-image work01-process-image01">
+    class="work01-process-image work01-process-image01 work01-process-fade">
 
 <!-- 製作過程画像02 -->
 <img
     src="../images/work01-06.png"
     alt=""
-    class="work01-process-image work01-process-image02">
+    class="work01-process-image work01-process-image02 work01-process-fade">
 
 <!-- 製作過程画像03 -->
 <img
     src="../images/work01-07.png"
     alt=""
-    class="work01-process-image work01-process-image03">
+    class="work01-process-image work01-process-image03 work01-process-fade">
 
 <!-- work01-11.png：1枚目 -->
 <img
@@ -171,7 +171,39 @@ function initWork01ImageAnimation() {
 
     if (!workScrollArea) return;
 
+    /* =========================================
+       製作過程画像05〜07：下からフェードイン
+    ========================================= */
 
+    const processImages =
+        document.querySelectorAll(".work01-process-fade");
+
+    const processFadeObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("is-visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                root: workScrollArea,
+                threshold: 0.15
+            }
+        );
+
+    processImages.forEach(image => {
+        processFadeObserver.observe(image);
+    });
     /* =========================================
        円グラフ：見え始めたら時計回りに表示
     ========================================= */
