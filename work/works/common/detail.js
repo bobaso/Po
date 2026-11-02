@@ -1,10 +1,49 @@
 
 /* =========================================
-   共通HTML
+   共通HTML・テンプレート切り替え
 ========================================= */
 
 const workDetail =
     document.getElementById("work-detail");
+
+
+/* =========================================
+   standardテンプレート
+========================================= */
+
+let workContentHTML = workData.content || "";
+
+if (workData.template === "standard") {
+
+    workContentHTML = `
+
+        <img
+            src="${workData.image}"
+            alt=""
+            class="standard-image01">
+
+        <div class="work-heading-large standard-heading-large typing-text">
+            ${workData.title || ""}
+        </div>
+
+        <div class="work-heading-small standard-heading-small typing-text">
+            DATA.${workData.data || ""}<br>
+            CATEGORY.${workData.category || ""}<br>
+            EQUIPMENT.${workData.equipment || ""}<br>
+            MATERIAL.${workData.material || ""}
+        </div>
+
+        <div class="work-body standard-body typing-text">
+            ${workData.description || ""}
+        </div>
+
+    `;
+}
+
+
+/* =========================================
+   共通HTML
+========================================= */
 
 workDetail.innerHTML = `
 
@@ -25,7 +64,7 @@ workDetail.innerHTML = `
 
                     <!-- 作品コンテンツ -->
                     <div class="work-content">
-                        ${workData.content}
+                        ${workContentHTML}
                     </div>
 
                     <!-- Back to list -->
