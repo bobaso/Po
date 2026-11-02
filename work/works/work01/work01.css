@@ -398,3 +398,35 @@ PROCESS
     }
 }
 
+/* =========================================
+   製作過程画像05〜07
+   下からフェードイン
+========================================= */
+
+.work01-process-fade {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.work01-process-fade.is-visible {
+    animation: process-fade-up 0.8s ease-out forwards;
+}
+
+
+/* =========================================
+   フェードアップアニメーション
+========================================= */
+
+@keyframes process-fade-up {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
