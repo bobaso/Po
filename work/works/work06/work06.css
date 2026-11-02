@@ -1,14 +1,33 @@
-
 /* =========================================
-   WORK06
-   メイン画像
+   BACKGROUND：小見出し
 ========================================= */
 
-.work06-image01 {
+.work06-background-heading {
     position: absolute;
+    left: 707px;
+    top: 685px;
+}
 
-    left: 40px;
-    top: 40px;
 
-    display: block;
+/* =========================================
+   BACKGROUND：本文
+========================================= */
+
+.work06-background-text {
+    position: absolute;
+    left: 808px;
+    top: 733px;
+}
+
+
+/* =========================================
+   詳細テキスト
+========================================= */
+
+.work06-detail-text {
+    position: absolute;
+    left: 633px;
+    top: 796px;
+    width: 556px;
+    box-sizing: border-box;
 }
