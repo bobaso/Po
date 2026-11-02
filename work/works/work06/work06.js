@@ -41,6 +41,19 @@ const workData = {
             分かりやすいウェブサイト作りをしようという目的もありました。
         </div>
 
+        <div class="work-heading-small work06-concept-heading">
+        CONCEPT
+    </div>
+
+    <div class="work-body work06-concept-text">
+        コンセプト
+    </div>
+
+    <div class="work-body work06-concept-detail">
+        ホームページやECサイトなどからも受け取れるように社内のコーポレートカラーはブルーなので、
+        ブルーを基調にしつつもアクセントカラーになるオレンジを加えることによって全体的にブルーが引き立つカラーに仕上げました。
+    </div>
+
     `
 
 };
