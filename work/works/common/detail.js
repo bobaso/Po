@@ -198,19 +198,26 @@ function initWorkTextFlow() {
         });
 
         // 後続要素の初期位置を保存
-        const targets = Array.from(
-            flowContent.querySelectorAll("*")
-        ).filter(element => {
+const targets = Array.from(
+    flowContent.querySelectorAll("*")
+).filter(element => {
 
-            const style =
-                window.getComputedStyle(element);
+    const style =
+        window.getComputedStyle(element);
 
-            return (
-                style.position === "absolute" &&
-                style.top !== "auto"
-            );
+    // 画像12〜14のグループと、その内部の画像は対象外
+    if (
+        element.closest(".work01-image-group")
+    ) {
+        return false;
+    }
 
-        });
+    return (
+        style.position === "absolute" &&
+        style.top !== "auto"
+    );
+
+});
 
         const originalPositions = targets.map(element => ({
             element: element,
