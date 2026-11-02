@@ -107,8 +107,11 @@ const workData = {
         src="../images/work01-12.png"
         alt=""
         class="work01-image12">
+</div>
 
 </div>
+</div>
+
 
 <div class="work-heading-small work01-heading-small-process">
     PROCESS
