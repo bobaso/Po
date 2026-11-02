@@ -57,3 +57,14 @@
     width: 400px;
     box-sizing: border-box;
 }
+
+/* =========================================
+   画像02
+========================================= */
+
+.work06-image02 {
+    position: absolute;
+    left: 16px;
+    top: 673px;
+    display: block;
+}
