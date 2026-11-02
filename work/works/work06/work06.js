@@ -62,6 +62,23 @@ const workData = {
     src="../images/work06-02.png"
     alt=""
     class="work06-image02">
+
+<a
+    href="https://web.archive.org/web/20261102081551/https://umaki-items.com/user_data/umaki-design"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="work06-button03">
+
+    <img
+        src="../images/work06-03.png"
+        alt="UMAKI Design"
+    >
+
+</a>
+
+
+
+    
     `
 
 };
