@@ -27,15 +27,15 @@ const workData = {
 
     content: `
 
-        <div class="work-heading-small work06-background-heading typing-text">
+        <div class="work-heading-small work06-background-heading">
             BACKGROUND
         </div>
 
-        <div class="work-body work06-background-text typing-text">
+        <div class="work-body work06-background-text">
             背景
         </div>
 
-        <div class="work-body work06-detail-text typing-text">
+        <div class="work-body work06-detail-text">
             ペーパーサミット2026を終えて、今まで制作したものや今後制作したものを発信していけるオリジナルブランドサイトを制作しました。
             また、ECサイトをリニューアルした経験を活かして、CSSでボタンや画像などにアニメーションをつけることで、利用者がより感覚的に使いやすく、
             分かりやすいウェブサイト作りをしようという目的もありました。
