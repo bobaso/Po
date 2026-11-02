@@ -120,9 +120,9 @@ const works = [
     },
 
     {
-        title: "作品06",
+        title: "オリジナルブランド<br>ページ制作",
         image: "../images/work-test06.png",
-        category: "event",
+        category: "web",
         link: "works/work06/index.html"
     },
 
