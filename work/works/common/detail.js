@@ -36,7 +36,7 @@ if (workData.template === "standard") {
         <div class="work-body standard-body typing-text">
             ${workData.description || ""}
         </div>
-
+${workData.content || ""}
     `;
 }
 
