@@ -30,4 +30,21 @@ const workData = {
         BtoC向けにオリジナルブランドを展開していくページを作成しました。
     `
 
+   content: `
+
+        <div class="work-heading-small work06-background-heading typing-text">
+            BACKGROUND
+        </div>
+
+        <div class="work-body work06-background-text typing-text">
+            背景
+        </div>
+
+        <div class="work-body work06-detail-text typing-text">
+            テキスト
+        </div>
+
+    `
+
+};
 };
