@@ -118,79 +118,23 @@ const workData = {
     製作過程
 </div>
 
-<div class="work01-process-rectangle">
-
-<img src="../images/work01-06.png" alt="" class="work01-process-number">
-
-<div class="work-heading-small work01-process-description">
-    空間全体をイメージする為<br>
-    Adobe Illustratorで見取り図を書き<br>
-    デザインを考える。
-</div>
-
-
-    <img src="../images/work01-05.png" alt="" class="work01-image05">
-
-</div>
-
-<img src="../images/work01-11.png" alt="" class="work01-image11">
-   
-        
-
-<!-- 製作過程02の親要素 -->
-<div class="work01-process-rectangle02">
-
-    <!-- 番号画像 -->
-    <img
-        src="../images/work01-08.png"
-        alt=""
-        class="work01-process-number02">
-
-    <!-- 説明文 -->
-    <div class="work-heading-small work01-process-description02">
-        見取り図を元に購入した<br>プラダンに合わせて割図を考える
-    </div>
-
-    <!-- 製作画像 -->
-    <img
-        src="../images/work01-07.png"
-        alt=""
-        class="work01-image07">
-
-</div>
-
-<!-- 親要素の外側に配置する画像 -->
+<!-- 製作過程画像01 -->
 <img
-    src="../images/work01-11.png"
+    src="../images/work01-05.png"
     alt=""
-    class="work01-image11-bottom">
+    class="work01-process-image work01-process-image01">
 
-
-
-<!-- 製作過程03の親要素 -->
-<div class="work01-process-rectangle03">
-
-    <!-- 画像 work01-10.png -->
-    <img
-        src="../images/work01-10.png"
-        alt=""
-        class="work01-image10">
-
-<!-- 画像 work01-09.png -->
+<!-- 製作過程画像02 -->
 <img
-    src="../images/work01-09.png"
+    src="../images/work01-06.png"
     alt=""
-    class="work01-image09">
+    class="work01-process-image work01-process-image02">
 
-<!-- 製作過程03の説明文 -->
-<div class="work-heading-small work01-process-description03">
-    割図の寸法通りに<br>プラダンを切って製作組み立てます。
-</div>
-
-</div>
-
-   　　 </div>
-    </div>
+<!-- 製作過程画像03 -->
+<img
+    src="../images/work01-07.png"
+    alt=""
+    class="work01-process-image work01-process-image03">
 
     `
 };
@@ -205,7 +149,7 @@ const workData = {
 
 function initWork01ImageAnimation() {
 
-    initWork01ProcessAnimation();
+
 
     const workScrollArea =
         document.querySelector(".work-scroll-area");
@@ -565,47 +509,5 @@ function handleTouchMove(event) {
 }
 
 
-/* =========================================
-   work01専用
-   製作過程01〜03のフェードイン
-========================================= */
 
-function initWork01ProcessAnimation() {
-
-    const workScrollArea =
-        document.querySelector(".work-scroll-area");
-
-    if (!workScrollArea) return;
-
-    const processRectangles = document.querySelectorAll(
-        ".work01-process-rectangle, " +
-        ".work01-process-rectangle02, " +
-        ".work01-process-rectangle03"
-    );
-
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("is-visible");
-
-                    // 一度表示したら再アニメーションしない
-                    observer.unobserve(entry.target);
-                }
-            });
-
-        },
-        {
-            root: workScrollArea,
-            threshold: 0.15
-        }
-    );
-
-    processRectangles.forEach((rectangle) => {
-        observer.observe(rectangle);
-    });
-}
 
