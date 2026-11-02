@@ -205,12 +205,14 @@ const targets = Array.from(
     const style =
         window.getComputedStyle(element);
 
-    // 画像12〜14のグループと、その内部の画像は対象外
-    if (
-        element.closest(".work01-image-group")
-    ) {
-        return false;
-    }
+  // WORK01の画像グループと左側テキストは位置調整の対象外
+if (
+    element.closest(
+        ".work01-image-group, .work01-body-nfc-awareness, .work01-body-text"
+    )
+) {
+    return false;
+}
 
     return (
         style.position === "absolute" &&
