@@ -18,7 +18,7 @@ const workData = {
        <div class="work-heading-small work03-heading-small typing-text">
     DATA.2026/04/03-2026/04/25<br>
     CATEGORY.Webデザイン<br>
-    EQUIPMENT.EC-CUBE4
+    EQUIPMENT.EC-CUBE4<br>
     MATERIAL.
     </div>
 
