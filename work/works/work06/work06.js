@@ -41,7 +41,7 @@ const workData = {
         </div>
 
         <div class="work-body work06-detail-text typing-text">
-            テキスト
+            ペーパーサミット2026を終えて
         </div>
 
     `
