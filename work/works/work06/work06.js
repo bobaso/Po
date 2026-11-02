@@ -58,6 +58,10 @@ const workData = {
         メインビジュアルにはこれまで販売した商品や、制作事例などが並びこれまでどういう製品を制作してきたのかが一目で分かるようにしています。
     </div>
 
+<img
+    src="../images/work06-02.png"
+    alt=""
+    class="work06-image02">
     `
 
 };
