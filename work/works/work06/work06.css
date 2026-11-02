@@ -31,3 +31,29 @@
     width: 556px;
     box-sizing: border-box;
 }
+/* =========================================
+   CONCEPT
+========================================= */
+
+/* CONCEPT：小見出し */
+.work06-concept-heading {
+    position: absolute;
+    left: 730px;
+    top: 1384px;
+}
+
+/* CONCEPT：本文 */
+.work06-concept-text {
+    position: absolute;
+    left: 730px;
+    top: 1432px;
+}
+
+/* CONCEPT：詳細テキスト */
+.work06-concept-detail {
+    position: absolute;
+    left: 633px;
+    top: 1495px;
+    width: 400px;
+    box-sizing: border-box;
+}
