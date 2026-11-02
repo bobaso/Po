@@ -284,6 +284,35 @@ PROCESS
 .work01-process-image03 {
     top: 2784px;
 }
+
+/* =========================================
+   work01-11.png
+========================================= */
+
+.work01-image11 {
+    position: absolute;
+
+    left: 605px;
+    top: 1735px;
+
+    width: auto;
+    height: auto;
+
+    z-index: 2;
+}
+
+
+.work01-image11-bottom {
+    position: absolute;
+
+    left: 605px;
+    top: 2114px;
+
+    width: auto;
+    height: auto;
+
+    z-index: 2;
+}
 /* =========================================
    work01
    画像02〜04 開くアニメーション
