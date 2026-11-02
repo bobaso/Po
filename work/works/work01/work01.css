@@ -254,186 +254,36 @@ PROCESS
     top: 1995px;
 }
 
-/* 長方形 */
-.work01-process-rectangle {
-    position: absolute;
-    left: 121px;
-    top: 2060px;
-    width: 1010px;
-    height: 263px;
-    background-color: #3cc8d7;
-    z-index: 1;
-}
-
-/* 01画像 */
-.work01-process-number {
-    position: absolute;
-    left: 10;
-    top: -33px;
-    z-index: 2;
-    width: auto;
-    height: auto;
-}
-
-/* 製作過程 01：本文 */
-.work01-process-description {
-    position: absolute;
-    left: 37px;
-    top: 60px;
-    z-index: 2;
-   text-align: center;
-}
-/* 製作過程01の画像 */
-.work01-image05 {
-    position: absolute;
-    left: 514px;
-    top: 9px;
-    width: auto;
-    height: auto;
-    z-index: 2;
-}
-
-/* 製作過程の画像11 */
-.work01-image11 {
-    position: absolute;
-    left: 605px;
-    top: 2361px;
-    width: auto;
-    height: auto;
-    z-index: 2;
-}
-
 
 /* =========================================
-製作過程02
+   WORK01 制作工程画像
 ========================================= */
-/* 製作過程02の親要素 */
-.work01-process-rectangle02 {
+
+.work01-process-image {
     position: absolute;
+
     left: 121px;
-    top: 2438px;
-    width: 1010px;
-    height: 263px;
-    background-color: #3cc8d7;
-    z-index: 1;
-}
-/* 製作過程02の数字画像 */
-.work01-process-number02 {
-    position: absolute;
-    left: 10;
-    top: -33px;
+
     width: auto;
     height: auto;
-    z-index: 2;
-}
-/* 製作過程02の小見出し */
-.work01-process-description02 {
-    position: absolute;
-    left: 37px;
-    top: 80px;
-    text-align: center;
-    z-index: 2;
-}
-/* 製作過程02の画像 */
-.work01-image07 {
-    position: absolute;
-    left: 514px;
-    top: 9px;
-    width: auto;
-    height: auto;
-    z-index: 2;
-}
-/* 製作過程02の下部画像 */
-.work01-image11-bottom {
-    position: absolute;
-    left: 605px;
-    top: 2740px;
-    width: auto;
-    height: auto;
-    z-index: 2;
+
+    display: block;
 }
 
-/* =========================================
-製作過程03の親要素
-========================================= */
-
-.work01-process-rectangle03 {
-    position: absolute;
-    left: 121px;
-    top: 2818px;
-    width: 1010px;
-    height: 263px;
-    background-color: #3cc8d7;
-    z-index: 1;
+/* 制作工程1 */
+.work01-process-image01 {
+    top: 2026px;
 }
 
-/*製作過程03の画像10*/
-.work01-image10 {
-    position: absolute;
-    left: 0;
-    top: -33px;
-    width: auto;
-    height: auto;
-    z-index: 2;
+/* 制作工程2 */
+.work01-process-image02 {
+    top: 2405px;
 }
 
-/*製作過程03の画像09*/
-.work01-image09 {
-    position: absolute;
-    left: 514px;
-    top: 9px;
-    width: auto;
-    height: auto;
-    z-index: 2;
+/* 制作工程3 */
+.work01-process-image03 {
+    top: 2784px;
 }
-
-/*製作過程03の小見出し */
-.work01-process-description03 {
-    position: absolute;
-    left: 37px;
-    top: 80px;
-    z-index: 2;
-   text-align: center;
-}
-
-
-
-
-/* =========================================
-   製作過程01〜03
-   下から上へフェードイン
-========================================= */
-
-/* アニメーション開始前 */
-.work01-process-rectangle,
-.work01-process-rectangle02,
-.work01-process-rectangle03 {
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-/* 画面内に入ったとき */
-.work01-process-rectangle.is-visible,
-.work01-process-rectangle02.is-visible,
-.work01-process-rectangle03.is-visible {
-    animation: process-fade-up 0.8s ease-out forwards;
-}
-
-/* 下から上へ移動しながら表示 */
-@keyframes process-fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-
 /* =========================================
    work01
    画像02〜04 開くアニメーション
