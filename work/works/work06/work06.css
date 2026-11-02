@@ -68,3 +68,18 @@
     top: 703px;
     display: block;
 }
+/* =========================================
+   ボタン03
+========================================= */
+
+.work06-button03 {
+    position: absolute;
+    left: 20px;
+    top: 1207px;
+    display: block;
+    cursor: pointer;
+}
+
+.work06-button03 img {
+    display: block;
+}
