@@ -127,9 +127,9 @@ const works = [
     },
 
     {
-        title: "作品07",
+        title: "NFCカセット型<br>アクリルキーホルダー",
         image: "../images/work-test07.png",
-        category: "illust",
+        category: "web",
         link: "works/work07/index.html"
     },
 
