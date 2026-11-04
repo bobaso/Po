@@ -510,3 +510,67 @@ overflow: visible;
     left: 40px;
     top: 450px;
 }
+
+/* =========================================
+   image-textテンプレート
+========================================= */
+
+/* 作品画像 */
+.image-text-image01 {
+    position: absolute;
+
+    left: 63px;
+    top: 60px;
+
+    width: 591px;
+    height: 473px;
+
+    object-fit: contain;
+
+    display: block;
+    cursor: zoom-in;
+}
+
+
+/* =========================================
+   文字配置
+========================================= */
+
+/* 文字グループ全体 */
+.image-text-group {
+    position: absolute;
+
+    left: 710px;
+    top: 50px;
+
+    width: 530px;
+    height: 400px;
+}
+
+/* 小見出し */
+.image-text-heading-small {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+}
+
+/* 大見出し */
+.image-text-heading-large {
+    position: absolute;
+
+    left: 0;
+    top: 224px;
+
+    text-align: center;
+}
+
+/* 本文 */
+.image-text-body {
+    position: absolute;
+
+    left: 3px;
+    top: 320px;
+
+    text-align: center;
+}
