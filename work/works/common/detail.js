@@ -8,10 +8,15 @@ const workDetail =
 
 
 /* =========================================
-   standardテンプレート
+   テンプレート切り替え
 ========================================= */
 
 let workContentHTML = workData.content || "";
+
+
+/* =========================================
+   standardテンプレート
+========================================= */
 
 if (workData.template === "standard") {
 
@@ -36,7 +41,52 @@ if (workData.template === "standard") {
         <div class="work-body standard-body typing-text">
             ${workData.description || ""}
         </div>
-${workData.content || ""}
+
+        ${workData.content || ""}
+
+    `;
+}
+
+
+/* =========================================
+   image-textテンプレート
+========================================= */
+
+else if (workData.template === "short-text") {
+
+    workContentHTML = `
+
+        <!-- 作品画像 -->
+        <img
+            src="${workData.image}"
+            alt=""
+            class="image-text-image01 work-image-zoom">
+
+        <!-- 文字グループ -->
+        <div class="image-text-group">
+
+            <!-- 小見出し -->
+            <p class="work-heading-small image-text-heading-small">
+                DATA.${workData.data || ""}<br>
+                CATEGORY.${workData.category || ""}<br>
+                EQUIPMENT.${workData.equipment || ""}<br>
+                MATERIAL.${workData.material || ""}
+            </p>
+
+            <!-- 大見出し -->
+            <p class="work-heading-large image-text-heading-large">
+                ${workData.title || ""}
+            </p>
+
+            <!-- 本文 -->
+            <p class="work-body image-text-body">
+                ${workData.description || ""}
+            </p>
+
+        </div>
+
+        ${workData.content || ""}
+
     `;
 }
 
