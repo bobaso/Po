@@ -74,9 +74,15 @@ requestAnimationFrame(function () {
 ========================================= */
 
 (() => {
-    const makeImage = document.querySelector(".make-image01");
 
-    if (!makeImage) return;
+    const makeImage =
+        document.querySelector(".make-image01");
+
+    const visualArea =
+        document.querySelector(".visual-area");
+
+    if (!makeImage || !visualArea) return;
+
 
     // 表示する画像
     const images = [
@@ -90,47 +96,193 @@ requestAnimationFrame(function () {
     let scrollTimer = null;
     let isScrolling = false;
 
-    // スクロールで画像を切り替える
-    window.addEventListener("wheel", (event) => {
-        event.preventDefault();
 
-        // 連続したホイールイベントによる高速切り替えを防止
-        if (!isScrolling) {
-            isScrolling = true;
+    /* =========================================
+       画像切り替え共通処理
+    ========================================= */
 
-            if (event.deltaY > 0) {
-                // 下スクロール：次の画像
-                currentIndex = (currentIndex + 1) % images.length;
-            } else if (event.deltaY < 0) {
-                // 上スクロール：前の画像
-                currentIndex =
-                    (currentIndex - 1 + images.length) % images.length;
-            }
+    function changeMakeImage(direction) {
 
-            // メイン画像を切り替え
-makeImage.src = images[currentIndex];
+        // 連続操作による高速切り替えを防止
+        if (isScrolling) return;
 
-// 画像ごとのアニメーションを切り替え
-if (currentIndex === 1) {
-    showMake02Images();
-    hideMake03Images();
-} else if (currentIndex === 2) {
-    hideMake02Images();
-    showMake03Images();
-} else {
-    hideMake02Images();
-    hideMake03Images();
-}
+        isScrolling = true;
+
+        if (direction > 0) {
+            // 次の画像
+            currentIndex =
+                (currentIndex + 1) % images.length;
+
+        } else if (direction < 0) {
+            // 前の画像
+            currentIndex =
+                (currentIndex - 1 + images.length) % images.length;
         }
 
-        // スクロール操作が止まってから次の切り替えを許可
+        // メイン画像を切り替え
+        makeImage.src = images[currentIndex];
+
+
+        // 画像ごとのアニメーションを切り替え
+        if (currentIndex === 1) {
+
+            showMake02Images();
+            hideMake03Images();
+
+        } else if (currentIndex === 2) {
+
+            hideMake02Images();
+            showMake03Images();
+
+        } else {
+
+            hideMake02Images();
+            hideMake03Images();
+
+        }
+
+
+        // 450ms後に次の切り替えを許可
         clearTimeout(scrollTimer);
 
         scrollTimer = setTimeout(() => {
             isScrolling = false;
         }, 450);
 
+    }
+
+
+    /* =========================================
+       PC：マウスホイール操作
+    ========================================= */
+
+    window.addEventListener("wheel", (event) => {
+
+        event.preventDefault();
+
+        if (event.deltaY > 0) {
+
+            changeMakeImage(1);
+
+        } else if (event.deltaY < 0) {
+
+            changeMakeImage(-1);
+
+        }
+
     }, { passive: false });
+
+
+    /* =========================================
+       スマホ：スワイプ操作
+    ========================================= */
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchMoved = false;
+
+    const swipeThreshold = 40;
+
+
+    // タッチ開始位置を記録
+    visualArea.addEventListener("touchstart", (event) => {
+
+        if (event.touches.length !== 1) return;
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+
+        touchMoved = false;
+
+    }, { passive: true });
+
+
+    // 縦方向のスワイプ時にブラウザの動作を抑制
+    visualArea.addEventListener("touchmove", (event) => {
+
+        if (event.touches.length !== 1) return;
+
+        const moveX =
+            event.touches[0].clientX - touchStartX;
+
+        const moveY =
+            event.touches[0].clientY - touchStartY;
+
+        if (Math.abs(moveY) > Math.abs(moveX)) {
+
+            event.preventDefault();
+
+            if (Math.abs(moveY) > 10) {
+                touchMoved = true;
+            }
+
+        }
+
+    }, { passive: false });
+
+
+    // タッチ終了時に画像を切り替え
+    visualArea.addEventListener("touchend", (event) => {
+
+        if (!touchMoved) return;
+
+        const touchEndY =
+            event.changedTouches[0].clientY;
+
+        const differenceY =
+            touchEndY - touchStartY;
+
+
+        // 一定距離以上のスワイプだけ反応
+        if (differenceY > swipeThreshold) {
+
+            // 指を下へ動かす：次の画像
+            changeMakeImage(1);
+
+        } else if (differenceY < -swipeThreshold) {
+
+            // 指を上へ動かす：前の画像
+            changeMakeImage(-1);
+
+        }
+
+        // スワイプ直後のリンク誤作動を防止
+        if (Math.abs(differenceY) > swipeThreshold) {
+
+            const preventClick = (clickEvent) => {
+                clickEvent.preventDefault();
+                clickEvent.stopPropagation();
+                clickEvent.stopImmediatePropagation();
+            };
+
+            visualArea.addEventListener(
+                "click",
+                preventClick,
+                { capture: true, once: true }
+            );
+
+            setTimeout(() => {
+                visualArea.removeEventListener(
+                    "click",
+                    preventClick,
+                    true
+                );
+            }, 500);
+
+        }
+
+        touchMoved = false;
+
+    }, { passive: true });
+
+
+    // タッチ操作が途中でキャンセルされた場合
+    visualArea.addEventListener("touchcancel", () => {
+
+        touchMoved = false;
+
+    });
+
 })();
 
 
