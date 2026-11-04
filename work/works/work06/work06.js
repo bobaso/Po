@@ -10,9 +10,9 @@ const workData = {
 
     image: "../images/work06-01.png",
 
-    title: "ECサイトリニューアル",
+    title: "オリジナルブランドページ制作",
 
-    data: "2026/04/03-2026/04/25",
+    data: "2026/07/24-2026/07/31",
 
     category: "Webデザイン",
 
@@ -21,8 +21,8 @@ const workData = {
     material: "",
 
     description: `
-        BtoB、BtoC向けにノベルティー制作事業を進めていく為<br>
-        ECサイト内のリデザイン、リニューアルを行いました。
+        ECサイトリニューアルの経験を活かして<br>
+        BtoC向けのオリジナルブランドページを制作しました。
     `,
 
     content: `
