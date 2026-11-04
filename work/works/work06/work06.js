@@ -74,6 +74,10 @@ const workData = {
         alt="UMAKI Design"
     >
 
+<img
+    src="../images/work06-04.png"
+    alt=""
+    class="work-image-zoom work06-image04">
 </a>
 
 
