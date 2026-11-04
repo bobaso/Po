@@ -4,7 +4,7 @@
 
 .work06-background-heading {
     position: absolute;
-    left: 980px;
+    left: 880px;
     top: 715px;
 }
 
@@ -65,7 +65,7 @@
 .work06-image02 {
     position: absolute;
     left: 16px;
-    top: 623px;
+    top: 603px;
     display: block;
 }
 /* =========================================
@@ -75,7 +75,7 @@
 .work06-button03 {
     position: absolute;
     left: 20px;
-    top: 1127px;
+    top: 1107px;
     display: block;
     cursor: pointer;
 }
