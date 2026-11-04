@@ -83,3 +83,18 @@
 .work06-button03 img {
     display: block;
 }
+
+
+/* =========================================
+   画像04：クリックで拡大
+========================================= */
+
+.work06-image04 {
+    position: absolute;
+    left: 20px;
+    top: 1553px;
+    width: 590px;
+    height: 1015px;
+    display: block;
+    cursor: pointer;
+}
