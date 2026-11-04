@@ -14,9 +14,9 @@ const workData = {
 
     // 基本情報
     data: "2026/06/25-2026/07/14",
-    category: "",
-    equipment: "",
-    material: "",
+    category: "プロダクトデザイン",
+    equipment: "Github",
+    material: "アクリル",
 
     // 紹介文
     description: `
