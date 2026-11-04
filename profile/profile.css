@@ -1018,3 +1018,10 @@ font-family:
     transform: scale(1.05) translateY(-2px);
     filter: brightness(1.15);
 }
+/* =========================================
+   PROFILE 画面2 object05 非表示
+========================================= */
+
+.profile-page:nth-child(2) .profile-object05-link {
+    display: none;
+}
