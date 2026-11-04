@@ -14,15 +14,15 @@ const workData = {
     image: "../images/work08-01.png",
 
     /* 作品情報 */
-    title: "ここに作品タイトル",
+    title: "アクキーサンプル画像",
 
-    data: "2026/00/00-2026/00/00",
+    data: "2026/09/09-2026/10/08",
 
-    category: "ここにカテゴリー",
+    category: "イラスト",
 
-    equipment: "ここに使用機材",
+    equipment: "Adobe illustrator",
 
-    material: "ここに使用素材",
+    material: "",
 
     /* 作品説明 */
     description: `
