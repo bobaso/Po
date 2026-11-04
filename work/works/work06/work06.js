@@ -65,6 +65,7 @@ const workData = {
     alt=""
     class="work06-image02">
 
+<!-- 外部サイトリンクボタン -->
 <a
     href="https://web.archive.org/web/20261102081551/https://umaki-items.com/user_data/umaki-design"
     target="_blank"
@@ -76,11 +77,14 @@ const workData = {
         alt="UMAKI Design"
     >
 
+</a>
+
+
+<!-- 画像04：独立配置 -->
 <img
     src="../images/work06-04.png"
     alt=""
     class="work-image-zoom work06-image04">
-</a>
 
 
 
