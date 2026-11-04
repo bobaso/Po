@@ -134,7 +134,7 @@ const works = [
     },
 
     {
-        title: "作品08",
+        title: "アクキーサンプル<br>画像",
         image: "../images/work-test08.png",
         category: "illust",
         link: "works/work08/index.html"
