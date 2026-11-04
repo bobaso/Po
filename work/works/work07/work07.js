@@ -13,7 +13,7 @@ const workData = {
     title: "NFCカセット型アクリルキーホルダー",
 
     // 基本情報
-    data: "",
+    data: "2026/06/25-2026/07/14",
     category: "",
     equipment: "",
     material: "",
