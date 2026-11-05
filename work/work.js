@@ -412,27 +412,20 @@ function playCutInAnimation() {
 
     if (!mainVisual) return;
 
-    /* =========================================
-       アニメーションを初期状態に戻す
-    ========================================= */
-
+    /* アニメーションを一度停止 */
     mainVisual.classList.remove("is-visible");
 
+    /* アニメーションを初期状態に戻す */
+    mainVisual.style.animation = "none";
 
-    /* =========================================
-       ブラウザの描画を2フレーム待つ
-    ========================================= */
+    /* ブラウザに初期状態を反映 */
+    void mainVisual.offsetWidth;
 
-    requestAnimationFrame(function () {
+    /* アニメーション設定を解除 */
+    mainVisual.style.animation = "";
 
-        requestAnimationFrame(function () {
-
-            /* 左からのカットインを再生 */
-            mainVisual.classList.add("is-visible");
-
-        });
-
-    });
+    /* カットインを再生 */
+    mainVisual.classList.add("is-visible");
 
 }
 
