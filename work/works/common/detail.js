@@ -227,7 +227,7 @@ function updateBackToListPosition() {
 
     });
 
-    const gap = 30;
+    const gap = workData.content.includes("work03-image06") ? 10 : 30;
 
     /*
      * コンテンツ末尾の30px下に配置
