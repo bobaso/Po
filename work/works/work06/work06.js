@@ -80,11 +80,11 @@ const workData = {
 </a>
 
 
-<!-- 画像04：独立配置 -->
+<!-- 画像04：縦長画像・クリック拡大対応 -->
 <img
     src="../images/work06-04.png"
     alt=""
-    class="work-image-zoom work06-image04">
+    class="work-image-zoom work-image-zoom-tall work06-image04">
 
 
 
