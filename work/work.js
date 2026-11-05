@@ -401,15 +401,38 @@ const mainVisual =
 
 /* =========================================
    メインビジュアル カットイン
+   初回表示・カテゴリー変更時に共通使用
+========================================= */
+
+function playCutInAnimation() {
+
+    if (!mainVisual) return;
+
+    /* アニメーション用クラスを一度外す */
+    mainVisual.classList.remove("is-visible");
+
+    /* ブラウザに変更を認識させる */
+    void mainVisual.offsetWidth;
+
+    /* アニメーションを再実行 */
+    requestAnimationFrame(function () {
+
+        mainVisual.classList.add("is-visible");
+
+    });
+
+}
+
+
+/* =========================================
+   初回表示
 ========================================= */
 
 requestAnimationFrame(function () {
 
     requestAnimationFrame(function () {
 
-        mainVisual.classList.add(
-            "is-visible"
-        );
+        playCutInAnimation();
 
     });
 
