@@ -89,7 +89,7 @@ body::before {
 
 /* =========================================
    WORK メインビジュアル
-   基準キャンバス：1280 × 650px
+   カットインアニメーション
 ========================================= */
 
 .main-visual {
@@ -103,17 +103,17 @@ body::before {
     padding: 0;
 
     z-index: 4;
-    opacity: 0;
 
+    opacity: 0;
     transform: translateX(-100px);
 
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
 }
+/* 初回表示・カテゴリー変更時のアニメーション */
+
 .main-visual.is-visible {
-    opacity: 1;
-    transform: translateX(0);
+
+    animation: workCutIn 0.3s ease forwards;
+
 }
 
 /* =========================================
