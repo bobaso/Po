@@ -619,12 +619,9 @@ document.addEventListener("click", function (event) {
 
     zoomedImage.classList.add("work-image-zoomed");
 
-   /* WORK03専用クラス */
-if (
-    image.classList.contains("work03-image06") ||
-    image.classList.contains("work03-image03")
-) {
-    zoomedImage.classList.add("work03-zoomed");
+ /* 縦長画像専用クラス */
+if (image.classList.contains("work-image-zoom-tall")) {
+    zoomedImage.classList.add("work-image-zoomed-tall");
 }
 
     /* 元画像の配置・アニメーションの影響を解除 */
@@ -650,15 +647,7 @@ Object.assign(zoomedImage.style, {
    WORK03専用：縦長画像の拡大設定
 ========================================= */
 
-if (
-    image.classList.contains("work03-image03") ||
-    image.classList.contains("work03-image06")
-) {
-    zoomedImage.style.width = "95vw";
-    zoomedImage.style.height = "auto";
-    zoomedImage.style.maxWidth = "95vw";
-    zoomedImage.style.maxHeight = "none";
-}
+
 
     overlay.appendChild(zoomedImage);
     document.body.appendChild(overlay);
