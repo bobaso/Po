@@ -293,10 +293,13 @@ const illustButton =
    カテゴリー表示
 ========================================= */
 
+/* =========================================
+   カテゴリー表示
+========================================= */
+
 function filterWorks(category) {
 
     let filteredWorks;
-
 
     if (category === "all") {
 
@@ -311,16 +314,17 @@ function filterWorks(category) {
 
     }
 
-
+    /* 作品一覧を更新 */
     displayWorks(filteredWorks);
 
-
     /* スクロール位置を先頭に戻す */
-
     const worksArea =
         document.querySelector(".works-area");
 
     worksArea.scrollTop = 0;
+
+    /* カットインアニメーションを再実行 */
+    playCutInAnimation();
 
 }
 
