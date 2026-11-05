@@ -72,10 +72,19 @@ const workData = {
     rel="noopener noreferrer"
     class="work06-button03">
 
+    <!-- 下で動く画像 -->
+    <span class="work06-button-window">
+        <img
+            src="../images/work06-05.png"
+            alt=""
+            class="work06-button-animation">
+    </span>
+
+    <!-- 上に重ねるボタン画像 -->
     <img
         src="../images/work06-03.png"
         alt="UMAKI Design"
-    >
+        class="work06-button-image">
 
 </a>
 
