@@ -195,37 +195,56 @@ function updateBackToListPosition() {
     const elements =
         workContent.querySelectorAll("*");
 
-    elements.forEach(function (element) {
+   
+elements.forEach(function (element) {
 
-        let top = 0;
-        let current = element;
+    /*
+     * 縦長画像のスクロール表示窓を確認
+     */
+    const scrollWindow = element.closest(
+        ".work-image-scroll-window"
+    );
 
-        /*
-         * work-content からの位置を計算
-         */
-        while (
-            current &&
-            current !== workContent
-        ) {
-            top += current.offsetTop;
-            current = current.offsetParent;
+    /*
+     * スクロール窓の内側にある画像は
+     * 高さ計算から除外する
+     *
+     * スクロール窓そのものは計算対象にする
+     */
+    if (scrollWindow && element !== scrollWindow) {
+        return;
+    }
+
+    let top = 0;
+    let current = element;
+
+    /*
+     * work-content からの位置を計算
+     */
+    while (
+        current &&
+        current !== workContent
+    ) {
+        top += current.offsetTop;
+        current = current.offsetParent;
+    }
+
+    /*
+     * work-content 内にある要素だけを対象にする
+     */
+    if (current === workContent) {
+
+        const bottom =
+            top + element.offsetHeight;
+
+        if (bottom > maxBottom) {
+            maxBottom = bottom;
         }
 
-        /*
-         * work-content 内にある要素だけを対象にする
-         */
-        if (current === workContent) {
+    }
 
-            const bottom =
-                top + element.offsetHeight;
+});
 
-            if (bottom > maxBottom) {
-                maxBottom = bottom;
-            }
-
-        }
-
-    });
 
     const gap = workData.content.includes("work03-image06") ? 10 : 30;
 
