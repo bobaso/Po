@@ -95,17 +95,17 @@ ECサイト内のリデザイン、リニューアルを行いました。
 <div class="work03-renewal-group">
 
     <!-- 見出し -->
-    <div class="work-heading-small work03-heading-small-renewal typing-text">
+    <div class="work-heading-small work03-heading-small-renewal">
         RENEWAL
     </div>
 
     <!-- ふりがな -->
-    <div class="work-body work03-body-renewal typing-text">
+    <div class="work-body work03-body-renewal">
         リニューアル
     </div>
 
     <!-- 本文 -->
-    <div class="work-body work03-body-text typing-text">
+    <div class="work-body work03-body-text">
         <br>
         サイト全体の文字数を減らし、変わりに絵や図などを使って<br>
         説明することで利用者が理解しやすいように配慮しました。<br><br>
