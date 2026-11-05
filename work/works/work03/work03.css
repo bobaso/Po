@@ -351,3 +351,11 @@
 .work-scroll-area:has(.work03-scroll-window02) > .back-to-list-area {
     top: 2471px !important;
 }
+
+/* =========================================
+   WORK03：Back to list 下部の余分な余白を調整
+========================================= */
+
+#work-detail:has(.work03-image06) .work-content {
+    margin-bottom: -30px;
+}
