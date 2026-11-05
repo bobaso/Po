@@ -254,7 +254,20 @@ function displayWorks(workData) {
             "work-item-link";
 
 
-        link.appendChild(image);
+                /* =========================================
+           画像表示範囲
+           150 × 150pxで固定
+        ========================================= */
+
+        const imageWindow =
+            document.createElement("div");
+
+        imageWindow.className =
+            "work-item-image-window";
+
+        imageWindow.appendChild(image);
+
+        link.appendChild(imageWindow);
 
 
         workItem.appendChild(link);
