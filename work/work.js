@@ -129,7 +129,7 @@ const works = [
     {
         title: "NFCカセット型<br>アクリルキーホルダー",
         image: "../images/work-test07.png",
-        category: "web",
+        category: "product",
         link: "works/work07/index.html"
     },
 
