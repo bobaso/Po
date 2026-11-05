@@ -105,10 +105,15 @@ body::before {
     z-index: 4;
 
     opacity: 0;
+
     transform: translateX(-100px);
 
 }
-/* 初回表示・カテゴリー変更時のアニメーション */
+
+
+/* =========================================
+   初回表示・カテゴリー変更時
+========================================= */
 
 .main-visual.is-visible {
 
@@ -116,22 +121,28 @@ body::before {
 
 }
 
+
 /* =========================================
-   WORK メインビジュアル画像
-   基準サイズ：1280 × 650px
+   カットインの動き
 ========================================= */
 
-.work-main-visual-image {
+@keyframes workCutIn {
 
-    position: absolute;
+    from {
 
-    left: 0;
-    top: 0;
+        opacity: 0;
 
-    width: 1280px;
-    height: 650px;
+        transform: translateX(-100px);
 
-    display: block;
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
 
 }
 /* =========================================
