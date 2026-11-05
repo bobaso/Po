@@ -52,7 +52,7 @@
 /* CONCEPT：詳細テキスト */
 .work06-concept-detail {
     position: absolute;
-    left: 633px;
+    left: 733px;
     top: 1495px;
     width: 400px;
     box-sizing: border-box;
@@ -68,9 +68,7 @@
     top: 550px;
     display: block;
 }
-/* =========================================
-   ボタン03
-========================================= */
+
 
 /* =========================================
    WORK06 外部サイトリンクボタン
