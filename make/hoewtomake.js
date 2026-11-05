@@ -234,17 +234,17 @@ requestAnimationFrame(function () {
 
 
         // 一定距離以上のスワイプだけ反応
-        if (differenceY > swipeThreshold) {
+if (differenceY > swipeThreshold) {
 
-            // 指を下へ動かす：次の画像
-            changeMakeImage(1);
+    // 指を下へ動かす：前の画像
+    changeMakeImage(-1);
 
-        } else if (differenceY < -swipeThreshold) {
+} else if (differenceY < -swipeThreshold) {
 
-            // 指を上へ動かす：前の画像
-            changeMakeImage(-1);
+    // 指を上へ動かす：次の画像
+    changeMakeImage(1);
 
-        }
+}
 
         // スワイプ直後のリンク誤作動を防止
         if (Math.abs(differenceY) > swipeThreshold) {
