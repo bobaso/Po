@@ -344,4 +344,10 @@
     max-height: none;
 }
 
+/* =========================================
+   WORK03：Back to list の位置を固定
+========================================= */
 
+.work-scroll-area:has(.work03-scroll-window02) > .back-to-list-area {
+    top: 2471px !important;
+}
