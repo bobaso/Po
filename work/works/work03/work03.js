@@ -58,11 +58,7 @@ ECサイト内のリデザイン、リニューアルを行いました。
     class="work03-image02">
 
 <!-- 画像03：スクロール表示範囲 -->
-<div class="work03-scroll-window">
-    <img
-        src="../images/work03-03.png"
-        alt=""
-        class="work03-image03">
+<div class="work-image-scroll-window work03-scroll-window">
 </div>
 
 <!-- 画像04 -->
@@ -83,12 +79,7 @@ ECサイト内のリデザイン、リニューアルを行いました。
     
 
 <!-- 画像06：画像05の内側でスクロール -->
-<div class="work03-scroll-window02">
-    <img
-        src="../images/work03-06.png"
-        alt="拡大表示する画像"
-        class="work03-image06 work-image-zoom">
-</div>
+<div class="work-image-scroll-window work03-scroll-window02">
 
 
 <!-- RENEWAL：見出し・ふりがな・本文 -->
