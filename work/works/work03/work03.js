@@ -59,6 +59,12 @@ ECサイト内のリデザイン、リニューアルを行いました。
 
 <!-- 画像03：スクロール表示範囲 -->
 <div class="work-image-scroll-window work03-scroll-window">
+
+    <img
+        src="../images/work03-03.png"
+        alt=""
+        class="work03-image03 work-image-zoom work-image-zoom-tall">
+
 </div>
 
 <!-- 画像04 -->
@@ -78,39 +84,42 @@ ECサイト内のリデザイン、リニューアルを行いました。
 
     
 
-<!-- 画像06：画像05の内側でスクロール -->
+<!-- 画像06：スクロール表示範囲 -->
 <div class="work-image-scroll-window work03-scroll-window02">
 
+    <img
+        src="../images/work03-06.png"
+        alt="拡大表示する画像"
+        class="work03-image06 work-image-zoom work-image-zoom-tall">
+
+</div>
 
 <!-- RENEWAL：見出し・ふりがな・本文 -->
 <div class="work03-renewal-group">
 
-    <!-- 見出し -->
     <div class="work-heading-small work03-heading-small-renewal">
         RENEWAL
     </div>
 
-    <!-- ふりがな -->
     <div class="work-body work03-body-renewal">
         リニューアル
     </div>
 
-    <!-- 本文 -->
     <div class="work-body work03-body-text">
         <br>
         サイト全体の文字数を減らし、変わりに絵や図などを使って<br>
         説明することで利用者が理解しやすいように配慮しました。<br><br>
-        
+
         メインビジュアルなどをそのままにしておくことで、今までの<br>
         ユーザーやクライアントの方々に混乱を生まないために、ある程度<br>
         過去デザインの意思を汲んで全く別ものになってしまわないよう<br>
         逸脱しすぎないデザインに配慮しました。<br><br>
-        
+
         また、ページのヘッダーにカテゴリー欄を追加したことで、UIの<br>
         改善にも取り組みました。<br><br>
+
         そうすることで１ページあたりの情報量を減らして、さらに詳しく<br>
         知りたい人向けにトピック欄を作成し別ページのリンク先で詳細を語る構造にしました。<br>
-        
     </div>
 
 </div>
@@ -119,9 +128,3 @@ ECサイト内のリデザイン、リニューアルを行いました。
     `
 };
 
-if (
-    image.classList.contains("work03-image06") ||
-    image.classList.contains("work03-image03")
-) {
-    zoomedImage.classList.add("work03-zoomed");
-}
