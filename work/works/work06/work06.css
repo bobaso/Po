@@ -72,16 +72,102 @@
    ボタン03
 ========================================= */
 
+/* =========================================
+   WORK06 外部サイトリンクボタン
+========================================= */
+
 .work06-button03 {
     position: absolute;
+
     left: 20px;
     top: 1057px;
+
     display: block;
+
+    width: 590px;
+    height: 207px;
+
     cursor: pointer;
+
+    z-index: 10;
+
+    transition: transform 0.3s ease;
 }
 
-.work06-button03 img {
+/* 下の画像を表示する範囲 */
+.work06-button-window {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 590px;
+    height: 207px;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+/* 下で動く画像 */
+.work06-button-animation {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 590px;
+    height: 400px;
+
+    object-fit: contain;
+}
+
+/* 上に重ねるボタン画像 */
+.work06-button-image {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
     display: block;
+
+    width: 590px;
+    height: 207px;
+
+    z-index: 2;
+}
+
+/* ホバー時のボタン */
+.work06-button03:hover {
+    transform: translateY(-6px) scale(1.05);
+}
+
+/* ホバー中だけ下の画像を表示 */
+.work06-button03:hover .work06-button-window {
+    opacity: 1;
+}
+
+/* ホバー中だけ下の画像を動かす */
+.work06-button03:hover .work06-button-animation {
+    animation: work06-image-loop 4s linear infinite;
+}
+
+/* =========================================
+   上方向へのループ移動
+========================================= */
+
+@keyframes work06-image-loop {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-193px);
+    }
 }
 
 
