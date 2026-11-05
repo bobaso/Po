@@ -178,15 +178,11 @@ function initWork04Carousel() {
     showImage(0);
 }
 
-requestAnimationFrame(function () {
-    initWork04Carousel();
-});
+document.addEventListener("DOMContentLoaded", function () {
 
+    // detail.js による作品HTML生成後に初期化
+    requestAnimationFrame(function () {
+        initWork04Carousel();
+    });
 
-/* =========================================
-   カルーセル初期化
-========================================= */
-
-requestAnimationFrame(function () {
-    initWork04Carousel();
 });
