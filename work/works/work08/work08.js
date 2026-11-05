@@ -24,9 +24,14 @@ const workData = {
 
     material: "",
 
-    /* 作品説明 */
-    description: `
-        ここに作品の説明文を記載します。
-    `
+    material: "",
+
+/* 追加コンテンツ */
+content: "",
+
+/* 作品説明 */
+description: `
+    ここに作品の説明文を記載します。
+`
 
 };
