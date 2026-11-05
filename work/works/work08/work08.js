@@ -20,7 +20,7 @@ const workData = {
 
     category: "イラスト",
 
-    equipment: "Adobe illustrator、EC-CUBE4",
+    equipment: "Adobe illustrator",
 
     material: "",
 
@@ -30,8 +30,8 @@ content: "",
 /* 作品説明 */
 description: `
     ECサイト更新時に商品サンプルページを作成しました。<br>
-    人気商品であるNFCアクリルキーホルダー作成する際のイメージになればと、<br>
-    カフェや飲食店事業者を対象にノベルティアイテムとしてデザインしました。<br>
+    人気商品であるNFCアクリルキーホルダー作成する際のイメージになればと、
+    カフェや飲食店事業者を対象にノベルティアイテムとしてデザインしました。
 `
 
 };
