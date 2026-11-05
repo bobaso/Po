@@ -20,7 +20,7 @@ const workData = {
 
     category: "イラスト",
 
-    equipment: "Adobe illustrator",
+    equipment: "Adobe illustrator、EC-CUBE4",
 
     material: "",
 
