@@ -276,6 +276,7 @@ function initWork02OpenAnimation() {
    画像03：ゲージアニメーション
 ========================================= */
 
+
 function initWork02GaugeAnimation() {
 
     const workScrollArea =
@@ -284,7 +285,11 @@ function initWork02GaugeAnimation() {
     const gaugeImage =
         document.querySelector(".work02-image03");
 
-    if (!workScrollArea || !gaugeImage) {
+    // 画像10を監視対象にする
+    const observerTarget =
+        document.querySelector(".work02-image10");
+
+    if (!workScrollArea || !gaugeImage || !observerTarget) {
         return;
     }
 
@@ -295,10 +300,10 @@ function initWork02GaugeAnimation() {
 
                 if (entry.isIntersecting) {
 
+                    // 画像03のゲージアニメーションを開始
                     gaugeImage.classList.add("is-gauge-visible");
 
-                    // 一度アニメーションしたら再実行しない
-                    observer.unobserve(gaugeImage);
+                    observer.unobserve(observerTarget);
                 }
 
             });
@@ -310,8 +315,9 @@ function initWork02GaugeAnimation() {
         }
     );
 
-    observer.observe(gaugeImage);
+    observer.observe(observerTarget);
 }
+
 
 
 
