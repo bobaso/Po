@@ -16,11 +16,12 @@ const workData = {
     data: "2026/06/25-2026/07/14",
     category: "プロダクトデザイン",
     equipment: "Github",
-    material: "アクリル",
+    material: "アクリル板3mm",
 
     // 紹介文
     description: `
-
+スマホでかざすだけで遊べるNFCの新用品を作成しました<br>
+NFCを利用してゲームサイトへ誘導し独自のコンテンツを
     `,
 
     // 600px以降の独自コンテンツ
