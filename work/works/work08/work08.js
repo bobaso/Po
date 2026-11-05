@@ -22,9 +22,7 @@ const workData = {
 
     equipment: "Adobe illustrator",
 
-    material: "",
-
-    material: "",
+    material: "アクリル板３mm",
 
 /* 追加コンテンツ */
 content: "",
