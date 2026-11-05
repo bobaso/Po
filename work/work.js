@@ -399,31 +399,27 @@ illustButton.addEventListener(
 );
 
 
-const mainVisual =
-    document.querySelector(".main-visual");
-
-
 /* =========================================
    メインビジュアル カットイン
    初回表示・カテゴリー変更時に共通使用
 ========================================= */
 
+const mainVisual =
+    document.querySelector(".main-visual");
+
+
 function playCutInAnimation() {
 
     if (!mainVisual) return;
 
-    /* アニメーション用クラスを一度外す */
+    /* 一度アニメーションを初期状態に戻す */
     mainVisual.classList.remove("is-visible");
 
-    /* ブラウザに変更を認識させる */
+    /* ブラウザに初期状態を反映させる */
     void mainVisual.offsetWidth;
 
-    /* アニメーションを再実行 */
-    requestAnimationFrame(function () {
-
-        mainVisual.classList.add("is-visible");
-
-    });
+    /* 左からのカットインを再生 */
+    mainVisual.classList.add("is-visible");
 
 }
 
