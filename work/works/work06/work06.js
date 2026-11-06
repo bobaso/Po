@@ -67,7 +67,7 @@ const workData = {
 
 <!-- 外部サイトリンクボタン -->
 <a
-    href="https://web.archive.org/web/20261102081551/https://umaki-items.com/user_data/umaki-design"
+    href="https://umaki-items.com/user_data/umaki-design"
     target="_blank"
     rel="noopener noreferrer"
     class="work06-button03">
