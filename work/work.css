@@ -349,6 +349,21 @@ body::before {
     filter: brightness(0.65);
 
 }
+
+/* =========================================
+   選択中カテゴリー
+   色を反転
+========================================= */
+
+.all-bottom.is-selected,
+.product-bottom.is-selected,
+.web-bottom.is-selected,
+.event-bottom.is-selected,
+.illust-bottom.is-selected {
+
+    filter: invert(1);
+
+}
 /* =========================================
    作品一覧エリア
 ========================================= */
