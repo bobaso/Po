@@ -360,9 +360,7 @@ body::before {
 .web-bottom.is-selected,
 .event-bottom.is-selected,
 .illust-bottom.is-selected {
-
-    filter: invert(1);
-
+    filter: hue-rotate(180deg);
 }
 /* =========================================
    作品一覧エリア
