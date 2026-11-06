@@ -303,8 +303,11 @@ const illustButton =
 
 
 /* =========================================
-   カテゴリー表示
+   選択中カテゴリーの表示
 ========================================= */
+
+/* 初期状態はAllを選択 */
+allButton.classList.add("is-selected");
 
 /* =========================================
    カテゴリー表示
@@ -327,14 +330,51 @@ function filterWorks(category) {
 
     }
 
-    /* 作品一覧を更新 */
-    displayWorks(filteredWorks);
+    /* =========================================
+   選択中カテゴリーの色を反転
+========================================= */
 
-    /* スクロール位置を先頭に戻す */
-    const worksArea =
-        document.querySelector(".works-area");
+/* すべてのボタンの選択状態を解除 */
+allButton.classList.remove("is-selected");
+productButton.classList.remove("is-selected");
+webButton.classList.remove("is-selected");
+eventButton.classList.remove("is-selected");
+illustButton.classList.remove("is-selected");
 
-    worksArea.scrollTop = 0;
+/* クリックされたカテゴリーだけ反転 */
+if (category === "all") {
+    allButton.classList.add("is-selected");
+}
+
+else if (category === "product") {
+    productButton.classList.add("is-selected");
+}
+
+else if (category === "web") {
+    webButton.classList.add("is-selected");
+}
+
+else if (category === "event") {
+    eventButton.classList.add("is-selected");
+}
+
+else if (category === "illust") {
+    illustButton.classList.add("is-selected");
+}
+
+
+/* =========================================
+   作品一覧を更新
+========================================= */
+
+displayWorks(filteredWorks);
+
+
+/* スクロール位置を先頭に戻す */
+const worksArea =
+    document.querySelector(".works-area");
+
+worksArea.scrollTop = 0;
 
     /* カットインアニメーションを再実行 */
     playCutInAnimation();
