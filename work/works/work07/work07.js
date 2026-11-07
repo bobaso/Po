@@ -24,8 +24,30 @@ const workData = {
 NFCを利用してゲームサイトへ誘導しデジタルコンテンツを遊んでもらえる仕組みを作りました
     `,
 
-    // 600px以降の独自コンテンツ
+   
+        // 600px以降の独自コンテンツ
     content: `
+
+        <!-- 画像 -->
+        <img
+            src="../images/work07-02.png"
+            alt=""
+            class="work07-image02">
+
+        <!-- 小見出し -->
+        <div class="work-heading-small work07-heading-background">
+            BACKGROUND
+        </div>
+
+        <!-- 本文 -->
+        <div class="work-body work07-body01">
+            テキスト
+        </div>
+
+        <!-- 本文 -->
+        <div class="work-body work07-body02">
+            テキスト
+        </div>
 
     `
 
