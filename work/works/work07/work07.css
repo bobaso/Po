@@ -54,3 +54,15 @@
     left: 687px;
     top: 1253px;
 }
+/* =========================================
+   WORK07 画像03
+========================================= */
+.work-content .work07-image03 {
+    position: absolute;
+    left: 687px;
+    top: 1253px;
+    width: 500px;
+    height: 500px;
+    max-width: none;
+    display: block;
+}
