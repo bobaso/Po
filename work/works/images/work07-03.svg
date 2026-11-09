@@ -387,4 +387,51 @@
       </g>
     </g>
   </g>
+
+  <style>
+    /* =========================================
+       smartphone：傾いた状態から現在の角度へ
+    ========================================= */
+
+    #smartphone {
+        transform-box: fill-box;
+        transform-origin: center center;
+        transform: rotate(-35deg);
+
+        animation: smartphoneFall 1s ease-out forwards;
+    }
+
+    @keyframes smartphoneFall {
+        from {
+            transform: rotate(-35deg);
+        }
+
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+
+    /* =========================================
+       text：最初は非表示、後からフェードイン
+    ========================================= */
+
+    #text {
+        opacity: 0;
+
+        animation: textFadeIn 1s ease forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes textFadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
 </svg>
