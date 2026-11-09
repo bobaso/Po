@@ -101,7 +101,7 @@
 ========================================= */
 
 .work06-button03.is-open {
-    animation: work06-button-open 1s linear forwards;
+    animation: work06-button-open 0.5s linear forwards;
 }
 
 @keyframes work06-button-open {
