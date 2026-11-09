@@ -71,9 +71,9 @@
 
 
 
+
 /* =========================================
    WORK06 外部サイトリンクボタン
-   中央から上下に広がる展開アニメーション
 ========================================= */
 
 .work06-button03 {
@@ -90,33 +90,20 @@
     cursor: pointer;
 
     z-index: 10;
-}
 
-/* ボタン画像 */
-.work06-button-image {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    display: block;
-
-    width: 590px;
-    height: 207px;
-
-    z-index: 2;
-
-    /* 最初は中央の細い線 */
+    /* 最初は中央の細い線だけ表示 */
     clip-path: inset(49.5% 0 49.5% 0);
     opacity: 0;
 }
 
-/* 中央から上下に広がるアニメーション */
-.work06-button03.is-open .work06-button-image {
+/* =========================================
+   画面内に入ったときの展開
+========================================= */
+
+.work06-button03.is-open {
     animation: work06-button-open 1s linear forwards;
 }
 
-/* 展開アニメーション */
 @keyframes work06-button-open {
     from {
         clip-path: inset(49.5% 0 49.5% 0);
@@ -129,6 +116,87 @@
     }
 }
 
+/* =========================================
+   下の画像を表示する範囲
+========================================= */
+
+.work06-button-window {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 590px;
+    height: 207px;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+/* =========================================
+   下で動く画像
+========================================= */
+
+.work06-button-animation {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 590px;
+    height: 400px;
+
+    object-fit: contain;
+}
+
+/* =========================================
+   上に重ねるボタン画像
+========================================= */
+
+.work06-button-image {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    display: block;
+
+    width: 590px;
+    height: 207px;
+
+    z-index: 2;
+}
+
+/* =========================================
+   ホバー時：下の画像を表示
+========================================= */
+
+.work06-button03:hover .work06-button-window {
+    opacity: 1;
+}
+
+/* =========================================
+   ホバー時：下の画像を上方向へループ
+========================================= */
+
+.work06-button03:hover .work06-button-animation {
+    animation: work06-image-loop 4s linear infinite;
+}
+
+@keyframes work06-image-loop {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-193px);
+    }
+}
 
 
 /* =========================================
