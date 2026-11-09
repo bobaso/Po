@@ -57,7 +57,7 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
     type="image/svg+xml"
     class="work07-image03">
 </object>
->
+
 
     `
 
