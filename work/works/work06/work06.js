@@ -101,3 +101,21 @@ const workData = {
     `
 
 };
+
+
+/* =========================================
+   WORK06 外部リンクボタン
+   展開アニメーション開始
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const button = document.querySelector(".work06-button03");
+
+    if (!button) return;
+
+    requestAnimationFrame(() => {
+        button.classList.add("is-open");
+    });
+
+});
