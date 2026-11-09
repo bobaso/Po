@@ -103,9 +103,10 @@ const workData = {
 };
 
 
+
 /* =========================================
    WORK06 外部リンクボタン
-   展開アニメーション開始
+   画面内に入ったら展開
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -114,8 +115,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!button) return;
 
-    requestAnimationFrame(() => {
-        button.classList.add("is-open");
+    /* 画面内に入ったかを監視 */
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                button.classList.add("is-open");
+
+                /* 一度展開したら監視終了 */
+                observer.unobserve(button);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
     });
+
+    observer.observe(button);
 
 });
