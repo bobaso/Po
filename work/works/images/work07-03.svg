@@ -413,25 +413,32 @@
 
 
     /* =========================================
-       text：最初は非表示、後からフェードイン
-    ========================================= */
+   text：下からポンッと出現
+========================================= */
 
-    #text {
+#text {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: textPopup 0.65s cubic-bezier(0.2, 1.4, 0.4, 1) 1s forwards;
+}
+
+@keyframes textPopup {
+    0% {
         opacity: 0;
-
-        animation: textFadeIn 1s ease forwards;
-        animation-delay: 1s;
+        transform: translateY(35px) scale(0.85);
     }
 
-    @keyframes textFadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
+    70% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.04);
     }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
 </style>
 </svg>
