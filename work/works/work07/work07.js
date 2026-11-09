@@ -52,6 +52,12 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
             少し不親切な
         </div>
 
+        <img
+    src="../images/work07-03.svg"
+    alt=""
+    class="work07-image03"
+>
+
     `
 
 };
