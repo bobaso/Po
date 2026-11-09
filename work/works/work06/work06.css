@@ -4,7 +4,7 @@
 
 .work06-background-heading {
     position: absolute;
-    left: 850px;
+    left: 800px;
     top: 715px;
 }
 
@@ -38,14 +38,14 @@
 /* CONCEPT：小見出し */
 .work06-concept-heading {
     position: absolute;
-    left: 730px;
+    left: 830px;
     top: 1384px;
 }
 
 /* CONCEPT：本文 */
 .work06-concept-text {
     position: absolute;
-    left: 730px;
+    left: 930px;
     top: 1432px;
 }
 
