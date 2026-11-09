@@ -30,7 +30,7 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
         <!-- 画像 -->
         <img
-            src="../images/work07-02.png"
+            src="../images/work07-02.svg"
             alt=""
             class="work07-image02">
 
