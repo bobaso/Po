@@ -52,12 +52,25 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
             少し不親切な
         </div>
 
-                <object
-    data=""
-    data-src="../images/work07-03.svg"
-    type="image/svg+xml"
-    class="work07-image03">
-</object>
+           <object
+            data=""
+            data-src="../images/work07-03.svg"
+            type="image/svg+xml"
+            class="work07-image03">
+        </object>
+
+        <!-- NFCとは -->
+        <div class="work07-text01">
+            NFCとは
+        </div>
+
+        <!-- テキスト -->
+        <div class="work07-text02">
+            NFCタグは情報を読み取る際に使われる直径25mmのタグのこと、
+            事前にデータを書き込んでおくことで、
+            スマートフォンをかざしてURLを開いたり、アプリの起動などの操作に繋げたりできます。
+            NFCタグはスマホから簡単に何度でも情報を書き換えることが可能です。
+        </div>
 
     `
 
