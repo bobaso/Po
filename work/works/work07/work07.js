@@ -53,7 +53,8 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
         </div>
 
         <object
-    data="../images/work07-03.svg"
+    data=""
+    data-src="../images/work07-03.svg"
     type="image/svg+xml"
     class="work07-image03">
 </object>
