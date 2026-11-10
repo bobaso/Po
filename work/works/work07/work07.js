@@ -76,23 +76,37 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
         if (animationStarted) return;
 
-        if (window.scrollY < 1440) return;
+        // スクロール位置を取得
+        const scrollArea = document.querySelector(".work-scroll-area");
 
+        const currentY = Math.max(
+            window.scrollY,
+            scrollArea ? scrollArea.scrollTop : 0
+        );
+
+        if (currentY < 1440) return;
+
+        // SVG要素を取得
         const svgObject = document.querySelector(".work07-image03");
 
         if (!svgObject) return;
 
-        const svgPath = svgObject.dataset.src;
+        // SVGの読み込み先を取得
+        const svgPath = svgObject.getAttribute("data-src");
 
         if (!svgPath) return;
 
+        // アニメーション開始
         animationStarted = true;
 
-        svgObject.data = svgPath;
+        svgObject.setAttribute("data", svgPath);
+
     }
 
-    window.addEventListener("scroll", startWork07Animation);
+    // ページ内のスクロールを監視
+    document.addEventListener("scroll", startWork07Animation, true);
 
+    // 初期位置も確認
     startWork07Animation();
 
 })();
