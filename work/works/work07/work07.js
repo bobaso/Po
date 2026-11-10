@@ -62,4 +62,37 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
     `
 
+// =========================================
+// WORK07：Y=1440px到達でSVGアニメーション開始
+// =========================================
+
+(() => {
+
+    let animationStarted = false;
+
+    function startWork07Animation() {
+
+        if (animationStarted) return;
+
+        if (window.scrollY < 1440) return;
+
+        const svgObject = document.querySelector(".work07-image03");
+
+        if (!svgObject) return;
+
+        const svgPath = svgObject.dataset.src;
+
+        if (!svgPath) return;
+
+        animationStarted = true;
+
+        svgObject.data = svgPath;
+    }
+
+    window.addEventListener("scroll", startWork07Animation);
+
+    startWork07Animation();
+
+})();
+    
 };
