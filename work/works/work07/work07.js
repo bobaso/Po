@@ -83,7 +83,7 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
         if (!scrollArea || !svgObject) return;
 
         // work-scroll-areaのスクロール量を取得
-        if (scrollArea.scrollTop < 1440) return;
+        if (scrollArea.scrollTop < 1200) return;
 
         // SVGの読み込み先を取得
         const svgPath = svgObject.getAttribute("data-src");
