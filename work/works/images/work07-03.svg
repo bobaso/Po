@@ -414,30 +414,30 @@
   </g>
 
 <style>
-    /* =========================================
-       smartphone：傾いた状態から現在の角度へ
-    ========================================= */
+  /* =========================================
+   smartphone：傾いた状態から現在の角度へ
+========================================= */
 
-    #smartphone {
-        transform-box: fill-box;
-        transform-origin: center center;
+#smartphone {
+    transform-box: fill-box;
+    transform-origin: center center;
+    transform: rotate(-35deg);
+
+    animation: smartphoneFall 1s ease-out forwards;
+}
+
+@keyframes smartphoneFall {
+    from {
         transform: rotate(-35deg);
-
-        animation: smartphoneFall 1s ease-out forwards;
     }
 
-    @keyframes smartphoneFall {
-        from {
-            transform: rotate(-35deg);
-        }
-
-        to {
-            transform: rotate(0deg);
-        }
+    to {
+        transform: rotate(0deg);
     }
+}
 
 
-    /* =========================================
+/* =========================================
    text：下からポンッと出現
 ========================================= */
 
@@ -465,5 +465,28 @@
     }
 }
 
+
+/* =========================================
+   window_xFF12_：アプリ起動時の画面展開
+========================================= */
+
+#window_xFF12_ {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center center;
+    animation: windowOpen 0.5s ease-out 1.65s forwards;
+}
+
+@keyframes windowOpen {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 </style>
 </svg>
