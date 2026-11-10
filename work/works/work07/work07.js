@@ -65,7 +65,7 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
 
 // =========================================
-// WORK07：Y=1440px到達でSVGアニメーション開始
+// WORK07：スクロール量1440pxでSVGアニメーション開始
 // =========================================
 
 (() => {
@@ -76,37 +76,41 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
         if (animationStarted) return;
 
-        // スクロール位置を取得
         const scrollArea = document.querySelector(".work-scroll-area");
 
-        const currentY = Math.max(
-            window.scrollY,
-            scrollArea ? scrollArea.scrollTop : 0
-        );
-
-        if (currentY < 1440) return;
-
-        // SVG要素を取得
         const svgObject = document.querySelector(".work07-image03");
 
-        if (!svgObject) return;
+        if (!scrollArea || !svgObject) return;
+
+        // work-scroll-areaのスクロール量を取得
+        if (scrollArea.scrollTop < 1440) return;
 
         // SVGの読み込み先を取得
         const svgPath = svgObject.getAttribute("data-src");
 
         if (!svgPath) return;
 
-        // アニメーション開始
+        // 一度だけSVGを読み込む
         animationStarted = true;
 
         svgObject.setAttribute("data", svgPath);
 
     }
 
-    // ページ内のスクロールを監視
-    document.addEventListener("scroll", startWork07Animation, true);
+    // 実際にスクロールしている要素を監視
+    const checkTimer = setInterval(() => {
 
-    // 初期位置も確認
-    startWork07Animation();
+        const scrollArea = document.querySelector(".work-scroll-area");
+
+        if (!scrollArea) return;
+
+        scrollArea.addEventListener("scroll", startWork07Animation);
+
+        clearInterval(checkTimer);
+
+        // 初期位置も確認
+        startWork07Animation();
+
+    }, 100);
 
 })();
