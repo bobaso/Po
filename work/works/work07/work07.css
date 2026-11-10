@@ -66,3 +66,19 @@
     max-width: none;
     display: block;
 }
+
+/* =========================================
+   WORK07：SVG下のテキスト
+========================================= */
+
+.work07-text01 {
+    position: absolute;
+    left: 93px;
+    top: 1337px;
+}
+
+.work07-text02 {
+    position: absolute;
+    left: 35px;
+    top: 1448px;
+}
