@@ -52,15 +52,17 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
             少し不親切な
         </div>
 
-        <object
+                <object
     data=""
     data-src="../images/work07-03.svg"
     type="image/svg+xml"
     class="work07-image03">
 </object>
 
-
     `
+
+};
+
 
 // =========================================
 // WORK07：Y=1440px到達でSVGアニメーション開始
@@ -94,5 +96,3 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
     startWork07Animation();
 
 })();
-    
-};
