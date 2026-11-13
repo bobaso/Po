@@ -88,3 +88,48 @@
     left: 526px;
     top: 1968px;
 }
+
+/* =========================================
+   WORK07：画像04とボタン
+========================================= */
+
+.work07-image04-group {
+    position: absolute;
+    left: 60px;
+    top: 2102px;
+}
+
+.work07-image04 {
+    display: block;
+}
+
+/* ボタン05 */
+.work07-button05 {
+    position: absolute;
+    left: 102px;
+    top: 605px;
+}
+
+/* ボタン06 */
+.work07-button06 {
+    position: absolute;
+    left: 629px;
+    top: 605px;
+}
+
+
+/* =========================================
+   WORK07：追加画像
+========================================= */
+
+.work07-image05 {
+    position: absolute;
+    left: 60px;
+    top: 2904px;
+}
+
+.work07-image06 {
+    position: absolute;
+    left: 60px;
+    top: 3692px;
+}
