@@ -443,34 +443,34 @@ initWorkTextFlow();
 ========================================= */
 
 const fadeUpElements =
-    document.querySelectorAll(".fade-up");
+    document.querySelectorAll(
+        ".fade-up, .work01-process-fade"
+    );
 
 if (fadeUpElements.length > 0) {
 
+    const fadeUpObserver = new IntersectionObserver(
+        function (entries, observer) {
 
-const fadeUpObserver = new IntersectionObserver(
-    function (entries, observer) {
+            entries.forEach(function (entry) {
 
-        entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
 
-            if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
 
-                entry.target.classList.add("is-visible");
+                    // 一度表示したら再アニメーションしない
+                    observer.unobserve(entry.target);
 
-                // 一度表示したら再アニメーションしない
-                observer.unobserve(entry.target);
+                }
 
-            }
+            });
 
-        });
-
-    },
-    {
-        root: scrollArea,
-        threshold: 0.1
-    }
-);
-
+        },
+        {
+            root: scrollArea,
+            threshold: 0.1
+        }
+    );
 
     fadeUpElements.forEach(function (element) {
 
