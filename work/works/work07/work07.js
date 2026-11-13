@@ -83,7 +83,7 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
 
                 <!-- 画像04とボタン -->
-        <div class="work07-image04-group">
+        <div class="work07-image04-group work01-process-fade">
 
             <!-- 親画像 -->
             <img
@@ -120,16 +120,10 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
         </div>
 
         <!-- 画像05 -->
-        <img
-            src="../images/work07-07.png"
-            alt=""
-            class="work07-image07">
+        <img src="../images/work07-07.png" alt="" class="work07-image07 work01-process-fade">
 
         <!-- 画像06 -->
-        <img
-            src="../images/work07-08.png"
-            alt=""
-            class="work07-image08">
+        <img src="../images/work07-08.png" alt="" class="work07-image08 work01-process-fade">
 
     `
 
