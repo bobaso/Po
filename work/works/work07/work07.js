@@ -107,15 +107,15 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
         <!-- 画像05 -->
         <img
-            src="../images/work07-05.png"
+            src="../images/work07-07.png"
             alt=""
-            class="work07-image05">
+            class="work07-image07">
 
         <!-- 画像06 -->
         <img
-            src="../images/work07-06.png"
+            src="../images/work07-08.png"
             alt=""
-            class="work07-image06">
+            class="work07-image08">
 
     `
 
