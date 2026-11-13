@@ -81,6 +81,42 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
             仕様とこだわり
         </div>
 
+
+                <!-- 画像04とボタン -->
+        <div class="work07-image04-group">
+
+            <!-- 親画像 -->
+            <img
+                src="../images/work07-04.png"
+                alt=""
+                class="work07-image04">
+
+            <!-- ボタン05 -->
+            <img
+                src="../images/work07-05.png"
+                alt=""
+                class="work07-button05">
+
+            <!-- ボタン06 -->
+            <img
+                src="../images/work07-06.png"
+                alt=""
+                class="work07-button06">
+
+        </div>
+
+        <!-- 画像05 -->
+        <img
+            src="../images/work07-05.png"
+            alt=""
+            class="work07-image05">
+
+        <!-- 画像06 -->
+        <img
+            src="../images/work07-06.png"
+            alt=""
+            class="work07-image06">
+
     `
 
 };
