@@ -30,7 +30,7 @@
     position: absolute;
     left: 700px;
     top: 818px;
-   width: 500px;
+   width: 550px;
 }
 /* =========================================
    CONCEPT
@@ -63,12 +63,12 @@
 }
 
 /* =========================================
-   WORK07：SVG下のテキスト
+   NFCとは
 ========================================= */
 
 .work07-text01 {
     position: absolute;
-    left: 93px;
+    left: 300px;
     top: 1337px;
 }
 
