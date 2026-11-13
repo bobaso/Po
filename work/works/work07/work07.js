@@ -60,7 +60,7 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
         </object>
 
         <!-- NFCとは -->
-        <div class="work-body work07-text01">
+        <div class="work-heading-small work07-text01">
 
             NFCとは
         </div>
