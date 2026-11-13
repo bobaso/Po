@@ -76,6 +76,11 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
             NFCタグはスマホから簡単に何度でも情報を書き換えることが可能です。
         </div>
 
+        <!-- 小見出し -->
+        <div class="work-heading-small work07-heading-spec">
+            仕様とこだわり
+        </div>
+
     `
 
 };
