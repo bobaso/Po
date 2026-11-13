@@ -133,3 +133,30 @@
     left: 65px;
     top: 3692px;
 }
+
+/* =========================================
+   WORK07：ボタンの沈み込みアニメーション
+========================================= */
+
+.work07-button05,
+.work07-button06 {
+    display: block;
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
+    transform-origin: center center;
+}
+
+/* カーソルを合わせたとき */
+.work07-button05:hover,
+.work07-button06:hover {
+    transform: translateY(5px) scale(0.98);
+    filter: brightness(0.9);
+}
+
+/* クリックしている間 */
+.work07-button05:active,
+.work07-button06:active {
+    transform: translateY(8px) scale(0.96);
+    filter: brightness(0.85);
+}
