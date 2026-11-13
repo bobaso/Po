@@ -91,17 +91,31 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
                 alt=""
                 class="work07-image04">
 
-            <!-- ボタン05 -->
-            <img
-                src="../images/work07-05.png"
-                alt=""
+                        <!-- ボタン05：商品ページ -->
+            <a
+                href="https://umaki-items.com/products/detail/30"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="work07-button05">
 
-            <!-- ボタン06 -->
-            <img
-                src="../images/work07-06.png"
-                alt=""
+                <img
+                    src="../images/work07-05.png"
+                    alt="商品ページ">
+
+            </a>
+
+            <!-- ボタン06：Instagram -->
+            <a
+                href="https://www.instagram.com/umakitack/"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="work07-button06">
+
+                <img
+                    src="../images/work07-06.png"
+                    alt="Instagram">
+
+            </a>
 
         </div>
 
