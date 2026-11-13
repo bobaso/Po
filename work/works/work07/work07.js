@@ -106,7 +106,7 @@ NFCを利用してゲームサイトへ誘導しデジタルコンテンツを�
 
             <!-- ボタン06：Instagram -->
             <a
-                href="https://www.instagram.com/umakitack/"
+                href="https://www.instagram.com/p/DcSUYtelHlN/?utm_source=ig_web_copy_link&dlrf=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 class="work07-button06">
