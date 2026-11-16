@@ -427,34 +427,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showNextImage() {
 
-        const currentImage = images[currentIndex];
+    const currentImage = images[currentIndex];
 
-        // 現在の画像をぼかして消す
-        currentImage.classList.add("blur-out");
+    // 次の画像へ進む
+    currentIndex = (currentIndex + 1) % images.length;
 
-        setTimeout(() => {
+    const nextImage = images[currentIndex];
 
-            // 現在の画像を非表示にする
-            currentImage.classList.remove("active", "zoom-out", "blur-out");
+    // 次の画像を裏側に表示
+    nextImage.classList.add("active");
 
-            // 次の画像へ進む（4枚目の次は1枚目）
-            currentIndex = (currentIndex + 1) % images.length;
+    // アニメーションを再スタート
+    void nextImage.offsetWidth;
 
-            const nextImage = images[currentIndex];
+    nextImage.classList.add("zoom-out");
 
-            // 次の画像を表示
-            nextImage.classList.add("active");
+    // 現在の画像をぼかして消す
+    currentImage.classList.add("blur-out");
 
-            // ズームアニメーションを再スタート
-            void nextImage.offsetWidth;
+    setTimeout(() => {
 
-            nextImage.classList.add("zoom-out");
+        // 現在の画像を非表示にする
+        currentImage.classList.remove(
+            "active",
+            "zoom-out",
+            "blur-out"
+        );
 
-            // 次の切り替えを予約
-            setTimeout(showNextImage, zoomDuration);
+        // 次の切り替えを予約
+        setTimeout(showNextImage, zoomDuration);
 
-        }, blurDuration);
-    }
+    }, blurDuration);
+}
 
     // 1枚目のアニメーションを開始
     images[0].classList.add("active", "zoom-out");
