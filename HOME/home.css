@@ -790,3 +790,29 @@ background-image:
         transform: scale(1);
     }
 }
+
+/* =========================================
+   CRTモニター風 走査線エフェクト
+========================================= */
+
+.screen-object01-scanlines {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.22) 0px,
+        rgba(0, 0, 0, 0.22) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+}
