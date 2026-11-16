@@ -707,7 +707,24 @@ background-image:
     left: 75.5%;
     top: 61.9259%;
 }
+/* =========================================
+   screen object01
+   画像表示範囲
+========================================= */
 
+.screen-object01 {
+    position: absolute;
+
+    left: 27.8472%;
+    top: 17.037%;
+
+    width: calc(45.3472% + 1px);
+    height: 52.1481%;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
 /* =========================================
    screen object01
    画像切り替え・ズームアウト
