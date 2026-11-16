@@ -719,7 +719,7 @@ background-image:
     left: 27.8472%;
     top: 17.037%;
 
-    width: 45.3472%;
+    width: calc(45.3472% + 1px);
     height: 52.1481%;
 
     overflow: hidden;
