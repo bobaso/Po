@@ -757,6 +757,15 @@ background-image:
 
 .screen-object01-image.active {
     opacity: 1;
+    z-index: 1;
+}
+
+/* ぼかしながら消える画像を手前に表示 */
+
+.screen-object01-image.blur-out {
+    opacity: 0;
+    filter: blur(15px);
+    z-index: 2;
 }
 
 /* ズームアウト */
