@@ -414,12 +414,19 @@ if (skipLoading) {
    4枚の画像を順番に切り替える
 ========================================= */
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const images = document.querySelectorAll(".screen-object01-image");
+    const link = document.querySelector("#screen-object01-link");
 
-    if (!images.length) return;
+    if (!images.length || !link) return;
+
+    const urls = [
+        "https://bobaso.github.io/Po/work/works/work02/index.html",
+        "https://bobaso.github.io/Po/work/works/work07/index.html",
+        "https://bobaso.github.io/Po/work/works/work06/index.html",
+        "https://bobaso.github.io/Po/work/works/work01/index.html"
+    ];
 
     let currentIndex = 0;
 
@@ -435,6 +442,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const nextImage = images[currentIndex];
 
+        // リンク先も次の画像に変更
+        link.href = urls[currentIndex];
+
         // 次の画像を表示
         nextImage.classList.add("active");
 
@@ -446,7 +456,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // 現在の画像をぼかして消す
         currentImage.classList.add("blur-out");
 
-        // ぼかしが終わったら古い画像を非表示にする
         setTimeout(() => {
 
             currentImage.classList.remove(
@@ -457,16 +466,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }, blurDuration);
 
-        // 次の切り替えを8秒後に予約
-        // ぼかしの終了を待たずに予約する
         setTimeout(showNextImage, zoomDuration);
 
     }
 
-    // 最初の画像のアニメーションを開始
+    // 最初の画像のリンク先
+    link.href = urls[0];
+
+    // 最初の画像のアニメーション開始
     images[0].classList.add("active", "zoom-out");
 
-    // 8秒後に次の画像へ
     setTimeout(showNextImage, zoomDuration);
 
 });
