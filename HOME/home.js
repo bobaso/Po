@@ -414,6 +414,7 @@ if (skipLoading) {
    4枚の画像を順番に切り替える
 ========================================= */
 
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const images = document.querySelectorAll(".screen-object01-image");
@@ -422,48 +423,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentIndex = 0;
 
-    const zoomDuration = 8000; // ズームアウト時間
-    const blurDuration = 1500; // ぼかし時間
+    const zoomDuration = 8000;
+    const blurDuration = 1500;
 
     function showNextImage() {
 
-    const currentImage = images[currentIndex];
+        const currentImage = images[currentIndex];
 
-    // 次の画像へ進む
-    currentIndex = (currentIndex + 1) % images.length;
+        // 次の画像へ進む
+        currentIndex = (currentIndex + 1) % images.length;
 
-    const nextImage = images[currentIndex];
+        const nextImage = images[currentIndex];
 
-    // 次の画像を裏側に表示
-    nextImage.classList.add("active");
+        // 次の画像を表示
+        nextImage.classList.add("active");
 
-    // アニメーションを再スタート
-    void nextImage.offsetWidth;
+        // アニメーションを再スタート
+        void nextImage.offsetWidth;
 
-    nextImage.classList.add("zoom-out");
+        nextImage.classList.add("zoom-out");
 
-    // 現在の画像をぼかして消す
-    currentImage.classList.add("blur-out");
+        // 現在の画像をぼかして消す
+        currentImage.classList.add("blur-out");
 
-    setTimeout(() => {
+        // ぼかしが終わったら古い画像を非表示にする
+        setTimeout(() => {
 
-        // 現在の画像を非表示にする
-        currentImage.classList.remove(
-            "active",
-            "zoom-out",
-            "blur-out"
-        );
+            currentImage.classList.remove(
+                "active",
+                "zoom-out",
+                "blur-out"
+            );
 
-        // 次の切り替えを予約
+        }, blurDuration);
+
+        // 次の切り替えを8秒後に予約
+        // ぼかしの終了を待たずに予約する
         setTimeout(showNextImage, zoomDuration);
 
-    }, blurDuration);
-}
+    }
 
-    // 1枚目のアニメーションを開始
+    // 最初の画像のアニメーションを開始
     images[0].classList.add("active", "zoom-out");
 
-    // 8秒後に2枚目へ切り替え
+    // 8秒後に次の画像へ
     setTimeout(showNextImage, zoomDuration);
 
 });
+
