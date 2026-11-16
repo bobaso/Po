@@ -408,3 +408,58 @@ if (skipLoading) {
 }
 
 });
+
+/* =========================================
+   screen object01
+   4枚の画像を順番に切り替える
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const images = document.querySelectorAll(".screen-object01-image");
+
+    if (!images.length) return;
+
+    let currentIndex = 0;
+
+    const zoomDuration = 8000; // ズームアウト時間
+    const blurDuration = 1500; // ぼかし時間
+
+    function showNextImage() {
+
+        const currentImage = images[currentIndex];
+
+        // 現在の画像をぼかして消す
+        currentImage.classList.add("blur-out");
+
+        setTimeout(() => {
+
+            // 現在の画像を非表示にする
+            currentImage.classList.remove("active", "zoom-out", "blur-out");
+
+            // 次の画像へ進む（4枚目の次は1枚目）
+            currentIndex = (currentIndex + 1) % images.length;
+
+            const nextImage = images[currentIndex];
+
+            // 次の画像を表示
+            nextImage.classList.add("active");
+
+            // ズームアニメーションを再スタート
+            void nextImage.offsetWidth;
+
+            nextImage.classList.add("zoom-out");
+
+            // 次の切り替えを予約
+            setTimeout(showNextImage, zoomDuration);
+
+        }, blurDuration);
+    }
+
+    // 1枚目のアニメーションを開始
+    images[0].classList.add("active", "zoom-out");
+
+    // 8秒後に2枚目へ切り替え
+    setTimeout(showNextImage, zoomDuration);
+
+});
